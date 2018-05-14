@@ -1,0 +1,1752 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.lug.ustc.edu.cn/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Java," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="祥_venux" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="1 数据结构1.1 枚举（Enumeration）定义了一种从数据结构中取回连续元素的方式，已被迭代器取代。 1.2 位集合（BitSet）实现了一组可以单独设置和清除的位或标志。该类在处理一组布尔值的时候非常有用，你只需要给每个值赋值一”位”，然后对位进行适当的设置或清除，就可以对布尔值进行操作了。 1.3 向量（Vector） 向量（Vector）类和传统数组非常相似，但是Vector的大小能">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java基础知识02">
+<meta property="og:url" content="http://www.venux.cn/2018/03/29/Java基础知识02/index.html">
+<meta property="og:site_name" content="祥_venux">
+<meta property="og:description" content="1 数据结构1.1 枚举（Enumeration）定义了一种从数据结构中取回连续元素的方式，已被迭代器取代。 1.2 位集合（BitSet）实现了一组可以单独设置和清除的位或标志。该类在处理一组布尔值的时候非常有用，你只需要给每个值赋值一”位”，然后对位进行适当的设置或清除，就可以对布尔值进行操作了。 1.3 向量（Vector） 向量（Vector）类和传统数组非常相似，但是Vector的大小能">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://www.venux.cn/images/posts/Java_Thread.jpg">
+<meta property="og:updated_time" content="2018-05-14T02:53:19.399Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java基础知识02">
+<meta name="twitter:description" content="1 数据结构1.1 枚举（Enumeration）定义了一种从数据结构中取回连续元素的方式，已被迭代器取代。 1.2 位集合（BitSet）实现了一组可以单独设置和清除的位或标志。该类在处理一组布尔值的时候非常有用，你只需要给每个值赋值一”位”，然后对位进行适当的设置或清除，就可以对布尔值进行操作了。 1.3 向量（Vector） 向量（Vector）类和传统数组非常相似，但是Vector的大小能">
+<meta name="twitter:image" content="http://www.venux.cn/images/posts/Java_Thread.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.venux.cn/2018/03/29/Java基础知识02/"/>
+
+
+
+
+
+  <title>Java基础知识02 | 祥_venux</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?9ead14983eeabdb5fddcace7bbc74475";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">祥_venux</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">个人博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/2018/03/29/Java基础知识02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="祥_venux">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="祥_venux">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Java基础知识02</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-29T22:01:27+08:00">
+                2018-03-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/29/Java基础知识02/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/03/29/Java基础知识02/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/03/29/Java基础知识02/" class="leancloud_visitors" data-flag-title="Java基础知识02">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-数据结构"><a href="#1-数据结构" class="headerlink" title="1 数据结构"></a>1 数据结构</h2><h3 id="1-1-枚举（Enumeration）"><a href="#1-1-枚举（Enumeration）" class="headerlink" title="1.1 枚举（Enumeration）"></a>1.1 枚举（Enumeration）</h3><p>定义了一种从数据结构中取回连续元素的方式，已被迭代器取代。</p>
+<h3 id="1-2-位集合（BitSet）"><a href="#1-2-位集合（BitSet）" class="headerlink" title="1.2 位集合（BitSet）"></a>1.2 位集合（BitSet）</h3><p>实现了一组可以单独设置和清除的位或标志。该类在处理一组布尔值的时候非常有用，你只需要给每个值赋值一”位”，然后对位进行适当的设置或清除，就可以对布尔值进行操作了。</p>
+<h3 id="1-3-向量（Vector）"><a href="#1-3-向量（Vector）" class="headerlink" title="1.3 向量（Vector）"></a>1.3 向量（Vector）</h3><ul>
+<li>向量（Vector）类和传统数组非常相似，但是Vector的大小能根据需要动态的变化。</li>
+<li>和数组一样，Vector对象的元素也能通过索引访问。</li>
+<li>使用Vector类最主要的好处就是在创建对象的时候不必给对象指定大小，它的大小会根据需要动态的变化。</li>
+</ul>
+<h3 id="1-4-栈（Stack）"><a href="#1-4-栈（Stack）" class="headerlink" title="1.4 栈（Stack）"></a>1.4 栈（Stack）</h3><p>栈（Stack）实现了一个后进先出（LIFO）的数据结构。</p>
+<h3 id="1-5-字典（Dictionary）（已过时，使用Map接口替代）"><a href="#1-5-字典（Dictionary）（已过时，使用Map接口替代）" class="headerlink" title="1.5 字典（Dictionary）（已过时，使用Map接口替代）"></a>1.5 字典（Dictionary）（已过时，使用Map接口替代）</h3><p>字典（Dictionary） 类是一个<strong>抽象类</strong>，它定义了键映射到值的数据结构。</p>
+<h3 id="1-6-哈希表（Hashtable）"><a href="#1-6-哈希表（Hashtable）" class="headerlink" title="1.6 哈希表（Hashtable）"></a>1.6 哈希表（Hashtable）</h3><p>Hashtable类提供了一种在用户定义键结构的基础上来组织数据的手段。</p>
+<h3 id="1-7-属性（Properties）"><a href="#1-7-属性（Properties）" class="headerlink" title="1.7 属性（Properties）"></a>1.7 属性（Properties）</h3><p>Properties 继承于 Hashtable.Properties 类表示了一个持久的属性集.属性列表中每个键及其对应值都是一个字符串。Properties 类被许多Java类使用。例如，在获取环境变量时它就作为System.getProperties()方法的返回值。</p>
+<a id="more"></a>
+<h2 id="2-集合框架"><a href="#2-集合框架" class="headerlink" title="2 集合框架"></a>2 <strong>集合框架</strong></h2><p>集合框架是一个用来代表和操纵集合的统一架构。</p>
+<h3 id="2-1-设计目标"><a href="#2-1-设计目标" class="headerlink" title="2.1 设计目标"></a>2.1 设计目标</h3><ul>
+<li>高性能,基本集合（动态数组，链表，树，哈希表）的实现也必须是高效的。</li>
+<li>允许不同类型的集合，以类似的方式工作，具有高度的互操作性。</li>
+<li>对一个集合的扩展和适应必须是简单的。</li>
+</ul>
+<h3 id="2-2-内容"><a href="#2-2-内容" class="headerlink" title="2.2 内容"></a>2.2 内容</h3><ul>
+<li>接口：是代表集合的抽象数据类型。接口允许集合独立操纵其代表的细节。在面向对象的语言，接口通常形成一个层次。</li>
+<li>实现（类）：是集合接口的具体实现。从本质上讲，它们是可重复使用的数据结构。</li>
+<li>算法：是实现集合接口的对象里的方法执行的一些有用的计算，例如：搜索和排序。这些算法被称为多态，那是因为相同的方法可以在相似的接口上有着不同的实现。</li>
+</ul>
+<h3 id="2-3-集合接口"><a href="#2-3-集合接口" class="headerlink" title="2.3 集合接口"></a>2.3 集合接口</h3><table>
+<thead>
+<tr>
+<th>接口</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Collection 接口</td>
+<td>允许你使用一组对象，是Collection层次结构的根接口。</td>
+</tr>
+<tr>
+<td>List 接口</td>
+<td>继承于Collection和一个 List实例存储一个有序集合的元素。</td>
+</tr>
+<tr>
+<td>Set</td>
+<td>继承于 Collection，是一个不包含重复元素的集合。</td>
+</tr>
+<tr>
+<td>SortedSet</td>
+<td>继承于Set保存有序的集合。</td>
+</tr>
+<tr>
+<td>Map</td>
+<td>将唯一的键映射到值。</td>
+</tr>
+<tr>
+<td>Map.Entry</td>
+<td>描述在一个Map中的一个元素（键/值对）。是一个Map的内部类。</td>
+</tr>
+<tr>
+<td>SortedMap</td>
+<td>继承于Map，使Key保持在升序排列。</td>
+</tr>
+<tr>
+<td>Enumeration</td>
+<td>这是一个传统的接口和定义的方法，通过它可以枚举（一次获得一个）对象集合中的元素。这个传统接口已被迭代器取代。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-4-集合类"><a href="#2-4-集合类" class="headerlink" title="2.4 集合类"></a>2.4 集合类</h3><table>
+<thead>
+<tr>
+<th>类名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AbstractCollection</td>
+<td>实现了大部分的集合接口。</td>
+</tr>
+<tr>
+<td>AbstractList</td>
+<td>继承于AbstractCollection 并且实现了大部分List接口。</td>
+</tr>
+<tr>
+<td>AbstractSequentialList</td>
+<td>继承于AbstractList，提供了对数据元素的链式访问而不是随机访问。</td>
+</tr>
+<tr>
+<td>LinkedList</td>
+<td>继承于 AbstractSequentialList，实现了一个链表。</td>
+</tr>
+<tr>
+<td>ArrayList</td>
+<td>通过继承AbstractList，实现动态数组。</td>
+</tr>
+<tr>
+<td>AbstractSet</td>
+<td>继承于AbstractCollection 并且实现了大部分Set接口。</td>
+</tr>
+<tr>
+<td>HashSet</td>
+<td>继承了AbstractSet，并且使用一个哈希表。</td>
+</tr>
+<tr>
+<td>LinkedHashSet</td>
+<td>具有可预知迭代顺序的 Set 接口的哈希表和链接列表实现。</td>
+</tr>
+<tr>
+<td>TreeSet</td>
+<td>继承于AbstractSet，使用元素的自然顺序对元素进行排序.</td>
+</tr>
+<tr>
+<td>AbstractMap</td>
+<td>实现了大部分的Map接口。</td>
+</tr>
+<tr>
+<td>HashMap</td>
+<td>继承了HashMap，并且使用一个哈希表。</td>
+</tr>
+<tr>
+<td>TreeMap</td>
+<td>继承了AbstractMap，并且使用一颗树。</td>
+</tr>
+<tr>
+<td>WeakHashMap</td>
+<td>继承AbstractMap类，使用弱密钥的哈希表。</td>
+</tr>
+<tr>
+<td>LinkedHashMap</td>
+<td>继承于HashMap，使用元素的自然顺序对元素进行排序.</td>
+</tr>
+<tr>
+<td>IdentityHashMap</td>
+<td>继承AbstractMap类，比较文档时使用引用相等。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-序列化"><a href="#3-序列化" class="headerlink" title="3 序列化"></a>3 序列化</h2><ul>
+<li>一个类的对象要想序列化成功，必须满足两个条件：<ul>
+<li>该类必须实现 java.io.Serializable 对象。</li>
+<li>该类的所有属性必须是可序列化的。如果有一个属性不是可序列化的，则该属性必须注明是短暂的（transient ）。</li>
+</ul>
+</li>
+<li><p>ObjectOutputStream（writeObject）—：序列化</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">writeObject</span><span class="params">(Object x)</span> <span class="keyword">throws</span> IOException</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>ObjectInputStream（readObject）：反序列化</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">final</span> Object <span class="title">readObject</span><span class="params">()</span> <span class="keyword">throws</span> IOException,ClassNotFoundException</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="4-网络编程"><a href="#4-网络编程" class="headerlink" title="4 网络编程"></a>4 网络编程</h2><h3 id="4-1-网络协议（java-net）"><a href="#4-1-网络协议（java-net）" class="headerlink" title="4.1 网络协议（java.net）"></a>4.1 网络协议（java.net）</h3><ul>
+<li>TCP： TCP是传输控制协议的缩写，它保障了两个应用程序之间的可靠通信。通常用于互联网协议，被称TCP / IP。</li>
+<li>UDP:UDP是用户数据报协议的缩写，一个无连接的协议。提供了应用程序之间要发送的数据的数据包。</li>
+</ul>
+<h3 id="4-2-Socket（java-net-Socket）"><a href="#4-2-Socket（java-net-Socket）" class="headerlink" title="4.2 Socket（java.net.Socket）"></a>4.2 Socket（java.net.Socket）</h3><p>主要使用ServerSocket和Socket类</p>
+<ul>
+<li><ol>
+<li>服务器实例化一个 ServerSocket 对象，表示通过服务器上的端口通信。</li>
+</ol>
+</li>
+<li><ol>
+<li>服务器调用 ServerSocket 类的 accept() 方法，该方法将一直等待，直到客户端连接到服务器上给定的端口。</li>
+</ol>
+</li>
+<li><ol>
+<li>服务器正在等待时，一个客户端实例化一个 Socket 对象，指定服务器名称和端口号来请求连接。</li>
+</ol>
+</li>
+<li><ol>
+<li>Socket 类的构造函数试图将客户端连接到指定的服务器和端口号。如果通信被建立，则在客户端创建一个 Socket 对象能够与服务器进行通信。</li>
+</ol>
+</li>
+<li><ol>
+<li>在服务器端，accept() 方法返回服务器上一个新的 socket 引用，该 socket 连接到客户端的 socket。</li>
+</ol>
+</li>
+</ul>
+<h2 id="5-多线程"><a href="#5-多线程" class="headerlink" title="5 多线程"></a>5 多线程</h2><h3 id="5-1-线程的生命周期"><a href="#5-1-线程的生命周期" class="headerlink" title="5.1 线程的生命周期"></a>5.1 线程的生命周期</h3><p><img src="/images/posts/Java_Thread.jpg" alt="Thread"></p>
+<ul>
+<li>新建状态:使用 new 关键字和 Thread 类或其子类建立一个线程对象后，该线程对象就处于新建状态。它保持这个状态直到程序 start() 这个线程。</li>
+<li>就绪状态:当线程对象调用了start()方法之后，该线程就进入就绪状态。就绪状态的线程处于就绪队列中，要等待JVM里线程调度器的调度。</li>
+<li>运行状态:如果就绪状态的线程获取 CPU 资源，就可以执行 run()，此时线程便处于运行状态。处于运行状态的线程最为复杂，它可以变为阻塞状态、就绪状态和死亡状态。</li>
+<li>阻塞状态:如果一个线程执行了sleep（睡眠）、suspend（挂起）等方法，失去所占用资源之后，该线程就从运行状态进入阻塞状态。在睡眠时间已到或获得设备资源后可以重新进入就绪状态。可以分为三种：<ul>
+<li>等待阻塞：运行状态中的线程执行 wait() 方法，使线程进入到等待阻塞状态。</li>
+<li>同步阻塞：线程在获取 synchronized 同步锁失败(因为同步锁被其他线程占用)。</li>
+<li>其他阻塞：通过调用线程的 sleep() 或 join() 发出了 I/O 请求时，线程就会进入到阻塞状态。当sleep() 状态超时，join() 等待线程终止或超时，或者 I/O 处理完毕，线程重新转入就绪状态。</li>
+</ul>
+</li>
+<li>死亡状态:一个运行状态的线程完成任务或者其他终止条件发生时，该线程就切换到终止状态。</li>
+</ul>
+<h3 id="5-2-线程的优先级"><a href="#5-2-线程的优先级" class="headerlink" title="5.2 线程的优先级"></a>5.2 线程的优先级</h3><ul>
+<li>线程的优先级是一个整数，其取值范围是 1 （Thread.MIN_PRIORITY ） - 10 （Thread.MAX_PRIORITY ）。</li>
+<li>默认情况下，每一个线程都会分配一个优先级 NORM_PRIORITY（5）。</li>
+</ul>
+<h3 id="5-3-创建线程"><a href="#5-3-创建线程" class="headerlink" title="5.3 创建线程"></a>5.3 创建线程</h3><ul>
+<li>通过实现 Runnable 接口；</li>
+<li>通过继承 Thread 类本身；</li>
+<li>通过 Callable 和 Future 创建线程。</li>
+</ul>
+<h2 id="6-文档注释"><a href="#6-文档注释" class="headerlink" title="6 文档注释"></a>6 文档注释</h2><h3 id="6-1-javadoc-标签"><a href="#6-1-javadoc-标签" class="headerlink" title="6.1 javadoc 标签"></a>6.1 javadoc 标签</h3><table>
+<thead>
+<tr>
+<th>标签</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@author</td>
+<td>标识一个类的作者</td>
+<td>@author description</td>
+</tr>
+<tr>
+<td>@deprecated</td>
+<td>指名一个过期的类或成员</td>
+<td>@deprecated description</td>
+</tr>
+<tr>
+<td>{@docRoot}</td>
+<td>指明当前文档根目录的路径</td>
+<td>Directory Path</td>
+</tr>
+<tr>
+<td>@exception</td>
+<td>标志一个类抛出的异常</td>
+<td>@exception exception-name explanation</td>
+</tr>
+<tr>
+<td>{@inheritDoc}</td>
+<td>从直接父类继承的注释</td>
+<td>Inherits a comment from the immediate surperclass.</td>
+</tr>
+<tr>
+<td>{@link}</td>
+<td>插入一个到另一个主题的链接</td>
+<td>{@link name text}</td>
+</tr>
+<tr>
+<td>{@linkplain}</td>
+<td>插入一个到另一个主题的链接，但是该链接显示纯文本字体</td>
+<td>Inserts an in-line link to another topic.</td>
+</tr>
+<tr>
+<td>@param</td>
+<td>说明一个方法的参数</td>
+<td>@param parameter-name explanation</td>
+</tr>
+<tr>
+<td>@return</td>
+<td>说明返回值类型</td>
+<td>@return explanation</td>
+</tr>
+<tr>
+<td>@see</td>
+<td>指定一个到另一个主题的链接</td>
+<td>@see anchor</td>
+</tr>
+<tr>
+<td>@serial</td>
+<td>说明一个序列化属性</td>
+<td>@serial description</td>
+</tr>
+<tr>
+<td>@serialData</td>
+<td>说明通过writeObject( ) 和 writeExternal( )方法写的数据</td>
+<td>@serialData description</td>
+</tr>
+<tr>
+<td>@serialField</td>
+<td>说明一个ObjectStreamField组件</td>
+<td>@serialField name type description</td>
+</tr>
+<tr>
+<td>@since</td>
+<td>标记当引入一个特定的变化时</td>
+<td>@since release</td>
+</tr>
+<tr>
+<td>@throws</td>
+<td>和 @exception标签一样.</td>
+<td>The @throws tag has the same meaning as the @exception tag.</td>
+</tr>
+<tr>
+<td>{@value}</td>
+<td>显示常量的值，该常量必须是static属性。</td>
+<td>Displays the value of a constant, which must be a static field.</td>
+</tr>
+<tr>
+<td>@version</td>
+<td>指定类的版本</td>
+<td>@version info</td>
+</tr>
+</tbody>
+</table>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>本文主要用于记录个人不明了之处，故可能忽略许多知识点，如有需要，请自行查找相关资料，谢谢。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="祥_venux WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="祥_venux Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/25/Java环境变量配置/" rel="next" title="Java环境变量配置">
+                <i class="fa fa-chevron-left"></i> Java环境变量配置
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/01/Java各版本新特性/" rel="prev" title="Java各版本新特性">
+                Java各版本新特性 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微薄</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=2142808" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/head2.jpg"
+               alt="祥_venux" />
+          <p class="site-author-name" itemprop="name">祥_venux</p>
+           
+              <p class="site-description motion-element" itemprop="description">.NET</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/venux" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://music.163.com/#/user/home?id=16765516" target="_blank" title="网易云音乐">
+                  
+                    <i class="fa fa-fw fa-music"></i>
+                  
+                    
+                      网易云音乐
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/venux_27" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                    
+                      Twitter
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/luwenbiao333" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                    
+                      Facebook
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://martinfowler.com/" title="Martin Fowler" target="_blank">Martin Fowler</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.facebook.com/Jeffrey.Richter.1" title="Jeffrey Richter" target="_blank">Jeffrey Richter</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://twitter.com/search?q=Jon%20Skeet&src=typd" title="Jon Skeet" target="_blank">Jon Skeet</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/shanyou/" title="张善友" target="_blank">张善友</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/artech/" title="老A" target="_blank">老A</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.zhaojie.me/" title="老赵" target="_blank">老赵</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数据结构"><span class="nav-text">1 数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-枚举（Enumeration）"><span class="nav-text">1.1 枚举（Enumeration）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-位集合（BitSet）"><span class="nav-text">1.2 位集合（BitSet）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-向量（Vector）"><span class="nav-text">1.3 向量（Vector）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-栈（Stack）"><span class="nav-text">1.4 栈（Stack）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-字典（Dictionary）（已过时，使用Map接口替代）"><span class="nav-text">1.5 字典（Dictionary）（已过时，使用Map接口替代）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-6-哈希表（Hashtable）"><span class="nav-text">1.6 哈希表（Hashtable）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-7-属性（Properties）"><span class="nav-text">1.7 属性（Properties）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-集合框架"><span class="nav-text">2 集合框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-设计目标"><span class="nav-text">2.1 设计目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-内容"><span class="nav-text">2.2 内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-集合接口"><span class="nav-text">2.3 集合接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-集合类"><span class="nav-text">2.4 集合类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-序列化"><span class="nav-text">3 序列化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-网络编程"><span class="nav-text">4 网络编程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-网络协议（java-net）"><span class="nav-text">4.1 网络协议（java.net）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-Socket（java-net-Socket）"><span class="nav-text">4.2 Socket（java.net.Socket）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-多线程"><span class="nav-text">5 多线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-线程的生命周期"><span class="nav-text">5.1 线程的生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-线程的优先级"><span class="nav-text">5.2 线程的优先级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-创建线程"><span class="nav-text">5.3 创建线程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-文档注释"><span class="nav-text">6 文档注释</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-javadoc-标签"><span class="nav-text">6.1 javadoc 标签</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意"><span class="nav-text">注意</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 &mdash; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">祥_venux</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://venux27.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://www.venux.cn/2018/03/29/Java基础知识02/';
+          this.page.identifier = '2018/03/29/Java基础知识02/';
+          this.page.title = 'Java基础知识02';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://venux27.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("UDjFXGEpy6nb5tWHq55BEaoV-gzGzoHsz", "qdpkXjO9HeADnrAdOAvRsuXi");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 6827,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

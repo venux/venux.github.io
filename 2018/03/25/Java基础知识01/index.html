@@ -1,0 +1,2560 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.lug.ustc.edu.cn/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Java,JavaSE," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="祥_venux" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="1 Hello World 示例12345public class HelloWorld&amp;#123;    public static void main(String[] args)&amp;#123;        System.out.println(&quot;Hello World&quot;);    &amp;#125;&amp;#125; ps:  Java 中类名（CamelCase 风格）要与文件名保持一致； Java">
+<meta name="keywords" content="Java,JavaSE">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java基础知识01">
+<meta property="og:url" content="http://www.venux.cn/2018/03/25/Java基础知识01/index.html">
+<meta property="og:site_name" content="祥_venux">
+<meta property="og:description" content="1 Hello World 示例12345public class HelloWorld&amp;#123;    public static void main(String[] args)&amp;#123;        System.out.println(&quot;Hello World&quot;);    &amp;#125;&amp;#125; ps:  Java 中类名（CamelCase 风格）要与文件名保持一致； Java">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://www.venux.cn/images/posts/Java_Number.jpg">
+<meta property="og:image" content="http://www.venux.cn/images/posts/Java_Array.jpg">
+<meta property="og:image" content="http://www.venux.cn/images/posts/Java_Stream.jpg">
+<meta property="og:image" content="http://www.venux.cn/images/posts/Java_Exception.jpg">
+<meta property="og:updated_time" content="2018-05-14T02:53:19.399Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java基础知识01">
+<meta name="twitter:description" content="1 Hello World 示例12345public class HelloWorld&amp;#123;    public static void main(String[] args)&amp;#123;        System.out.println(&quot;Hello World&quot;);    &amp;#125;&amp;#125; ps:  Java 中类名（CamelCase 风格）要与文件名保持一致； Java">
+<meta name="twitter:image" content="http://www.venux.cn/images/posts/Java_Number.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.venux.cn/2018/03/25/Java基础知识01/"/>
+
+
+
+
+
+  <title>Java基础知识01 | 祥_venux</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?9ead14983eeabdb5fddcace7bbc74475";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">祥_venux</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">个人博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/2018/03/25/Java基础知识01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="祥_venux">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="祥_venux">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Java基础知识01</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-25T22:41:06+08:00">
+                2018-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/03/25/Java基础知识01/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2018/03/25/Java基础知识01/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/03/25/Java基础知识01/" class="leancloud_visitors" data-flag-title="Java基础知识01">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-Hello-World-示例"><a href="#1-Hello-World-示例" class="headerlink" title="1 Hello World 示例"></a>1 Hello World 示例</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</div><div class="line">        System.out.println(<span class="string">"Hello World"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>ps:</code></p>
+<ul>
+<li>Java 中类名（CamelCase 风格）要与文件名保持一致；</li>
+<li>Java 中方法名 camelCase 风格；</li>
+<li>main 主函数参数默认为 String []；</li>
+</ul>
+<a id="more"></a>
+<h2 id="2-Java-标识符"><a href="#2-Java-标识符" class="headerlink" title="2 Java 标识符"></a>2 Java 标识符</h2><ul>
+<li>所有的标识符都应该以字母（A-Z或者a-z）,美元符（$）、或者下划线（_）开始</li>
+</ul>
+<h2 id="3-Java-变量"><a href="#3-Java-变量" class="headerlink" title="3 Java 变量"></a>3 Java 变量</h2><ul>
+<li>局部变量</li>
+<li>类变量（静态变量）</li>
+<li>成员变量（非静态变量）</li>
+</ul>
+<h2 id="4-Java-关键字"><a href="#4-Java-关键字" class="headerlink" title="4 Java 关键字"></a>4 Java 关键字</h2><table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>abstract</td>
+<td>抽象方法，抽象类的修饰符</td>
+</tr>
+<tr>
+<td>assert</td>
+<td>断言条件是否满足</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>布尔数据类型</td>
+</tr>
+<tr>
+<td>break</td>
+<td>跳出循环或者label代码段</td>
+</tr>
+<tr>
+<td>byte</td>
+<td>8-bit 有符号数据类型</td>
+</tr>
+<tr>
+<td>case</td>
+<td>switch语句的一个条件</td>
+</tr>
+<tr>
+<td>catch</td>
+<td>try搭配捕捉异常信息</td>
+</tr>
+<tr>
+<td>char</td>
+<td>16-bit Unicode字符数据类型</td>
+</tr>
+<tr>
+<td>class</td>
+<td>定义类</td>
+</tr>
+<tr>
+<td>const</td>
+<td>未使用</td>
+</tr>
+<tr>
+<td>continue</td>
+<td>不执行循环体剩余部分</td>
+</tr>
+<tr>
+<td>default</td>
+<td>switch语句中的默认分支</td>
+</tr>
+<tr>
+<td>do</td>
+<td>循环语句，循环体至少会执行一次</td>
+</tr>
+<tr>
+<td>double</td>
+<td>64-bit双精度浮点数</td>
+</tr>
+<tr>
+<td>else</td>
+<td>if条件不成立时执行的分支</td>
+</tr>
+<tr>
+<td>enum</td>
+<td>枚举类型</td>
+</tr>
+<tr>
+<td>extends</td>
+<td>表示一个类是另一个类的子类</td>
+</tr>
+<tr>
+<td>final</td>
+<td>表示一个值在初始化之后就不能再改变了或表示方法不能被重写，或者一个类不能有子类</td>
+</tr>
+<tr>
+<td>finally</td>
+<td>为了完成执行的代码而设计的，主要是为了程序的健壮性和完整性，无论有没有异常发生都执行代码。</td>
+</tr>
+<tr>
+<td>float</td>
+<td>32-bit单精度浮点数</td>
+</tr>
+<tr>
+<td>for</td>
+<td>for循环语句</td>
+</tr>
+<tr>
+<td>goto</td>
+<td>未使用</td>
+</tr>
+<tr>
+<td>if</td>
+<td>条件语句</td>
+</tr>
+<tr>
+<td>implements</td>
+<td>表示一个类实现了接口</td>
+</tr>
+<tr>
+<td>import</td>
+<td>导入类</td>
+</tr>
+<tr>
+<td><strong>instanceof</strong></td>
+<td>测试一个对象是否是某个类的实例</td>
+</tr>
+<tr>
+<td>int</td>
+<td>32位整型数</td>
+</tr>
+<tr>
+<td>interface</td>
+<td>接口，一种抽象的类型，仅有方法和常量的定义</td>
+</tr>
+<tr>
+<td>long</td>
+<td>64位整型数</td>
+</tr>
+<tr>
+<td><strong>native</strong></td>
+<td>表示方法用非java代码实现</td>
+</tr>
+<tr>
+<td>new</td>
+<td>分配新的类实例</td>
+</tr>
+<tr>
+<td>package</td>
+<td>一系列相关类组成一个包</td>
+</tr>
+<tr>
+<td>private</td>
+<td>表示私有字段，或者方法等，只能从类内部访问</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>表示字段只能通过类或者其子类访问子类或者在同一个包内的其他类</td>
+</tr>
+<tr>
+<td>public</td>
+<td>表示共有属性或者方法</td>
+</tr>
+<tr>
+<td>return</td>
+<td>方法返回值</td>
+</tr>
+<tr>
+<td>short</td>
+<td>16位数字</td>
+</tr>
+<tr>
+<td>static</td>
+<td>表示在类级别定义，所有实例共享的</td>
+</tr>
+<tr>
+<td><strong>strictfp</strong></td>
+<td>浮点数比较使用严格的规则</td>
+</tr>
+<tr>
+<td>super</td>
+<td>表示基类</td>
+</tr>
+<tr>
+<td>switch</td>
+<td>选择语句</td>
+</tr>
+<tr>
+<td><strong>synchronized</strong></td>
+<td>表示同一时间只能由一个线程访问的代码块</td>
+</tr>
+<tr>
+<td>this</td>
+<td>表示调用当前实例或者调用另一个构造函数</td>
+</tr>
+<tr>
+<td>throw</td>
+<td>抛出异常</td>
+</tr>
+<tr>
+<td><strong>throws</strong></td>
+<td>定义方法可能抛出的异常</td>
+</tr>
+<tr>
+<td><strong>transient</strong></td>
+<td>修饰不要序列化的字段</td>
+</tr>
+<tr>
+<td>try</td>
+<td>表示代码块要做异常处理或者和finally配合表示是否抛出异常都执行finally中的代码</td>
+</tr>
+<tr>
+<td>void</td>
+<td>标记方法不返回任何值</td>
+</tr>
+<tr>
+<td><strong>volatile</strong></td>
+<td>标记字段可能会被多个线程同时访问，而不做同步</td>
+</tr>
+<tr>
+<td>while</td>
+<td>while循环</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-类-amp-对象"><a href="#5-类-amp-对象" class="headerlink" title="5 类&amp;对象"></a>5 类&amp;对象</h2><ul>
+<li>对象：对象是类的一个实例，有状态和行为。</li>
+<li>类：类是一个模板，它描述一类对象的行为和状态。</li>
+<li>局部变量：在方法、构造方法或者语句块中定义的变量被称为局部变量。变量声明和初始化都是在方法中，方法结束后，变量就会自动销毁。</li>
+<li>成员变量：成员变量是定义在类中，方法体之外的变量。这种变量在创建对象的时候实例化。成员变量可以被类中方法、构造方法和特定类的语句块访问。</li>
+<li>类变量：类变量也声明在类中，方法体之外，但必须声明为static类型。</li>
+</ul>
+<h2 id="6-源文件"><a href="#6-源文件" class="headerlink" title="6 源文件"></a>6 源文件</h2><ul>
+<li>一个源文件中只能有一个 public 类</li>
+<li>一个源文件可以有多个非 public 类</li>
+<li>源文件的名称应该和 public 类的类名保持一致</li>
+<li>如果一个类定义在某个包中，那么 package 语句应该在源文件的首行。</li>
+<li>如果源文件包含 import 语句，那么应该放在 package 语句和类定义之间。如果没有 package 语句，那么 import 语句应该在源文件中最前面。</li>
+<li>import 语句和 package 语句对源文件中定义的所有类都有效。</li>
+</ul>
+<h2 id="7-基本数据类型"><a href="#7-基本数据类型" class="headerlink" title="7 基本数据类型"></a>7 基本数据类型</h2><p>八种基本类型：六种数字类型（四个整数型，两个浮点型），一种字符类型，还有一种布尔型。<br><em>PS:</em>字符串不属于基本类型。</p>
+<h3 id="7-1-byte（java-lang-Byte）"><a href="#7-1-byte（java-lang-Byte）" class="headerlink" title="7.1 byte（java.lang.Byte）"></a>7.1 byte（java.lang.Byte）</h3><ul>
+<li>byte数据类型是8位、有符号的，以二进制补码表示的整数；</li>
+<li>最小值是-128（-2^7）；</li>
+<li>最大值是127（2^7-1）；</li>
+<li>默认值是0；</li>
+<li>byte类型用在大型数组中节约空间，主要代替整数，因为byte变量占用的空间只有int类型的四分之一；</li>
+</ul>
+<h3 id="7-2-short（java-lang-Short）"><a href="#7-2-short（java-lang-Short）" class="headerlink" title="7.2 short（java.lang.Short）"></a>7.2 short（java.lang.Short）</h3><ul>
+<li>short数据类型是16位、有符号的以二进制补码表示的整数</li>
+<li>最小值是-32768（-2^15）；</li>
+<li>最大值是32767（2^15 - 1）；</li>
+<li>Short数据类型也可以像byte那样节省空间。一个short变量是int型变量所占空间的二分之一；</li>
+<li>默认值是0；</li>
+</ul>
+<h3 id="7-3-int（java-lang-Integer）"><a href="#7-3-int（java-lang-Integer）" class="headerlink" title="7.3 int（java.lang.Integer）"></a>7.3 int（java.lang.Integer）</h3><ul>
+<li>int数据类型是32位、有符号的以二进制补码表示的整数；</li>
+<li>最小值是-2,147,483,648（-2^31）；</li>
+<li>最大值是2,147,483,647（2^31 - 1）；</li>
+<li>一般地整型变量默认为int类型；</li>
+<li>默认值是0；</li>
+</ul>
+<h3 id="7-4-long（java-lang-Long）"><a href="#7-4-long（java-lang-Long）" class="headerlink" title="7.4 long（java.lang.Long）"></a>7.4 long（java.lang.Long）</h3><ul>
+<li>long数据类型是64位、有符号的以二进制补码表示的整数；</li>
+<li>最小值是-9,223,372,036,854,775,808（-2^63）；</li>
+<li>最大值是9,223,372,036,854,775,807（2^63 -1）；</li>
+<li>这种类型主要使用在需要比较大整数的系统上；</li>
+<li>默认值是0L；</li>
+</ul>
+<h3 id="7-5-float（java-lang-Float）"><a href="#7-5-float（java-lang-Float）" class="headerlink" title="7.5 float（java.lang.Float）"></a>7.5 float（java.lang.Float）</h3><ul>
+<li>float数据类型是单精度、32位、符合IEEE 754标准的浮点数；</li>
+<li>float在储存大型浮点数组的时候可节省内存空间；</li>
+<li>默认值是0.0f；</li>
+<li><strong>浮点数不能用来表示精确的值</strong>，如货币；</li>
+</ul>
+<h3 id="7-6-double（java-lang-Double）"><a href="#7-6-double（java-lang-Double）" class="headerlink" title="7.6 double（java.lang.Double）"></a>7.6 double（java.lang.Double）</h3><ul>
+<li>double数据类型是双精度、64位、符合IEEE 754标准的浮点数；</li>
+<li>浮点数的默认类型为double类型；</li>
+<li><strong>double类型同样不能表示精确的值</strong>，如货币；</li>
+</ul>
+<h3 id="7-7-boolean"><a href="#7-7-boolean" class="headerlink" title="7.7 boolean"></a>7.7 boolean</h3><ul>
+<li>boolean数据类型表示一位的信息；</li>
+<li>只有两个取值：true和false；</li>
+<li>这种类型只作为一种标志来记录true/false情况；</li>
+<li>默认值是false；</li>
+</ul>
+<h3 id="7-8-char（java-lang-Character）"><a href="#7-8-char（java-lang-Character）" class="headerlink" title="7.8 char（java.lang.Character）"></a>7.8 char（java.lang.Character）</h3><ul>
+<li>char类型是一个单一的16位Unicode字符；</li>
+<li>最小值是’\u0000’（即为0）；</li>
+<li>最大值是’\uffff’（即为65,535）；</li>
+<li>char数据类型可以储存任何字符；</li>
+</ul>
+<h3 id="7-9-void（java-lang-Void）"><a href="#7-9-void（java-lang-Void）" class="headerlink" title="7.9 void（java.lang.Void）"></a>7.9 void（java.lang.Void）</h3><p>实际上，JAVA中还存在另外一种基本类型void，它也有对应的包装类 java.lang.Void，不过我们无法直接对它们进行操作。</p>
+<h2 id="8-引用类型"><a href="#8-引用类型" class="headerlink" title="8 引用类型"></a>8 引用类型</h2><ul>
+<li>引用类型变量由类的构造函数创建，可以使用它们访问所引用的对象。这些变量在声明时被指定为一个特定的类型。变量一旦声明后，类型就不能被改变了。</li>
+<li>对象、<strong>数组</strong>、<strong>字符串</strong>都是引用数据类型。</li>
+<li>所有引用类型的默认值都是null。</li>
+<li>一个引用变量可以用来引用与任何与之兼容的类型。</li>
+</ul>
+<h2 id="9-常量（final）"><a href="#9-常量（final）" class="headerlink" title="9 常量（final）"></a>9 常量（final）</h2><ul>
+<li>常量就是一个固定值。</li>
+<li>通常使用大写字母表示常量。</li>
+<li><strong>字符串</strong>是常量。</li>
+</ul>
+<h2 id="10-局部变量"><a href="#10-局部变量" class="headerlink" title="10 局部变量"></a>10 局部变量</h2><ul>
+<li>局部变量声明在方法、构造方法或者语句块中；</li>
+<li>局部变量是在栈上分配的。</li>
+<li>局部变量没有默认值，所以<strong>局部变量被声明后，必须经过初始化，才可以使用</strong>。</li>
+</ul>
+<h2 id="11-实例变量"><a href="#11-实例变量" class="headerlink" title="11 实例变量"></a>11 实例变量</h2><ul>
+<li>实例变量声明在一个类中，但在方法、构造方法和语句块之外；</li>
+<li>实例变量具有默认值。数值型变量的默认值是0，布尔型变量的默认值是false，引用类型变量的默认值是null。变量的值可以在声明时指定，也可以在构造方法中指定；</li>
+</ul>
+<h2 id="12-类变量（静态变量）"><a href="#12-类变量（静态变量）" class="headerlink" title="12 类变量（静态变量）"></a>12 类变量（静态变量）</h2><ul>
+<li>类变量也称为静态变量，在类中以static关键字声明，但必须在方法、构造方法和语句块之外。</li>
+<li>无论一个类创建了多少个对象，类只拥有类变量的一份拷贝。</li>
+<li>静态变量除了被声明为常量外很少使用。<strong>常量是指声明为public/private，final和static类型的变量。常量初始化后不可改变。</strong></li>
+<li><strong>静态变量储存在静态存储区</strong>。经常被声明为常量，很少单独使用static声明变量。</li>
+<li><strong>静态变量在程序开始时创建，在程序结束时销毁</strong>。</li>
+<li>与实例变量具有相似的可见性。但为了对类的使用者可见，大多数静态变量声明为public类型。</li>
+<li>默认值和实例变量相似。数值型变量默认值是0，布尔型默认值是false，引用类型默认值是null。变量的值可以在声明的时候指定，也可以- 在构造方法中指定。此外，静态变量还可以在静态语句块中初始化。</li>
+<li>静态变量可以通过：ClassName.VariableName的方式访问。</li>
+<li><strong>类变量被声明为public static final类型时，类变量名称必须使用大写字母。如果静态变量不是public和final类型，其命名方式与实例变量以及局部变量的命名方式一致。</strong></li>
+</ul>
+<h2 id="13-访问控制修饰符"><a href="#13-访问控制修饰符" class="headerlink" title="13 访问控制修饰符"></a>13 访问控制修饰符</h2><ul>
+<li>default：默认的，在同一包内可见，不使用任何修饰符。<ul>
+<li>接口里的变量都隐式声明为public static final,而接口里的方法默认情况下访问权限为public。</li>
+</ul>
+</li>
+<li>private：私有的，在同一类内可见。</li>
+<li>public：共有的，对所有类可见。</li>
+<li>protected 受保护的，对<strong>同一包内的类和所有子类</strong>可见（<strong>注意</strong>：此处对应C#的protected internal，而C#中protected仅仅对所有程序集的子类可见，而对包内的类不可见）。<ul>
+<li>Protected访问修饰符不能修饰类和接口，方法和成员变量能够声明为protected，但是接口的成员变量和成员方法不能声明为protected。</li>
+</ul>
+</li>
+</ul>
+<h2 id="14-访问控制和继承"><a href="#14-访问控制和继承" class="headerlink" title="14 访问控制和继承"></a>14 访问控制和继承</h2><ul>
+<li>父类中声明为public的方法在子类中也必须为public。</li>
+<li>父类中声明为protected的方法在子类中要么声明为protected，要么声明为public。不能声明为private。</li>
+<li>父类中声明为private的方法，不能够被继承。</li>
+</ul>
+<h2 id="15-非访问修饰符"><a href="#15-非访问修饰符" class="headerlink" title="15 非访问修饰符"></a>15 非访问修饰符</h2><ul>
+<li>static<ul>
+<li>用来创建类方法和类变量。</li>
+</ul>
+</li>
+<li>final<ul>
+<li>用来修饰类、方法和变量，<strong>final修饰的类不能够被继承，修饰的方法不能被继承类重新定义，修饰的变量为常量，是不可修改的</strong>。</li>
+<li>final变量能被显式地初始化并且只能初始化一次。<strong>被声明为final的对象的引用不能指向不同的对象。但是final对象里的数据可以被改变。</strong>也就是说final对象的引用不能改变，但是里面的值可以改变。</li>
+<li>final修饰符通常和static修饰符一起使用来创建类常量。</li>
+<li>类中的Final方法可以被子类继承，但是不能被子类修改。声明final方法的主要目的是防止该方法的内容被修改。</li>
+<li>final类不能被继承，没有类能够继承final类的任何特性。（即C#的sealed）</li>
+</ul>
+</li>
+<li>abstract<ul>
+<li>用来创建抽象类和抽象方法。</li>
+<li>一个类不能同时被abstract和final修饰。</li>
+<li>抽象类可以包含抽象方法和非抽象方法。</li>
+<li>抽象方法不能被声明成final和static。任何继承抽象类的子类必须实现父类的所有抽象方法，除非该子类也是抽象类。</li>
+</ul>
+</li>
+<li>synchronized<ul>
+<li>synchronized关键字声明的方法同一时间只能被一个线程访问。synchronized修饰符可以应用于四个访问修饰符。</li>
+</ul>
+</li>
+<li>Transient<ul>
+<li>序列化的对象包含被transient修饰的实例变量时，java虚拟机(JVM)跳过该特定的变量。该修饰符包含在定义变量的语句中，用来预处理类和变量的数据类型。</li>
+</ul>
+</li>
+<li>volatile<ul>
+<li>volatile修饰的成员变量在每次被线程访问时，都强迫从共享内存中重读该成员变量的值。而且，当成员变量发生变化时，强迫线程将变化值回写到共享内存。这样在任何时刻，两个不同的线程总是看到某个成员变量的同一个值。一个volatile对象引用可能是null。</li>
+</ul>
+</li>
+</ul>
+<h2 id="16-位运算符"><a href="#16-位运算符" class="headerlink" title="16 位运算符"></a>16 位运算符</h2><table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>&amp;</strong></td>
+<td>按位与操作符，当且仅当两个操作数的某一位都非0时候结果的该位才为1。</td>
+</tr>
+<tr>
+<td><strong>&#124;</strong></td>
+<td>按位或操作符，只要两个操作数的某一位有一个非0时候结果的该位就为1。</td>
+</tr>
+<tr>
+<td><strong>^</strong></td>
+<td>按位异或操作符，两个操作数的某一位不相同时候结果的该位就为1。    </td>
+</tr>
+<tr>
+<td><strong>〜</strong></td>
+<td>按位补运算符翻转操作数的每一位。    </td>
+</tr>
+<tr>
+<td><strong>&lt;&lt;</strong></td>
+<td>按位左移运算符。左操作数按位左移右操作数指定的位数。</td>
+</tr>
+<tr>
+<td><strong>&gt;&gt;</strong></td>
+<td>按位右移运算符。左操作数按位右移右操作数指定的位数。</td>
+</tr>
+<tr>
+<td><strong>&gt;&gt;&gt;</strong></td>
+<td>按位右移补零操作符。左操作数的值按右操作数指定的位数右移，移动得到的空位以零填充。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="17-instanceOf"><a href="#17-instanceOf" class="headerlink" title="17 instanceOf"></a>17 instanceOf</h2><p>该运算符用于操作对象实例，检查该对象是否是一个特定类型（类类型或接口类型）。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">String name = <span class="string">'James'</span>;</div><div class="line"><span class="keyword">boolean</span> result = name instanceOf String; <span class="comment">// 由于name是Strine类型，所以返回true</span></div></pre></td></tr></table></figure></p>
+<h2 id="18-for增强（即C-的foreach）"><a href="#18-for增强（即C-的foreach）" class="headerlink" title="18 for增强（即C#的foreach）"></a>18 for增强（即C#的foreach）</h2><p><code>·</code>要用于数组(Java5，之后不清楚是否有扩展，待确认)`</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> [] numbers = &#123;<span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span>&#125;;</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> x : numbers )&#123;</div><div class="line">  System.out.print( x );</div><div class="line">  System.out.print(<span class="string">","</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="19-switch"><a href="#19-switch" class="headerlink" title="19 switch"></a>19 switch</h2><ul>
+<li>switch语句中的变量类型只能为byte、short、int或者char。<code>(不清楚后续版本是否有扩展，待确认)</code></li>
+<li>case语句中的值的数据类型必须与变量的数据类型相同，而且只能是常量或者字面常量。</li>
+<li>switch语句可以包含一个default分支，<strong>该分支必须是switch语句的最后一个分支</strong>（C#中不一定是最后一个）。</li>
+</ul>
+<h2 id="20-Number类（java-lang）"><a href="#20-Number类（java-lang）" class="headerlink" title="20 Number类（java.lang）"></a>20 Number类（java.lang）</h2><p><img src="/images/posts/Java_Number.jpg" alt="图一"></p>
+<h2 id="21-String类"><a href="#21-String类" class="headerlink" title="21 String类"></a>21 String类</h2><ul>
+<li><strong>字符串属于对象</strong></li>
+<li><strong>和C#不同的是，Java中只有String，而没有string！！！</strong></li>
+<li><strong>String类是不可改变的，所以你一旦创建了String对象，那它的值就无法改变了。</strong></li>
+<li><strong>字符串长度使用length(),即方法而不是C#的属性length。</strong></li>
+</ul>
+<h2 id="22-StringBuffer和StringBuilder"><a href="#22-StringBuffer和StringBuilder" class="headerlink" title="22 StringBuffer和StringBuilder"></a>22 StringBuffer和StringBuilder</h2><ul>
+<li>StringBuilder的方法不是线程安全的（不能同步访问）,而StringBuffer是。</li>
+<li>StringBuilder相较于StringBuffer有速度优势，多数情况下建议使用StringBuilder类。</li>
+<li>在应用程序要求线程安全的情况下，则必须使用StringBuffer类。</li>
+</ul>
+<h2 id="23-数组"><a href="#23-数组" class="headerlink" title="23 数组"></a>23 数组</h2><h3 id="23-1-数组"><a href="#23-1-数组" class="headerlink" title="23.1 数组"></a>23.1 数组</h3><p><img src="/images/posts/Java_Array.jpg" alt="图一"></p>
+<h3 id="23-2-Arrays-类-java-util-Arrays"><a href="#23-2-Arrays-类-java-util-Arrays" class="headerlink" title="23.2 Arrays 类(java.util.Arrays)"></a>23.2 Arrays 类(java.util.Arrays)</h3><ul>
+<li>所有方法都是静态的</li>
+<li>给数组赋值：通过fill方法。</li>
+<li>对数组排序：通过sort方法,按升序。</li>
+<li>比较数组：通过equals方法比较数组中<strong>元素值</strong>是否相等。</li>
+<li>查找数组元素：通过binarySearch方法能对排序好的数组进行二分查找法操作</li>
+</ul>
+<h2 id="24-时间"><a href="#24-时间" class="headerlink" title="24 时间"></a>24 时间</h2><h3 id="24-1-Date-类-java-util-Date"><a href="#24-1-Date-类-java-util-Date" class="headerlink" title="24.1 Date 类(java.util.Date)"></a>24.1 Date 类(java.util.Date)</h3><p>System.currentTimeMillis()计算时间</p>
+<h3 id="24-2-SimpleDateFormat：格式化日期"><a href="#24-2-SimpleDateFormat：格式化日期" class="headerlink" title="24.2 SimpleDateFormat：格式化日期"></a>24.2 SimpleDateFormat：格式化日期</h3><table>
+<thead>
+<tr>
+<th>字母</th>
+<th>描述</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>G</td>
+<td>纪元标记</td>
+<td>AD</td>
+</tr>
+<tr>
+<td>y</td>
+<td>四位年份</td>
+<td>2001</td>
+</tr>
+<tr>
+<td>M</td>
+<td>月份</td>
+<td>July or 07</td>
+</tr>
+<tr>
+<td>d</td>
+<td>一个月的日期</td>
+<td>10</td>
+</tr>
+<tr>
+<td>h</td>
+<td>A.M./P.M.(1~12)格式小时</td>
+<td>12</td>
+</tr>
+<tr>
+<td>H</td>
+<td>一天中的小时(0~23)</td>
+<td>22</td>
+</tr>
+<tr>
+<td>m</td>
+<td>分钟数</td>
+<td>30</td>
+</tr>
+<tr>
+<td>s</td>
+<td>秒数</td>
+<td>55</td>
+</tr>
+<tr>
+<td>S</td>
+<td>微妙数</td>
+<td>234</td>
+</tr>
+<tr>
+<td>E</td>
+<td>星期几</td>
+<td>Tuesday</td>
+</tr>
+<tr>
+<td>D</td>
+<td>一年中的日子</td>
+<td>360</td>
+</tr>
+<tr>
+<td>F</td>
+<td>一个月中第几周的周几</td>
+<td>2 (second Wed. in July)</td>
+</tr>
+<tr>
+<td>w</td>
+<td>一年中第几周</td>
+<td>40</td>
+</tr>
+<tr>
+<td>W</td>
+<td>一个月中第几周</td>
+<td>1</td>
+</tr>
+<tr>
+<td>a</td>
+<td>A.M./P.M. 标记</td>
+<td>PM</td>
+</tr>
+<tr>
+<td>k</td>
+<td>一天中的小时(1~24)</td>
+<td>24</td>
+</tr>
+<tr>
+<td>K</td>
+<td>A.M./P.M. (0~11)格式小时</td>
+<td>10</td>
+</tr>
+<tr>
+<td>z</td>
+<td>时区</td>
+<td>Eastern Standard Time</td>
+</tr>
+<tr>
+<td>‘</td>
+<td>文字定界符</td>
+<td>Delimiter</td>
+</tr>
+<tr>
+<td>“</td>
+<td>单引号</td>
+<td>`</td>
+</tr>
+</tbody>
+</table>
+<h3 id="24-3-Calendar"><a href="#24-3-Calendar" class="headerlink" title="24.3 Calendar"></a>24.3 Calendar</h3><ul>
+<li>抽象类</li>
+<li>getInstance()获取实例</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>常量</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Calendar.YEAR</td>
+<td>年份</td>
+</tr>
+<tr>
+<td>Calendar.MONTH</td>
+<td>月份</td>
+</tr>
+<tr>
+<td>Calendar.DATE</td>
+<td>日期</td>
+</tr>
+<tr>
+<td>Calendar.DAY_OF_MONTH</td>
+<td>日期，和上面的字段意义完全相同</td>
+</tr>
+<tr>
+<td>Calendar.HOUR</td>
+<td>12小时制的小时</td>
+</tr>
+<tr>
+<td>Calendar.HOUR_OF_DAY</td>
+<td>24小时制的小时</td>
+</tr>
+<tr>
+<td>Calendar.MINUTE</td>
+<td>分钟</td>
+</tr>
+<tr>
+<td>Calendar.SECOND</td>
+<td>秒</td>
+</tr>
+<tr>
+<td>Calendar.DAY_OF_WEEK</td>
+<td>星期几</td>
+</tr>
+</tbody>
+</table>
+<h3 id="24-4-GregorianCalendar"><a href="#24-4-GregorianCalendar" class="headerlink" title="24.4 GregorianCalendar"></a>24.4 GregorianCalendar</h3><h2 id="25-正则（java-util-regex包）"><a href="#25-正则（java-util-regex包）" class="headerlink" title="25 正则（java.util.regex包）"></a>25 正则（java.util.regex包）</h2><ul>
+<li>Pattern类：pattern对象是一个正则表达式的编译表示。Pattern类没有公共构造方法。要创建一个Pattern对象，你必须首先调用其公共静态编译方法，它返回一个Pattern对象。该方法接受一个正则表达式作为它的第一个参数。</li>
+<li>Matcher类：Matcher对象是对输入字符串进行解释和匹配操作的引擎。与Pattern类一样，Matcher也没有公共构造方法。你需要调用Pattern对象的matcher方法来获得一个Matcher对象。</li>
+<li>PatternSyntaxException：PatternSyntaxException是一个非强制异常类，它表示一个正则表达式模式中的语法错误。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\</td>
+<td><code>将下一字符标记为特殊字符、文本、反向引用或八进制转义符。例如，&quot;n&quot;匹配字符&quot;n&quot;。&quot;\n&quot;匹配换行符。序列&quot;\\&quot;匹配&quot;\&quot;，&quot;\(&quot;匹配&quot;(&quot;。</code></td>
+</tr>
+<tr>
+<td>^</td>
+<td><code>匹配输入字符串开始的位置。如果设置了 RegExp 对象的 Multiline 属性，^ 还会与&quot;\n&quot;或&quot;\r&quot;之后的位置匹配。</code></td>
+</tr>
+<tr>
+<td>$</td>
+<td><code>匹配输入字符串结尾的位置。如果设置了 RegExp 对象的 Multiline 属性，$ 还会与&quot;\n&quot;或&quot;\r&quot;之前的位置匹配。</code></td>
+</tr>
+<tr>
+<td>*</td>
+<td><code>零次或多次匹配前面的字符或子表达式。例如，zo* 匹配&quot;z&quot;和&quot;zoo&quot;。* 等效于 {0,}。</code></td>
+</tr>
+<tr>
+<td>+</td>
+<td><code>一次或多次匹配前面的字符或子表达式。例如，&quot;zo+&quot;与&quot;zo&quot;和&quot;zoo&quot;匹配，但与&quot;z&quot;不匹配。+ 等效于 {1,}。</code></td>
+</tr>
+<tr>
+<td>?</td>
+<td><code>零次或一次匹配前面的字符或子表达式。例如，&quot;do(es)?&quot;匹配&quot;do&quot;或&quot;does&quot;中的&quot;do&quot;。? 等效于 {0,1}。</code></td>
+</tr>
+<tr>
+<td>{n}</td>
+<td><code>n 是非负整数。正好匹配 n 次。例如，&quot;o{2}&quot;与&quot;Bob&quot;中的&quot;o&quot;不匹配，但与&quot;food&quot;中的两个&quot;o&quot;匹配。</code></td>
+</tr>
+<tr>
+<td>{n,}</td>
+<td><code>n 是非负整数。至少匹配 n 次。例如，&quot;o{2,}&quot;不匹配&quot;Bob&quot;中的&quot;o&quot;，而匹配&quot;foooood&quot;中的所有 o。&quot;o{1,}&quot;等效于&quot;o+&quot;。&quot;o{0,}&quot;等效于&quot;o*&quot;。</code></td>
+</tr>
+<tr>
+<td>{n,m}</td>
+<td><code>M 和 n 是非负整数，其中 n &lt;= m。匹配至少 n 次，至多 m 次。例如，&quot;o{1,3}&quot;匹配&quot;fooooood&quot;中的头三个 o。&#39;o{0,1}&#39; 等效于 &#39;o?&#39;。注意：您不能将空格插入逗号和数字之间。</code></td>
+</tr>
+<tr>
+<td>?</td>
+<td><code>当此字符紧随任何其他限定符（*、+、?、{n}、{n,}、{n,m}）之后时，匹配模式是&quot;非贪心的&quot;。&quot;非贪心的&quot;模式匹配搜索到的、尽可能短的字符串，而默认的&quot;贪心的&quot;模式匹配搜索到的、尽可能长的字符串。例如，在字符串&quot;oooo&quot;中，&quot;o+?&quot;只匹配单个&quot;o&quot;，而&quot;o+&quot;匹配所有&quot;o&quot;。</code></td>
+</tr>
+<tr>
+<td>.</td>
+<td><code>匹配除&quot;\r\n&quot;之外的任何单个字符。若要匹配包括&quot;\r\n&quot;在内的任意字符，请使用诸如&quot;[\s\S]&quot;之类的模式。</code></td>
+</tr>
+<tr>
+<td>(pattern)</td>
+<td><code>匹配 pattern 并捕获该匹配的子表达式。可以使用 $0…$9 属性从结果&quot;匹配&quot;集合中检索捕获的匹配。若要匹配括号字符 ( )，请使用&quot;\(&quot;或者&quot;\)&quot;。</code></td>
+</tr>
+<tr>
+<td>(?:pattern)</td>
+<td><code>匹配 pattern 但不捕获该匹配的子表达式，即它是一个非捕获匹配，不存储供以后使用的匹配。这对于用&quot;or&quot;字符 (&amp;#124;) 组合模式部件的情况很有用。例如，&#39;industr(?:y&amp;#124;ies) 是比 &#39;industry&amp;#124;industries&#39; 更经济的表达式。</code></td>
+</tr>
+<tr>
+<td>(?=pattern)</td>
+<td><code>执行正向预测先行搜索的子表达式，该表达式匹配处于匹配 pattern 的字符串的起始点的字符串。它是一个非捕获匹配，即不能捕获供以后使用的匹配。例如，&#39;Windows (?=95&amp;#124;98&amp;#124;NT&amp;#124;2000)&#39; 匹配&quot;Windows 2000&quot;中的&quot;Windows&quot;，但不匹配&quot;Windows 3.1&quot;中的&quot;Windows&quot;。预测先行不占用字符，即发生匹配后，下一匹配的搜索紧随上一匹配之后，而不是在组成预测先行的字符后。</code></td>
+</tr>
+<tr>
+<td>(?!pattern)</td>
+<td><code>执行反向预测先行搜索的子表达式，该表达式匹配不处于匹配 pattern 的字符串的起始点的搜索字符串。它是一个非捕获匹配，即不能捕获供以后使用的匹配。例如，&#39;Windows (?!95&amp;#124;98&amp;#124;NT&amp;#124;2000)&#39; 匹配&quot;Windows 3.1&quot;中的 &quot;Windows&quot;，但不匹配&quot;Windows 2000&quot;中的&quot;Windows&quot;。预测先行不占用字符，即发生匹配后，下一匹配的搜索紧随上一匹配之后，而不是在组成预测先行的字符后。</code></td>
+</tr>
+<tr>
+<td>x&#124;y</td>
+<td><code>匹配 x 或 y。例如，&#39;z&amp;#124;food&#39; 匹配&quot;z&quot;或&quot;food&quot;。&#39;(z&amp;#124;f)ood&#39; 匹配&quot;zood&quot;或&quot;food&quot;。</code></td>
+</tr>
+<tr>
+<td>[xyz]</td>
+<td><code>字符集。匹配包含的任一字符。例如，&quot;[abc]&quot;匹配&quot;plain&quot;中的&quot;a&quot;。</code></td>
+</tr>
+<tr>
+<td>[^xyz]</td>
+<td><code>反向字符集。匹配未包含的任何字符。例如，&quot;[^abc]&quot;匹配&quot;plain&quot;中&quot;p&quot;，&quot;l&quot;，&quot;i&quot;，&quot;n&quot;。</code></td>
+</tr>
+<tr>
+<td>[a-z]</td>
+<td><code>字符范围。匹配指定范围内的任何字符。例如，&quot;[a-z]&quot;匹配&quot;a&quot;到&quot;z&quot;范围内的任何小写字母。</code></td>
+</tr>
+<tr>
+<td>[^a-z]</td>
+<td><code>反向范围字符。匹配不在指定的范围内的任何字符。例如，&quot;[^a-z]&quot;匹配任何不在&quot;a&quot;到&quot;z&quot;范围内的任何字符。</code></td>
+</tr>
+<tr>
+<td>\b</td>
+<td><code>匹配一个字边界，即字与空格间的位置。例如，&quot;er\b&quot;匹配&quot;never&quot;中的&quot;er&quot;，但不匹配&quot;verb&quot;中的&quot;er&quot;。</code></td>
+</tr>
+<tr>
+<td>\B</td>
+<td><code>非字边界匹配。&quot;er\B&quot;匹配&quot;verb&quot;中的&quot;er&quot;，但不匹配&quot;never&quot;中的&quot;er&quot;。</code></td>
+</tr>
+<tr>
+<td>\cx</td>
+<td><code>匹配 x 指示的控制字符。例如，\cM 匹配 Control-M 或回车符。x 的值必须在 A-Z 或 a-z 之间。如果不是这样，则假定 c 就是&quot;c&quot;字符本身。</code></td>
+</tr>
+<tr>
+<td>\d</td>
+<td><code>数字字符匹配。等效于 [0-9]。</code></td>
+</tr>
+<tr>
+<td>\D</td>
+<td><code>非数字字符匹配。等效于 [^0-9]。</code></td>
+</tr>
+<tr>
+<td>\f</td>
+<td><code>换页符匹配。等效于 \x0c 和 \cL。</code></td>
+</tr>
+<tr>
+<td>\n</td>
+<td><code>换行符匹配。等效于 \x0a 和 \cJ。</code></td>
+</tr>
+<tr>
+<td>\r</td>
+<td><code>匹配一个回车符。等效于 \x0d 和 \cM。</code></td>
+</tr>
+<tr>
+<td>\s</td>
+<td><code>匹配任何空白字符，包括空格、制表符、换页符等。与 [ \f\n\r\t\v] 等效。</code></td>
+</tr>
+<tr>
+<td>\S</td>
+<td><code>匹配任何非空白字符。与 [^ \f\n\r\t\v] 等效。</code></td>
+</tr>
+<tr>
+<td>\t</td>
+<td><code>制表符匹配。与 \x09 和 \cI 等效。</code></td>
+</tr>
+<tr>
+<td>\v</td>
+<td><code>垂直制表符匹配。与 \x0b 和 \cK 等效。</code></td>
+</tr>
+<tr>
+<td>\w</td>
+<td><code>匹配任何字类字符，包括下划线。与&quot;[A-Za-z0-9_]&quot;等效。</code></td>
+</tr>
+<tr>
+<td>\W</td>
+<td><code>与任何非单词字符匹配。与&quot;[^A-Za-z0-9_]&quot;等效。</code></td>
+</tr>
+<tr>
+<td>\xn</td>
+<td><code>匹配 n，此处的 n 是一个十六进制转义码。十六进制转义码必须正好是两位数长。例如，&quot;\x41&quot;匹配&quot;A&quot;。&quot;\x041&quot;与&quot;\x04&quot;&amp;&quot;1&quot;等效。允许在正则表达式中使用 ASCII 代码。</code></td>
+</tr>
+<tr>
+<td>\num</td>
+<td><code>匹配 num，此处的 num 是一个正整数。到捕获匹配的反向引用。例如，&quot;(.)\1&quot;匹配两个连续的相同字符。</code></td>
+</tr>
+<tr>
+<td>\n</td>
+<td><code>标识一个八进制转义码或反向引用。如果 \n 前面至少有 n 个捕获子表达式，那么 n 是反向引用。否则，如果 n 是八进制数 (0-7)，那么 n 是八进制转义码。</code></td>
+</tr>
+<tr>
+<td>\nm</td>
+<td><code>标识一个八进制转义码或反向引用。如果 \nm 前面至少有 nm 个捕获子表达式，那么 nm 是反向引用。如果 \nm 前面至少有 n 个捕获，则 n 是反向引用，后面跟有字符 m。如果两种前面的情况都不存在，则 \nm 匹配八进制值 nm，其中 n 和 m 是八进制数字 (0-7)。</code></td>
+</tr>
+<tr>
+<td>\nml</td>
+<td><code>当 n 是八进制数 (0-3)，m 和 l 是八进制数 (0-7) 时，匹配八进制转义码 nml。</code></td>
+</tr>
+<tr>
+<td>\un</td>
+<td><code>匹配 n，其中 n 是以四位十六进制数表示的 Unicode 字符。例如，\u00A9 匹配版权符号 (©)。</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="26-方法"><a href="#26-方法" class="headerlink" title="26 方法"></a>26 方法</h2><ul>
+<li><strong>方法是通过值传递参数</strong></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestPassByValue</span> </span>&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">      <span class="keyword">int</span> num1 = <span class="number">1</span>;</div><div class="line">      <span class="keyword">int</span> num2 = <span class="number">2</span>;</div><div class="line"></div><div class="line">      System.out.println(<span class="string">"Before swap method, num1 is "</span> + num1 + <span class="string">" and num2 is "</span> + num2);</div><div class="line"></div><div class="line">      <span class="comment">// 调用swap方法</span></div><div class="line">      swap(num1, num2);</div><div class="line">      System.out.println(<span class="string">"After swap method, num1 is "</span> + num1 + <span class="string">" and num2 is "</span> + num2);</div><div class="line">   &#125;</div><div class="line">   <span class="comment">/** 交换两个变量的方法 */</span></div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> n1, <span class="keyword">int</span> n2)</span> </span>&#123;</div><div class="line">      System.out.println(<span class="string">"\tInside the swap method"</span>);</div><div class="line">      System.out.println(<span class="string">"\t\tBefore swapping n1 is "</span> + n1 + <span class="string">" n2 is "</span> + n2);</div><div class="line">      <span class="comment">// 交换 n1 与 n2的值</span></div><div class="line">      <span class="keyword">int</span> temp = n1;</div><div class="line">      n1 = n2;</div><div class="line">      n2 = temp;</div><div class="line"></div><div class="line">      System.out.println(<span class="string">"\t\tAfter swapping n1 is "</span> + n1 + <span class="string">" n2 is "</span> + n2);</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><em>结果如下：</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Before swap method, num1 is 1 and num2 is 2</div><div class="line">Inside the swap method</div><div class="line">Before swapping n1 is 1 n2 is 2</div><div class="line">After swapping n1 is 2 n2 is 1</div><div class="line">After swap method, num1 is 1 and num2 is 2</div></pre></td></tr></table></figure></p>
+<h2 id="27-可变参数"><a href="#27-可变参数" class="headerlink" title="27 可变参数"></a>27 可变参数</h2><p>typeName… parameterName，必须放置在最后一个（即C#的param int arr）</p>
+<h2 id="28-finalize方法（即C-的析构函数）"><a href="#28-finalize方法（即C-的析构函数）" class="headerlink" title="28 finalize方法（即C#的析构函数）"></a>28 finalize方法（即C#的析构函数）</h2><ul>
+<li>在对象被垃圾收集器析构(回收)之前调用，它用来清除回收对象。</li>
+<li>System.gc(); //调用Java垃圾收集器</li>
+</ul>
+<h2 id="29-流（java-io包）"><a href="#29-流（java-io包）" class="headerlink" title="29 流（java.io包）"></a>29 流（java.io包）</h2><p><img src="/images/posts/Java_Stream.jpg" alt="Stream"></p>
+<h3 id="29-1-读取控制台输入"><a href="#29-1-读取控制台输入" class="headerlink" title="29.1 读取控制台输入"></a>29.1 读取控制台输入</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">BufferedReader br = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(System.in));</div></pre></td></tr></table></figure>
+<h3 id="29-2-获取或设置JVM当前工作目录"><a href="#29-2-获取或设置JVM当前工作目录" class="headerlink" title="29.2 获取或设置JVM当前工作目录"></a>29.2 获取或设置JVM当前工作目录</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">System.getProperty(<span class="string">"user.dir"</span>);</div><div class="line">System.setProperty(<span class="string">"user.dir"</span>, <span class="string">"C:\\myDir"</span>);</div></pre></td></tr></table></figure>
+<h3 id="29-3-文件分隔符"><a href="#29-3-文件分隔符" class="headerlink" title="29.3 文件分隔符"></a>29.3 文件分隔符</h3><p>常量<strong>File.separator</strong>，用于解决Windows在路径名中使用反斜杠（\）作为名称分隔符，而UNIX使用正斜杠（/）的问题。</p>
+<h2 id="30-Scan-java-util-SCanner"><a href="#30-Scan-java-util-SCanner" class="headerlink" title="30 Scan(java.util.SCanner)"></a>30 Scan(java.util.SCanner)</h2><p>主要用于获取用户的输入。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Scanner s = <span class="keyword">new</span> Scanner(System.in);</div></pre></td></tr></table></figure></p>
+<h2 id="31-异常"><a href="#31-异常" class="headerlink" title="31 异常"></a>31 异常</h2><h3 id="31-1-异常类型"><a href="#31-1-异常类型" class="headerlink" title="31.1 异常类型"></a>31.1 异常类型</h3><ul>
+<li>检查性异常：最具代表的检查性异常是用户错误或问题引起的异常，这是程序员无法预见的。例如要打开一个不存在文件时，一个异常就发生了，这些异常在编译时不能被简单地忽略。</li>
+<li>运行时异常： 运行时异常是可能被程序员避免的异常。与检查性异常相反，运行时异常可以在编译时被忽略。</li>
+<li>错误： 错误不是异常，而是脱离程序员控制的问题。错误在代码中通常被忽略。例如，当栈溢出时，一个错误就发生了，它们在编译也检查不到的。</li>
+</ul>
+<h3 id="31-2-异常层次"><a href="#31-2-异常层次" class="headerlink" title="31.2 异常层次"></a>31.2 异常层次</h3><ul>
+<li>所有的异常类是从java.lang.Exception类继承的子类。</li>
+<li>Exception类是Throwable类的子类。除了Exception类外，Throwable还有一个子类Error 。</li>
+</ul>
+<p><img src="/images/posts/Java_Exception.jpg" alt="Exception"></p>
+<h3 id="31-3-非检查性异常"><a href="#31-3-非检查性异常" class="headerlink" title="31.3 非检查性异常"></a>31.3 非检查性异常</h3><table>
+<thead>
+<tr>
+<th>异常</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ArithmeticException</td>
+<td>当出现异常的运算条件时，抛出此异常。例如，一个整数”除以零”时，抛出此类的一个实例。</td>
+</tr>
+<tr>
+<td>ArrayIndexOutOfBoundsException</td>
+<td>用非法索引访问数组时抛出的异常。如果索引为负或大于等于数组大小，则该索引为非法索引。</td>
+</tr>
+<tr>
+<td>ArrayStoreException</td>
+<td>试图将错误类型的对象存储到一个对象数组时抛出的异常。</td>
+</tr>
+<tr>
+<td>ClassCastException</td>
+<td>当试图将对象强制转换为不是实例的子类时，抛出该异常。</td>
+</tr>
+<tr>
+<td>IllegalArgumentException</td>
+<td>抛出的异常表明向方法传递了一个不合法或不正确的参数。</td>
+</tr>
+<tr>
+<td>IllegalMonitorStateException</td>
+<td>抛出的异常表明某一线程已经试图等待对象的监视器，或者试图通知其他正在等待对象的监视器而本身没有指定监视器的线程。</td>
+</tr>
+<tr>
+<td>IllegalStateException</td>
+<td>在非法或不适当的时间调用方法时产生的信号。换句话说，即 Java 环境或 Java 应用程序没有处于请求操作所要求的适当状态下。</td>
+</tr>
+<tr>
+<td>IllegalThreadStateException</td>
+<td>线程没有处于请求操作所要求的适当状态时抛出的异常。</td>
+</tr>
+<tr>
+<td>IndexOutOfBoundsException</td>
+<td>指示某排序索引（例如对数组、字符串或向量的排序）超出范围时抛出。</td>
+</tr>
+<tr>
+<td>NegativeArraySizeException</td>
+<td>如果应用程序试图创建大小为负的数组，则抛出该异常。</td>
+</tr>
+<tr>
+<td>NullPointerException</td>
+<td>当应用程序试图在需要对象的地方使用 null 时，抛出该异常</td>
+</tr>
+<tr>
+<td>NumberFormatException</td>
+<td>当应用程序试图将字符串转换成一种数值类型，但该字符串不能转换为适当格式时，抛出该异常。</td>
+</tr>
+<tr>
+<td>SecurityException</td>
+<td>由安全管理器抛出的异常，指示存在安全侵犯。</td>
+</tr>
+<tr>
+<td>StringIndexOutOfBoundsException</td>
+<td>此异常由 String 方法抛出，指示索引或者为负，或者超出字符串的大小。</td>
+</tr>
+<tr>
+<td>UnsupportedOperationException</td>
+<td>当不支持请求的操作时，抛出该异常。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="31-4-检查性异常类"><a href="#31-4-检查性异常类" class="headerlink" title="31.4 检查性异常类"></a>31.4 检查性异常类</h3><table>
+<thead>
+<tr>
+<th>异常</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ClassNotFoundException</td>
+<td>应用程序试图加载类时，找不到相应的类，抛出该异常。</td>
+</tr>
+<tr>
+<td>CloneNotSupportedException</td>
+<td>当调用 Object 类中的 clone 方法克隆对象，但该对象的类无法实现 Cloneable 接口时，抛出该异常。</td>
+</tr>
+<tr>
+<td>IllegalAccessException</td>
+<td>拒绝访问一个类的时候，抛出该异常。</td>
+</tr>
+<tr>
+<td>InstantiationException</td>
+<td>当试图使用 Class 类中的 newInstance 方法创建一个类的实例，而指定的类对象因为是一个接口或是一个抽象类而无法实例化时，抛出该异常。</td>
+</tr>
+<tr>
+<td>InterruptedException</td>
+<td>一个线程被另一个线程中断，抛出该异常。</td>
+</tr>
+<tr>
+<td>NoSuchFieldException</td>
+<td>请求的变量不存在</td>
+</tr>
+<tr>
+<td>NoSuchMethodException</td>
+<td>请求的方法不存在</td>
+</tr>
+</tbody>
+</table>
+<h3 id="31-5-throws-throw关键字"><a href="#31-5-throws-throw关键字" class="headerlink" title="31.5 throws/throw关键字"></a>31.5 throws/throw关键字</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.io.*;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">className</span></span></div><div class="line"><span class="class"></span>&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deposit</span><span class="params">(<span class="keyword">double</span> amount)</span> <span class="keyword">throws</span> RemoteException</span></div><div class="line"><span class="function">   </span>&#123;</div><div class="line">      <span class="comment">// Method implementation</span></div><div class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> RemoteException();</div><div class="line">   &#125;</div><div class="line">   <span class="comment">//Remainder of class definition</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="31-6-自定义异常"><a href="#31-6-自定义异常" class="headerlink" title="31.6 自定义异常"></a>31.6 自定义异常</h3><ul>
+<li>所有异常都必须是Throwable的子类。</li>
+<li>检查性异常：继承Exception类。</li>
+<li>运行时异常：继承RuntimeException 类。</li>
+</ul>
+<h3 id="31-7-异常和错误"><a href="#31-7-异常和错误" class="headerlink" title="31.7 异常和错误"></a>31.7 异常和错误</h3><ul>
+<li>JVM(Java虚拟机)异常：由JVM抛出的异常或错误。例如：NullPointerException类，ArrayIndexOutOfBoundsException类，ClassCastException类。</li>
+<li>程序级异常：由程序或者API程序抛出的异常。例如IllegalArgumentException类，IllegalStateException类。</li>
+</ul>
+<h2 id="38-继承-is-a"><a href="#38-继承-is-a" class="headerlink" title="38 继承(is-a)"></a>38 继承(is-a)</h2><p>可用<code>a instanceof b</code>校验。 </p>
+<ul>
+<li>extends：继承类</li>
+<li>implements：继承接口</li>
+</ul>
+<h2 id="39-重写（override）-amp-重载（overload）"><a href="#39-重写（override）-amp-重载（overload）" class="headerlink" title="39 重写（override）&amp;重载（overload）"></a>39 重写（override）&amp;重载（overload）</h2><table>
+<thead>
+<tr>
+<th>区别点</th>
+<th>重载</th>
+<th>重写</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>参数列表</td>
+<td>必须修改</td>
+<td>一定不能修改</td>
+</tr>
+<tr>
+<td>返回类型</td>
+<td>可以修改</td>
+<td>一定不能修改</td>
+</tr>
+<tr>
+<td>异常</td>
+<td>可以修改</td>
+<td>可以减少或删除，一定不能抛出新的或者更广的异常</td>
+</tr>
+<tr>
+<td>访问</td>
+<td>可以修改</td>
+<td>一定不能做更严格的限制（可以降低限制）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="40-多态（is-a）"><a href="#40-多态（is-a）" class="headerlink" title="40 多态（is-a）"></a>40 多态（is-a）</h2><ul>
+<li>同一个行为具有多个不同表现形式或形态的能力。</li>
+<li>多态性是对象多种表现形式的体现。</li>
+</ul>
+<h2 id="41-接口（interface）"><a href="#41-接口（interface）" class="headerlink" title="41 接口（interface）"></a>41 接口（interface）</h2><ul>
+<li>接口是隐式抽象的，当声明一个接口的时候，不必使用abstract关键字。</li>
+<li>接口中每一个方法也是隐式抽象的，声明时同样不需要abstract关键子。</li>
+<li>接口中的方法都是公有的。</li>
+<li>标识接口：没有任何方法和属性的接口.它仅仅表明它的类属于一个特定的类型,供其他代码来测试允许做一些事情。</li>
+</ul>
+<h2 id="42-包"><a href="#42-包" class="headerlink" title="42 包"></a>42 包</h2><h3 id="42-1-package"><a href="#42-1-package" class="headerlink" title="42.1 package"></a>42.1 package</h3><ul>
+<li>包声明应该在源文件的第一行，每个源文件只能有一个包声明，这个文件中的每个类型都应用于它。</li>
+<li>如果一个源文件中没有使用包声明，那么其中的类，函数，枚举，注释等将被放在一个无名的包（unnamed package）中。</li>
+</ul>
+<h3 id="42-2-import"><a href="#42-2-import" class="headerlink" title="42.2 import"></a>42.2 import</h3><ul>
+<li>文件中可以包含任意数量的import声明。import声明必须在包声明之后，类声明之前。</li>
+<li>静态导入<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> <span class="keyword">static</span> java.lang.Math.*;</div><div class="line"><span class="keyword">import</span> <span class="keyword">static</span> java.lang.System.out;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="42-3-CLASSPATH"><a href="#42-3-CLASSPATH" class="headerlink" title="42.3 CLASSPATH"></a>42.3 CLASSPATH</h3><p>类目录的绝对路径叫做class path。设置在系统变量CLASSPATH中。编译器和java虚拟机通过将package名字加到class path后来构造.class文件的路径。<path- two="">\classes是class path，package名字是com.apple.computers,而编译器和JVM会在 <path-two>\classes\com\apple\compters中找.class文件。<br>一个class path可能会包含好几个路径。多路径应该用分隔符分开。默认情况下，编译器和JVM查找当前目录。JAR文件按包含Java平台相关的类，所以他们的目录默认放在了class path中。</path-two></path-></p>
+<h2 id="43-Object"><a href="#43-Object" class="headerlink" title="43 Object"></a>43 Object</h2><table>
+<thead>
+<tr>
+<th>名称</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public String toString()</td>
+<td>它是实现在Object类中，我们可以自定义它。它返回对象的字符串表示形式。通常，它用于调试目的。</td>
+</tr>
+<tr>
+<td>public boolean equals(Object obj)</td>
+<td>它在Object类中实现，我们可以自定义它。它用于比较两个对象的相等性。</td>
+</tr>
+<tr>
+<td>public int hashCode()</td>
+<td>它在Object类中实现，我们可以自定义它。它返回对象的哈希码（整数）值。</td>
+</tr>
+<tr>
+<td>protected Object clone() throws CloneNotSupportedException</td>
+<td>它不在Object类中实现，我们可以通过覆盖克隆方法来自定义它。它用于创建对象的副本。</td>
+</tr>
+<tr>
+<td>protected void finalize() throws Throwable</td>
+<td>它不是在Object类中实现，我们可以自定义它。它在对象被销毁之前被垃圾收集器调用。</td>
+</tr>
+<tr>
+<td>public final Class getClass()</td>
+<td>它在Object类中实现，我们不能自定义它。它返回对对象的Class对象的引用。</td>
+</tr>
+<tr>
+<td>public final void notify()</td>
+<td>它是在Object类中实现的，我们不能自定义它。此方法通知对象的等待队列中的一个线程。</td>
+</tr>
+<tr>
+<td>public final void notifyAll()</td>
+<td>它是在Object类中实现的，我们不能自定义它。此方法通知对象的等待队列中的所有线程。</td>
+</tr>
+<tr>
+<td>public final void wait() throws InterruptedException<br>public final void wait(long timeout) throws InterruptedException<br>public final void wait (long timeout, int nanos) throws InterruptedException</td>
+<td>它是在Object类中实现的，我们不能自定义它。使对象的等待队列中的线程等待，无论是否超时。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="43-1-hashCode"><a href="#43-1-hashCode" class="headerlink" title="43.1 hashCode"></a>43.1 hashCode</h3><ul>
+<li>如果两个对象使用equals()方法相等，则它们必须具有相同的哈希码。</li>
+<li>如果x.hashCode()等于y.hashCode()，则x.equals(y)不必返回true。</li>
+</ul>
+<h3 id="43-2-equals"><a href="#43-2-equals" class="headerlink" title="43.2 equals"></a>43.2 equals</h3><p>这里是equals()方法的实现的规范。假设x，y和z是三个对象的非空引用。</p>
+<ul>
+<li>自反性。表达式x.equals(x)应该返回true。</li>
+<li>对称性。如果x.equals(y)返回true，y.equals(x)必须返回true。</li>
+<li>传递性。如果x.equals(y)返回true，y.equals(z)返回true，则x.equals(z)必须返回true。</li>
+<li>一致性。如果x.equals(y)返回true，它应该保持返回true，直到x或y的状态被修改。如果x.equals(y)返回false，它应该保持返回false，直到x或y的状态被修改。</li>
+<li>与空引用的比较：任何类的对象不应等于空引用。表达式x.equals(null)应始终返回false。</li>
+<li>与hashCode()方法的关系：如果x.equals(y)返回true，x.hashCode()必须返回与y.hashCode()相同的值。</li>
+</ul>
+<h3 id="43-3-toString"><a href="#43-3-toString" class="headerlink" title="43.3 toString"></a>43.3 toString</h3><p>当需要对象的字符串表示时，Java会自动调用toString()方法。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">String str = <span class="string">"Hello"</span> + <span class="keyword">new</span> Point(<span class="number">10</span>, <span class="number">20</span>);</div></pre></td></tr></table></figure></p>
+<p>等同于<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">String str = <span class="string">"Hello"</span> + <span class="keyword">new</span> Point(<span class="number">10</span>, <span class="number">20</span>).toString();</div></pre></td></tr></table></figure></p>
+<h3 id="43-4-clone（浅拷贝）"><a href="#43-4-clone（浅拷贝）" class="headerlink" title="43.4 clone（浅拷贝）"></a>43.4 clone（浅拷贝）</h3><p>Java不提供克隆(复制)对象的自动机制。克隆对象意味着逐位复制对象的内容。要支持克隆操作，请在类中实现clone()方法。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> Object <span class="title">clone</span><span class="params">()</span> </span>&#123;</div><div class="line">  MyClass copy = <span class="keyword">null</span>;</div><div class="line">  <span class="keyword">try</span> &#123;</div><div class="line">    copy = (MyClass) <span class="keyword">super</span>.clone();</div><div class="line">  &#125; <span class="keyword">catch</span> (CloneNotSupportedException e) &#123;</div><div class="line">    e.printStackTrace();</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> copy;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="43-5-finalize"><a href="#43-5-finalize" class="headerlink" title="43.5 finalize"></a>43.5 finalize</h3><p>finalize()方法将在类的对象销毁之前由垃圾回收器调用。</p>
+<h3 id="Immutables-不可变"><a href="#Immutables-不可变" class="headerlink" title="Immutables(不可变)"></a>Immutables(不可变)</h3><p>在创建状态后无法更改其状态的对象称为不可变对象。一个对象不可变的类称为不可变类。不变的对象可以由程序的不同区域共享而不用担心其状态改变。不可变对象本质上是线程安全的。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span>  <span class="class"><span class="keyword">class</span>  <span class="title">IntWrapper</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span>  <span class="keyword">final</span>  <span class="keyword">int</span>  value;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="title">IntWrapper</span><span class="params">(<span class="keyword">int</span> value)</span> </span>&#123;</div><div class="line">        <span class="keyword">this</span>.value = value;</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span>  <span class="title">getValue</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> value;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="43-7-Objects类-实用程序类"><a href="#43-7-Objects类-实用程序类" class="headerlink" title="43.7 Objects类(实用程序类)"></a>43.7 Objects类(实用程序类)</h3><p>主要用于处理对象。由静态方法组成。 Objects类中的大多数方法都会优雅地处理空值。</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int compare(T a, T b, Comparator c)</td>
+<td>如果参数相同，则返回0，否则返回c.compare(a，b)。因此，如果两个参数都为null，则返回0。</td>
+</tr>
+<tr>
+<td>boolean deepEquals(Object a, Object b)</td>
+<td>检查两个对象是否相等。如果两个参数都相等，则返回true。否则，它返回false。如果两个参数都为null，则返回true。</td>
+</tr>
+<tr>
+<td>boolean equals(Object a, Object b)</td>
+<td>比较两个对象是否相等。如果两个参数相等，则返回true。否则，它返回false。如果两个参数都为null，则返回true。</td>
+</tr>
+<tr>
+<td>int hash(Object… values)</td>
+<td>为所有指定的对象生成哈希码。它可以用于计算对象的哈希码，该哈希码基于多个实例字段。</td>
+</tr>
+<tr>
+<td>int hashCode(Object o)</td>
+<td>返回指定对象的哈希码值。如果参数为null，则返回0。</td>
+</tr>
+<tr>
+<td>boolean isNull(Object obj)</td>
+<td>如果指定的对象为null，isNull()方法返回true。否则，它返回false。您还可以使用比较运算符==检查对象是否为null，例如，obj == null返回obj的true为null。</td>
+</tr>
+<tr>
+<td>boolean nonNull(Object obj)</td>
+<td>执行与isNull()方法相反的检查。</td>
+</tr>
+<tr>
+<td>T requireNonNull(T obj)</td>
+<td>检查参数是否为null。如果参数为null，它会抛出一个NullPointerException异常。此方法设计用于验证方法和构造函数的参数。</td>
+</tr>
+<tr>
+<td>T requireNonNull(T obj, String message)</td>
+<td>第二个版本可以指定当参数为null时抛出的NullPointerException的消息。</td>
+</tr>
+<tr>
+<td>T requireNonNull(T obj, Supplier messageSupplier)</td>
+<td>第三个版本的方法将一个Supplier作为第二个参数。</td>
+</tr>
+<tr>
+<td>String toString(Object o)<br>String toString(Object o, String nullDefault)</td>
+<td>如果参数为null，则toString()方法返回一个“null”字符串。对于非空参数，它返回通过调用参数的toString()方法返回的值。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>本文主要用于记录个人不明了之处，故可能忽略许多知识点，如有需要，请自行查找相关资料，谢谢。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="祥_venux WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="祥_venux Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/JavaSE/" rel="tag"># JavaSE</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/27/CLR-21垃圾回收/" rel="next" title="CLR-21垃圾回收">
+                <i class="fa fa-chevron-left"></i> CLR-21垃圾回收
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/25/Java环境变量配置/" rel="prev" title="Java环境变量配置">
+                Java环境变量配置 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微薄</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=2142808" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/head2.jpg"
+               alt="祥_venux" />
+          <p class="site-author-name" itemprop="name">祥_venux</p>
+           
+              <p class="site-description motion-element" itemprop="description">.NET</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/venux" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://music.163.com/#/user/home?id=16765516" target="_blank" title="网易云音乐">
+                  
+                    <i class="fa fa-fw fa-music"></i>
+                  
+                    
+                      网易云音乐
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/venux_27" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                    
+                      Twitter
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/luwenbiao333" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                    
+                      Facebook
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://martinfowler.com/" title="Martin Fowler" target="_blank">Martin Fowler</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.facebook.com/Jeffrey.Richter.1" title="Jeffrey Richter" target="_blank">Jeffrey Richter</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://twitter.com/search?q=Jon%20Skeet&src=typd" title="Jon Skeet" target="_blank">Jon Skeet</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/shanyou/" title="张善友" target="_blank">张善友</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/artech/" title="老A" target="_blank">老A</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.zhaojie.me/" title="老赵" target="_blank">老赵</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Hello-World-示例"><span class="nav-text">1 Hello World 示例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Java-标识符"><span class="nav-text">2 Java 标识符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Java-变量"><span class="nav-text">3 Java 变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Java-关键字"><span class="nav-text">4 Java 关键字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-类-amp-对象"><span class="nav-text">5 类&对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-源文件"><span class="nav-text">6 源文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-基本数据类型"><span class="nav-text">7 基本数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-byte（java-lang-Byte）"><span class="nav-text">7.1 byte（java.lang.Byte）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-short（java-lang-Short）"><span class="nav-text">7.2 short（java.lang.Short）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-3-int（java-lang-Integer）"><span class="nav-text">7.3 int（java.lang.Integer）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-4-long（java-lang-Long）"><span class="nav-text">7.4 long（java.lang.Long）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-5-float（java-lang-Float）"><span class="nav-text">7.5 float（java.lang.Float）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-6-double（java-lang-Double）"><span class="nav-text">7.6 double（java.lang.Double）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-7-boolean"><span class="nav-text">7.7 boolean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-8-char（java-lang-Character）"><span class="nav-text">7.8 char（java.lang.Character）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-9-void（java-lang-Void）"><span class="nav-text">7.9 void（java.lang.Void）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-引用类型"><span class="nav-text">8 引用类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-常量（final）"><span class="nav-text">9 常量（final）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-局部变量"><span class="nav-text">10 局部变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-实例变量"><span class="nav-text">11 实例变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-类变量（静态变量）"><span class="nav-text">12 类变量（静态变量）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-访问控制修饰符"><span class="nav-text">13 访问控制修饰符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-访问控制和继承"><span class="nav-text">14 访问控制和继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-非访问修饰符"><span class="nav-text">15 非访问修饰符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16-位运算符"><span class="nav-text">16 位运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#17-instanceOf"><span class="nav-text">17 instanceOf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#18-for增强（即C-的foreach）"><span class="nav-text">18 for增强（即C#的foreach）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#19-switch"><span class="nav-text">19 switch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#20-Number类（java-lang）"><span class="nav-text">20 Number类（java.lang）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#21-String类"><span class="nav-text">21 String类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#22-StringBuffer和StringBuilder"><span class="nav-text">22 StringBuffer和StringBuilder</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#23-数组"><span class="nav-text">23 数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#23-1-数组"><span class="nav-text">23.1 数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#23-2-Arrays-类-java-util-Arrays"><span class="nav-text">23.2 Arrays 类(java.util.Arrays)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#24-时间"><span class="nav-text">24 时间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#24-1-Date-类-java-util-Date"><span class="nav-text">24.1 Date 类(java.util.Date)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#24-2-SimpleDateFormat：格式化日期"><span class="nav-text">24.2 SimpleDateFormat：格式化日期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#24-3-Calendar"><span class="nav-text">24.3 Calendar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#24-4-GregorianCalendar"><span class="nav-text">24.4 GregorianCalendar</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#25-正则（java-util-regex包）"><span class="nav-text">25 正则（java.util.regex包）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#26-方法"><span class="nav-text">26 方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#27-可变参数"><span class="nav-text">27 可变参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#28-finalize方法（即C-的析构函数）"><span class="nav-text">28 finalize方法（即C#的析构函数）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#29-流（java-io包）"><span class="nav-text">29 流（java.io包）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#29-1-读取控制台输入"><span class="nav-text">29.1 读取控制台输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#29-2-获取或设置JVM当前工作目录"><span class="nav-text">29.2 获取或设置JVM当前工作目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#29-3-文件分隔符"><span class="nav-text">29.3 文件分隔符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#30-Scan-java-util-SCanner"><span class="nav-text">30 Scan(java.util.SCanner)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#31-异常"><span class="nav-text">31 异常</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#31-1-异常类型"><span class="nav-text">31.1 异常类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#31-2-异常层次"><span class="nav-text">31.2 异常层次</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#31-3-非检查性异常"><span class="nav-text">31.3 非检查性异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#31-4-检查性异常类"><span class="nav-text">31.4 检查性异常类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#31-5-throws-throw关键字"><span class="nav-text">31.5 throws/throw关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#31-6-自定义异常"><span class="nav-text">31.6 自定义异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#31-7-异常和错误"><span class="nav-text">31.7 异常和错误</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#38-继承-is-a"><span class="nav-text">38 继承(is-a)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#39-重写（override）-amp-重载（overload）"><span class="nav-text">39 重写（override）&重载（overload）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#40-多态（is-a）"><span class="nav-text">40 多态（is-a）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#41-接口（interface）"><span class="nav-text">41 接口（interface）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#42-包"><span class="nav-text">42 包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#42-1-package"><span class="nav-text">42.1 package</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#42-2-import"><span class="nav-text">42.2 import</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#42-3-CLASSPATH"><span class="nav-text">42.3 CLASSPATH</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#43-Object"><span class="nav-text">43 Object</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#43-1-hashCode"><span class="nav-text">43.1 hashCode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#43-2-equals"><span class="nav-text">43.2 equals</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#43-3-toString"><span class="nav-text">43.3 toString</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#43-4-clone（浅拷贝）"><span class="nav-text">43.4 clone（浅拷贝）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#43-5-finalize"><span class="nav-text">43.5 finalize</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Immutables-不可变"><span class="nav-text">Immutables(不可变)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#43-7-Objects类-实用程序类"><span class="nav-text">43.7 Objects类(实用程序类)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意"><span class="nav-text">注意</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 &mdash; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">祥_venux</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://venux27.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://www.venux.cn/2018/03/25/Java基础知识01/';
+          this.page.identifier = '2018/03/25/Java基础知识01/';
+          this.page.title = 'Java基础知识01';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://venux27.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("UDjFXGEpy6nb5tWHq55BEaoV-gzGzoHsz", "qdpkXjO9HeADnrAdOAvRsuXi");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 6827,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

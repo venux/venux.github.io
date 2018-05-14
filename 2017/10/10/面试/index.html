@@ -1,0 +1,1587 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.lug.ustc.edu.cn/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="面试," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="祥_venux" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="1. C#和.NET1.1 C#基础知识访问修饰符 private【Private】 私有（定义类型、嵌套类型） protected【Family】 保护（定义类型、嵌套类型、不同程序集中的派生类型） C#不支持【Family and Assembly】（定义类型、嵌套类型、同一程序集中的派生类型） internal【Assembly】 内部（同一程序集中的所有类型） protected inte">
+<meta name="keywords" content="面试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试">
+<meta property="og:url" content="http://www.venux.cn/2017/10/10/面试/index.html">
+<meta property="og:site_name" content="祥_venux">
+<meta property="og:description" content="1. C#和.NET1.1 C#基础知识访问修饰符 private【Private】 私有（定义类型、嵌套类型） protected【Family】 保护（定义类型、嵌套类型、不同程序集中的派生类型） C#不支持【Family and Assembly】（定义类型、嵌套类型、同一程序集中的派生类型） internal【Assembly】 内部（同一程序集中的所有类型） protected inte">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-14T02:53:19.406Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面试">
+<meta name="twitter:description" content="1. C#和.NET1.1 C#基础知识访问修饰符 private【Private】 私有（定义类型、嵌套类型） protected【Family】 保护（定义类型、嵌套类型、不同程序集中的派生类型） C#不支持【Family and Assembly】（定义类型、嵌套类型、同一程序集中的派生类型） internal【Assembly】 内部（同一程序集中的所有类型） protected inte">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.venux.cn/2017/10/10/面试/"/>
+
+
+
+
+
+  <title>面试 | 祥_venux</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?9ead14983eeabdb5fddcace7bbc74475";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">祥_venux</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">个人博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/2017/10/10/面试/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="祥_venux">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="祥_venux">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">面试</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-10T20:03:44+08:00">
+                2017-10-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/面试/" itemprop="url" rel="index">
+                    <span itemprop="name">面试</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/10/面试/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/10/10/面试/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/10/10/面试/" class="leancloud_visitors" data-flag-title="面试">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-C-和-NET"><a href="#1-C-和-NET" class="headerlink" title="1. C#和.NET"></a>1. C#和.NET</h2><h3 id="1-1-C-基础知识"><a href="#1-1-C-基础知识" class="headerlink" title="1.1 C#基础知识"></a>1.1 C#基础知识</h3><h4 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h4><ul>
+<li>private【Private】 私有（定义类型、嵌套类型）</li>
+<li>protected【Family】 保护（定义类型、嵌套类型、不同程序集中的派生类型）</li>
+<li>C#不支持【Family and Assembly】（定义类型、嵌套类型、同一程序集中的派生类型）</li>
+<li>internal【Assembly】 内部（同一程序集中的所有类型）</li>
+<li>protected internal【Family or Assembly】（定义类型、嵌套类型、同一程序集中的所有类型，不同程序集中的派生类型）</li>
+<li>public【Public】 公有</li>
+</ul>
+<p><em>PS：</em></p>
+<ul>
+<li>【】中为CLR术语。</li>
+<li><code>C#</code>派生类型重写基类型定义的成员，<code>C#编译器</code>要求两者具有相同可访问性，<code>CLR</code>允许放宽但不允许收紧成员的可访问性。</li>
+</ul>
+<a id="more"></a>
+<h4 id="值类型、引用类型"><a href="#值类型、引用类型" class="headerlink" title="值类型、引用类型"></a>值类型、引用类型</h4><h5 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h5><p>1 总是从<code>托管堆</code>分配，new 操作符返回指向对象的内存地址；<br>2 堆上分配的每个对象都有一些额外成员（类型对象指针、同步块索引），这些成员必须初始化；<br>3 对象中的其他字节（为字段而设）总是设为零；<br>4 从托管堆分配对象时，可能强制执行一次垃圾回收。</p>
+<h5 id="值类型"><a href="#值类型" class="headerlink" title="值类型"></a>值类型</h5><p>1 <code>一般</code>在<code>线程栈</code>上分配；<br>2 优点：缓解托管堆的压力，减少应用程序生存期内的垃圾回收次数；<br>3 所有值类型必须从 System.ValueType 派生；<br>4 值类型可以实现一个或多个接口；<br>5 所有值类型隐式密封；</p>
+<h5 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h5><ul>
+<li>值类型对象两种表示形式：未装箱和已装箱，引用类型总是已装箱</li>
+<li>值类型从 System.ValueType 派生，该类型重写了 Equals 方法，能在两对象的字段值完全匹配返回 true，也重写了 GetHashCode 方法，算法会将实例字段的值计算进去。<em>由于默认实现存在性能问题，故定义值类型需重写。</em></li>
+<li>值类型隐式密封，故不应引入任何虚方法，且所有方法不能时抽象方法，所有方法都隐式密封。</li>
+<li>引用类型包含堆中对象的地址，默认初始化为 null，值类型总是包含基础类型的一个值，默认初始化为 0。</li>
+<li>值类型赋给另一个值类型变量，会执行逐字段复制，引用类型则只复制内存地址，故对值类型变量执行操作不会影响另一个值类型，引用类型则不同。</li>
+<li>由于未装箱的值类型不在堆上分配，一旦定义了该类型的实例的方法不再活动，分配的存储就会释放，而不等垃圾回收。</li>
+</ul>
+<h5 id="值类型设计前提："><a href="#值类型设计前提：" class="headerlink" title="值类型设计前提："></a>值类型设计前提：</h5><ul>
+<li>类型具有基元类型的行为，没有成员会改变类型的任何实例字段。即不可变（immutable），建议将全部字段标记为 readonly。</li>
+<li>类型不需要从其他类型继承。</li>
+<li>类型也不派生其他任何类型。</li>
+<li>类型的实例较小（16字节或更小）。</li>
+<li>类型的实例较大（大于16字节），但不作为方法实参传递，也不作为返回参数。</li>
+</ul>
+<h5 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h5><ul>
+<li><a href="http://www.cnblogs.com/venux/p/6307561.html" target="_blank" rel="external">个人笔记</a></li>
+</ul>
+<h4 id="委托、事件"><a href="#委托、事件" class="headerlink" title="委托、事件"></a>委托、事件</h4><h4 id="重载、重写"><a href="#重载、重写" class="headerlink" title="重载、重写"></a>重载、重写</h4><h4 id="接口、抽象类"><a href="#接口、抽象类" class="headerlink" title="接口、抽象类"></a>接口、抽象类</h4><h4 id="out和ref"><a href="#out和ref" class="headerlink" title="out和ref"></a>out和ref</h4><h4 id="虚方法"><a href="#虚方法" class="headerlink" title="虚方法"></a>虚方法</h4><h4 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h4><ul>
+<li>Equals:如果两个<code>对象</code>具有相同值，就返回true。<ul>
+<li>对象相等性和同一性</li>
+</ul>
+</li>
+<li>GetHashCode:若对象要在哈希表集合（如Dictionary）中作为键，则应重写该方法。<ul>
+<li>良好分布：指针对所有输入，GetHashCode生成的哈希值应该在所有整数中产生一个随机的分布。</li>
+</ul>
+</li>
+<li>ToString:默认返回类型的完整名称（this.GetType().FullName）。</li>
+<li>GetType:返回类型的一个实例。<ul>
+<li>非虚方法，防止类重写，隐瞒类型，从而破坏类型安全性。</li>
+</ul>
+</li>
+<li><a href="https://msdn.microsoft.com/en-us/library/system.object.memberwiseclone(v=vs.110" target="_blank" rel="external">MemberwiseClone</a>.aspx):浅拷贝。<ul>
+<li>protected</li>
+<li>非虚方法</li>
+<li>The MemberwiseClone method creates a shallow copy by creating a new object, and then copying the nonstatic fields of the current object to the new object. If a field is a <code>value</code> type, <code>a bit-by-bit copy of the field is performed</code>. If a field is a <code>reference</code> type, <code>the reference is copied but the referred object is not; therefore, the original object and its clone refer to the same object</code>.（意即：obj和cloneObj对应的值类型不会同时改变；引用类型同时改变）。    </li>
+</ul>
+</li>
+<li>Finalize:垃圾回收之前调用该<code>虚</code>方法，可重写进行对象清理工作。</li>
+</ul>
+<h4 id="new操作符"><a href="#new操作符" class="headerlink" title="new操作符"></a>new操作符</h4><p>1 计算类型及其所有基类型（直到Object）中定义的所有<code>实例字段</code>需要的字节数，堆上每个对象都需要一些额外的成员（overhead成员、开销成员），包括<code>类型对象指针type object pointer</code>和<code>同步块索引sync block index</code>，CLR利用这些成员管理对象，额外成员的字节数需要计入对象大小。</p>
+<p>2 从<code>托管堆</code>分配类型要求的字节数，从而分配对象的内存，所有字节设为零。</p>
+<p>3 初始化对象的类型对象指针和同步块索引。</p>
+<p>4 调用类型的实例构造器，传递实参，编译器自动生成代码调用基类构造器，并负责初始化定义的实例字段，最终调用Object的构造器，返回。</p>
+<p>5 返回指向新建对象的一个引用（指针）。</p>
+<h4 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h4><ol>
+<li>C#运行类型定义转换操作符方法，但只有使用转型表达式才调用，使用<code>as</code>或<code>is</code>永不调用它们。</li>
+</ol>
+<h4 id="类型、对象、线程栈、托管堆在运行时的相互关系"><a href="#类型、对象、线程栈、托管堆在运行时的相互关系" class="headerlink" title="类型、对象、线程栈、托管堆在运行时的相互关系"></a>类型、对象、线程栈、托管堆在运行时的相互关系</h4><p>CLR via C# 4.4 P90</p>
+<h4 id="字段和属性有什么区别"><a href="#字段和属性有什么区别" class="headerlink" title="字段和属性有什么区别"></a>字段和属性有什么区别</h4><ul>
+<li><p>答一：两者都是类的成员。不同的是：<br>  1 字段是数据成员，属性是方法成员;<br>  2 访问上对于属性访问需要使用访问元get,set，字段没有访问元直接赋值或者取值;<br>  3 属性能override，visual字段不能。</p>
+</li>
+<li><p>答二：如果你编写一些控件给别的开发者用，而需要给他们提供“数据绑定”这种傻瓜化的机制，那么使用属性才可以做到。<br>属性是方法而字段不是，当你用反射去掉用的时候，它们有各自的API。因为属性是方法，所以它可以和方法那样定义在接口中，或者被继承和重写，重写属性被ORM/AOP等框架用来注入代码。</p>
+</li>
+</ul>
+<h4 id="抽象方法，和虚方法的区别"><a href="#抽象方法，和虚方法的区别" class="headerlink" title="抽象方法，和虚方法的区别"></a>抽象方法，和虚方法的区别</h4><ul>
+<li>抽象方法一定是虚方法，虚方法未必是抽象方法。</li>
+<li>虚方法是指可以被继承类重写的方法，而抽象方法是指，基类是抽象类，没有实现它，因此必须被继承类重写的方法。</li>
+</ul>
+<h4 id="new的几种用法"><a href="#new的几种用法" class="headerlink" title="new的几种用法"></a>new的几种用法</h4><ul>
+<li>创建对象或者结构（只是用于调用结构构造函数）；</li>
+<li>隐藏基类成员；</li>
+<li>泛型里用于约束</li>
+</ul>
+<h4 id="什么叫做泛型"><a href="#什么叫做泛型" class="headerlink" title="什么叫做泛型"></a>什么叫做泛型</h4><ul>
+<li>从编程的角度说是在定义类或者方法的时候省去具体的类型，由调用者来指定，类型+泛型类型合成得到真正的类型。</li>
+<li>从实现机制上说，泛型是CLR在运行时动态根据泛型类型创建的匿名类型。</li>
+<li>从OO设计的角度说，泛型体现了多态性。</li>
+<li>泛型使得程序员可以复用数据结构和算法，并且适应不同的类型，享有编译期间的强类型检查和语法提示。<br>  一些经典的FCL提供的泛型类型和接口,List<t>、Dictionary<t1, t2="">这个属于复用数据结构,IComparer<t>、IEnumerable<t>这个属于复用算法</t></t></t1,></t></li>
+</ul>
+<h4 id="什么叫做类"><a href="#什么叫做类" class="headerlink" title="什么叫做类"></a>什么叫做类</h4><p>就C#而言，类是对象的模板，对象是类的实例。C#是强类型语言，一切皆需要类型，除了内置的简单类型，那些其实例为引用对象的都叫做类。C#也允许定义抽象类和密封类，以及两者的叠加——静态类，它们都无法实例化，其实这是编译器的限制，本质上它们和一般的类没有区别，是特殊情况。</p>
+<h4 id="EF的理解"><a href="#EF的理解" class="headerlink" title="EF的理解"></a>EF的理解</h4><ul>
+<li>对象关系映射（ORM）机制和LINQ To EF Provider，在此基础上的缓存机制、延迟加载、对象状态跟踪、事务等等。</li>
+<li>EF是微软官方的ORM框架，结束了之前各种第三方ORM混战的局面，统一了API，这无疑是开发者的福音。EF拥有非常优雅的，基于C#/VB语言优化的API，比如原生的LINQ查询，自然的Code First的对数据结构的定义，Fluent API方式的数据库和关系的定义等等。VS完美支持EF并且提供了多种数据库的适配。</li>
+</ul>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ul>
+<li>开发调试时打开编译器的/checked+开关，虽然会慢点，但能轻松进行溢出检查，及时修正BUG。正式发布时使用/checked-开关。</li>
+<li>System.Decimal是<code>非常特殊</code>的类型，虽然C#视其为基元类型，但CLR不然。内部提供各种计算方法和操作符重载，故处理速度慢于CLR基元类型。</li>
+</ul>
+<h3 id="1-2-ASP-NET"><a href="#1-2-ASP-NET" class="headerlink" title="1.2 ASP.NET"></a>1.2 ASP.NET</h3><h4 id="页面传值"><a href="#页面传值" class="headerlink" title="页面传值"></a>页面传值</h4><ul>
+<li><a href="http://www.cnblogs.com/zhangkai2237/archive/2012/05/06/2486462.html" target="_blank" rel="external">参考1</a></li>
+</ul>
+<h4 id="ASP-NET服务器控件的生命周期"><a href="#ASP-NET服务器控件的生命周期" class="headerlink" title="ASP.NET服务器控件的生命周期"></a>ASP.NET服务器控件的生命周期</h4><ul>
+<li><a href="http://www.cnblogs.com/waters/articles/3373013.html" target="_blank" rel="external">参考1</a></li>
+<li><a href="http://www.cnblogs.com/peterYong/p/6556597.html" target="_blank" rel="external">参考2</a></li>
+</ul>
+<h4 id="ASP-NET七个内置对象"><a href="#ASP-NET七个内置对象" class="headerlink" title="ASP.NET七个内置对象"></a>ASP.NET七个内置对象</h4><h3 id="1-3-名词解释"><a href="#1-3-名词解释" class="headerlink" title="1.3 名词解释"></a>1.3 名词解释</h3><ul>
+<li>FCL(Framework Class Library)框架类库</li>
+<li>CLS(Common Language Stander)</li>
+<li>CLR(Common Language Runtime)公共语言运行时</li>
+<li>IDL(Interface Definition Language)接口定义语言</li>
+<li>IL(Intermediate Language)中间语言</li>
+</ul>
+<h3 id="1-4-IL"><a href="#1-4-IL" class="headerlink" title="1.4 IL"></a>1.4 IL</h3><h4 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h4><ul>
+<li>add：两值相加，不执行溢出检查</li>
+<li>add.ovf：两值相加，执行溢出检查，抛出System.OverflowException</li>
+<li>sub：减</li>
+<li>sub.ovf</li>
+<li>mul：乘</li>
+<li>mul.ovf</li>
+<li>conv：转换</li>
+<li>conv.ovf</li>
+</ul>
+<h3 id="参考-1"><a href="#参考-1" class="headerlink" title="参考"></a>参考</h3><ul>
+<li>CLR via C#(第4版)</li>
+<li><a href="http://bbs.csdn.net/topics/390919248" target="_blank" rel="external">文章一</a></li>
+</ul>
+<h2 id="2-数据库"><a href="#2-数据库" class="headerlink" title="2.数据库"></a>2.数据库</h2><h3 id="2-1-基础"><a href="#2-1-基础" class="headerlink" title="2.1 基础"></a>2.1 基础</h3><ul>
+<li>Table1含有字段Col1，Col2，Col3，请用一条标准SQL选出Col2重复条数&gt;=2的所有记录。<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">SELECT</span></div><div class="line">    <span class="keyword">COUNT</span>(<span class="number">1</span>)</div><div class="line"><span class="keyword">FROM</span></div><div class="line">    Table1</div><div class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span></div><div class="line">    Col2</div><div class="line"><span class="keyword">HAVING</span></div><div class="line">    <span class="keyword">COUNT</span>(COL2) &gt;= <span class="number">2</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-2-SQL性能优化"><a href="#2-2-SQL性能优化" class="headerlink" title="2.2 SQL性能优化"></a>2.2 SQL性能优化</h3><h3 id="参考-2"><a href="#参考-2" class="headerlink" title="参考"></a>参考</h3><h2 id="3-数据结构和算法"><a href="#3-数据结构和算法" class="headerlink" title="3. 数据结构和算法"></a>3. 数据结构和算法</h2><h3 id="3-1-数据结构"><a href="#3-1-数据结构" class="headerlink" title="3.1 数据结构"></a>3.1 数据结构</h3><h3 id="3-2-算法"><a href="#3-2-算法" class="headerlink" title="3.2 算法"></a>3.2 算法</h3><h4 id="3-2-1-冒泡排序"><a href="#3-2-1-冒泡排序" class="headerlink" title="3.2.1 冒泡排序"></a>3.2.1 冒泡排序</h4><h4 id="3-2-2-快速排序"><a href="#3-2-2-快速排序" class="headerlink" title="3.2.2 快速排序"></a>3.2.2 快速排序</h4><h4 id="3-2-3-冒泡排序"><a href="#3-2-3-冒泡排序" class="headerlink" title="3.2.3 冒泡排序"></a>3.2.3 冒泡排序</h4><h3 id="参考-3"><a href="#参考-3" class="headerlink" title="参考"></a>参考</h3><p>1.<a href="https://github.com/aalhour/C-Sharp-Algorithms" target="_blank" rel="external">https://github.com/aalhour/C-Sharp-Algorithms</a></p>
+<h2 id="4-编程思想"><a href="#4-编程思想" class="headerlink" title="4. 编程思想"></a>4. 编程思想</h2><h3 id="4-1-原则"><a href="#4-1-原则" class="headerlink" title="4.1 原则"></a>4.1 原则</h3><ul>
+<li>SOLID</li>
+</ul>
+<h3 id="4-2-设计模式"><a href="#4-2-设计模式" class="headerlink" title="4.2 设计模式"></a>4.2 设计模式</h3><h3 id="4-3-MVC"><a href="#4-3-MVC" class="headerlink" title="4.3 MVC"></a>4.3 MVC</h3><h3 id="4-4-DDD"><a href="#4-4-DDD" class="headerlink" title="4.4 DDD"></a>4.4 DDD</h3><h2 id="5-前端"><a href="#5-前端" class="headerlink" title="5. 前端"></a>5. 前端</h2><h3 id="5-1-JavaScript"><a href="#5-1-JavaScript" class="headerlink" title="5.1 JavaScript"></a>5.1 JavaScript</h3><h3 id="5-2-JQuery"><a href="#5-2-JQuery" class="headerlink" title="5.2 JQuery"></a>5.2 JQuery</h3><h3 id="5-3-性能优化"><a href="#5-3-性能优化" class="headerlink" title="5.3 性能优化"></a>5.3 性能优化</h3><h3 id="5-4-其他"><a href="#5-4-其他" class="headerlink" title="5.4 其他"></a>5.4 其他</h3><h2 id="6-其他"><a href="#6-其他" class="headerlink" title="6. 其他"></a>6. 其他</h2><h3 id="6-1-新技术"><a href="#6-1-新技术" class="headerlink" title="6.1 新技术"></a>6.1 新技术</h3><h3 id="6-2-职业规划"><a href="#6-2-职业规划" class="headerlink" title="6.2 职业规划"></a>6.2 职业规划</h3>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="祥_venux WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="祥_venux Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/面试/" rel="tag"># 面试</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/18/JavaEE开发环境搭建/" rel="next" title="JavaEEE开发环境搭建">
+                <i class="fa fa-chevron-left"></i> JavaEEE开发环境搭建
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/13/线程笔记/" rel="prev" title="线程笔记">
+                线程笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微薄</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=2142808" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/head2.jpg"
+               alt="祥_venux" />
+          <p class="site-author-name" itemprop="name">祥_venux</p>
+           
+              <p class="site-description motion-element" itemprop="description">.NET</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/venux" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://music.163.com/#/user/home?id=16765516" target="_blank" title="网易云音乐">
+                  
+                    <i class="fa fa-fw fa-music"></i>
+                  
+                    
+                      网易云音乐
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/venux_27" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                    
+                      Twitter
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/luwenbiao333" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                    
+                      Facebook
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://martinfowler.com/" title="Martin Fowler" target="_blank">Martin Fowler</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.facebook.com/Jeffrey.Richter.1" title="Jeffrey Richter" target="_blank">Jeffrey Richter</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://twitter.com/search?q=Jon%20Skeet&src=typd" title="Jon Skeet" target="_blank">Jon Skeet</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/shanyou/" title="张善友" target="_blank">张善友</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/artech/" title="老A" target="_blank">老A</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.zhaojie.me/" title="老赵" target="_blank">老赵</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-C-和-NET"><span class="nav-text">1. C#和.NET</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-C-基础知识"><span class="nav-text">1.1 C#基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#访问修饰符"><span class="nav-text">访问修饰符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#值类型、引用类型"><span class="nav-text">值类型、引用类型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#引用类型"><span class="nav-text">引用类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#值类型"><span class="nav-text">值类型</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#区别"><span class="nav-text">区别</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#值类型设计前提："><span class="nav-text">值类型设计前提：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#参考"><span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#委托、事件"><span class="nav-text">委托、事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重载、重写"><span class="nav-text">重载、重写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#接口、抽象类"><span class="nav-text">接口、抽象类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#out和ref"><span class="nav-text">out和ref</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#虚方法"><span class="nav-text">虚方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Object"><span class="nav-text">Object</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#new操作符"><span class="nav-text">new操作符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类型转换"><span class="nav-text">类型转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类型、对象、线程栈、托管堆在运行时的相互关系"><span class="nav-text">类型、对象、线程栈、托管堆在运行时的相互关系</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字段和属性有什么区别"><span class="nav-text">字段和属性有什么区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#抽象方法，和虚方法的区别"><span class="nav-text">抽象方法，和虚方法的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#new的几种用法"><span class="nav-text">new的几种用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么叫做泛型"><span class="nav-text">什么叫做泛型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么叫做类"><span class="nav-text">什么叫做类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#EF的理解"><span class="nav-text">EF的理解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他"><span class="nav-text">其他</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-ASP-NET"><span class="nav-text">1.2 ASP.NET</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#页面传值"><span class="nav-text">页面传值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ASP-NET服务器控件的生命周期"><span class="nav-text">ASP.NET服务器控件的生命周期</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ASP-NET七个内置对象"><span class="nav-text">ASP.NET七个内置对象</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-名词解释"><span class="nav-text">1.3 名词解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-IL"><span class="nav-text">1.4 IL</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#指令"><span class="nav-text">指令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考-1"><span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-数据库"><span class="nav-text">2.数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-基础"><span class="nav-text">2.1 基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-SQL性能优化"><span class="nav-text">2.2 SQL性能优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考-2"><span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-数据结构和算法"><span class="nav-text">3. 数据结构和算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-数据结构"><span class="nav-text">3.1 数据结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-算法"><span class="nav-text">3.2 算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-1-冒泡排序"><span class="nav-text">3.2.1 冒泡排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-2-快速排序"><span class="nav-text">3.2.2 快速排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-3-冒泡排序"><span class="nav-text">3.2.3 冒泡排序</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考-3"><span class="nav-text">参考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-编程思想"><span class="nav-text">4. 编程思想</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-原则"><span class="nav-text">4.1 原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-设计模式"><span class="nav-text">4.2 设计模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-MVC"><span class="nav-text">4.3 MVC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-DDD"><span class="nav-text">4.4 DDD</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-前端"><span class="nav-text">5. 前端</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-JavaScript"><span class="nav-text">5.1 JavaScript</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-JQuery"><span class="nav-text">5.2 JQuery</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-性能优化"><span class="nav-text">5.3 性能优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4-其他"><span class="nav-text">5.4 其他</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-其他"><span class="nav-text">6. 其他</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-新技术"><span class="nav-text">6.1 新技术</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-职业规划"><span class="nav-text">6.2 职业规划</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 &mdash; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">祥_venux</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://venux27.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://www.venux.cn/2017/10/10/面试/';
+          this.page.identifier = '2017/10/10/面试/';
+          this.page.title = '面试';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://venux27.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("UDjFXGEpy6nb5tWHq55BEaoV-gzGzoHsz", "qdpkXjO9HeADnrAdOAvRsuXi");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 6827,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>

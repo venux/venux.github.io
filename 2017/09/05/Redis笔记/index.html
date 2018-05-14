@@ -1,0 +1,1564 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.lug.ustc.edu.cn/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Redis," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="祥_venux" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="1 键值对 SET TESTKEY “TESTVALUE”,设置键值对TESTKEY-“TESTVALUE”，返回OK； GET TESTKEY,获取键TESTKEY的值（获取不存在的键的值返回nil，即空）； DEL TESTKEY,删除键为TESTKEY的键值对，成功返回1； EXISTS TESTKEY,键是否存在，0否1是 TYPE TESTKEY,返回键的类型，如string、list等">
+<meta name="keywords" content="Redis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redis笔记">
+<meta property="og:url" content="http://www.venux.cn/2017/09/05/Redis笔记/index.html">
+<meta property="og:site_name" content="祥_venux">
+<meta property="og:description" content="1 键值对 SET TESTKEY “TESTVALUE”,设置键值对TESTKEY-“TESTVALUE”，返回OK； GET TESTKEY,获取键TESTKEY的值（获取不存在的键的值返回nil，即空）； DEL TESTKEY,删除键为TESTKEY的键值对，成功返回1； EXISTS TESTKEY,键是否存在，0否1是 TYPE TESTKEY,返回键的类型，如string、list等">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-14T02:53:19.399Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Redis笔记">
+<meta name="twitter:description" content="1 键值对 SET TESTKEY “TESTVALUE”,设置键值对TESTKEY-“TESTVALUE”，返回OK； GET TESTKEY,获取键TESTKEY的值（获取不存在的键的值返回nil，即空）； DEL TESTKEY,删除键为TESTKEY的键值对，成功返回1； EXISTS TESTKEY,键是否存在，0否1是 TYPE TESTKEY,返回键的类型，如string、list等">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.venux.cn/2017/09/05/Redis笔记/"/>
+
+
+
+
+
+  <title>Redis笔记 | 祥_venux</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?9ead14983eeabdb5fddcace7bbc74475";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">祥_venux</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">个人博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/2017/09/05/Redis笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="祥_venux">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="祥_venux">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Redis笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-05T16:57:27+08:00">
+                2017-09-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/09/05/Redis笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/09/05/Redis笔记/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/09/05/Redis笔记/" class="leancloud_visitors" data-flag-title="Redis笔记">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-键值对"><a href="#1-键值对" class="headerlink" title="1 键值对"></a>1 键值对</h2><ul>
+<li>SET TESTKEY “TESTVALUE”,设置键值对TESTKEY-“TESTVALUE”，返回OK；</li>
+<li>GET TESTKEY,获取键TESTKEY的值（获取不存在的键的值返回nil，即空）；</li>
+<li>DEL TESTKEY,删除键为TESTKEY的键值对，成功返回1；</li>
+<li>EXISTS TESTKEY,键是否存在，0否1是</li>
+<li>TYPE TESTKEY,返回键的类型，如string、list等，若键不存在返回None;</li>
+<li>INCR TESTKEY,自动加一，成功返回结果（若TESTKEY不是int值，则报错）<br>  <code>注意：INCR命令是原子操作（即不会被线程调度机制打断的操作）</code>;</li>
+<li>SETNX TEST1 ‘TESTVALUE’，若键不存在则设置，若键存在则不设置，成功返回1，失败返回0；</li>
+<li>EXPIRE TESTKEY 120,设置键TESTKEY有效期120秒（等同于 SET TESTKEY ‘TESTVALUE’ EX 120）；</li>
+<li>PERSIST TESTKEY,取消TESTKEY的有效期，1成功0失败</li>
+<li>TTL TESTKEY,查看键TESTKEY剩余有效期,-2表示键已过期不存在，-1表示永不过期，若重下SET TESTKEY，则状态重置为-1;</li>
+</ul>
+<a id="more"></a>
+<h2 id="2-数据结构"><a href="#2-数据结构" class="headerlink" title="2 数据结构"></a>2 数据结构</h2><h3 id="2-1-列表（list）有序、可重复"><a href="#2-1-列表（list）有序、可重复" class="headerlink" title="2.1 列表（list）有序、可重复"></a>2.1 列表（list）有序、可重复</h3><ul>
+<li>RPUSH TESTLIST “ITEM1” “ITEM2” “ITEM3” … “ITEMN”,插入多项到列表尾部，返回列表子项个数；</li>
+<li>LPUSH TESTLIST “ITEM2”,插入一项到列表头部，返回列表子项个数；</li>
+<li>LRANGE TESTLIST 0 -1,列出列表子项，参数1表示从第0个开始，参数2表示到第N个（-1表示最后）；</li>
+<li>LLEN TESTLIST,获取列表子项个数；</li>
+<li>LPOP TESTLIST,移除列表头部项，返回项的值；</li>
+<li>RPOP TESTLIST,移除列表尾部项，返回项的值；</li>
+<li>工具命令BRPOP TESTLIST 0、BLPOP，阻塞版本的取元素，若LIST为空，仅在规定时间（0代表永久）内有新元素加入时候取出，而不是返回NULL；<ul>
+<li>客户端按顺序执行，第一个取得先等其他客户端加入元素，以此类推；</li>
+<li>与RPOP相比，返回值是不同的：它是一个两元素数组，因为它也包括键的名称，因为BRPOP和BLPOP能够阻止等待来自多个列表的元素。</li>
+<li>如果超时，则返回NULL。</li>
+<li>RPOPLPUSH更适合命令创建安全的队列，BRPOPLPUSH阻塞版本</li>
+</ul>
+</li>
+<li>LTRIM TESTLIST 0 2，只保留前3项，丢弃之后的元素；</li>
+</ul>
+<h3 id="2-2-集合（set）无序、不可重复"><a href="#2-2-集合（set）无序、不可重复" class="headerlink" title="2.2 集合（set）无序、不可重复"></a>2.2 集合（set）无序、不可重复</h3><ul>
+<li>SADD TESTSET “ITEM1” “ITEM2” “ITEM3” … “ITEMN”,插入一项到集合中，返回1表示成功，若已有该项则返回0；</li>
+<li>SREM TESTSET “ITEM1”,从集合中移除指定项，返回1表示成功，若无该项则返回0；</li>
+<li>SISMEMBER TESTSET “ITEM1”，验证指定项是否在集合中，0否1是；</li>
+<li>SMEMBERS TESTSET，列出集合项</li>
+<li>SUNION TESTSET1 TEST2 … TESTN,取多个集合并集（无序无重复项）；</li>
+<li>SINTER TESTSET1 TEST2 … TESTN,取多个集合交集</li>
+<li>SUNIONSTORE TESTSETALL TESTSET1 TESTSET2 …TESTSETN,将多个集合并集保存至TESTSETALL</li>
+<li>SCARD TESETSET1，获取集合元素个数</li>
+<li>SPOP TESTSET1，随机取一个集合元素，移除集合</li>
+<li>SRANDMEMBER TESTSET1，随机取一个集合元素，不移除集合</li>
+</ul>
+<h3 id="2-3-有序集合（sorted-set）有序、不可重复"><a href="#2-3-有序集合（sorted-set）有序、不可重复" class="headerlink" title="2.3 有序集合（sorted set）有序、不可重复"></a>2.3 有序集合（sorted set）有序、不可重复</h3><ul>
+<li>ZADD TESTSORTSET 3 “C”,3为关联值，用于排序，float；</li>
+<li>ZRANGE TESTSORTLIST 0 -1 [withscores],列出有序集合子项，参数1表示从第0个开始，参数2表示到第N个（-1表示最后）,[withscores]可选，是否列出score项；</li>
+<li>ZREVRANGE TESTSORTLIST 0，-1,反向列出有序集合元素；</li>
+<li>ZRANK TESTSORTLIST ‘C’,查找指定元素的位置；</li>
+<li>ZREVRANK TESTSORTLIST ‘C’,反向查找指定元素的位置；</li>
+</ul>
+<h3 id="2-4-哈希（Hashes）用于保存对象"><a href="#2-4-哈希（Hashes）用于保存对象" class="headerlink" title="2.4 哈希（Hashes）用于保存对象"></a>2.4 哈希（Hashes）用于保存对象</h3><ul>
+<li>HSET obj name ‘venux’;HSET obj age ‘27’;HSET obj email ‘337225164@qq.com’,保存一个obj对象，单个属性存放用户名、年龄、email。</li>
+<li>HMSET obj name ‘venux’ age ‘27’ email ‘337225164@qq.com’,保存一个obj对象，多个属性存放用户名、年龄、email。</li>
+<li>HGETALL obj,获取obj对象</li>
+<li>HGET obj name,获取obj对象的name属性</li>
+<li>HINCRBY obj age 10,给obj对象的age属性加10，Hash字段中数值类型使用同等的字符串表示，并能通过<code>HINCRBY</code>（原子操作）累加</li>
+</ul>
+<h2 id="3-Redis支持的数据结构"><a href="#3-Redis支持的数据结构" class="headerlink" title="3 Redis支持的数据结构"></a>3 Redis支持的数据结构</h2><ol>
+<li>Binary-safe strings；</li>
+<li>Lists:按插入顺序排序的列表，基于链表；</li>
+<li>Sets:无序、唯一的集合；</li>
+<li>Sorted sets:有序、唯一的有序集合，用一个称为scroe的float字段存放排序值；</li>
+<li>Hashes:一系列属性合集，即对象，字段名和值都为strings；</li>
+<li>Bit arrays (or simply bitmaps):二进制数组；</li>
+<li>HyperLogLogs:this is a probabilistic data structure which is used in order to estimate the cardinality of a set（概率性数据结构，用于评估集合的基数）.</li>
+</ol>
+<h2 id="4-Redis-keys"><a href="#4-Redis-keys" class="headerlink" title="4 Redis keys"></a>4 Redis keys</h2><ul>
+<li>空字符串也是有效的key值；</li>
+<li>太长的key不好，若key代表的对象本身过长，使用hash（如SHA1）后的值作为key值；</li>
+<li>太短的key值也不好，如使用user:1000:followers替代u1000flw，这样可读性更良好；</li>
+<li>尽量（坚持）使用模式，一个良好的模式<code>object-type:id</code>，通常使用<code>:</code>、<code>-</code>、<code>.</code>分割。例如<code>user:1000</code>、<code>comment:1234:reply.to</code>、<code>comment:1234:reply-to</code>；</li>
+<li>键最大容量为512MB。</li>
+</ul>
+<h2 id="5-Redis-Strings"><a href="#5-Redis-Strings" class="headerlink" title="5 Redis Strings"></a>5 Redis Strings</h2><ul>
+<li>键值都为string类型，和<code>Memcached</code>一样，string作为唯一的数据类型；</li>
+<li>值也可用于保存图片资源，只要格式本质是string（如二进制），且大小不能超出512M；</li>
+<li>SET命令选项：SET TESTKEY “TESTVALUE” nx/xx,nx代表如果键已存在，则SET失败；反之xx表示，如果键已存在则成功；</li>
+<li>INCR TESTKEY：将string作为int值累加一并保存新值，DECR减； INCRBY TESTKEY 10：加10，DECRBY减； （其实是同一个底层命令不同表示方式）；</li>
+<li>GETSET：先获取旧值后设置新值（有点儿像<code>i++</code>）；</li>
+<li>MSET A 10 B 20 C 30;MGET A B C;MSET或MGET（返回一个Array）同时操作多个键值对ABC；</li>
+</ul>
+<h2 id="6-Redis-expires（有效期）"><a href="#6-Redis-expires（有效期）" class="headerlink" title="6 Redis expires（有效期）"></a>6 Redis expires（有效期）</h2><ol>
+<li>精度可以说秒或毫秒；</li>
+<li>本质上精度都是毫秒；</li>
+<li>当Redis server停止时，过期的数据也会保存到磁盘中，Redis只是给key加了个有效期的属性；</li>
+</ol>
+<h2 id="7-Redis-Lists"><a href="#7-Redis-Lists" class="headerlink" title="7 Redis Lists"></a>7 Redis Lists</h2><h3 id="7-1-注意区分链表（Linked-Lists）和数组（Array）。"><a href="#7-1-注意区分链表（Linked-Lists）和数组（Array）。" class="headerlink" title="7.1 注意区分链表（Linked Lists）和数组（Array）。"></a>7.1 注意区分链表（Linked Lists）和数组（Array）。</h3><ul>
+<li>Redis Lists本质是链表，在存储上不连续，优点插入时间复杂度为常量即O(1)，缺点索引查找O(n)。</li>
+<li>数组指一系列元素的集合，在存储上是连续的，优点索引查找时间复杂度为常量即O(1)，缺点插入O(n)。</li>
+</ul>
+<h3 id="7-2-适用场景"><a href="#7-2-适用场景" class="headerlink" title="7.2 适用场景"></a>7.2 适用场景</h3><ol>
+<li>记录社交网络最后一个提交更新；</li>
+<li>消息队列等；</li>
+</ol>
+<h2 id="8-Bitmaps（位图不是一个确切的数据类型）"><a href="#8-Bitmaps（位图不是一个确切的数据类型）" class="headerlink" title="8 Bitmaps（位图不是一个确切的数据类型）"></a>8 Bitmaps（位图不是一个确切的数据类型）</h2><ol>
+<li>SETBIT BITKEY 10 1，设置BITKEY键的值的第10位为1；</li>
+<li>GETBIT BITKEY 10，获取BITKEY键的值的第10位；</li>
+</ol>
+<h3 id="8-1-适用场景"><a href="#8-1-适用场景" class="headerlink" title="8.1 适用场景"></a>8.1 适用场景</h3><ol>
+<li>任何实时分析情况；</li>
+<li>高效高性能存储boolean信息，通过各位0或1直接判断各种状态；</li>
+</ol>
+<h2 id="9-HyperLogLogs-估算各类分布概率"><a href="#9-HyperLogLogs-估算各类分布概率" class="headerlink" title="9 HyperLogLogs(估算各类分布概率)"></a>9 HyperLogLogs(估算各类分布概率)</h2><ol>
+<li>PFADD HLLTEST a b c d；插入元素；</li>
+<li>PFCOUNT HLLTEST；查询个数</li>
+</ol>
+<h3 id="9-1-适用场景"><a href="#9-1-适用场景" class="headerlink" title="9.1 适用场景"></a>9.1 适用场景</h3><ol>
+<li>例如统计每天用户查询不同关键词的数目</li>
+</ol>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>1 <a href="http://try.redis.io/" target="_blank" rel="external">redis入门</a><br>2 <a href="https://redis.io/topics/data-types-intro" target="_blank" rel="external">介绍Redis数据结构和抽象</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="祥_venux WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="祥_venux Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Redis/" rel="tag"># Redis</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/09/04/设计模式-02建造者/" rel="next" title="设计模式-02.BUILDER（生成器）— 对象创建型模式">
+                <i class="fa fa-chevron-left"></i> 设计模式-02.BUILDER（生成器）— 对象创建型模式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/09/05/VS设置类库程序集自动更新版本号/" rel="prev" title="VS设置类库程序集自动更新版本号">
+                VS设置类库程序集自动更新版本号 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微薄</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=2142808" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/head2.jpg"
+               alt="祥_venux" />
+          <p class="site-author-name" itemprop="name">祥_venux</p>
+           
+              <p class="site-description motion-element" itemprop="description">.NET</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">24</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/venux" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://music.163.com/#/user/home?id=16765516" target="_blank" title="网易云音乐">
+                  
+                    <i class="fa fa-fw fa-music"></i>
+                  
+                    
+                      网易云音乐
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/venux_27" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                    
+                      Twitter
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/luwenbiao333" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                    
+                      Facebook
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://martinfowler.com/" title="Martin Fowler" target="_blank">Martin Fowler</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.facebook.com/Jeffrey.Richter.1" title="Jeffrey Richter" target="_blank">Jeffrey Richter</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://twitter.com/search?q=Jon%20Skeet&src=typd" title="Jon Skeet" target="_blank">Jon Skeet</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/shanyou/" title="张善友" target="_blank">张善友</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/artech/" title="老A" target="_blank">老A</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.zhaojie.me/" title="老赵" target="_blank">老赵</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-键值对"><span class="nav-text">1 键值对</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-数据结构"><span class="nav-text">2 数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-列表（list）有序、可重复"><span class="nav-text">2.1 列表（list）有序、可重复</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-集合（set）无序、不可重复"><span class="nav-text">2.2 集合（set）无序、不可重复</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-有序集合（sorted-set）有序、不可重复"><span class="nav-text">2.3 有序集合（sorted set）有序、不可重复</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-哈希（Hashes）用于保存对象"><span class="nav-text">2.4 哈希（Hashes）用于保存对象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Redis支持的数据结构"><span class="nav-text">3 Redis支持的数据结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Redis-keys"><span class="nav-text">4 Redis keys</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Redis-Strings"><span class="nav-text">5 Redis Strings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Redis-expires（有效期）"><span class="nav-text">6 Redis expires（有效期）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-Redis-Lists"><span class="nav-text">7 Redis Lists</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-注意区分链表（Linked-Lists）和数组（Array）。"><span class="nav-text">7.1 注意区分链表（Linked Lists）和数组（Array）。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-适用场景"><span class="nav-text">7.2 适用场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-Bitmaps（位图不是一个确切的数据类型）"><span class="nav-text">8 Bitmaps（位图不是一个确切的数据类型）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-适用场景"><span class="nav-text">8.1 适用场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-HyperLogLogs-估算各类分布概率"><span class="nav-text">9 HyperLogLogs(估算各类分布概率)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#9-1-适用场景"><span class="nav-text">9.1 适用场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 &mdash; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">祥_venux</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://venux27.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://www.venux.cn/2017/09/05/Redis笔记/';
+          this.page.identifier = '2017/09/05/Redis笔记/';
+          this.page.title = 'Redis笔记';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://venux27.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("UDjFXGEpy6nb5tWHq55BEaoV-gzGzoHsz", "qdpkXjO9HeADnrAdOAvRsuXi");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 6827,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
