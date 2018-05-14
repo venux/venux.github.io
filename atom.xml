@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.venux.cn/"/>
-  <updated>2018-05-14T02:53:19.401Z</updated>
+  <updated>2018-05-14T03:07:05.156Z</updated>
   <id>http://www.venux.cn/</id>
   
   <author>
@@ -14,6 +14,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>DDD-01介绍</title>
+    <link href="http://www.venux.cn/2018/05/14/DDD-01%E4%BB%8B%E7%BB%8D/"/>
+    <id>http://www.venux.cn/2018/05/14/DDD-01介绍/</id>
+    <published>2018-05-14T03:06:38.000Z</published>
+    <updated>2018-05-14T03:07:05.156Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="DDD" scheme="http://www.venux.cn/categories/DDD/"/>
+    
+    
+      <category term="DDD" scheme="http://www.venux.cn/tags/DDD/"/>
+    
+  </entry>
   
   <entry>
     <title>java-Tomcat</title>
@@ -407,7 +425,7 @@
     <link href="http://www.venux.cn/2018/04/15/java-Maven/"/>
     <id>http://www.venux.cn/2018/04/15/java-Maven/</id>
     <published>2018-04-15T09:36:50.000Z</published>
-    <updated>2018-05-14T02:53:19.400Z</updated>
+    <updated>2018-05-14T08:36:41.135Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1 介绍"></a>1 介绍</h2><p>Maven 是一个项目构建和管理的自动化工具，提供了帮助管理 构建、文档、报告、依赖、scms、发布、分发的方法。可以方便的编译代码、进行依赖管理、管理二进制库等等。</p>
 <p>Maven 使用惯例优于配置的原则 。它要求在没有定制之前，所有的项目都有如下的结构：</p>
@@ -453,7 +471,7 @@
 <li>修改本地仓库路径：setting.xml 中的 localRepository。</li>
 </ol>
 <h3 id="2-5-测试"><a href="#2-5-测试" class="headerlink" title="2.5 测试"></a>2.5 测试</h3><ul>
-<li><strong>maven -v</strong>:版本号</li>
+<li><strong>mvn -v</strong>:版本号</li>
 </ul>
 <h3 id="2-6-集成IDE"><a href="#2-6-集成IDE" class="headerlink" title="2.6 集成IDE"></a>2.6 集成IDE</h3><ul>
 <li>Eclipse IDE：<a href="https://www.eclipse.org/m2e/" target="_blank" rel="external">M2Eclipse</a>，直接搜索 Maven 即可。<ul>
@@ -3000,104 +3018,6 @@
       <category term="Tomcat" scheme="http://www.venux.cn/tags/Tomcat/"/>
     
       <category term="Eclipse" scheme="http://www.venux.cn/tags/Eclipse/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式-08COMPOSITE（组合）— 对象结构型模式</title>
-    <link href="http://www.venux.cn/2017/09/13/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-08%E7%BB%84%E5%90%88/"/>
-    <id>http://www.venux.cn/2017/09/13/设计模式-08组合/</id>
-    <published>2017-09-13T11:40:08.000Z</published>
-    <updated>2018-05-14T02:53:19.405Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="1-意图"><a href="#1-意图" class="headerlink" title="1 意图"></a>1 意图</h2><p>将对象组合成树形结构以表示“部分-整体”的层次结构。Composite 使得用户对单个对象和组合对象的使用具有一致性。</p>
-<h2 id="2-别名"><a href="#2-别名" class="headerlink" title="2 别名"></a>2 别名</h2><p>无</p>
-<h2 id="3-动机"><a href="#3-动机" class="headerlink" title="3 动机"></a>3 动机</h2><p>在绘图编辑器和图形捕捉系统这样的图形应用程序中，用户可以使用简单的组件创建复杂的图表。用户可以组合多个简单组件以形成一些较大的组件，这些组件又可以组合成更大的组件。一个简单的实现方法是为 Text 和 Line 这样的图元定义一些类，另外定义一些类作为这些图元的容器类（Container）。问题：使用这些类的代码必须区别对待图元对象与容器对象，而实际上大多数情况下用户认为它们是一样的。<br><img src="/images/posts/组合1.jpg" alt="图一"><br><a id="more"></a></p>
-<h2 id="4-适用性"><a href="#4-适用性" class="headerlink" title="4 适用性"></a>4 适用性</h2><ul>
-<li>你想表示对象的部分 -整体层次结构。</li>
-<li>你希望用户忽略组合对象与单个对象的不同，用户将统一地使用组合结构中的所有对象。</li>
-</ul>
-<h2 id="5-结构"><a href="#5-结构" class="headerlink" title="5 结构"></a>5 结构</h2><p><img src="/images/posts/组合2.jpg" alt="图二"></p>
-<h2 id="6-参与者"><a href="#6-参与者" class="headerlink" title="6 参与者"></a>6 参与者</h2><ul>
-<li>Component(Graphic)<ul>
-<li>为组合中的对象声明接口。</li>
-<li>在适当的情况下，实现所有类共有接口的缺省行为。</li>
-<li>声明一个接口用于访问和管理 Component 的子组件。</li>
-<li>(可选)在递归结构中定义一个接口，用于访问一个父部件，并在合适的情况下实现它。</li>
-</ul>
-</li>
-<li>Leaf(Rectangle、Line、Text 等)<ul>
-<li>在组合中表示叶节点对象，叶节点没有子节点。</li>
-<li>在组合中定义图元对象的行为。</li>
-</ul>
-</li>
-<li>Composite(Picture)<ul>
-<li>定义有子部件的那些部件的行为。</li>
-<li>存储子部件。</li>
-<li>在 Component 接口中实现与子部件有关的操作。</li>
-</ul>
-</li>
-<li>Client<ul>
-<li>通过 Component 接口操纵组合部件的对象。</li>
-</ul>
-</li>
-</ul>
-<h2 id="7-协作"><a href="#7-协作" class="headerlink" title="7 协作"></a>7 协作</h2><p>用户使用  Component 类接口与组合结构中的对象进行交互。如果接收者是一个叶节点 ,则直接处理请求。如果接收者是  Composite , 它通常将请求发送给它的子部件，在转发请求之前与/或之后可能执行一些辅助操作。</p>
-<h2 id="8-效果"><a href="#8-效果" class="headerlink" title="8 效果"></a>8 效果</h2><ul>
-<li>定义了包含基本对象和组合对象的类层次结构 </li>
-<li>简化客户代码</li>
-<li>使得更容易增加新类型的组件</li>
-<li>使你的设计变得更加一般化</li>
-<li>子部件排序</li>
-<li></li>
-</ul>
-<h2 id="9-实现"><a href="#9-实现" class="headerlink" title="9 实现"></a>9 实现</h2><ul>
-<li>显式的父部件引用</li>
-<li>共享组件</li>
-<li>最大化 Component 接口</li>
-<li>声明管理子部件的操作（透明性 or 安全性）</li>
-<li>Component 是否应该实现一个 Component 列表</li>
-<li>应该由谁删除 Component</li>
-<li>存贮组件最好用哪一种数据结构（列表、树、数组和 hash 表，效率）</li>
-</ul>
-<h2 id="10-代码示例"><a href="#10-代码示例" class="headerlink" title="10 代码示例"></a>10 代码示例</h2><ul>
-<li><p>Component</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">class Component</div><div class="line">&#123;</div><div class="line">    public abstract void Operation();</div><div class="line"></div><div class="line">    public virtual void Add(Component component)</div><div class="line">    &#123;</div><div class="line">        //默认实现，Leaf不需要复写，Composite需要复写</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public virtual void Remove(Component component)</div><div class="line">    &#123;</div><div class="line">        //默认实现，Leaf不需要复写，Composite需要复写</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public virtual Component GetChild(int index)</div><div class="line">    &#123;</div><div class="line">        //默认实现，Leaf不需要复写，Composite需要复写</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>Leaf(Rectangle、Line、Text 等)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">class Leaf:Component</div><div class="line">&#123;</div><div class="line">    public override void Operation()</div><div class="line">    &#123;</div><div class="line">        Console.WriteLine(&quot;Leaf&quot;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>Composite(Picture)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">class Composite:Component</div><div class="line">&#123;</div><div class="line">    private List&lt;Component&gt; children=new List&lt;Component&gt;();</div><div class="line"></div><div class="line">    public override void Operation()</div><div class="line">    &#123;</div><div class="line">        foreach(var component in children)</div><div class="line">        &#123;</div><div class="line">            component.Operation();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public new void Add(Component component)</div><div class="line">    &#123;</div><div class="line">        children.Add(component);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public new void Remove(Component component)</div><div class="line">    &#123;</div><div class="line">       children.Add(component);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public new Component GetChild(int index)</div><div class="line">    &#123;</div><div class="line">        return children[index];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>Client</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">class Client</div><div class="line">&#123;</div><div class="line">    public static void Main(string[] args)</div><div class="line">    &#123;</div><div class="line">        Component leaf=new Leaf();</div><div class="line">        leaf.Operation();</div><div class="line"></div><div class="line">        Component composite=new Composite();</div><div class="line">        composite.Add(leaf);</div><div class="line">        composite.Operation();</div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="11-已知应用"><a href="#11-已知应用" class="headerlink" title="11 已知应用"></a>11 已知应用</h2><p>MVC 中的 View。</p>
-<h2 id="12-相关模式"><a href="#12-相关模式" class="headerlink" title="12 相关模式"></a>12 相关模式</h2><ul>
-<li>通常部件 - 父部件连接用于 Responsibility of Chain 模式。</li>
-<li>Decorator 模式经常与 Composite 模式一起使用。当装饰和组合一起使用时，它们通常有一个公共的父类。因此装饰必须支持具有 Add、Remove 和 GetChild 操作的 Component。</li>
-<li>Flyweight 让你共享组件，但不再能引用他们的父部件。</li>
-<li>Itertor 可用来遍历 Composite。</li>
-<li>Visitor 将本来应该分布在 Composite 和 Leaf 类中的操作和行为局部化。</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;1-意图&quot;&gt;&lt;a href=&quot;#1-意图&quot; class=&quot;headerlink&quot; title=&quot;1 意图&quot;&gt;&lt;/a&gt;1 意图&lt;/h2&gt;&lt;p&gt;将对象组合成树形结构以表示“部分-整体”的层次结构。Composite 使得用户对单个对象和组合对象的使用具有一致性。&lt;/p&gt;
-&lt;h2 id=&quot;2-别名&quot;&gt;&lt;a href=&quot;#2-别名&quot; class=&quot;headerlink&quot; title=&quot;2 别名&quot;&gt;&lt;/a&gt;2 别名&lt;/h2&gt;&lt;p&gt;无&lt;/p&gt;
-&lt;h2 id=&quot;3-动机&quot;&gt;&lt;a href=&quot;#3-动机&quot; class=&quot;headerlink&quot; title=&quot;3 动机&quot;&gt;&lt;/a&gt;3 动机&lt;/h2&gt;&lt;p&gt;在绘图编辑器和图形捕捉系统这样的图形应用程序中，用户可以使用简单的组件创建复杂的图表。用户可以组合多个简单组件以形成一些较大的组件，这些组件又可以组合成更大的组件。一个简单的实现方法是为 Text 和 Line 这样的图元定义一些类，另外定义一些类作为这些图元的容器类（Container）。问题：使用这些类的代码必须区别对待图元对象与容器对象，而实际上大多数情况下用户认为它们是一样的。&lt;br&gt;&lt;img src=&quot;/images/posts/组合1.jpg&quot; alt=&quot;图一&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-      <category term="设计模式" scheme="http://www.venux.cn/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-      <category term="编程思想" scheme="http://www.venux.cn/tags/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/"/>
-    
-      <category term="设计模式" scheme="http://www.venux.cn/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
