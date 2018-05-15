@@ -100,21 +100,21 @@
 <meta name="description" content="1 意图动态地给一个对象添加一些额外的职责。 2 别名包装器 Wrapper 3 动机希望给某个对象而不是整个类添加一些功能。如图形界面添加一些特性（边框，滚动等）。  使用继承机制是以一种有效途径，然而不够灵活； 将组件嵌入另一个对象，有这个对象添加特性，该嵌入的对象称为装饰。该装饰与所装饰的组件接口一致，故对其透明。">
 <meta name="keywords" content="编程思想,设计模式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="设计模式-08.DECORATOR（装饰）— 对象结构型模式">
+<meta property="og:title" content="设计模式-09.DECORATOR（装饰）— 对象结构型模式">
 <meta property="og:url" content="http://www.venux.cn/2017/09/15/设计模式-09装饰/index.html">
 <meta property="og:site_name" content="祥_venux">
 <meta property="og:description" content="1 意图动态地给一个对象添加一些额外的职责。 2 别名包装器 Wrapper 3 动机希望给某个对象而不是整个类添加一些功能。如图形界面添加一些特性（边框，滚动等）。  使用继承机制是以一种有效途径，然而不够灵活； 将组件嵌入另一个对象，有这个对象添加特性，该嵌入的对象称为装饰。该装饰与所装饰的组件接口一致，故对其透明。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://www.venux.cn/images/posts/装饰1.jpg">
-<meta property="og:image" content="http://www.venux.cn/images/posts/装饰2.jpg">
-<meta property="og:image" content="http://www.venux.cn/images/posts/装饰3.jpg">
-<meta property="og:image" content="http://www.venux.cn/images/posts/装饰5.jpg">
-<meta property="og:image" content="http://www.venux.cn/images/posts/装饰4.jpg">
-<meta property="og:updated_time" content="2018-05-15T03:38:32.739Z">
+<meta property="og:image" content="http://www.venux.cn/images/posts/装饰1.png">
+<meta property="og:image" content="http://www.venux.cn/images/posts/装饰2.png">
+<meta property="og:image" content="http://www.venux.cn/images/posts/装饰3.png">
+<meta property="og:image" content="http://www.venux.cn/images/posts/装饰5.png">
+<meta property="og:image" content="http://www.venux.cn/images/posts/装饰4.png">
+<meta property="og:updated_time" content="2018-05-15T03:42:29.294Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="设计模式-08.DECORATOR（装饰）— 对象结构型模式">
+<meta name="twitter:title" content="设计模式-09.DECORATOR（装饰）— 对象结构型模式">
 <meta name="twitter:description" content="1 意图动态地给一个对象添加一些额外的职责。 2 别名包装器 Wrapper 3 动机希望给某个对象而不是整个类添加一些功能。如图形界面添加一些特性（边框，滚动等）。  使用继承机制是以一种有效途径，然而不够灵活； 将组件嵌入另一个对象，有这个对象添加特性，该嵌入的对象称为装饰。该装饰与所装饰的组件接口一致，故对其透明。">
-<meta name="twitter:image" content="http://www.venux.cn/images/posts/装饰1.jpg">
+<meta name="twitter:image" content="http://www.venux.cn/images/posts/装饰1.png">
 
 
 
@@ -150,7 +150,7 @@
 
 
 
-  <title>设计模式-08.DECORATOR（装饰）— 对象结构型模式 | 祥_venux</title>
+  <title>设计模式-09.DECORATOR（装饰）— 对象结构型模式 | 祥_venux</title>
   
 
 
@@ -358,7 +358,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">设计模式-08.DECORATOR（装饰）— 对象结构型模式</h1>
+          <h1 class="post-title" itemprop="name headline">设计模式-09.DECORATOR（装饰）— 对象结构型模式</h1>
         
 
         <div class="post-meta">
@@ -421,7 +421,7 @@
 
           
           
-             <span id="/2017/09/15/设计模式-09装饰/" class="leancloud_visitors" data-flag-title="设计模式-08.DECORATOR（装饰）— 对象结构型模式">
+             <span id="/2017/09/15/设计模式-09装饰/" class="leancloud_visitors" data-flag-title="设计模式-09.DECORATOR（装饰）— 对象结构型模式">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -459,7 +459,7 @@
 <li>使用继承机制是以一种有效途径，然而不够灵活；</li>
 <li>将组件嵌入另一个对象，有这个对象添加特性，该嵌入的对象称为装饰。该装饰与所装饰的组件接口一致，故对其透明。</li>
 </ul>
-<p><img src="/images/posts/装饰1.jpg" alt="图一"><br><img src="/images/posts/装饰2.jpg" alt="图二"><br><a id="more"></a></p>
+<p><img src="/images/posts/装饰1.png" alt="图一"><br><img src="/images/posts/装饰2.png" alt="图二"><br><a id="more"></a></p>
 <h2 id="4-适用性"><a href="#4-适用性" class="headerlink" title="4 适用性"></a>4 适用性</h2><ul>
 <li>在不影响其他对象的情况下，以动态、透明的方式给单个对象添加职责。</li>
 <li>处理那些可以撤消的职责。</li>
@@ -469,7 +469,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="5-结构"><a href="#5-结构" class="headerlink" title="5 结构"></a>5 结构</h2><p><img src="/images/posts/装饰3.jpg" alt="图三"></p>
+<h2 id="5-结构"><a href="#5-结构" class="headerlink" title="5 结构"></a>5 结构</h2><p><img src="/images/posts/装饰3.png" alt="图三"></p>
 <h2 id="6-参与者"><a href="#6-参与者" class="headerlink" title="6 参与者"></a>6 参与者</h2><ul>
 <li>Component(VisualComponent)<ul>
 <li>定义一个对象接口，可以给这些对象动态地添加职责。</li>
@@ -507,7 +507,7 @@
 <li>保存 Component 类的简单性；</li>
 <li>改变对象外壳（Strategy 策略模式可改变对象内核）</li>
 </ul>
-<p><code>注：</code>当 Component 类原本很庞大时，使用 Decorator 模式代价太大，可考虑使用 Strategy 模式。<br><img src="/images/posts/装饰5.jpg" alt="图五"></p>
+<p><code>注：</code>当 Component 类原本很庞大时，使用 Decorator 模式代价太大，可考虑使用 Strategy 模式。<br><img src="/images/posts/装饰5.png" alt="图五"></p>
 <h2 id="10-代码示例"><a href="#10-代码示例" class="headerlink" title="10 代码示例"></a>10 代码示例</h2><ul>
 <li><p>Component</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">class Component</div><div class="line">&#123;</div><div class="line">    public abstract void Operation();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -525,7 +525,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">class Client</div><div class="line">&#123;</div><div class="line">    public static void Main(string[] args)</div><div class="line">    &#123;</div><div class="line">        Component component=new ConcreteComponent();</div><div class="line">        component.Operation();</div><div class="line"></div><div class="line">        BaseDecorator decorator=new ConcreteDecorator(component);</div><div class="line">        decorator.Operation();</div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="11-已知应用"><a href="#11-已知应用" class="headerlink" title="11 已知应用"></a>11 已知应用</h2><p>用户界面工具，Stream。<br><img src="/images/posts/装饰4.jpg" alt="图四"></p>
+<h2 id="11-已知应用"><a href="#11-已知应用" class="headerlink" title="11 已知应用"></a>11 已知应用</h2><p>用户界面工具，Stream。<br><img src="/images/posts/装饰4.png" alt="图四"></p>
 <h2 id="12-相关模式"><a href="#12-相关模式" class="headerlink" title="12 相关模式"></a>12 相关模式</h2><ul>
 <li><strong>Adapter 模式：</strong>Decorator 模式不同于 Adapter 模式，因为装饰仅改变对象的职责而不改<br>变它的接口；而适配器将给对象一个全新的接口。</li>
 <li><strong>Composite 模式：</strong>可以将装饰视为一个退化的、仅有一个组件的组合。然而，装饰仅<br>给对象添加一些额外的职责—它的目的不在于对象聚集。</li>
@@ -1034,7 +1034,7 @@ var jiathis_config={
         var disqus_config = function () {
           this.page.url = 'http://www.venux.cn/2017/09/15/设计模式-09装饰/';
           this.page.identifier = '2017/09/15/设计模式-09装饰/';
-          this.page.title = '设计模式-08.DECORATOR（装饰）— 对象结构型模式';
+          this.page.title = '设计模式-09.DECORATOR（装饰）— 对象结构型模式';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://venux27.disqus.com/embed.js';
