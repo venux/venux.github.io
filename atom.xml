@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.venux.cn/"/>
-  <updated>2018-05-25T08:33:09.704Z</updated>
+  <updated>2018-05-25T08:50:55.503Z</updated>
   <id>http://www.venux.cn/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://www.venux.cn//posts/01.%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/04.%E5%85%B6%E4%BB%96/CSharp%E4%B8%8EJava%E5%AF%B9%E6%AF%94/"/>
     <id>http://www.venux.cn//posts/01.编程语言/04.其他/CSharp与Java对比/</id>
     <published>2018-05-25T12:05:42.000Z</published>
-    <updated>2018-05-25T08:33:09.704Z</updated>
+    <updated>2018-05-25T08:50:55.503Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-代码风格"><a href="#1-代码风格" class="headerlink" title="1.代码风格"></a>1.代码风格</h2><h3 id="1-1-命名规范"><a href="#1-1-命名规范" class="headerlink" title="1.1 命名规范"></a>1.1 命名规范</h3><h4 id="1-1-1-接口"><a href="#1-1-1-接口" class="headerlink" title="1.1.1 接口"></a>1.1.1 接口</h4><table>
 <thead>
@@ -72,17 +72,113 @@
   </entry>
   
   <entry>
-    <title>CSharp-代码规范</title>
-    <link href="http://www.venux.cn//posts/01.%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/01.CSharp/CSharp-%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/"/>
-    <id>http://www.venux.cn//posts/01.编程语言/01.CSharp/CSharp-代码规范/</id>
-    <published>2018-05-22T06:06:26.000Z</published>
-    <updated>2018-05-25T08:33:09.570Z</updated>
+    <title>C#代码规范</title>
+    <link href="http://www.venux.cn//posts/01.%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/01.CSharp/CSharp%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/"/>
+    <id>http://www.venux.cn//posts/01.编程语言/01.CSharp/CSharp代码规范/</id>
+    <published>2018-05-25T10:06:26.000Z</published>
+    <updated>2018-05-25T10:05:49.720Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="1-格式"><a href="#1-格式" class="headerlink" title="1 格式"></a>1 格式</h2>]]></content>
+    <content type="html"><![CDATA[<h2 id="1-规范制定原则"><a href="#1-规范制定原则" class="headerlink" title="1.    规范制定原则"></a>1.    规范制定原则</h2><ul>
+<li>方便代码的交流和维护。</li>
+<li>不影响编码的效率，不与大众习惯冲突。</li>
+<li>使代码更美观、阅读更方便。</li>
+<li>使代码的逻辑更清晰、更易于理解。</li>
+</ul>
+<h2 id="2-术语定义"><a href="#2-术语定义" class="headerlink" title="2.    术语定义"></a>2.    术语定义</h2><h3 id="2-1-Pascal-大小写"><a href="#2-1-Pascal-大小写" class="headerlink" title="2.1 Pascal 大小写"></a>2.1 Pascal 大小写</h3><p>将标识符的首字母和后面连接的每个单词的首字母都大写。可以对三字符或更多字符的标识符使用Pascal 大小写。例如： BackColor。</p>
+<h3 id="2-2-Camel-大小写"><a href="#2-2-Camel-大小写" class="headerlink" title="2.2 Camel 大小写"></a>2.2 Camel 大小写</h3><p>标识符的首字母小写，而每个后面连接的单词的首字母都大写。例如：backColor。</p>
+<h2 id="3-代码外观"><a href="#3-代码外观" class="headerlink" title="3. 代码外观"></a>3. 代码外观</h2><h3 id="3-1-列宽"><a href="#3-1-列宽" class="headerlink" title="3.1 列宽"></a>3.1 列宽</h3><p>控制在 120 字符左右。</p>
+<h3 id="3-2-换行"><a href="#3-2-换行" class="headerlink" title="3.2 换行"></a>3.2 换行</h3><ul>
+<li>在逗号后换行。</li>
+<li>在操作符前换行。</li>
+<li>规则1优先于规则2。</li>
+</ul>
+<h3 id="3-3-缩进"><a href="#3-3-缩进" class="headerlink" title="3.3    缩进"></a>3.3    缩进</h3><p>缩进应该是每行一个Tab(4个空格)，不要在代码中使用Tab字符。<br><code>VS设置</code>：工具-&gt;选项-&gt;文本编辑器-&gt;C#-&gt;制表符-&gt;插入空格</p>
+<h3 id="3-4-空行"><a href="#3-4-空行" class="headerlink" title="3.4    空行"></a>3.4    空行</h3><p>空行是为了将逻辑上相关联的代码分块，以便提高代码的可阅读性。</p>
+<ul>
+<li><p>在以下情况下使用两个空行</p>
+<ul>
+<li>接口和类的定义之间。</li>
+<li>枚举和类的定义之间。</li>
+<li>类与类的定义之间.</li>
+</ul>
+</li>
+<li><p>在以下情况下使用一个空行</p>
+<ul>
+<li>方法与方法、属性与属性之间。</li>
+<li>方法中变量声明与语句之间。</li>
+<li>方法与方法之间。</li>
+<li>方法中不同的逻辑块之间。</li>
+<li>方法中的返回语句与其他的语句之间。</li>
+<li>属性与方法、属性与字段、方法与字段之间。</li>
+<li>注释与它注释的语句间不空行，但与其他的语句间空一行。</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-5-程序注释"><a href="#3-5-程序注释" class="headerlink" title="3.5 程序注释"></a>3.5 程序注释</h3><h4 id="3-5-1-文件注释"><a href="#3-5-1-文件注释" class="headerlink" title="3.5.1 文件注释"></a>3.5.1 文件注释</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//===========================================================</div><div class="line">// Copyright (c) $年份 $公司名称.  </div><div class="line">// 版权所有.</div><div class="line">//===========================================================</div></pre></td></tr></table></figure>
+<h4 id="3-5-2-对象注释（类、接口、枚举、结构等）"><a href="#3-5-2-对象注释（类、接口、枚举、结构等）" class="headerlink" title="3.5.2 对象注释（类、接口、枚举、结构等）"></a>3.5.2 对象注释（类、接口、枚举、结构等）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">/// &lt;summary&gt;</div><div class="line">/// $功能描述</div><div class="line">/// 作者：$作者</div><div class="line">/// 日期：$创建日期</div><div class="line">/// 版本：$版本号</div><div class="line">/// &lt;/summary&gt;</div></pre></td></tr></table></figure>
+<h4 id="3-5-3-其他注释（单行注释、多行注释、方法注释）"><a href="#3-5-3-其他注释（单行注释、多行注释、方法注释）" class="headerlink" title="3.5.3 其他注释（单行注释、多行注释、方法注释）"></a>3.5.3 其他注释（单行注释、多行注释、方法注释）</h4><ul>
+<li>方法注释<strong>必须</strong>；</li>
+<li>其他根据情况自行添加。</li>
+</ul>
+<h2 id="4-命名规范"><a href="#4-命名规范" class="headerlink" title="4. 命名规范"></a>4. 命名规范</h2><h3 id="4-1-命名原则"><a href="#4-1-命名原则" class="headerlink" title="4.1 命名原则"></a>4.1 命名原则</h3><ul>
+<li>使名称足够长以便有一定的意义，并且足够短以避免冗长。</li>
+<li>唯一名称在编程上仅用于将各项区分开。</li>
+<li>表现力强的名称是为了帮助人们阅读，提供人们可以理解的名称是有意义的。</li>
+<li>请确保选择的名称符合适用语言的规则和标准。</li>
+</ul>
+<h3 id="4-2-命名空间"><a href="#4-2-命名空间" class="headerlink" title="4.2    命名空间"></a>4.2    命名空间</h3><p>命名命名空间时的一般性规则是使用公司名称，后跟项目名称和可选的功能与设计。<br><code>示例</code>：namespace CompanyName.ProjectName.ModuleName</p>
+<h3 id="4-3-类"><a href="#4-3-类" class="headerlink" title="4.3    类"></a>4.3    类</h3><ul>
+<li>使用 Pascal 大小写。</li>
+<li>用名词或名词短语命名类。</li>
+<li>使用全称避免缩写，除非缩写已是一种公认的约定，如URL、HTML。</li>
+<li>不要使用类型前缀，如在类名称上对类使用 C 前缀。例如，使用类名称 FileStream，而不是 CFileStream。 </li>
+</ul>
+<h3 id="4-4-接口"><a href="#4-4-接口" class="headerlink" title="4.4    接口"></a>4.4    接口</h3><ul>
+<li>用名词或名词短语，或者描述行为的形容词命名接口。例如，接口名称 IComponent 使用描述性名词。接口名称 ICustomAttributeProvider 使用名词短语。名称 IPersistable 使用形容词。 </li>
+<li>使用 Pascal 大小写。 </li>
+<li>少用缩写。 </li>
+<li>给接口名称加上字母 I 前缀，以指示该类型为接口。在定义类/接口对（其中类是接口的标准实现）时使用相似的名称。两个名称的区别应该只是接口名称上有字母 I 前缀。</li>
+<li>当类是接口的标准执行时，定义这一对类/接口组合就要使用相似的名称。两个名称的不同之处只是接口名前有一个I前缀。</li>
+</ul>
+<h3 id="4-5-属性-Attribute"><a href="#4-5-属性-Attribute" class="headerlink" title="4.5 属性 (Attribute)"></a>4.5 属性 (Attribute)</h3><ul>
+<li>将后缀 Attribute 添加到自定义属性类。</li>
+</ul>
+<h3 id="4-6-枚举-Enum"><a href="#4-6-枚举-Enum" class="headerlink" title="4.6    枚举 (Enum)"></a>4.6    枚举 (Enum)</h3><ul>
+<li>对于 Enum 类型和值名称使用 Pascal 大小写。 </li>
+<li>少用缩写。 </li>
+<li>不要在 Enum 类型名称上使用 Enum 后缀。</li>
+</ul>
+<h3 id="4-7-参数"><a href="#4-7-参数" class="headerlink" title="4.7    参数"></a>4.7    参数</h3><ul>
+<li>使用描述性参数名称。参数名称应当具有足够的描述性，以便参数的名称及其类型可用于在大多数情况下确定它的含义。 </li>
+<li>对参数名称使用 Camel 大小写。 </li>
+<li>使用描述参数的含义的名称，而不要使用描述参数的类型的名称。开发工具将提供有关参数的类型的有意义的信息。因此， 通过描述意义，可以更好地使用参数的名称。少用基于类型的参数名称，仅在适合使用它们的地方使用它们。 </li>
+<li>不要使用保留的参数。保留的参数是专用参数，如果需要，可以在未来的版本中公开它们。相反，如果在类库的未来版本中需要更多的数据，请为方法添加新的重载。 </li>
+<li>不要给参数名称加匈牙利语类型表示法的前缀。 </li>
+</ul>
+<h3 id="4-8-方法"><a href="#4-8-方法" class="headerlink" title="4.8    方法"></a>4.8    方法</h3><ul>
+<li>使用动词或动词短语命名方法。 </li>
+<li>使用 Pascal 大小写。</li>
+</ul>
+<h3 id="4-9-属性-property"><a href="#4-9-属性-property" class="headerlink" title="4.9    属性 (property)"></a>4.9    属性 (property)</h3><ul>
+<li>使用名词或名词短语命名属性。 </li>
+<li>使用 Pascal 大小写。 </li>
+<li>不要使用匈牙利语表示法。</li>
+</ul>
+<h3 id="4-10-常量-const"><a href="#4-10-常量-const" class="headerlink" title="4.10    常量 (const)"></a>4.10    常量 (const)</h3><ul>
+<li>所有单词大写，多个单词之间用 “_” 隔开。</li>
+</ul>
+<h3 id="4-11-字段-Field"><a href="#4-11-字段-Field" class="headerlink" title="4.11 字段(Field)"></a>4.11 字段(Field)</h3><ul>
+<li>private、protected 使用 Camel 大小写。</li>
+<li>public 使用 Pascal 大小写。</li>
+<li>为了区分字段和局部变量，建议在首字母前加一下划线_。<br><code>ps</code>：C# 中通常字段只有 private，若需暴露，请使用属性。</li>
+</ul>
+]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;1-格式&quot;&gt;&lt;a href=&quot;#1-格式&quot; class=&quot;headerlink&quot; title=&quot;1 格式&quot;&gt;&lt;/a&gt;1 格式&lt;/h2&gt;
+      &lt;h2 id=&quot;1-规范制定原则&quot;&gt;&lt;a href=&quot;#1-规范制定原则&quot; class=&quot;headerlink&quot; title=&quot;1.    规范制定原则&quot;&gt;&lt;/a&gt;1.    规范制定原则&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;方便代码的交流和维护。&lt;/li&gt;
+&lt;li&gt;不影响编码的效率，不与
     
     </summary>
     
@@ -91,6 +187,8 @@
       <category term="01.CSharp" scheme="http://www.venux.cn/categories/01-%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/01-CSharp/"/>
     
     
+      <category term="C#" scheme="http://www.venux.cn/tags/C/"/>
+    
   </entry>
   
   <entry>
@@ -98,7 +196,7 @@
     <link href="http://www.venux.cn//posts/08.%E6%9E%B6%E6%9E%84/01.DDD/01.%E4%BB%8B%E7%BB%8D/"/>
     <id>http://www.venux.cn//posts/08.架构/01.DDD/01.介绍/</id>
     <published>2018-05-14T03:06:38.000Z</published>
-    <updated>2018-05-25T08:33:09.781Z</updated>
+    <updated>2018-05-25T08:50:55.538Z</updated>
     
     <summary type="html">
     
@@ -118,7 +216,7 @@
     <link href="http://www.venux.cn//posts/01.%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/02.Java/Java-Tomcat/"/>
     <id>http://www.venux.cn//posts/01.编程语言/02.Java/Java-Tomcat/</id>
     <published>2018-04-18T14:13:30.000Z</published>
-    <updated>2018-05-25T08:33:09.614Z</updated>
+    <updated>2018-05-25T08:50:55.451Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1 介绍"></a>1 介绍</h2><p>Apache 基金会下的一款开源的 web 服务器。</p>
 <h2 id="2-下载"><a href="#2-下载" class="headerlink" title="2.下载"></a>2.下载</h2><p><a href="http://tomcat.apache.org/download-90.cgi" target="_blank" rel="external">Tomcat下载</a></p>
@@ -194,7 +292,7 @@
     <link href="http://www.venux.cn//posts/01.%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/02.Java/Java-JSP/"/>
     <id>http://www.venux.cn//posts/01.编程语言/02.Java/Java-JSP/</id>
     <published>2018-04-18T14:05:19.000Z</published>
-    <updated>2018-05-25T08:33:09.611Z</updated>
+    <updated>2018-05-25T08:50:55.438Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1 介绍"></a>1 介绍</h2><p>JSP（Java Server Pages），一种动态网页开发技术，类似于 ASP。通常以<code>&lt;%</code>开头，以<code>%&gt;</code>结尾。</p>
 <a id="more"></a>
@@ -397,7 +495,7 @@
     <link href="http://www.venux.cn//posts/01.%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/02.Java/Java-%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/"/>
     <id>http://www.venux.cn//posts/01.编程语言/02.Java/Java-名词解释/</id>
     <published>2018-04-15T14:19:21.000Z</published>
-    <updated>2018-05-25T08:33:09.628Z</updated>
+    <updated>2018-05-25T08:50:55.455Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-名词解释"><a href="#1-名词解释" class="headerlink" title="1 名词解释"></a>1 名词解释</h2><table>
 <thead>
@@ -485,7 +583,7 @@
     <link href="http://www.venux.cn//posts/01.%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/02.Java/Java-MyBatis/"/>
     <id>http://www.venux.cn//posts/01.编程语言/02.Java/Java-MyBatis/</id>
     <published>2018-04-15T14:17:04.000Z</published>
-    <updated>2018-05-25T08:33:09.613Z</updated>
+    <updated>2018-05-25T08:50:55.449Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1 介绍"></a>1 介绍</h2><p>MyBatis 是一款<strong>持久层框架</strong>，它支持定制化 SQL、存储过程以及高级映射。MyBatis 避免了几乎所有的 JDBC 代码和手动设置参数以及获取结果集。MyBatis 可以使用简单的 XML 或注解来配置和映射原生信息，将接口和 Java 的 POJOs(Plain Old Java Objects,普通的 Java对象)映射成数据库中的记录。</p>
 <a id="more"></a>
@@ -513,7 +611,7 @@
     <link href="http://www.venux.cn//posts/01.%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/02.Java/Java-Maven/"/>
     <id>http://www.venux.cn//posts/01.编程语言/02.Java/Java-Maven/</id>
     <published>2018-04-15T09:36:50.000Z</published>
-    <updated>2018-05-25T08:33:09.612Z</updated>
+    <updated>2018-05-25T08:50:55.441Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1 介绍"></a>1 介绍</h2><p>Maven 是一个项目构建和管理的自动化工具，提供了帮助管理 构建、文档、报告、依赖、scms、发布、分发的方法。可以方便的编译代码、进行依赖管理、管理二进制库等等。</p>
 <p>Maven 使用惯例优于配置的原则 。它要求在没有定制之前，所有的项目都有如下的结构：</p>
@@ -717,7 +815,7 @@
     <link href="http://www.venux.cn//posts/01.%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/02.Java/Java-%E5%8F%8D%E5%B0%84/"/>
     <id>http://www.venux.cn//posts/01.编程语言/02.Java/Java-反射/</id>
     <published>2018-04-09T15:36:43.000Z</published>
-    <updated>2018-05-25T08:33:09.621Z</updated>
+    <updated>2018-05-25T08:50:55.452Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-Class（java-lang-Class）"><a href="#1-Class（java-lang-Class）" class="headerlink" title="1 Class（java.lang.Class）"></a>1 Class（java.lang.Class）</h2><p>该类是反射的核心，获取类的Class对象引用方式：</p>
 <ul>
@@ -779,7 +877,7 @@
     <link href="http://www.venux.cn//posts/01.%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/02.Java/Java-%E9%9B%86%E5%90%88/"/>
     <id>http://www.venux.cn//posts/01.编程语言/02.Java/Java-集合/</id>
     <published>2018-04-09T13:43:16.000Z</published>
-    <updated>2018-05-25T08:33:09.679Z</updated>
+    <updated>2018-05-25T08:50:55.470Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-集合遍历"><a href="#1-集合遍历" class="headerlink" title="1 集合遍历"></a>1 集合遍历</h2><h3 id="1-1-迭代器（实现-Iterator-接口的实例）"><a href="#1-1-迭代器（实现-Iterator-接口的实例）" class="headerlink" title="1.1 迭代器（实现 Iterator 接口的实例）"></a>1.1 迭代器（实现 Iterator<e> 接口的实例）</e></h3><ul>
 <li>检查是否有尚未访问的元素。</li>
@@ -870,7 +968,7 @@
     <link href="http://www.venux.cn//posts/01.%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/02.Java/Java-%E5%90%84%E7%89%88%E6%9C%AC%E6%96%B0%E7%89%B9%E6%80%A7/"/>
     <id>http://www.venux.cn//posts/01.编程语言/02.Java/Java-各版本新特性/</id>
     <published>2018-04-01T14:45:48.000Z</published>
-    <updated>2018-05-25T08:33:09.625Z</updated>
+    <updated>2018-05-25T08:50:55.458Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-Java8-新特性（2014-3-18）"><a href="#1-Java8-新特性（2014-3-18）" class="headerlink" title="1 Java8 新特性（2014/3/18）"></a>1 Java8 新特性（2014/3/18）</h2><ul>
 <li><p><strong>Lambda 表达式</strong> − Lambda允许把函数作为一个方法的参数（函数作为参数传递进方法中。</p>
@@ -947,7 +1045,7 @@
     <link href="http://www.venux.cn//posts/01.%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/02.Java/Java-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%8602/"/>
     <id>http://www.venux.cn//posts/01.编程语言/02.Java/Java-基础知识02/</id>
     <published>2018-03-29T14:01:27.000Z</published>
-    <updated>2018-05-25T08:33:09.649Z</updated>
+    <updated>2018-05-25T08:50:55.463Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-数据结构"><a href="#1-数据结构" class="headerlink" title="1 数据结构"></a>1 数据结构</h2><h3 id="1-1-枚举（Enumeration）"><a href="#1-1-枚举（Enumeration）" class="headerlink" title="1.1 枚举（Enumeration）"></a>1.1 枚举（Enumeration）</h3><p>定义了一种从数据结构中取回连续元素的方式，已被迭代器取代。</p>
 <h3 id="1-2-位集合（BitSet）"><a href="#1-2-位集合（BitSet）" class="headerlink" title="1.2 位集合（BitSet）"></a>1.2 位集合（BitSet）</h3><p>实现了一组可以单独设置和清除的位或标志。该类在处理一组布尔值的时候非常有用，你只需要给每个值赋值一”位”，然后对位进行适当的设置或清除，就可以对布尔值进行操作了。</p>
@@ -1275,7 +1373,7 @@
     <link href="http://www.venux.cn//posts/01.%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/02.Java/Java-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE/"/>
     <id>http://www.venux.cn//posts/01.编程语言/02.Java/Java-环境变量配置/</id>
     <published>2018-03-25T14:42:39.000Z</published>
-    <updated>2018-05-25T08:33:09.676Z</updated>
+    <updated>2018-05-25T08:50:55.467Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-Java下载"><a href="#1-Java下载" class="headerlink" title="1 Java下载"></a>1 <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">Java下载</a></h2><h2 id="2-环境变量配置"><a href="#2-环境变量配置" class="headerlink" title="2 环境变量配置"></a>2 环境变量配置</h2><ol>
 <li><strong>JAVA_HOME</strong>:C:\Program Files\Java\jdk1.8.0_144（注：结尾不加分号）</li>
@@ -1318,7 +1416,7 @@
     <link href="http://www.venux.cn//posts/01.%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/02.Java/Java-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%8601/"/>
     <id>http://www.venux.cn//posts/01.编程语言/02.Java/Java-基础知识01/</id>
     <published>2018-03-25T14:41:06.000Z</published>
-    <updated>2018-05-25T08:33:09.638Z</updated>
+    <updated>2018-05-25T08:50:55.461Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-Hello-World-示例"><a href="#1-Hello-World-示例" class="headerlink" title="1 Hello World 示例"></a>1 Hello World 示例</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</div><div class="line">        System.out.println(<span class="string">"Hello World"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><code>ps:</code></p>
@@ -2447,7 +2545,7 @@
     <link href="http://www.venux.cn//posts/01.%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/01.CSharp/CSharp-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/"/>
     <id>http://www.venux.cn//posts/01.编程语言/01.CSharp/CSharp-垃圾回收/</id>
     <published>2017-12-27T06:50:37.000Z</published>
-    <updated>2018-05-25T08:33:09.574Z</updated>
+    <updated>2018-05-25T08:50:55.429Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-访问资源步骤"><a href="#1-访问资源步骤" class="headerlink" title="1 访问资源步骤"></a>1 访问资源步骤</h2><ol>
 <li>调用 IL 指令 newobj，为代表资源的类型分配内存（C# 一般使用 new）；</li>
@@ -2559,7 +2657,7 @@
     <link href="http://www.venux.cn//posts/09.%E8%81%8C%E4%B8%9A%E7%94%9F%E6%B6%AF/%E6%96%87%E7%AB%A0%E6%94%B6%E8%97%8F/"/>
     <id>http://www.venux.cn//posts/09.职业生涯/文章收藏/</id>
     <published>2017-10-18T12:20:39.000Z</published>
-    <updated>2018-05-25T08:39:11.371Z</updated>
+    <updated>2018-05-25T08:50:55.422Z</updated>
     
     <content type="html"><![CDATA[<h2 id="职业生涯文章收藏"><a href="#职业生涯文章收藏" class="headerlink" title="职业生涯文章收藏"></a>职业生涯文章收藏</h2><ul>
 <li><a href="https://mp.weixin.qq.com/s?__biz=MzIzOTU0NTQ0MA==&amp;mid=2247487544&amp;idx=1&amp;sn=a15c8762edf234e843e11061def8931a" target="_blank" rel="external">程序员吃的是青春饭？本质上取决于……</a></li>
@@ -2587,7 +2685,7 @@
     <link href="http://www.venux.cn//posts/07.%E6%94%B6%E8%97%8F/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/"/>
     <id>http://www.venux.cn//posts/07.收藏/杂七杂八/</id>
     <published>2017-10-18T12:20:39.000Z</published>
-    <updated>2018-05-25T08:33:09.567Z</updated>
+    <updated>2018-05-25T08:50:55.416Z</updated>
     
     <content type="html"><![CDATA[<h2 id="编程思想"><a href="#编程思想" class="headerlink" title="编程思想"></a>编程思想</h2><h3 id="依赖注入（DI）"><a href="#依赖注入（DI）" class="headerlink" title="依赖注入（DI）"></a>依赖注入（DI）</h3><ul>
 <li><a href="https://martinfowler.com/articles/injection.html" target="_blank" rel="external">Inversion of Control Containers and the Dependency Injection pattern by Martin Fowler</a></li>
@@ -2622,7 +2720,7 @@
     <link href="http://www.venux.cn//posts/03.%E5%B7%A5%E5%85%B7/UML/"/>
     <id>http://www.venux.cn//posts/03.工具/UML/</id>
     <published>2017-10-15T08:36:32.000Z</published>
-    <updated>2018-05-25T08:33:09.569Z</updated>
+    <updated>2018-05-25T08:50:55.409Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-UML介绍"><a href="#1-UML介绍" class="headerlink" title="1 UML介绍"></a>1 UML介绍</h2><p>UML(Unified Modeling Language)又称统一建模语言或标准建模语言，一个支持模型化和软件系统开发的图形化语言，为软件开发的所有阶段提供模型化和可视化支持，包括由需求分析到规格，到构造和配置。 </p>
 <a id="more"></a>
@@ -2704,7 +2802,7 @@
     <link href="http://www.venux.cn//posts/06.%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-%E7%BC%93%E5%AD%98/"/>
     <id>http://www.venux.cn//posts/06.解决方案/解决方案-缓存/</id>
     <published>2017-10-15T05:31:10.000Z</published>
-    <updated>2018-05-25T08:33:09.563Z</updated>
+    <updated>2018-05-25T08:50:55.418Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-NoSQL总览"><a href="#1-NoSQL总览" class="headerlink" title="1 NoSQL总览"></a>1 NoSQL总览</h2><h3 id="1-1-介绍"><a href="#1-1-介绍" class="headerlink" title="1.1 介绍"></a>1.1 介绍</h3><p>NoSQL（Not Only SQL）,意即“不仅仅是SQL”，非关系型的数据库</p>
 <h3 id="1-2-分类"><a href="#1-2-分类" class="headerlink" title="1.2 分类"></a>1.2 分类</h3><ul>
@@ -2804,7 +2902,7 @@
     <link href="http://www.venux.cn//posts/06.%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-%E9%AB%98%E5%B9%B6%E5%8F%91%E7%BD%91%E7%AB%99/"/>
     <id>http://www.venux.cn//posts/06.解决方案/解决方案-高并发网站/</id>
     <published>2017-10-15T03:56:20.000Z</published>
-    <updated>2018-05-25T08:33:09.566Z</updated>
+    <updated>2018-05-25T08:50:55.420Z</updated>
     
     <content type="html"><![CDATA[<h2 id="1-服务器"><a href="#1-服务器" class="headerlink" title="1 服务器"></a>1 服务器</h2><ul>
 <li>使用高性能CPU主机</li>
