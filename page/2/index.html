@@ -334,7 +334,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/2018/03/25/Java环境变量配置/">
+    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/posts/01.编程语言/02.Java/Java-各版本新特性/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="祥_venux">
@@ -353,7 +353,400 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/25/Java环境变量配置/" itemprop="url">Java环境变量配置</a></h1>
+                <a class="post-title-link" href="/posts/01.编程语言/02.Java/Java-各版本新特性/" itemprop="url">Java各版本新特性</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-01T22:45:48+08:00">
+                2018-04-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/01-编程语言/" itemprop="url" rel="index">
+                    <span itemprop="name">01.编程语言</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/01-编程语言/02-Java/" itemprop="url" rel="index">
+                    <span itemprop="name">02.Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/01.编程语言/02.Java/Java-各版本新特性/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="/posts/01.编程语言/02.Java/Java-各版本新特性/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/posts/01.编程语言/02.Java/Java-各版本新特性/" class="leancloud_visitors" data-flag-title="Java各版本新特性">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="1-Java8-新特性（2014-3-18）"><a href="#1-Java8-新特性（2014-3-18）" class="headerlink" title="1 Java8 新特性（2014/3/18）"></a>1 Java8 新特性（2014/3/18）</h2><ul>
+<li><p><strong>Lambda 表达式</strong> − Lambda允许把函数作为一个方法的参数（函数作为参数传递进方法中。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 使用 java 7 排序</span></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">sortUsingJava7</span><span class="params">(List&lt;String&gt; names)</span></span>&#123;   </div><div class="line">  Collections.sort(names, <span class="keyword">new</span> Comparator&lt;String&gt;() &#123;</div><div class="line">      <span class="meta">@Override</span></div><div class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(String s1, String s2)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> s1.compareTo(s2);</div><div class="line">      &#125;</div><div class="line">  &#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 使用 java 8 排序</span></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">sortUsingJava8</span><span class="params">(List&lt;String&gt; names)</span></span>&#123;</div><div class="line">  Collections.sort(names, (s1, s2) -&gt; s1.compareTo(s2));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>方法引用</strong> − 方法引用提供了非常有用的语法，可以直接引用已有Java类或对象（实例）的方法或构造器。与lambda联合使用，方法引用可以使语言的构造更紧凑简洁，减少冗余代码。</p>
+</li>
+<li><p><strong>默认方法</strong> − 默认方法就是一个在接口里面有了一个实现的方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Java8Tester</span> </span>&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span>&#123;</div><div class="line">      Vehicle vehicle = <span class="keyword">new</span> Car();</div><div class="line">      vehicle.print();</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Vehicle</span> </span>&#123;</div><div class="line">   <span class="function"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</div><div class="line">      System.out.println(<span class="string">"我是一辆车!"</span>);</div><div class="line">   &#125;</div><div class="line">    </div><div class="line">   <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">blowHorn</span><span class="params">()</span></span>&#123;</div><div class="line">      System.out.println(<span class="string">"按喇叭!!!"</span>);</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="class"><span class="keyword">interface</span> <span class="title">FourWheeler</span> </span>&#123;</div><div class="line">   <span class="function"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</div><div class="line">      System.out.println(<span class="string">"我是一辆四轮车!"</span>);</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span> <span class="keyword">implements</span> <span class="title">Vehicle</span>, <span class="title">FourWheeler</span> </span>&#123;</div><div class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</div><div class="line">      Vehicle.<span class="keyword">super</span>.print();</div><div class="line">      FourWheeler.<span class="keyword">super</span>.print();</div><div class="line">      Vehicle.blowHorn();</div><div class="line">      System.out.println(<span class="string">"我是一辆汽车!"</span>);</div><div class="line">   &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>新工具 − 新的编译工具，如：Nashorn引擎 jjs、 类依赖分析器jdeps。</p>
+</li>
+<li><p><strong>Stream API（链式编程）</strong> −新添加的Stream API（java.util.stream） 把真正的函数式编程风格引入到Java中。</p>
+<ul>
+<li>元素是特定类型的对象，形成一个队列。 Java中的Stream并不会存储元素，而是按需计算。</li>
+<li>数据源 流的来源。 可以是集合，数组，I/O channel， 产生器generator 等。</li>
+<li>聚合操作 类似SQL语句一样的操作， 比如filter, map, reduce, find, match, sorted等。  </li>
+<li>Pipelining: 中间操作都会返回流对象本身。 这样多个操作可以串联成一个管道， 如同流式风格（fluent style）。 这样做可以对操作进行优化， 比如延迟执行(laziness)和短路( short-circuiting)。</li>
+<li>内部迭代： 以前对集合遍历都是通过Iterator或者For-Each的方式, 显式的在集合外部进行迭代， 这叫做外部迭代。 Stream提供了内部迭代的方式， 通过访问者模式(Visitor)实现。<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">List&lt;String&gt;strings = Arrays.asList(<span class="string">"abc"</span>, <span class="string">""</span>, <span class="string">"bc"</span>, <span class="string">"efg"</span>, <span class="string">"abcd"</span>,<span class="string">""</span>, <span class="string">"jkl"</span>);</div><div class="line">List&lt;String&gt; filtered = strings.stream()</div><div class="line">                                .filter(string -&gt; !string.isEmpty())</div><div class="line">                                .collect(Collectors.toList());</div><div class="line"> </div><div class="line">System.out.println(<span class="string">"筛选列表: "</span> + filtered);</div><div class="line">String mergedString = strings.stream()</div><div class="line">                              .filter(string -&gt; !string.isEmpty())</div><div class="line">                              .collect(Collectors.joining(<span class="string">", "</span>));</div><div class="line">System.out.println(<span class="string">"合并字符串: "</span> + mergedString);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Date Time API − 加强对日期与时间的处理。</p>
+</li>
+<li>Optional 类 − Optional 类已经成为 Java 8 类库的一部分，用来解决空指针异常。</li>
+<li>Nashorn, JavaScript 引擎 − Java 8提供了一个新的Nashorn javascript引擎，它允许我们在JVM上运行特定的javascript应用。</li>
+</ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/posts/01.编程语言/02.Java/Java-各版本新特性/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/posts/01.编程语言/02.Java/Java-基础知识02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="祥_venux">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="祥_venux">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/01.编程语言/02.Java/Java-基础知识02/" itemprop="url">Java基础知识02</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-29T22:01:27+08:00">
+                2018-03-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/01-编程语言/" itemprop="url" rel="index">
+                    <span itemprop="name">01.编程语言</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/01-编程语言/02-Java/" itemprop="url" rel="index">
+                    <span itemprop="name">02.Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/01.编程语言/02.Java/Java-基础知识02/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="/posts/01.编程语言/02.Java/Java-基础知识02/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/posts/01.编程语言/02.Java/Java-基础知识02/" class="leancloud_visitors" data-flag-title="Java基础知识02">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="1-数据结构"><a href="#1-数据结构" class="headerlink" title="1 数据结构"></a>1 数据结构</h2><h3 id="1-1-枚举（Enumeration）"><a href="#1-1-枚举（Enumeration）" class="headerlink" title="1.1 枚举（Enumeration）"></a>1.1 枚举（Enumeration）</h3><p>定义了一种从数据结构中取回连续元素的方式，已被迭代器取代。</p>
+<h3 id="1-2-位集合（BitSet）"><a href="#1-2-位集合（BitSet）" class="headerlink" title="1.2 位集合（BitSet）"></a>1.2 位集合（BitSet）</h3><p>实现了一组可以单独设置和清除的位或标志。该类在处理一组布尔值的时候非常有用，你只需要给每个值赋值一”位”，然后对位进行适当的设置或清除，就可以对布尔值进行操作了。</p>
+<h3 id="1-3-向量（Vector）"><a href="#1-3-向量（Vector）" class="headerlink" title="1.3 向量（Vector）"></a>1.3 向量（Vector）</h3><ul>
+<li>向量（Vector）类和传统数组非常相似，但是Vector的大小能根据需要动态的变化。</li>
+<li>和数组一样，Vector对象的元素也能通过索引访问。</li>
+<li>使用Vector类最主要的好处就是在创建对象的时候不必给对象指定大小，它的大小会根据需要动态的变化。</li>
+</ul>
+<h3 id="1-4-栈（Stack）"><a href="#1-4-栈（Stack）" class="headerlink" title="1.4 栈（Stack）"></a>1.4 栈（Stack）</h3><p>栈（Stack）实现了一个后进先出（LIFO）的数据结构。</p>
+<h3 id="1-5-字典（Dictionary）（已过时，使用Map接口替代）"><a href="#1-5-字典（Dictionary）（已过时，使用Map接口替代）" class="headerlink" title="1.5 字典（Dictionary）（已过时，使用Map接口替代）"></a>1.5 字典（Dictionary）（已过时，使用Map接口替代）</h3><p>字典（Dictionary） 类是一个<strong>抽象类</strong>，它定义了键映射到值的数据结构。</p>
+<h3 id="1-6-哈希表（Hashtable）"><a href="#1-6-哈希表（Hashtable）" class="headerlink" title="1.6 哈希表（Hashtable）"></a>1.6 哈希表（Hashtable）</h3><p>Hashtable类提供了一种在用户定义键结构的基础上来组织数据的手段。</p>
+<h3 id="1-7-属性（Properties）"><a href="#1-7-属性（Properties）" class="headerlink" title="1.7 属性（Properties）"></a>1.7 属性（Properties）</h3><p>Properties 继承于 Hashtable.Properties 类表示了一个持久的属性集.属性列表中每个键及其对应值都是一个字符串。Properties 类被许多Java类使用。例如，在获取环境变量时它就作为System.getProperties()方法的返回值。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/posts/01.编程语言/02.Java/Java-基础知识02/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/posts/01.编程语言/02.Java/Java-环境变量配置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="祥_venux">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="祥_venux">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/01.编程语言/02.Java/Java-环境变量配置/" itemprop="url">Java环境变量配置</a></h1>
         
 
         <div class="post-meta">
@@ -388,8 +781,19 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
+                  <a href="/categories/01-编程语言/" itemprop="url" rel="index">
+                    <span itemprop="name">01.编程语言</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/01-编程语言/02-Java/" itemprop="url" rel="index">
+                    <span itemprop="name">02.Java</span>
                   </a>
                 </span>
 
@@ -406,9 +810,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/03/25/Java环境变量配置/#comments" itemprop="discussionUrl">
+                <a href="/posts/01.编程语言/02.Java/Java-环境变量配置/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/03/25/Java环境变量配置/" itemprop="commentCount"></span>
+                        data-disqus-identifier="/posts/01.编程语言/02.Java/Java-环境变量配置/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -416,7 +820,7 @@
 
           
           
-             <span id="/2018/03/25/Java环境变量配置/" class="leancloud_visitors" data-flag-title="Java环境变量配置">
+             <span id="/posts/01.编程语言/02.Java/Java-环境变量配置/" class="leancloud_visitors" data-flag-title="Java环境变量配置">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -460,7 +864,7 @@
 </ul>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/25/Java环境变量配置/#more" rel="contents">
+            <a class="btn" href="/posts/01.编程语言/02.Java/Java-环境变量配置/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -511,7 +915,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/2018/03/25/Java基础知识01/">
+    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/posts/01.编程语言/02.Java/Java-基础知识01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="祥_venux">
@@ -530,7 +934,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/03/25/Java基础知识01/" itemprop="url">Java基础知识01</a></h1>
+                <a class="post-title-link" href="/posts/01.编程语言/02.Java/Java-基础知识01/" itemprop="url">Java基础知识01</a></h1>
         
 
         <div class="post-meta">
@@ -565,8 +969,19 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
+                  <a href="/categories/01-编程语言/" itemprop="url" rel="index">
+                    <span itemprop="name">01.编程语言</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/01-编程语言/02-Java/" itemprop="url" rel="index">
+                    <span itemprop="name">02.Java</span>
                   </a>
                 </span>
 
@@ -583,9 +998,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/03/25/Java基础知识01/#comments" itemprop="discussionUrl">
+                <a href="/posts/01.编程语言/02.Java/Java-基础知识01/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/03/25/Java基础知识01/" itemprop="commentCount"></span>
+                        data-disqus-identifier="/posts/01.编程语言/02.Java/Java-基础知识01/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -593,7 +1008,7 @@
 
           
           
-             <span id="/2018/03/25/Java基础知识01/" class="leancloud_visitors" data-flag-title="Java基础知识01">
+             <span id="/posts/01.编程语言/02.Java/Java-基础知识01/" class="leancloud_visitors" data-flag-title="Java基础知识01">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -634,7 +1049,7 @@
 </ul>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/03/25/Java基础知识01/#more" rel="contents">
+            <a class="btn" href="/posts/01.编程语言/02.Java/Java-基础知识01/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -685,7 +1100,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/2017/12/27/CLR-21垃圾回收/">
+    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/posts/01.编程语言/01.CSharp/CSharp-垃圾回收/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="祥_venux">
@@ -704,7 +1119,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/12/27/CLR-21垃圾回收/" itemprop="url">CLR-21垃圾回收</a></h1>
+                <a class="post-title-link" href="/posts/01.编程语言/01.CSharp/CSharp-垃圾回收/" itemprop="url">CLR-21垃圾回收</a></h1>
         
 
         <div class="post-meta">
@@ -739,8 +1154,19 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CLR/" itemprop="url" rel="index">
-                    <span itemprop="name">CLR</span>
+                  <a href="/categories/01-编程语言/" itemprop="url" rel="index">
+                    <span itemprop="name">01.编程语言</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/01-编程语言/01-CSharp/" itemprop="url" rel="index">
+                    <span itemprop="name">01.CSharp</span>
                   </a>
                 </span>
 
@@ -757,9 +1183,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/12/27/CLR-21垃圾回收/#comments" itemprop="discussionUrl">
+                <a href="/posts/01.编程语言/01.CSharp/CSharp-垃圾回收/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/12/27/CLR-21垃圾回收/" itemprop="commentCount"></span>
+                        data-disqus-identifier="/posts/01.编程语言/01.CSharp/CSharp-垃圾回收/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -767,7 +1193,7 @@
 
           
           
-             <span id="/2017/12/27/CLR-21垃圾回收/" class="leancloud_visitors" data-flag-title="CLR-21垃圾回收">
+             <span id="/posts/01.编程语言/01.CSharp/CSharp-垃圾回收/" class="leancloud_visitors" data-flag-title="CLR-21垃圾回收">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -807,7 +1233,7 @@
 <li>释放内存（垃圾回收）。
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/12/27/CLR-21垃圾回收/#more" rel="contents">
+            <a class="btn" href="/posts/01.编程语言/01.CSharp/CSharp-垃圾回收/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -858,7 +1284,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/2017/10/18/收藏/">
+    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/posts/09.职业生涯/文章收藏/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="祥_venux">
@@ -877,7 +1303,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/18/收藏/" itemprop="url">收藏</a></h1>
+                <a class="post-title-link" href="/posts/09.职业生涯/文章收藏/" itemprop="url">职业生涯相关文章收藏</a></h1>
         
 
         <div class="post-meta">
@@ -912,8 +1338,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/其他/" itemprop="url" rel="index">
-                    <span itemprop="name">其他</span>
+                  <a href="/categories/09-职业生涯/" itemprop="url" rel="index">
+                    <span itemprop="name">09.职业生涯</span>
                   </a>
                 </span>
 
@@ -930,9 +1356,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/10/18/收藏/#comments" itemprop="discussionUrl">
+                <a href="/posts/09.职业生涯/文章收藏/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/18/收藏/" itemprop="commentCount"></span>
+                        data-disqus-identifier="/posts/09.职业生涯/文章收藏/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -940,7 +1366,173 @@
 
           
           
-             <span id="/2017/10/18/收藏/" class="leancloud_visitors" data-flag-title="收藏">
+             <span id="/posts/09.职业生涯/文章收藏/" class="leancloud_visitors" data-flag-title="职业生涯相关文章收藏">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="职业生涯文章收藏"><a href="#职业生涯文章收藏" class="headerlink" title="职业生涯文章收藏"></a>职业生涯文章收藏</h2><ul>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzIzOTU0NTQ0MA==&amp;mid=2247487544&amp;idx=1&amp;sn=a15c8762edf234e843e11061def8931a" target="_blank" rel="external">程序员吃的是青春饭？本质上取决于……</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/posts/07.收藏/杂七杂八/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="祥_venux">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="祥_venux">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/07.收藏/杂七杂八/" itemprop="url">收藏</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-18T20:20:39+08:00">
+                2017-10-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/07-收藏/" itemprop="url" rel="index">
+                    <span itemprop="name">07.收藏</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/07.收藏/杂七杂八/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="/posts/07.收藏/杂七杂八/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/posts/07.收藏/杂七杂八/" class="leancloud_visitors" data-flag-title="收藏">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1034,7 +1626,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/2017/10/15/UML笔记/">
+    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/posts/03.工具/UML/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="祥_venux">
@@ -1053,7 +1645,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/15/UML笔记/" itemprop="url">UML</a></h1>
+                <a class="post-title-link" href="/posts/03.工具/UML/" itemprop="url">UML</a></h1>
         
 
         <div class="post-meta">
@@ -1088,8 +1680,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/工具/" itemprop="url" rel="index">
-                    <span itemprop="name">工具</span>
+                  <a href="/categories/03-工具/" itemprop="url" rel="index">
+                    <span itemprop="name">03.工具</span>
                   </a>
                 </span>
 
@@ -1106,9 +1698,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/10/15/UML笔记/#comments" itemprop="discussionUrl">
+                <a href="/posts/03.工具/UML/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/15/UML笔记/" itemprop="commentCount"></span>
+                        data-disqus-identifier="/posts/03.工具/UML/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1116,7 +1708,7 @@
 
           
           
-             <span id="/2017/10/15/UML笔记/" class="leancloud_visitors" data-flag-title="UML">
+             <span id="/posts/03.工具/UML/" class="leancloud_visitors" data-flag-title="UML">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1151,7 +1743,7 @@
           <h2 id="1-UML介绍"><a href="#1-UML介绍" class="headerlink" title="1 UML介绍"></a>1 UML介绍</h2><p>UML(Unified Modeling Language)又称统一建模语言或标准建模语言，一个支持模型化和软件系统开发的图形化语言，为软件开发的所有阶段提供模型化和可视化支持，包括由需求分析到规格，到构造和配置。 </p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/10/15/UML笔记/#more" rel="contents">
+            <a class="btn" href="/posts/03.工具/UML/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1202,7 +1794,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/2017/10/15/缓存解决方案/">
+    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/posts/06.解决方案/解决方案-缓存/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="祥_venux">
@@ -1221,7 +1813,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/15/缓存解决方案/" itemprop="url">缓存解决方案</a></h1>
+                <a class="post-title-link" href="/posts/06.解决方案/解决方案-缓存/" itemprop="url">缓存解决方案</a></h1>
         
 
         <div class="post-meta">
@@ -1256,8 +1848,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/架构/" itemprop="url" rel="index">
-                    <span itemprop="name">架构</span>
+                  <a href="/categories/06-解决方案/" itemprop="url" rel="index">
+                    <span itemprop="name">06.解决方案</span>
                   </a>
                 </span>
 
@@ -1274,9 +1866,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/10/15/缓存解决方案/#comments" itemprop="discussionUrl">
+                <a href="/posts/06.解决方案/解决方案-缓存/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/15/缓存解决方案/" itemprop="commentCount"></span>
+                        data-disqus-identifier="/posts/06.解决方案/解决方案-缓存/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1284,7 +1876,7 @@
 
           
           
-             <span id="/2017/10/15/缓存解决方案/" class="leancloud_visitors" data-flag-title="缓存解决方案">
+             <span id="/posts/06.解决方案/解决方案-缓存/" class="leancloud_visitors" data-flag-title="缓存解决方案">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1325,7 +1917,7 @@
 </ul>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017/10/15/缓存解决方案/#more" rel="contents">
+            <a class="btn" href="/posts/06.解决方案/解决方案-缓存/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1376,7 +1968,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/2017/10/15/高并发网站解决方案/">
+    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/posts/06.解决方案/解决方案-高并发网站/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="祥_venux">
@@ -1395,7 +1987,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/15/高并发网站解决方案/" itemprop="url">高并发网站解决方案</a></h1>
+                <a class="post-title-link" href="/posts/06.解决方案/解决方案-高并发网站/" itemprop="url">高并发网站解决方案</a></h1>
         
 
         <div class="post-meta">
@@ -1430,8 +2022,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/架构/" itemprop="url" rel="index">
-                    <span itemprop="name">架构</span>
+                  <a href="/categories/06-解决方案/" itemprop="url" rel="index">
+                    <span itemprop="name">06.解决方案</span>
                   </a>
                 </span>
 
@@ -1448,9 +2040,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/10/15/高并发网站解决方案/#comments" itemprop="discussionUrl">
+                <a href="/posts/06.解决方案/解决方案-高并发网站/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/15/高并发网站解决方案/" itemprop="commentCount"></span>
+                        data-disqus-identifier="/posts/06.解决方案/解决方案-高并发网站/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1458,7 +2050,7 @@
 
           
           
-             <span id="/2017/10/15/高并发网站解决方案/" class="leancloud_visitors" data-flag-title="高并发网站解决方案">
+             <span id="/posts/06.解决方案/解决方案-高并发网站/" class="leancloud_visitors" data-flag-title="高并发网站解决方案">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -1566,557 +2158,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/2017/10/13/线程笔记/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="祥_venux">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head2.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="祥_venux">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/13/线程笔记/" itemprop="url">线程笔记</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-13T19:26:03+08:00">
-                2017-10-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ASP-NET/" itemprop="url" rel="index">
-                    <span itemprop="name">ASP.NET</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ASP-NET/基础/" itemprop="url" rel="index">
-                    <span itemprop="name">基础</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/10/13/线程笔记/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/13/线程笔记/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/10/13/线程笔记/" class="leancloud_visitors" data-flag-title="线程笔记">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="1-基础知识"><a href="#1-基础知识" class="headerlink" title="1 基础知识"></a>1 基础知识</h2><h3 id="1-1-进程-amp-线程"><a href="#1-1-进程-amp-线程" class="headerlink" title="1.1 进程&amp;线程"></a>1.1 进程&amp;线程</h3><ul>
-<li><strong>进程</strong>：应用程序的实例要使用的资源的集合。<ul>
-<li>每个进程都被赋予一个虚拟地址空间，确保进程中的数据和代码无法由另一个进程访问，确保了应用程序实例的健壮性；</li>
-<li>进程无法访问OS内核代码，保证系统稳定性和安全性。</li>
-</ul>
-</li>
-<li>线程
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/13/线程笔记/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/2017/10/10/面试/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="祥_venux">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head2.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="祥_venux">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/10/面试/" itemprop="url">面试</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-10T20:03:44+08:00">
-                2017-10-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/面试/" itemprop="url" rel="index">
-                    <span itemprop="name">面试</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/10/10/面试/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/10/10/面试/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/10/10/面试/" class="leancloud_visitors" data-flag-title="面试">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="1-C-和-NET"><a href="#1-C-和-NET" class="headerlink" title="1. C#和.NET"></a>1. C#和.NET</h2><h3 id="1-1-C-基础知识"><a href="#1-1-C-基础知识" class="headerlink" title="1.1 C#基础知识"></a>1.1 C#基础知识</h3><h4 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h4><ul>
-<li>private【Private】 私有（定义类型、嵌套类型）</li>
-<li>protected【Family】 保护（定义类型、嵌套类型、不同程序集中的派生类型）</li>
-<li>C#不支持【Family and Assembly】（定义类型、嵌套类型、同一程序集中的派生类型）</li>
-<li>internal【Assembly】 内部（同一程序集中的所有类型）</li>
-<li>protected internal【Family or Assembly】（定义类型、嵌套类型、同一程序集中的所有类型，不同程序集中的派生类型）</li>
-<li>public【Public】 公有</li>
-</ul>
-<p><em>PS：</em></p>
-<ul>
-<li>【】中为CLR术语。</li>
-<li><code>C#</code>派生类型重写基类型定义的成员，<code>C#编译器</code>要求两者具有相同可访问性，<code>CLR</code>允许放宽但不允许收紧成员的可访问性。</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/10/面试/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/2017/09/18/JavaEE开发环境搭建/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="祥_venux">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head2.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="祥_venux">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/18/JavaEE开发环境搭建/" itemprop="url">JavaEEE开发环境搭建</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-18T18:46:11+08:00">
-                2017-09-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/09/18/JavaEE开发环境搭建/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2017/09/18/JavaEE开发环境搭建/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2017/09/18/JavaEE开发环境搭建/" class="leancloud_visitors" data-flag-title="JavaEEE开发环境搭建">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="1-Java环境"><a href="#1-Java环境" class="headerlink" title="1.Java环境"></a>1.Java环境</h2><h3 id="1-1-Java下载"><a href="#1-1-Java下载" class="headerlink" title="1.1 Java下载"></a>1.1 <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">Java下载</a></h3><h3 id="1-2-环境变量配置"><a href="#1-2-环境变量配置" class="headerlink" title="1.2 环境变量配置"></a>1.2 环境变量配置</h3><ol>
-<li><strong>JAVA_HOME</strong>:C:\Program Files\Java\jdk1.8.0_144（注：结尾不加分号）</li>
-<li><strong>PATH</strong>:%JAVA_HOME%\bin;</li>
-<li><strong>CLASS_PATH</strong>:.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;</li>
-</ol>
-<h3 id="1-3-测试"><a href="#1-3-测试" class="headerlink" title="1.3 测试"></a>1.3 测试</h3><ul>
-<li><strong>java-version</strong>:版本号</li>
-<li><strong>java</strong>:Java环境</li>
-<li><strong>javac</strong>:Java编译器</li>
-</ul>
-<h3 id="1-4-Eclipse集成"><a href="#1-4-Eclipse集成" class="headerlink" title="1.4 Eclipse集成"></a>1.4 Eclipse集成</h3><ul>
-<li><strong>默认</strong>：Eclipse 会自动关联环境变量中配置的 JDK。</li>
-<li><strong>手动</strong>：“Window”–“Preferences”–“Java”–“Installed JREs”–“Add”–“Standard VM”–选择jdk安装目录。 （多个版本的JDK手工进行配置）</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/09/18/JavaEE开发环境搭建/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2164,7 +2210,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">38</span>
+                <span class="site-state-item-count">41</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2175,7 +2221,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -2186,7 +2232,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-count">27</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

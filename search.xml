@@ -3,13 +3,85 @@
   
     
     <entry>
+      <title><![CDATA[CSharp与Java对比]]></title>
+      <url>//posts/01.%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/04.%E5%85%B6%E4%BB%96/CSharp%E4%B8%8EJava%E5%AF%B9%E6%AF%94/</url>
+      <content type="html"><![CDATA[<h2 id="1-代码风格"><a href="#1-代码风格" class="headerlink" title="1.代码风格"></a>1.代码风格</h2><h3 id="1-1-命名规范"><a href="#1-1-命名规范" class="headerlink" title="1.1 命名规范"></a>1.1 命名规范</h3><h4 id="1-1-1-接口"><a href="#1-1-1-接口" class="headerlink" title="1.1.1 接口"></a>1.1.1 接口</h4><table>
+<thead>
+<tr>
+<th>分类</th>
+<th>详细</th>
+<th>C#</th>
+<th>Java</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>命名</td>
+<td>接口</td>
+<td>前缀I</td>
+<td>无</td>
+</tr>
+<tr>
+<td>命名</td>
+<td>接口实现</td>
+<td>无</td>
+<td>后缀Impl</td>
+</tr>
+<tr>
+<td>命名</td>
+<td>抽象类</td>
+<td>前缀Base</td>
+<td>前缀Abstract</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      
+        <categories>
+            
+            <category> 01.编程语言 </category>
+            
+            <category> 04.其他 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> C# </tag>
+            
+            <tag> Java </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[CSharp-代码规范]]></title>
+      <url>//posts/01.%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/01.CSharp/CSharp-%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83/</url>
+      <content type="html"><![CDATA[<h2 id="1-格式"><a href="#1-格式" class="headerlink" title="1 格式"></a>1 格式</h2>]]></content>
+      
+        <categories>
+            
+            <category> 01.编程语言 </category>
+            
+            <category> 01.CSharp </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[DDD-01介绍]]></title>
-      <url>/2018/05/14/DDD-01%E4%BB%8B%E7%BB%8D/</url>
+      <url>//posts/08.%E6%9E%B6%E6%9E%84/01.DDD/01.%E4%BB%8B%E7%BB%8D/</url>
       <content type="html"></content>
       
         <categories>
             
-            <category> DDD </category>
+            <category> 08.架构 </category>
+            
+            <category> 01.DDD </category>
             
         </categories>
         
@@ -24,7 +96,7 @@
     
     <entry>
       <title><![CDATA[java-Tomcat]]></title>
-      <url>/2018/04/18/java-Tomcat/</url>
+      <url>//posts/01.%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/02.Java/Java-Tomcat/</url>
       <content type="html"><![CDATA[<h2 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1 介绍"></a>1 介绍</h2><p>Apache 基金会下的一款开源的 web 服务器。</p>
 <h2 id="2-下载"><a href="#2-下载" class="headerlink" title="2.下载"></a>2.下载</h2><p><a href="http://tomcat.apache.org/download-90.cgi" target="_blank" rel="external">Tomcat下载</a></p>
 <h2 id="3-安装"><a href="#3-安装" class="headerlink" title="3. 安装"></a>3. 安装</h2><p>解压缩到指定目录</p>
@@ -57,7 +129,9 @@
       
         <categories>
             
-            <category> Java </category>
+            <category> 01.编程语言 </category>
+            
+            <category> 02.Java </category>
             
         </categories>
         
@@ -72,7 +146,7 @@
     
     <entry>
       <title><![CDATA[java-JSP]]></title>
-      <url>/2018/04/18/java-JSP/</url>
+      <url>//posts/01.%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/02.Java/Java-JSP/</url>
       <content type="html"><![CDATA[<h2 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1 介绍"></a>1 介绍</h2><p>JSP（Java Server Pages），一种动态网页开发技术，类似于 ASP。通常以<code>&lt;%</code>开头，以<code>%&gt;</code>结尾。</p>
 <a id="more"></a>
 <h2 id="2-特点（与CGI对比）"><a href="#2-特点（与CGI对比）" class="headerlink" title="2 特点（与CGI对比）"></a>2 特点（与CGI对比）</h2><ul>
@@ -256,7 +330,9 @@
       
         <categories>
             
-            <category> Java </category>
+            <category> 01.编程语言 </category>
+            
+            <category> 02.Java </category>
             
         </categories>
         
@@ -271,7 +347,7 @@
     
     <entry>
       <title><![CDATA[java-名词解释]]></title>
-      <url>/2018/04/15/java-%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/</url>
+      <url>//posts/01.%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/02.Java/Java-%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A/</url>
       <content type="html"><![CDATA[<h2 id="1-名词解释"><a href="#1-名词解释" class="headerlink" title="1 名词解释"></a>1 名词解释</h2><table>
 <thead>
 <tr>
@@ -310,7 +386,9 @@
       
         <categories>
             
-            <category> Java </category>
+            <category> 01.编程语言 </category>
+            
+            <category> 02.Java </category>
             
         </categories>
         
@@ -325,7 +403,7 @@
     
     <entry>
       <title><![CDATA[java-MyBatis]]></title>
-      <url>/2018/04/15/java-MyBatis/</url>
+      <url>//posts/01.%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/02.Java/Java-MyBatis/</url>
       <content type="html"><![CDATA[<h2 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1 介绍"></a>1 介绍</h2><p>MyBatis 是一款<strong>持久层框架</strong>，它支持定制化 SQL、存储过程以及高级映射。MyBatis 避免了几乎所有的 JDBC 代码和手动设置参数以及获取结果集。MyBatis 可以使用简单的 XML 或注解来配置和映射原生信息，将接口和 Java 的 POJOs(Plain Old Java Objects,普通的 Java对象)映射成数据库中的记录。</p>
 <a id="more"></a>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>1 <a href="http://www.venux.cn">博客</a></p>
@@ -334,7 +412,9 @@
       
         <categories>
             
-            <category> Java </category>
+            <category> 01.编程语言 </category>
+            
+            <category> 02.Java </category>
             
         </categories>
         
@@ -349,7 +429,7 @@
     
     <entry>
       <title><![CDATA[java-Maven]]></title>
-      <url>/2018/04/15/java-Maven/</url>
+      <url>//posts/01.%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/02.Java/Java-Maven/</url>
       <content type="html"><![CDATA[<h2 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1 介绍"></a>1 介绍</h2><p>Maven 是一个项目构建和管理的自动化工具，提供了帮助管理 构建、文档、报告、依赖、scms、发布、分发的方法。可以方便的编译代码、进行依赖管理、管理二进制库等等。</p>
 <p>Maven 使用惯例优于配置的原则 。它要求在没有定制之前，所有的项目都有如下的结构：</p>
 <table>
@@ -500,7 +580,9 @@
       
         <categories>
             
-            <category> Java </category>
+            <category> 01.编程语言 </category>
+            
+            <category> 02.Java </category>
             
         </categories>
         
@@ -517,7 +599,7 @@
     
     <entry>
       <title><![CDATA[java-反射]]></title>
-      <url>/2018/04/09/java-%E5%8F%8D%E5%B0%84/</url>
+      <url>//posts/01.%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/02.Java/Java-%E5%8F%8D%E5%B0%84/</url>
       <content type="html"><![CDATA[<h2 id="1-Class（java-lang-Class）"><a href="#1-Class（java-lang-Class）" class="headerlink" title="1 Class（java.lang.Class）"></a>1 Class（java.lang.Class）</h2><p>该类是反射的核心，获取类的Class对象引用方式：</p>
 <ul>
 <li>使用类文字，如Test.class、double.class（等价于Doubel.TYPE）和void.class；</li>
@@ -555,7 +637,9 @@
       
         <categories>
             
-            <category> Java </category>
+            <category> 01.编程语言 </category>
+            
+            <category> 02.Java </category>
             
         </categories>
         
@@ -570,7 +654,7 @@
     
     <entry>
       <title><![CDATA[java-集合]]></title>
-      <url>/2018/04/09/java-%E9%9B%86%E5%90%88/</url>
+      <url>//posts/01.%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/02.Java/Java-%E9%9B%86%E5%90%88/</url>
       <content type="html"><![CDATA[<h2 id="1-集合遍历"><a href="#1-集合遍历" class="headerlink" title="1 集合遍历"></a>1 集合遍历</h2><h3 id="1-1-迭代器（实现-Iterator-接口的实例）"><a href="#1-1-迭代器（实现-Iterator-接口的实例）" class="headerlink" title="1.1 迭代器（实现 Iterator 接口的实例）"></a>1.1 迭代器（实现 Iterator<e> 接口的实例）</e></h3><ul>
 <li>检查是否有尚未访问的元素。</li>
 <li>访问集合中的下一个元素。</li>
@@ -630,7 +714,9 @@
       
         <categories>
             
-            <category> Java </category>
+            <category> 01.编程语言 </category>
+            
+            <category> 02.Java </category>
             
         </categories>
         
@@ -645,7 +731,7 @@
     
     <entry>
       <title><![CDATA[Java各版本新特性]]></title>
-      <url>/2018/04/01/Java%E5%90%84%E7%89%88%E6%9C%AC%E6%96%B0%E7%89%B9%E6%80%A7/</url>
+      <url>//posts/01.%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/02.Java/Java-%E5%90%84%E7%89%88%E6%9C%AC%E6%96%B0%E7%89%B9%E6%80%A7/</url>
       <content type="html"><![CDATA[<h2 id="1-Java8-新特性（2014-3-18）"><a href="#1-Java8-新特性（2014-3-18）" class="headerlink" title="1 Java8 新特性（2014/3/18）"></a>1 Java8 新特性（2014/3/18）</h2><ul>
 <li><p><strong>Lambda 表达式</strong> − Lambda允许把函数作为一个方法的参数（函数作为参数传递进方法中。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 使用 java 7 排序</span></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">sortUsingJava7</span><span class="params">(List&lt;String&gt; names)</span></span>&#123;   </div><div class="line">  Collections.sort(names, <span class="keyword">new</span> Comparator&lt;String&gt;() &#123;</div><div class="line">      <span class="meta">@Override</span></div><div class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(String s1, String s2)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> s1.compareTo(s2);</div><div class="line">      &#125;</div><div class="line">  &#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 使用 java 8 排序</span></div><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">sortUsingJava8</span><span class="params">(List&lt;String&gt; names)</span></span>&#123;</div><div class="line">  Collections.sort(names, (s1, s2) -&gt; s1.compareTo(s2));</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -678,7 +764,9 @@
       
         <categories>
             
-            <category> Java </category>
+            <category> 01.编程语言 </category>
+            
+            <category> 02.Java </category>
             
         </categories>
         
@@ -693,7 +781,7 @@
     
     <entry>
       <title><![CDATA[Java基础知识02]]></title>
-      <url>/2018/03/29/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%8602/</url>
+      <url>//posts/01.%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/02.Java/Java-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%8602/</url>
       <content type="html"><![CDATA[<h2 id="1-数据结构"><a href="#1-数据结构" class="headerlink" title="1 数据结构"></a>1 数据结构</h2><h3 id="1-1-枚举（Enumeration）"><a href="#1-1-枚举（Enumeration）" class="headerlink" title="1.1 枚举（Enumeration）"></a>1.1 枚举（Enumeration）</h3><p>定义了一种从数据结构中取回连续元素的方式，已被迭代器取代。</p>
 <h3 id="1-2-位集合（BitSet）"><a href="#1-2-位集合（BitSet）" class="headerlink" title="1.2 位集合（BitSet）"></a>1.2 位集合（BitSet）</h3><p>实现了一组可以单独设置和清除的位或标志。该类在处理一组布尔值的时候非常有用，你只需要给每个值赋值一”位”，然后对位进行适当的设置或清除，就可以对布尔值进行操作了。</p>
 <h3 id="1-3-向量（Vector）"><a href="#1-3-向量（Vector）" class="headerlink" title="1.3 向量（Vector）"></a>1.3 向量（Vector）</h3><ul>
@@ -992,7 +1080,9 @@
       
         <categories>
             
-            <category> Java </category>
+            <category> 01.编程语言 </category>
+            
+            <category> 02.Java </category>
             
         </categories>
         
@@ -1007,7 +1097,7 @@
     
     <entry>
       <title><![CDATA[Java环境变量配置]]></title>
-      <url>/2018/03/25/Java%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE/</url>
+      <url>//posts/01.%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/02.Java/Java-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE/</url>
       <content type="html"><![CDATA[<h2 id="1-Java下载"><a href="#1-Java下载" class="headerlink" title="1 Java下载"></a>1 <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">Java下载</a></h2><h2 id="2-环境变量配置"><a href="#2-环境变量配置" class="headerlink" title="2 环境变量配置"></a>2 环境变量配置</h2><ol>
 <li><strong>JAVA_HOME</strong>:C:\Program Files\Java\jdk1.8.0_144（注：结尾不加分号）</li>
 <li><strong>PATH</strong>:%JAVA_HOME%\bin;</li>
@@ -1022,7 +1112,9 @@
       
         <categories>
             
-            <category> Java </category>
+            <category> 01.编程语言 </category>
+            
+            <category> 02.Java </category>
             
         </categories>
         
@@ -1037,7 +1129,7 @@
     
     <entry>
       <title><![CDATA[Java基础知识01]]></title>
-      <url>/2018/03/25/Java%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%8601/</url>
+      <url>//posts/01.%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/02.Java/Java-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%8601/</url>
       <content type="html"><![CDATA[<h2 id="1-Hello-World-示例"><a href="#1-Hello-World-示例" class="headerlink" title="1 Hello World 示例"></a>1 Hello World 示例</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</div><div class="line">        System.out.println(<span class="string">"Hello World"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><code>ps:</code></p>
 <ul>
@@ -2139,7 +2231,9 @@
       
         <categories>
             
-            <category> Java </category>
+            <category> 01.编程语言 </category>
+            
+            <category> 02.Java </category>
             
         </categories>
         
@@ -2156,7 +2250,7 @@
     
     <entry>
       <title><![CDATA[CLR-21垃圾回收]]></title>
-      <url>/2017/12/27/CLR-21%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/</url>
+      <url>//posts/01.%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/01.CSharp/CSharp-%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/</url>
       <content type="html"><![CDATA[<h2 id="1-访问资源步骤"><a href="#1-访问资源步骤" class="headerlink" title="1 访问资源步骤"></a>1 访问资源步骤</h2><ol>
 <li>调用 IL 指令 newobj，为代表资源的类型分配内存（C# 一般使用 new）；</li>
 <li>初始化内存，设置资源的初始状态并使资源可用。类型的实例构造器负责设置初始状态；</li>
@@ -2242,7 +2336,9 @@
       
         <categories>
             
-            <category> CLR </category>
+            <category> 01.编程语言 </category>
+            
+            <category> 01.CSharp </category>
             
         </categories>
         
@@ -2258,8 +2354,33 @@
     </entry>
     
     <entry>
+      <title><![CDATA[职业生涯相关文章收藏]]></title>
+      <url>//posts/09.%E8%81%8C%E4%B8%9A%E7%94%9F%E6%B6%AF/%E6%96%87%E7%AB%A0%E6%94%B6%E8%97%8F/</url>
+      <content type="html"><![CDATA[<h2 id="职业生涯文章收藏"><a href="#职业生涯文章收藏" class="headerlink" title="职业生涯文章收藏"></a>职业生涯文章收藏</h2><ul>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzIzOTU0NTQ0MA==&amp;mid=2247487544&amp;idx=1&amp;sn=a15c8762edf234e843e11061def8931a" target="_blank" rel="external">程序员吃的是青春饭？本质上取决于……</a></li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 09.职业生涯 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 收藏 </tag>
+            
+            <tag> 职业生涯 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[收藏]]></title>
-      <url>/2017/10/18/%E6%94%B6%E8%97%8F/</url>
+      <url>//posts/07.%E6%94%B6%E8%97%8F/%E6%9D%82%E4%B8%83%E6%9D%82%E5%85%AB/</url>
       <content type="html"><![CDATA[<h2 id="编程思想"><a href="#编程思想" class="headerlink" title="编程思想"></a>编程思想</h2><h3 id="依赖注入（DI）"><a href="#依赖注入（DI）" class="headerlink" title="依赖注入（DI）"></a>依赖注入（DI）</h3><ul>
 <li><a href="https://martinfowler.com/articles/injection.html" target="_blank" rel="external">Inversion of Control Containers and the Dependency Injection pattern by Martin Fowler</a></li>
 <li><a href="http://blog.ploeh.dk/2010/02/03/ServiceLocatorisanAnti-Pattern/" target="_blank" rel="external">Service Locator is an Anti-Pattern by Mark Seemann</a></li>
@@ -2277,7 +2398,7 @@
       
         <categories>
             
-            <category> 其他 </category>
+            <category> 07.收藏 </category>
             
         </categories>
         
@@ -2292,7 +2413,7 @@
     
     <entry>
       <title><![CDATA[UML]]></title>
-      <url>/2017/10/15/UML%E7%AC%94%E8%AE%B0/</url>
+      <url>//posts/03.%E5%B7%A5%E5%85%B7/UML/</url>
       <content type="html"><![CDATA[<h2 id="1-UML介绍"><a href="#1-UML介绍" class="headerlink" title="1 UML介绍"></a>1 UML介绍</h2><p>UML(Unified Modeling Language)又称统一建模语言或标准建模语言，一个支持模型化和软件系统开发的图形化语言，为软件开发的所有阶段提供模型化和可视化支持，包括由需求分析到规格，到构造和配置。 </p>
 <a id="more"></a>
 <h2 id="2-分类"><a href="#2-分类" class="headerlink" title="2 分类"></a>2 分类</h2><ul>
@@ -2357,7 +2478,7 @@
       
         <categories>
             
-            <category> 工具 </category>
+            <category> 03.工具 </category>
             
         </categories>
         
@@ -2372,7 +2493,7 @@
     
     <entry>
       <title><![CDATA[缓存解决方案]]></title>
-      <url>/2017/10/15/%E7%BC%93%E5%AD%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+      <url>//posts/06.%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-%E7%BC%93%E5%AD%98/</url>
       <content type="html"><![CDATA[<h2 id="1-NoSQL总览"><a href="#1-NoSQL总览" class="headerlink" title="1 NoSQL总览"></a>1 NoSQL总览</h2><h3 id="1-1-介绍"><a href="#1-1-介绍" class="headerlink" title="1.1 介绍"></a>1.1 介绍</h3><p>NoSQL（Not Only SQL）,意即“不仅仅是SQL”，非关系型的数据库</p>
 <h3 id="1-2-分类"><a href="#1-2-分类" class="headerlink" title="1.2 分类"></a>1.2 分类</h3><ul>
 <li>键值（key-value）存储数据库</li>
@@ -2445,7 +2566,7 @@
       
         <categories>
             
-            <category> 架构 </category>
+            <category> 06.解决方案 </category>
             
         </categories>
         
@@ -2464,7 +2585,7 @@
     
     <entry>
       <title><![CDATA[高并发网站解决方案]]></title>
-      <url>/2017/10/15/%E9%AB%98%E5%B9%B6%E5%8F%91%E7%BD%91%E7%AB%99%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+      <url>//posts/06.%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-%E9%AB%98%E5%B9%B6%E5%8F%91%E7%BD%91%E7%AB%99/</url>
       <content type="html"><![CDATA[<h2 id="1-服务器"><a href="#1-服务器" class="headerlink" title="1 服务器"></a>1 服务器</h2><ul>
 <li>使用高性能CPU主机</li>
 <li>数据库使用物理机，避免虚拟机，提升IO性能</li>
@@ -2509,7 +2630,7 @@
       
         <categories>
             
-            <category> 架构 </category>
+            <category> 06.解决方案 </category>
             
         </categories>
         
@@ -2526,7 +2647,7 @@
     
     <entry>
       <title><![CDATA[线程笔记]]></title>
-      <url>/2017/10/13/%E7%BA%BF%E7%A8%8B%E7%AC%94%E8%AE%B0/</url>
+      <url>//posts/01.%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/01.CSharp/CSharp-%E7%BA%BF%E7%A8%8B/</url>
       <content type="html"><![CDATA[<h2 id="1-基础知识"><a href="#1-基础知识" class="headerlink" title="1 基础知识"></a>1 基础知识</h2><h3 id="1-1-进程-amp-线程"><a href="#1-1-进程-amp-线程" class="headerlink" title="1.1 进程&amp;线程"></a>1.1 进程&amp;线程</h3><ul>
 <li><strong>进程</strong>：应用程序的实例要使用的资源的集合。<ul>
 <li>每个进程都被赋予一个虚拟地址空间，确保进程中的数据和代码无法由另一个进程访问，确保了应用程序实例的健壮性；</li>
@@ -2542,9 +2663,9 @@
       
         <categories>
             
-            <category> ASP.NET </category>
+            <category> 01.编程语言 </category>
             
-            <category> 基础 </category>
+            <category> 01.CSharp </category>
             
         </categories>
         
@@ -2561,7 +2682,7 @@
     
     <entry>
       <title><![CDATA[面试]]></title>
-      <url>/2017/10/10/%E9%9D%A2%E8%AF%95/</url>
+      <url>//posts/01.%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/01.CSharp/CSharp-%E9%9D%A2%E8%AF%95/</url>
       <content type="html"><![CDATA[<h2 id="1-C-和-NET"><a href="#1-C-和-NET" class="headerlink" title="1. C#和.NET"></a>1. C#和.NET</h2><h3 id="1-1-C-基础知识"><a href="#1-1-C-基础知识" class="headerlink" title="1.1 C#基础知识"></a>1.1 C#基础知识</h3><h4 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h4><ul>
 <li>private【Private】 私有（定义类型、嵌套类型）</li>
 <li>protected【Family】 保护（定义类型、嵌套类型、不同程序集中的派生类型）</li>
@@ -2697,7 +2818,9 @@
       
         <categories>
             
-            <category> 面试 </category>
+            <category> 01.编程语言 </category>
+            
+            <category> 01.CSharp </category>
             
         </categories>
         
@@ -2711,8 +2834,8 @@
     </entry>
     
     <entry>
-      <title><![CDATA[JavaEEE开发环境搭建]]></title>
-      <url>/2017/09/18/JavaEE%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
+      <title><![CDATA[JavaEE开发环境搭建]]></title>
+      <url>//posts/01.%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/02.Java/Java-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
       <content type="html"><![CDATA[<h2 id="1-Java环境"><a href="#1-Java环境" class="headerlink" title="1.Java环境"></a>1.Java环境</h2><h3 id="1-1-Java下载"><a href="#1-1-Java下载" class="headerlink" title="1.1 Java下载"></a>1.1 <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">Java下载</a></h3><h3 id="1-2-环境变量配置"><a href="#1-2-环境变量配置" class="headerlink" title="1.2 环境变量配置"></a>1.2 环境变量配置</h3><ol>
 <li><strong>JAVA_HOME</strong>:C:\Program Files\Java\jdk1.8.0_144（注：结尾不加分号）</li>
 <li><strong>PATH</strong>:%JAVA_HOME%\bin;</li>
@@ -2757,7 +2880,9 @@
       
         <categories>
             
-            <category> Java </category>
+            <category> 01.编程语言 </category>
+            
+            <category> 02.Java </category>
             
         </categories>
         
@@ -2776,7 +2901,7 @@
     
     <entry>
       <title><![CDATA[设计模式-09.DECORATOR（装饰）— 对象结构型模式]]></title>
-      <url>/2017/09/15/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-09%E8%A3%85%E9%A5%B0/</url>
+      <url>//posts/05.%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/01.%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-09%E8%A3%85%E9%A5%B0/</url>
       <content type="html"><![CDATA[<h2 id="1-意图"><a href="#1-意图" class="headerlink" title="1 意图"></a>1 意图</h2><p>动态地给一个对象添加一些额外的职责。</p>
 <h2 id="2-别名"><a href="#2-别名" class="headerlink" title="2 别名"></a>2 别名</h2><p>包装器 Wrapper</p>
 <h2 id="3-动机"><a href="#3-动机" class="headerlink" title="3 动机"></a>3 动机</h2><p>希望给某个对象而不是整个类添加一些功能。如图形界面添加一些特性（边框，滚动等）。</p>
@@ -2860,7 +2985,9 @@
       
         <categories>
             
-            <category> 设计模式 </category>
+            <category> 05.编程思想 </category>
+            
+            <category> 01.设计模式 </category>
             
         </categories>
         
@@ -2877,7 +3004,7 @@
     
     <entry>
       <title><![CDATA[设计模式-08.COMPOSITE（组合）— 对象结构型模式]]></title>
-      <url>/2017/09/13/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-08%E7%BB%84%E5%90%88/</url>
+      <url>//posts/05.%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/01.%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-08%E7%BB%84%E5%90%88/</url>
       <content type="html"><![CDATA[<h2 id="1-意图"><a href="#1-意图" class="headerlink" title="1 意图"></a>1 意图</h2><p>将对象组合成树形结构以表示“部分-整体”的层次结构。Composite 使得用户对单个对象和组合对象的使用具有一致性。</p>
 <h2 id="2-别名"><a href="#2-别名" class="headerlink" title="2 别名"></a>2 别名</h2><p>无</p>
 <h2 id="3-动机"><a href="#3-动机" class="headerlink" title="3 动机"></a>3 动机</h2><p>在绘图编辑器和图形捕捉系统这样的图形应用程序中，用户可以使用简单的组件创建复杂的图表。用户可以组合多个简单组件以形成一些较大的组件，这些组件又可以组合成更大的组件。一个简单的实现方法是为 Text 和 Line 这样的图元定义一些类，另外定义一些类作为这些图元的容器类（Container）。问题：使用这些类的代码必须区别对待图元对象与容器对象，而实际上大多数情况下用户认为它们是一样的。<br><img src="/images/posts/组合1.jpg" alt="图一"><br><a id="more"></a></p>
@@ -2954,7 +3081,9 @@
       
         <categories>
             
-            <category> 设计模式 </category>
+            <category> 05.编程思想 </category>
+            
+            <category> 01.设计模式 </category>
             
         </categories>
         
@@ -2971,7 +3100,7 @@
     
     <entry>
       <title><![CDATA[设计模式-07.BRIDGE（桥接）— 对象结构型模式]]></title>
-      <url>/2017/09/10/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-07%E6%A1%A5%E6%8E%A5/</url>
+      <url>//posts/05.%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/01.%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-07%E6%A1%A5%E6%8E%A5/</url>
       <content type="html"><![CDATA[<h2 id="1-意图"><a href="#1-意图" class="headerlink" title="1 意图"></a>1 意图</h2><p>将抽象部分与它的实现部分分离，使它们都可以独立地变化。</p>
 <h2 id="2-别名"><a href="#2-别名" class="headerlink" title="2 别名"></a>2 别名</h2><p>Handle/Body</p>
 <h2 id="3-动机"><a href="#3-动机" class="headerlink" title="3 动机"></a>3 动机</h2><p>当一个抽象可能有多个实现时，通常用继承来协调它们。抽象类定义对该抽象的接口，而具体的子类则用不同方式加以实现。但是此方法有时不够灵活。继承机制将抽象部分与它的实现部分固定在一起，使得难以对抽象部分和实现部分独立地进行修改、扩充和重用。继承机制有两个不足之处：<br>1) 扩展抽象使之适用于不同种类的窗口或新的系统平台很不方便。<br>2) 继承机制使得客户代码与平台相关。<br><a id="more"></a></p>
@@ -3043,7 +3172,9 @@
       
         <categories>
             
-            <category> 设计模式 </category>
+            <category> 05.编程思想 </category>
+            
+            <category> 01.设计模式 </category>
             
         </categories>
         
@@ -3060,7 +3191,7 @@
     
     <entry>
       <title><![CDATA[设计模式-06.ADAPTER（适配器）— 类对象结构型模式]]></title>
-      <url>/2017/09/09/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-06%E9%80%82%E9%85%8D%E5%99%A8/</url>
+      <url>//posts/05.%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/01.%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-06%E9%80%82%E9%85%8D%E5%99%A8/</url>
       <content type="html"><![CDATA[<h2 id="1-意图"><a href="#1-意图" class="headerlink" title="1 意图"></a>1 意图</h2><p>将一个类的接口转换成客户希望的另外一个接口。Adapter 模式使得原本由于接口不兼容而不能一起工作的那些类可以一起工作。</p>
 <h2 id="2-别名"><a href="#2-别名" class="headerlink" title="2 别名"></a>2 别名</h2><p>包装器 Wrapper</p>
 <h2 id="3-动机"><a href="#3-动机" class="headerlink" title="3 动机"></a>3 动机</h2><p>一个应用可能会有一些类具有不同的接口并且这些接口互不兼容，在这样的应用中象 TextView 这样已经存在并且不相关的类如何协同工作呢？我们可以改变 TextView 类使它兼容 Shape 类的接口，但前提是必须有这个工具箱的源代码。然而即使我们得到了这些源代码，修改 TextView 也是没有什么意义的；因为不应该仅仅为了实现一个应用，工具箱就不得不采用一些与特定领域相关的接口。<br><img src="/images/posts/适配器1.jpg" alt="图一"></p>
@@ -3142,7 +3273,9 @@
       
         <categories>
             
-            <category> 设计模式 </category>
+            <category> 05.编程思想 </category>
+            
+            <category> 01.设计模式 </category>
             
         </categories>
         
@@ -3159,7 +3292,7 @@
     
     <entry>
       <title><![CDATA[Vue笔记]]></title>
-      <url>/2017/09/08/Vue%E7%AC%94%E8%AE%B0/</url>
+      <url>//posts/01.%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/03.%E5%89%8D%E7%AB%AF/Vue%E7%AC%94%E8%AE%B0/</url>
       <content type="html"><![CDATA[<h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h2><ul>
 <li>vue</li>
 <li>vue-cli</li>
@@ -3170,7 +3303,9 @@
       
         <categories>
             
-            <category> 前端 </category>
+            <category> 01.编程语言 </category>
+            
+            <category> 03.前端 </category>
             
         </categories>
         
@@ -3187,7 +3322,7 @@
     
     <entry>
       <title><![CDATA[设计模式-05.SINGLETON（单件）— 对象创建型模式]]></title>
-      <url>/2017/09/07/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-05%E5%8D%95%E4%BE%8B/</url>
+      <url>//posts/05.%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/01.%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-05%E5%8D%95%E4%BE%8B/</url>
       <content type="html"><![CDATA[<h2 id="1-意图"><a href="#1-意图" class="headerlink" title="1 意图"></a>1 意图</h2><p>保证一个类仅有一个实例，并提供一个访问它的全局访问点。</p>
 <h2 id="2-别名"><a href="#2-别名" class="headerlink" title="2 别名"></a>2 别名</h2><p>无</p>
 <h2 id="3-动机"><a href="#3-动机" class="headerlink" title="3 动机"></a>3 动机</h2><p>让类自身负责保存它的唯一实例。这个类可以保证没有其他实例可以被创建（通过截取创建新对象的请求），并且它可以提供一个访问该实例的方法。这就是 Singleton 模式。<br><a id="more"></a></p>
@@ -3255,7 +3390,9 @@
       
         <categories>
             
-            <category> 设计模式 </category>
+            <category> 05.编程思想 </category>
+            
+            <category> 01.设计模式 </category>
             
         </categories>
         
@@ -3272,7 +3409,7 @@
     
     <entry>
       <title><![CDATA[设计模式-04.PROTOTYPE（原型）— 对象创建型模式]]></title>
-      <url>/2017/09/06/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-04%E5%8E%9F%E5%9E%8B/</url>
+      <url>//posts/05.%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/01.%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-04%E5%8E%9F%E5%9E%8B/</url>
       <content type="html"><![CDATA[<h2 id="1-意图"><a href="#1-意图" class="headerlink" title="1 意图"></a>1 意图</h2><p>用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。</p>
 <h2 id="2-别名"><a href="#2-别名" class="headerlink" title="2 别名"></a>2 别名</h2><p>无</p>
 <h2 id="3-动机"><a href="#3-动机" class="headerlink" title="3 动机"></a>3 动机</h2><p><img src="/images/posts/原型1.jpg" alt="图一"><br><a id="more"></a></p>
@@ -3330,7 +3467,9 @@
       
         <categories>
             
-            <category> 设计模式 </category>
+            <category> 05.编程思想 </category>
+            
+            <category> 01.设计模式 </category>
             
         </categories>
         
@@ -3347,7 +3486,7 @@
     
     <entry>
       <title><![CDATA[设计模式-03.FACTORY METHOD（工厂方法）— 对象创建型模式]]></title>
-      <url>/2017/09/05/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-03%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95/</url>
+      <url>//posts/05.%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/01.%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-03%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95/</url>
       <content type="html"><![CDATA[<h2 id="1-意图"><a href="#1-意图" class="headerlink" title="1 意图"></a>1 意图</h2><p>定义一个用于创建对象的接口，让子类决定实例化哪一个类。 Factory Method 使一个类的实例化延迟到其子类。</p>
 <h2 id="2-别名"><a href="#2-别名" class="headerlink" title="2 别名"></a>2 别名</h2><p>虚构造器（Virtual Constructor）</p>
 <h2 id="3-动机"><a href="#3-动机" class="headerlink" title="3 动机"></a>3 动机</h2><p>框架使用抽象类定义和维护对象之间的关系。这些对象的创建通常也由框架负责。<br><img src="/images/posts/工厂方法1.jpg" alt="图一"></p>
@@ -3423,7 +3562,9 @@
       
         <categories>
             
-            <category> 设计模式 </category>
+            <category> 05.编程思想 </category>
+            
+            <category> 01.设计模式 </category>
             
         </categories>
         
@@ -3440,7 +3581,7 @@
     
     <entry>
       <title><![CDATA[HTTP笔记]]></title>
-      <url>/2017/09/05/HTTP%E7%AC%94%E8%AE%B0/</url>
+      <url>//posts/04.%E7%BD%91%E7%BB%9C/01.HTTP/01.%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
       <content type="html"><![CDATA[<p><img src="/images/posts/HTTP1.png" alt="图一"></p>
 <h2 id="1-应用层"><a href="#1-应用层" class="headerlink" title="1.应用层"></a>1.应用层</h2><p>决定向用户提供应用服务时通信的活动。<br>TCP/IP协议簇内预存了各类通用的应用服务，如FTP文件传输协议，DNS域名系统服务。HTTP协议也在该层。</p>
 <h2 id="2-传输层"><a href="#2-传输层" class="headerlink" title="2.传输层"></a>2.传输层</h2><p>对上层应用层提供处于网络连接中两台计算机间的数据传输。<br>在传输层有两个性质不同的协议：TCP（Transmission Control Protocol，传输控制协议）和UDP（User Data Protocol，用户数据报协议）。</p>
@@ -3461,7 +3602,9 @@
       
         <categories>
             
-            <category> HTTP </category>
+            <category> 04.网络 </category>
+            
+            <category> 01.HTTP </category>
             
         </categories>
         
@@ -3475,9 +3618,10 @@
     </entry>
     
     <entry>
-      <title><![CDATA[VS设置类库程序集自动更新版本号]]></title>
-      <url>/2017/09/05/VS%E8%AE%BE%E7%BD%AE%E7%B1%BB%E5%BA%93%E7%A8%8B%E5%BA%8F%E9%9B%86%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E7%89%88%E6%9C%AC%E5%8F%B7/</url>
-      <content type="html"><![CDATA[<h2 id="1-修改AssemblyInfo文件"><a href="#1-修改AssemblyInfo文件" class="headerlink" title="1.修改AssemblyInfo文件"></a>1.修改AssemblyInfo文件</h2><ul>
+      <title><![CDATA[VS]]></title>
+      <url>//posts/03.%E5%B7%A5%E5%85%B7/VS/</url>
+      <content type="html"><![CDATA[<h2 id="1-设置类库程序集自动更新版本号"><a href="#1-设置类库程序集自动更新版本号" class="headerlink" title="1.设置类库程序集自动更新版本号"></a>1.设置类库程序集自动更新版本号</h2><p>修改AssemblyInfo文件</p>
+<ul>
 <li>更改[assembly: AssemblyVersion(“1.0.*”)]</li>
 <li>注释[assembly: AssemblyFileVersion(“1.0.0”)]</li>
 </ul>
@@ -3485,7 +3629,7 @@
       
         <categories>
             
-            <category> 工具 </category>
+            <category> 03.工具 </category>
             
         </categories>
         
@@ -3502,7 +3646,7 @@
     
     <entry>
       <title><![CDATA[Redis笔记]]></title>
-      <url>/2017/09/05/Redis%E7%AC%94%E8%AE%B0/</url>
+      <url>//posts/02.%E6%95%B0%E6%8D%AE%E5%BA%93/04.Redis/Redis/</url>
       <content type="html"><![CDATA[<h2 id="1-键值对"><a href="#1-键值对" class="headerlink" title="1 键值对"></a>1 键值对</h2><ul>
 <li>SET TESTKEY “TESTVALUE”,设置键值对TESTKEY-“TESTVALUE”，返回OK；</li>
 <li>GET TESTKEY,获取键TESTKEY的值（获取不存在的键的值返回nil，即空）；</li>
@@ -3615,7 +3759,9 @@
       
         <categories>
             
-            <category> 数据库 </category>
+            <category> 02.数据库 </category>
+            
+            <category> 04.Redis </category>
             
         </categories>
         
@@ -3630,7 +3776,7 @@
     
     <entry>
       <title><![CDATA[设计模式-02.BUILDER（生成器）— 对象创建型模式]]></title>
-      <url>/2017/09/04/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-02%E5%BB%BA%E9%80%A0%E8%80%85/</url>
+      <url>//posts/05.%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/01.%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-02%E5%BB%BA%E9%80%A0%E8%80%85/</url>
       <content type="html"><![CDATA[<h2 id="1-意图"><a href="#1-意图" class="headerlink" title="1 意图"></a>1 意图</h2><p>将一个复杂对象的构建与它的表示分离，使得同样的构建过程可以创建不同的表示。</p>
 <h2 id="2-别名"><a href="#2-别名" class="headerlink" title="2 别名"></a>2 别名</h2><p>无</p>
 <h2 id="3-动机"><a href="#3-动机" class="headerlink" title="3 动机"></a>3 动机</h2><p>一个RTF（Rich Text Format）文档交换格式的阅读器应能将 RTF 转换为多种正文格式。该阅读器可以将 RTF 文档转换成普通 ASCII 文本或转换成一个能以交互方式编辑的正文窗口组件。但问题在于可能转换的数目是无限的。因此要能够很容易实现新的转换的增加，同时却不改变 RTF 阅读器。<br><img src="/images/posts/建造者1.jpg" alt="图一"></p>
@@ -3707,7 +3853,9 @@
       
         <categories>
             
-            <category> 设计模式 </category>
+            <category> 05.编程思想 </category>
+            
+            <category> 01.设计模式 </category>
             
         </categories>
         
@@ -3724,7 +3872,7 @@
     
     <entry>
       <title><![CDATA[设计模式-01.ABSTRACT FACTORY（抽象工厂）— 对象创建型模式]]></title>
-      <url>/2017/09/04/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-01%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82/</url>
+      <url>//posts/05.%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/01.%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-01%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82/</url>
       <content type="html"><![CDATA[<h2 id="1-意图"><a href="#1-意图" class="headerlink" title="1 意图"></a>1 意图</h2><p>提供一个创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类。</p>
 <h2 id="2-别名"><a href="#2-别名" class="headerlink" title="2 别名"></a>2 别名</h2><p>Kit</p>
 <h2 id="3-动机"><a href="#3-动机" class="headerlink" title="3 动机"></a>3 动机</h2><p>考虑一个支持多种视感（look - and - feel）标准的用户界面工具包，例如 Motif 和 Presentation Manager。不同的视感风格为诸如滚动条、窗口和按钮等用户界面“窗口组件”定义不同的外观和行为。为保证视感风格标准间的可移植性，一个应用不应该为一个特定的视感外观硬编码它的窗口组件。在整个应用中实例化特定视感风格的窗口组件类将使得以后很难改变视感风格。<br><img src="/images/posts/抽象工厂1.jpg" alt="图一"></p>
@@ -3783,7 +3931,9 @@
       
         <categories>
             
-            <category> 设计模式 </category>
+            <category> 05.编程思想 </category>
+            
+            <category> 01.设计模式 </category>
             
         </categories>
         
@@ -3800,7 +3950,7 @@
     
     <entry>
       <title><![CDATA[面向对象设计原则]]></title>
-      <url>/2017/09/01/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</url>
+      <url>//posts/05.%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99/</url>
       <content type="html"><![CDATA[<h2 id="1-针对接口编程，而不是针对实现编程。"><a href="#1-针对接口编程，而不是针对实现编程。" class="headerlink" title="1.针对接口编程，而不是针对实现编程。"></a>1.针对接口编程，而不是针对实现编程。</h2><h2 id="2-优先使用对象组合，而不是类继承。"><a href="#2-优先使用对象组合，而不是类继承。" class="headerlink" title="2.优先使用对象组合，而不是类继承。"></a>2.优先使用对象组合，而不是类继承。</h2><h2 id="3-SOLID原则"><a href="#3-SOLID原则" class="headerlink" title="3.SOLID原则"></a>3.SOLID原则</h2><ul>
 <li><strong>S（SRP，The Single Responsibility Principle，单一责任原则）</strong>：就一个类而言，应该只有一个引起它变化的原因。如果一个类承担的职责过多，就等于把这些职责耦合在一起，一个职责的变化可能会影响到其他的职责，另外，把多个职责耦合在一起，也会影响复用性。</li>
 <li><strong>O（OCP，Open-Closed Principle，开闭原则）</strong>：一个软件实体（指的类、函数、模块等）应该对扩展开放，对修改关闭。即每次发生变化时，要通过添加新的代码来增强现有类型的行为，而不是修改原有的代码。　　符合开闭原则的最好方式是提供一个固有的接口，然后让所有可能发生变化的类实现该接口，让固定的接口与相关对象进行交互。</li>
@@ -3814,7 +3964,7 @@
       
         <categories>
             
-            <category> 设计模式 </category>
+            <category> 05.编程思想 </category>
             
         </categories>
         
@@ -3831,7 +3981,7 @@
     
     <entry>
       <title><![CDATA[设计模式-总体介绍]]></title>
-      <url>/2017/08/31/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-%E6%80%BB%E4%BD%93%E4%BB%8B%E7%BB%8D/</url>
+      <url>//posts/05.%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/01.%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-00%E6%80%BB%E4%BD%93%E4%BB%8B%E7%BB%8D/</url>
       <content type="html"><![CDATA[<h2 id="1-总体介绍"><a href="#1-总体介绍" class="headerlink" title="1 总体介绍"></a>1 总体介绍</h2><h3 id="1-1-什么是设计模式"><a href="#1-1-什么是设计模式" class="headerlink" title="1.1 什么是设计模式"></a>1.1 什么是设计模式</h3><div class="note info"><p>每一个模式描述了一个在我们周围不断重复发生的问题，以及该问题的解决方案的核心。这样，你就能一次又一次地使用该方案而不必做重复劳动。- Christopher Alexander </p></div>
 <div class="note info"><p>对被用来在特定场景下解决一般设计问题的类和相互通信的对象的描述。- GoF</p></div>
 <p>四个基本要素：</p>
@@ -3926,7 +4076,9 @@
       
         <categories>
             
-            <category> 设计模式 </category>
+            <category> 05.编程思想 </category>
+            
+            <category> 01.设计模式 </category>
             
         </categories>
         
@@ -3943,7 +4095,7 @@
     
     <entry>
       <title><![CDATA[多环境工作]]></title>
-      <url>/2017/08/31/Environment/</url>
+      <url>//posts/01.%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/01.CSharp/CSharp-Environment/</url>
       <content type="html"><![CDATA[<h2 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1.介绍"></a>1.介绍</h2><p>ASP.NET Core 通过多环境控制 APP 的行为，例如 development，staging 和 production。环境变量决定了运行环境，从而根据不同环境采用不同配置。</p>
 <a id="more"></a>
 <h2 id="2-ASPNETCORE-ENVIRONMENT-环境变量"><a href="#2-ASPNETCORE-ENVIRONMENT-环境变量" class="headerlink" title="2.ASPNETCORE_ENVIRONMENT 环境变量"></a>2.ASPNETCORE_ENVIRONMENT 环境变量</h2><ul>
@@ -3976,7 +4128,9 @@
       
         <categories>
             
-            <category> ASP.NET Core </category>
+            <category> 01.编程语言 </category>
+            
+            <category> 01.CSharp </category>
             
         </categories>
         
@@ -3991,7 +4145,7 @@
     
     <entry>
       <title><![CDATA[Markdown笔记]]></title>
-      <url>/2017/08/31/Markdown%E7%AC%94%E8%AE%B0/</url>
+      <url>//posts/03.%E5%B7%A5%E5%85%B7/Markdown/</url>
       <content type="html"><![CDATA[<h2 id="1-什么是Markdown"><a href="#1-什么是Markdown" class="headerlink" title="1.什么是Markdown"></a>1.什么是Markdown</h2><p>Markdown是一种在web显示带样式风格文本的方式。你能通过它控制文本的字体样式、插入图片、插入列表等。通常，Markdown使用一些特殊的非字母符号来作为语法规则，如<code>#</code>等。你能在Github上大部分地方使用Markdown。比如：</p>
 <ul>
 <li><a href="https://gist.github.com/" target="_blank" rel="external">Gists</a></li>
@@ -4035,7 +4189,7 @@
       
         <categories>
             
-            <category> 工具 </category>
+            <category> 03.工具 </category>
             
         </categories>
         
@@ -4050,7 +4204,7 @@
     
     <entry>
       <title><![CDATA[Git笔记]]></title>
-      <url>/2017/08/30/Git%E7%AC%94%E8%AE%B0/</url>
+      <url>//posts/03.%E5%B7%A5%E5%85%B7/Git/</url>
       <content type="html"><![CDATA[<h2 id="1-初始化"><a href="#1-初始化" class="headerlink" title="1.初始化"></a>1.初始化</h2><p>git init</p>
 <h2 id="2-添加到仓库"><a href="#2-添加到仓库" class="headerlink" title="2.添加到仓库"></a>2.添加到仓库</h2><p>git add $filename</p>
 <h2 id="3-提交到仓库"><a href="#3-提交到仓库" class="headerlink" title="3.提交到仓库"></a>3.提交到仓库</h2><p>git commit -m “$comment”</p>
@@ -4185,7 +4339,7 @@
       
         <categories>
             
-            <category> 工具 </category>
+            <category> 03.工具 </category>
             
         </categories>
         
