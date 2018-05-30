@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.lug.ustc.edu.cn/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="编程思想,重构," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="祥_venux" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="1. 定义 重构（refactoring）是在不改变软件可观察行为的前提下改善其内部结构。 重构是这样一个过程：在不改变代码外在行为的前提下，对代码进行修改，以改进程序的内部结构。 重构（名词）：对软件内部结构的一种调整，目的是在不改变软件可观察行为的前提下，提高可理解性，降低其修改成本。 重构（动词）：使用一系列重构首发，在不改变软件可观察行为的前提下，调整其结构。">
+<meta name="keywords" content="编程思想,重构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="01.重构-介绍">
+<meta property="og:url" content="http://www.venux.cn/posts/05.编程思想/02.重构/01.重构-介绍/index.html">
+<meta property="og:site_name" content="祥_venux">
+<meta property="og:description" content="1. 定义 重构（refactoring）是在不改变软件可观察行为的前提下改善其内部结构。 重构是这样一个过程：在不改变代码外在行为的前提下，对代码进行修改，以改进程序的内部结构。 重构（名词）：对软件内部结构的一种调整，目的是在不改变软件可观察行为的前提下，提高可理解性，降低其修改成本。 重构（动词）：使用一系列重构首发，在不改变软件可观察行为的前提下，调整其结构。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-30T09:14:37.352Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="01.重构-介绍">
+<meta name="twitter:description" content="1. 定义 重构（refactoring）是在不改变软件可观察行为的前提下改善其内部结构。 重构是这样一个过程：在不改变代码外在行为的前提下，对代码进行修改，以改进程序的内部结构。 重构（名词）：对软件内部结构的一种调整，目的是在不改变软件可观察行为的前提下，提高可理解性，降低其修改成本。 重构（动词）：使用一系列重构首发，在不改变软件可观察行为的前提下，调整其结构。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.venux.cn/posts/05.编程思想/02.重构/01.重构-介绍/"/>
+
+
+
+
+
+  <title>01.重构-介绍 | 祥_venux</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?9ead14983eeabdb5fddcace7bbc74475";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">祥_venux</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">个人博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/posts/05.编程思想/02.重构/01.重构-介绍/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="祥_venux">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="祥_venux">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">01.重构-介绍</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-29T18:06:26+08:00">
+                2018-05-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/05-编程思想/" itemprop="url" rel="index">
+                    <span itemprop="name">05.编程思想</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/05-编程思想/02-重构/" itemprop="url" rel="index">
+                    <span itemprop="name">02.重构</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/05.编程思想/02.重构/01.重构-介绍/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="/posts/05.编程思想/02.重构/01.重构-介绍/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/posts/05.编程思想/02.重构/01.重构-介绍/" class="leancloud_visitors" data-flag-title="01.重构-介绍">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-定义"><a href="#1-定义" class="headerlink" title="1. 定义"></a>1. 定义</h2><ul>
+<li>重构（refactoring）是在不改变软件可观察行为的前提下改善其内部结构。</li>
+<li>重构是这样一个过程：在不改变代码外在行为的前提下，对代码进行修改，以改进程序的内部结构。</li>
+<li>重构（名词）：对软件内部结构的一种调整，目的是在不改变软件可观察行为的前提下，提高可理解性，降低其修改成本。</li>
+<li>重构（动词）：使用一系列重构首发，在不改变软件可观察行为的前提下，调整其结构。</li>
+</ul>
+<a id="more"></a>
+<h2 id="2-原则"><a href="#2-原则" class="headerlink" title="2. 原则"></a>2. 原则</h2><ul>
+<li>不改变软件行为只是重构的最基本要求；</li>
+<li>不需了解软件行为才是目的；</li>
+<li>个人理解：封装完整性？调用 API 而无需了解 API 内部实现和行为。</li>
+<li>设计模式为重构提供了目标；</li>
+<li>判断哪个类拥有最多被此函数使用的数据，然后就把这个函数和那些数据放在一起。<ul>
+<li><code>ps:</code>有些设计模式破坏这个原则，如 Strategy 和 Visitor，Self Delegation，这是为了对抗坏味道 Divergent Change。</li>
+<li>最根本的原则：将总是一起变化的东西放在一起。</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-目的"><a href="#3-目的" class="headerlink" title="3. 目的"></a>3. 目的</h2><ul>
+<li>重构改进软件设计<ul>
+<li>消除重复代码</li>
+</ul>
+</li>
+<li>重构使软件更容易理解</li>
+<li>重构帮助找到 bug</li>
+<li>重构提高编程速度</li>
+</ul>
+<h2 id="4-经验"><a href="#4-经验" class="headerlink" title="4. 经验"></a>4. 经验</h2><ul>
+<li>重构前需建立一组可靠的测试环境，且必须能自我检验；</li>
+<li>重构技术就是以微小的步伐修改程序，如果出错，可以很容易发现；</li>
+<li>良好的名称是代码清晰的关键；</li>
+<li>尽量除去临时变量；</li>
+<li>最好不要在另一个对象的属性基础上运用 switch 语句，如果不得不使用，也应该在对象自己的数据上使用，而不是在别人的数据上使用；</li>
+<li>技术复审是减少错误、提高开发速度的一条重要途径。</li>
+</ul>
+<h2 id="5-何时重构"><a href="#5-何时重构" class="headerlink" title="5. 何时重构"></a>5. 何时重构</h2><ul>
+<li>反对专门拨出时间进行重构；</li>
+<li>重构应该随时随地进行；</li>
+<li>不应该为了重构而重构；</li>
+<li>三次法则（事不过三，三则重构）<ul>
+<li>第一次做某件事时只管去做；</li>
+<li>第二次做类似的事会产生反感，但无论如何还是可以去做；</li>
+<li>第三次再做类似的事，就应该重构。</li>
+</ul>
+</li>
+<li>添加功能时重构；</li>
+<li>修补错误时重构；</li>
+<li>复审代码时重构；</li>
+</ul>
+<h2 id="6-为什么重构有用-–-Kent-Beck"><a href="#6-为什么重构有用-–-Kent-Beck" class="headerlink" title="6. 为什么重构有用 – Kent Beck"></a>6. 为什么重构有用 – Kent Beck</h2><h3 id="6-1-问题"><a href="#6-1-问题" class="headerlink" title="6.1 问题"></a>6.1 问题</h3><ul>
+<li>难以阅读的程序，难以修改；</li>
+<li>逻辑重复的程序，难以修改；</li>
+<li>添加新行为时需要修改已有代码的程序，难以修改；</li>
+<li>带复杂条件逻辑的程序，难以修改；</li>
+</ul>
+<h3 id="6-2-期望"><a href="#6-2-期望" class="headerlink" title="6.2 期望"></a>6.2 期望</h3><ul>
+<li>容易阅读；</li>
+<li>所有逻辑都只在唯一地点指定；</li>
+<li>新的改动不会危及现有行为；</li>
+<li>尽可能简单表达条件逻辑；</li>
+</ul>
+<h2 id="7-间接层"><a href="#7-间接层" class="headerlink" title="7. 间接层"></a>7. 间接层</h2><blockquote><p>计算机科学是这样一门科学：它相信所有问题都可以通过增加一个间接层来解决。</p>
+<footer><strong>Dennis DeBruler</strong></footer></blockquote>
+<h2 id="8-重构难题"><a href="#8-重构难题" class="headerlink" title="8. 重构难题"></a>8. 重构难题</h2><h3 id="8-1-数据库"><a href="#8-1-数据库" class="headerlink" title="8.1 数据库"></a>8.1 数据库</h3><ul>
+<li>绝大多数程序都与其背后的数据库结构紧密耦合在一起；</li>
+<li>数据迁移（migration）；</li>
+<li>在非对象数据库中，解决办法之一是：在对象模型和数据库模型之间插入一个分割层，隔离两个模型各自的编号；</li>
+</ul>
+<h3 id="8-2-修改接口"><a href="#8-2-修改接口" class="headerlink" title="8.2 修改接口"></a>8.2 修改接口</h3><p>只有当需要修改的接口被哪些“找不到，即使找到也不能修改”的代码使用时，接口的修改才会成为问题。此时，这个接口是个已发布接口（published interface），比公开接口（public interface）更进一步。</p>
+<ul>
+<li>必须同时维护新旧两个接口，直到所有用户都有时间对这个变化做出反应；<ul>
+<li>让旧接口调用新接口，千万不要复制函数实现；</li>
+<li>将旧接口标记为 deprecated（java 的已过时），例如 Java 容器类；</li>
+</ul>
+</li>
+<li>尽量不要发布接口，除非真的有必要；</li>
+<li>Java 还有一种特别的接口修改：在 throws 子句中增加一个异常。此时，需要新建函数，然后在旧函数调用它，并处理这个异常。</li>
+</ul>
+<p><code>ps:</code>不要过早发布接口。请修改你的代码所有权政策，使重构更顺畅。</p>
+<h3 id="8-3-难以通过重构手法完成的设计改动"><a href="#8-3-难以通过重构手法完成的设计改动" class="headerlink" title="8.3 难以通过重构手法完成的设计改动"></a>8.3 难以通过重构手法完成的设计改动</h3><p>先想象重构的情况，考虑候选设计方案难度，而后在设计上投入更多力气。</p>
+<h2 id="9-何时不该重构"><a href="#9-何时不该重构" class="headerlink" title="9. 何时不该重构"></a>9. 何时不该重构</h2><ul>
+<li>有时候代码是在太混乱，重构还不如重新重写一个；</li>
+<li>重写（而非重构）的一个清楚讯号就是：现有代码根本不能正常运作；</li>
+<li>折中办法：将“大块头软件”重构为封装良好的小型组件；</li>
+<li>项目已近最后期限，此刻应该避免重构；</li>
+</ul>
+<h2 id="10-代码的坏味道（Bad-Smell）"><a href="#10-代码的坏味道（Bad-Smell）" class="headerlink" title="10. 代码的坏味道（Bad Smell）"></a>10. 代码的坏味道（Bad Smell）</h2><h3 id="10-1-Duplicated-Code（重复代码）"><a href="#10-1-Duplicated-Code（重复代码）" class="headerlink" title="10.1 Duplicated Code（重复代码）"></a>10.1 Duplicated Code（重复代码）</h3><ul>
+<li>Extract（提取） Method：重复代码；</li>
+<li>Pull Up Method：多个子类重复代码，提取代码放到超类；</li>
+<li>Form Template Method：各个子类有所差异，使用 Template Method（模板方法）模式；</li>
+<li>Substitute（替代） Algorithm：不同算法做同样的事；</li>
+<li>Extract Class：若两个毫不相关的类出现，则将重复代码提炼到一个独立类；</li>
+</ul>
+<h3 id="10-2-Long-Method（过长函数）"><a href="#10-2-Long-Method（过长函数）" class="headerlink" title="10.2 Long Method（过长函数）"></a>10.2 Long Method（过长函数）</h3><p>“间接层”所能带来的全部利益–解释能力、共享能力、选择能力–都是由小型函数支持的。小函数真正容易理解的关键之处在于一个好名字。</p>
+<ul>
+<li>Extract Method</li>
+<li>Replace Temp with Query</li>
+<li>Introduce Parameter Object</li>
+<li>Preserve（保持） Whole Object</li>
+<li>Replace Method with Method Object</li>
+<li>Decompose（分解） Conditional</li>
+</ul>
+<h3 id="10-3-Large-Class（过大的类）"><a href="#10-3-Large-Class（过大的类）" class="headerlink" title="10.3 Large Class（过大的类）"></a>10.3 Large Class（过大的类）</h3><ul>
+<li>Extract Class</li>
+<li>Extract Subclass</li>
+<li>Extract Interface：先确定客户端如何使用它们，而后为每种使用方式提炼出一个接口。</li>
+<li>Duplicate Observed Data</li>
+</ul>
+<h3 id="10-4-Long-Parameter-List（过长参数列）"><a href="#10-4-Long-Parameter-List（过长参数列）" class="headerlink" title="10.4 Long Parameter List（过长参数列）"></a>10.4 Long Parameter List（过长参数列）</h3><ul>
+<li>Replace Parameter with Method</li>
+<li>Preserve Whole Object</li>
+<li>Introduce Parameter Object：如果某些数据缺乏合理的对象归属，可为它们制造一个“参数对象”；<br>-<code>ps:</code>例外情况，有时候不希望造成“被调用对象”与“较大对象”间的某种依赖关系。这时候将数据从对象中拆解出来单独作为参数，也很合情合理。但需注意引发的代价。若参数列太长或变化太频繁，就需要重新考虑依赖结构。</li>
+</ul>
+<h3 id="10-5-Divergent-Change（发散式变化）"><a href="#10-5-Divergent-Change（发散式变化）" class="headerlink" title="10.5 Divergent Change（发散式变化）"></a>10.5 Divergent Change（发散式变化）</h3><p>某个类因为不同原因在不同方向发生变化。此时也许将对象拆分更好，这么一来每个对象就可以只因一种变化而修改。</p>
+<ul>
+<li>Extract Class</li>
+</ul>
+<h3 id="10-6-Shotgun-Surgery（散弹式修改）"><a href="#10-6-Shotgun-Surgery（散弹式修改）" class="headerlink" title="10.6 Shotgun Surgery（散弹式修改）"></a>10.6 Shotgun Surgery（散弹式修改）</h3><p>某种变化引发在许多不同的类内做出许多小修改。考虑把所有需要修改的代码放进同一个类。</p>
+<ul>
+<li>Move Method</li>
+<li>Move Field</li>
+<li>Inline Class</li>
+</ul>
+<p><code>ps:</code>Divergent Change 是指“一个类受多种变化的影响”，Shotgun Surgery 则是指“一种变化引发多个类相应修改”。</p>
+<h3 id="10-7-Feature-Envy（依恋情结）"><a href="#10-7-Feature-Envy（依恋情结）" class="headerlink" title="10.7 Feature Envy（依恋情结）"></a>10.7 Feature Envy（依恋情结）</h3><ul>
+<li>Extract Method</li>
+<li>Move Method</li>
+</ul>
+<h3 id="10-8-Data-Clumps（数据泥团）"><a href="#10-8-Data-Clumps（数据泥团）" class="headerlink" title="10.8 Data Clumps（数据泥团）"></a>10.8 Data Clumps（数据泥团）</h3><p>两个类中相同的字段、许多函数签名中相同的参数。这些总是绑在一起出现的数据真应该拥有数据它们自己的对象。</p>
+<ul>
+<li>Extract Class</li>
+<li>Introduce Parameter Object</li>
+<li>Preserve Whole Object</li>
+</ul>
+<h3 id="10-9-Primitive-Obsession（基本类型偏执）"><a href="#10-9-Primitive-Obsession（基本类型偏执）" class="headerlink" title="10.9 Primitive Obsession（基本类型偏执）"></a>10.9 Primitive Obsession（基本类型偏执）</h3><ul>
+<li>Replace Data Value with Object</li>
+<li>Replace Type Code with Class</li>
+<li>Replace Type Code with Subclass</li>
+<li>Replace Type Code with State/Strategy</li>
+<li>Extract Class</li>
+<li>Introduce Parameter Object</li>
+<li>Replace Array with Object</li>
+</ul>
+<h3 id="10-10-Switch-Statements（switch表达式）"><a href="#10-10-Switch-Statements（switch表达式）" class="headerlink" title="10.10 Switch Statements（switch表达式）"></a>10.10 Switch Statements（switch表达式）</h3><p>面向对象程序的一个最明显的特征就是：少用 switch（或 case）语句，问题在于重复，同样 switch 语句散布不同地方，需同时修改。解决方案是<strong>多态</strong>。</p>
+<ul>
+<li>Extract Method</li>
+<li>Extract Class</li>
+<li>Replace Type Code with Subclass</li>
+<li>Replace Type Code with State/Strategy</li>
+<li>Replace Conditional with Polymorphism（多态性）</li>
+<li>Replace Parameter with Explicit（明确的） Methods</li>
+<li>Introduce Null Object</li>
+</ul>
+<h3 id="10-11-Paraller-Inheritance-Hierarchies（平行继承体系）"><a href="#10-11-Paraller-Inheritance-Hierarchies（平行继承体系）" class="headerlink" title="10.11 Paraller Inheritance Hierarchies（平行继承体系）"></a>10.11 Paraller Inheritance Hierarchies（平行继承体系）</h3><p>Shotgun Surgery 的特殊情况，每当你为某个类增加一个子类，必须也为另一个类相应增加一个子类。<br><strong>策略</strong>：让一个继承体系的实例引用另一个继承体系的实例。</p>
+<ul>
+<li>Move Method</li>
+<li>Move Field</li>
+</ul>
+<h3 id="10-12-Lazy-Class（冗赘类）"><a href="#10-12-Lazy-Class（冗赘类）" class="headerlink" title="10.12 Lazy Class（冗赘类）"></a>10.12 Lazy Class（冗赘类）</h3><p>你所创建的每一个类，都得有人去理解和维护它，若一个类重构后完全没啥意义，就应该考虑删除它。</p>
+<ul>
+<li>Collapse（崩溃、折叠） Hierarchy</li>
+<li>Inline Class</li>
+</ul>
+<h3 id="10-13-Speculative-Generality（夸夸其谈未来性）"><a href="#10-13-Speculative-Generality（夸夸其谈未来性）" class="headerlink" title="10.13 Speculative Generality（夸夸其谈未来性）"></a>10.13 Speculative Generality（夸夸其谈未来性）</h3><ul>
+<li>Collapse Hierarchy</li>
+<li>Inline Class</li>
+<li>Remove Parameter</li>
+<li>Rename Method</li>
+</ul>
+<h3 id="10-14-Temporary-Field（令人迷惑的临时字段）"><a href="#10-14-Temporary-Field（令人迷惑的临时字段）" class="headerlink" title="10.14 Temporary Field（令人迷惑的临时字段）"></a>10.14 Temporary Field（令人迷惑的临时字段）</h3><ul>
+<li>Extract Class</li>
+<li>Introduce Null Object</li>
+</ul>
+<h3 id="10-15-Message-Chains（过度耦合的消息链）"><a href="#10-15-Message-Chains（过度耦合的消息链）" class="headerlink" title="10.15 Message Chains（过度耦合的消息链）"></a>10.15 Message Chains（过度耦合的消息链）</h3><ul>
+<li>Hide Delegate</li>
+<li>Extract Method</li>
+<li>Move Method</li>
+</ul>
+<h3 id="10-16-Middle-Man（中间人）"><a href="#10-16-Middle-Man（中间人）" class="headerlink" title="10.16 Middle Man（中间人）"></a>10.16 Middle Man（中间人）</h3><p>过度委托</p>
+<ul>
+<li>Remove Middle Man</li>
+<li>Inline Method</li>
+<li>Replace Delegation with Inheritance</li>
+</ul>
+<h3 id="10-17-Inappropriate-Intimacy（不恰当的亲密关系，即狎昵关系）"><a href="#10-17-Inappropriate-Intimacy（不恰当的亲密关系，即狎昵关系）" class="headerlink" title="10.17 Inappropriate Intimacy（不恰当的亲密关系，即狎昵关系）"></a>10.17 Inappropriate Intimacy（不恰当的亲密关系，即狎昵关系）</h3><ul>
+<li>Move Method</li>
+<li>Move Field</li>
+<li>Change Bidirectional（双向） Association（关联） to Unidirectional（单向）</li>
+<li>Extract Class</li>
+<li>Hide Delegate</li>
+<li>Replace Inheritance with Delegation</li>
+</ul>
+<h3 id="10-18-Alternative-Classes-with-Different-Interfaces（异曲同工的类）"><a href="#10-18-Alternative-Classes-with-Different-Interfaces（异曲同工的类）" class="headerlink" title="10.18 Alternative Classes with Different Interfaces（异曲同工的类）"></a>10.18 Alternative Classes with Different Interfaces（异曲同工的类）</h3><ul>
+<li>Rename Method</li>
+<li>Move Method</li>
+<li>Extract SuperClass</li>
+</ul>
+<h3 id="10-19-Incomplete-Library-Class（不完美的类库）"><a href="#10-19-Incomplete-Library-Class（不完美的类库）" class="headerlink" title="10.19 Incomplete Library Class（不完美的类库）"></a>10.19 Incomplete Library Class（不完美的类库）</h3><ul>
+<li>Introduce Foreign Method</li>
+<li>Introduce Local Extension</li>
+</ul>
+<h3 id="10-20-Data-Class（纯粹的数据类）"><a href="#10-20-Data-Class（纯粹的数据类）" class="headerlink" title="10.20 Data Class（纯粹的数据类）"></a>10.20 Data Class（纯粹的数据类）</h3><p>指拥有一些字段以及访问（读写）这些字段的函数的类，即 Model 实体类。</p>
+<ul>
+<li>Encapsulate（封装） Field</li>
+<li>Encapsulate Collection</li>
+<li>Remove Setting Method</li>
+<li>Move Method</li>
+<li>Extract Method</li>
+<li>Hide Method</li>
+</ul>
+<h3 id="10-21-Refused-Bequest（被拒绝的遗赠）"><a href="#10-21-Refused-Bequest（被拒绝的遗赠）" class="headerlink" title="10.21 Refused Bequest（被拒绝的遗赠）"></a>10.21 Refused Bequest（被拒绝的遗赠）</h3><p>子类不需要超类的函数和数据，意味着继承体系设计错误。</p>
+<ul>
+<li>Push Down Method</li>
+<li>Push Down Field</li>
+<li>Replace Iniheritance with Delegation</li>
+</ul>
+<h3 id="10-22-Comments（过多的注释）"><a href="#10-22-Comments（过多的注释）" class="headerlink" title="10.22 Comments（过多的注释）"></a>10.22 Comments（过多的注释）</h3><p>注释太长太多意味着代码很糟糕。</p>
+<ul>
+<li>Extract Method</li>
+<li>Rename Method</li>
+<li>Introduce Assertion<br><code>ps:</code>当你感觉需要撰写注释时，请先尝试重构，试着让所有注释都变得多余。</li>
+</ul>
+<h2 id="11-测试"><a href="#11-测试" class="headerlink" title="11 测试"></a>11 测试</h2><p>如果你想进行重构，首要前提就是拥有一个可靠的测试环境。<br><code>ps</code>：</p>
+<ul>
+<li>确保所有测试都完全自动化，让它们检查自己的测试结果。</li>
+<li>一套测试就是一个强大的 bug 侦测器，能够大大缩减查找 bug 所需要的时间。</li>
+<li>当事情被认为应该会出错时，别忘了检查是否抛出预期的异常。</li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><ul>
+<li>Replace Type Code with State/Strategy</li>
+<li>Move Method</li>
+<li>Replace Conditional with Polymorphism</li>
+<li>Form Template Method</li>
+<li>Replace Temp with Query</li>
+<li>Extract Method</li>
+<li>Self Encapsulate(自封装) Field</li>
+</ul>
+<h3 id="重构-vs-性能优化"><a href="#重构-vs-性能优化" class="headerlink" title="重构 vs 性能优化"></a>重构 vs 性能优化</h3><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>重构</th>
+<th>性能优化</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>内部结构</td>
+<td>改变</td>
+<td>改变</td>
+</tr>
+<tr>
+<td>外部行为</td>
+<td>不改变或很小改变</td>
+<td>不改变（除了执行速度）</td>
+</tr>
+<tr>
+<td>目的</td>
+<td>软件更容易被理解和修改，性能没有变化</td>
+<td>性能提升，但往往使代码较难理解</td>
+</tr>
+</tbody>
+</table>
+<h3 id="观点"><a href="#观点" class="headerlink" title="观点"></a>观点</h3><ul>
+<li><strong>怎么对经理说重构</strong>：很多经理嘴巴上说自己“质量驱动”，实际是“进度驱动”，这种情况建议是：不要告诉经理！</li>
+<li>学习一种可以大幅提高生产力的新技术时，你总是难以察觉其不适用的场合。通常你在一个特定场景中学习它，这个场景往往是个项目。这种情况下你很难看出什么会造成这种新技术成效不彰或形成危害。</li>
+<li><blockquote><p>他把未完成的重构工作形容为“债务”。很多公司都需要借债来使自己更有效的运转，但借债就得付利息，过于复杂的代码所造成的维护和扩展的额外成本就是利息。你可以承受一定程度的利息，但如果利息太高，你就会被压垮。把债务管理好是很重要的，你应该随时通过重构来偿还一部分债务。</p>
+<footer><strong>Ward Cunningham</strong></footer></blockquote></li>
+<li>重构与设计互补。</li>
+<li>如果在所有可能的变化出现地点都建立起灵活性，整个系统的复杂度和维护难度都会大大提高。当然，如果最后发现所有这些灵活性都毫无必要，这才是最大的失败。</li>
+<li>重构可以带来更简单的设计，同时又不损失灵活性，也降低了设计过程的难度，减轻了设计压力。</li>
+<li><blockquote><p>哪怕你完全了解系统，也请实际度量它的性能，不要瞎猜。瞎猜可能会让你学到一些东西，但十有八九是错的。</p>
+<footer><strong>Ron Jeffries</strong></footer></blockquote></li>
+<li>如何确定该提炼哪一段代码：寻找注释，它们通常能指出代码用途和实现手法之间的语义距离。</li>
+<li>对象技术的全部要点：将数据和对数据的操作行为包装到一起。</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li>《重构-改善既有代码的设计》（第1-4章）</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="祥_venux WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="祥_venux Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/编程思想/" rel="tag"># 编程思想</a>
+          
+            <a href="/tags/重构/" rel="tag"># 重构</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/03.工具/01.Linux/01.CentOS/vim编辑器/" rel="next" title="vim编辑器">
+                <i class="fa fa-chevron-left"></i> vim编辑器
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微薄</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=2142808" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/head2.jpg"
+               alt="祥_venux" />
+          <p class="site-author-name" itemprop="name">祥_venux</p>
+           
+              <p class="site-description motion-element" itemprop="description">.NET</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">43</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/venux" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                    
+                      GitHub
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://music.163.com/#/user/home?id=16765516" target="_blank" title="网易云音乐">
+                  
+                    <i class="fa fa-fw fa-music"></i>
+                  
+                    
+                      网易云音乐
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/venux_27" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                    
+                      Twitter
+                    
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/luwenbiao333" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                    
+                      Facebook
+                    
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://martinfowler.com/" title="Martin Fowler" target="_blank">Martin Fowler</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.facebook.com/Jeffrey.Richter.1" title="Jeffrey Richter" target="_blank">Jeffrey Richter</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://twitter.com/search?q=Jon%20Skeet&src=typd" title="Jon Skeet" target="_blank">Jon Skeet</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/shanyou/" title="张善友" target="_blank">张善友</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.cnblogs.com/artech/" title="老A" target="_blank">老A</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.zhaojie.me/" title="老赵" target="_blank">老赵</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://sailengsi.com/" title="赛冷思" target="_blank">赛冷思</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-定义"><span class="nav-text">1. 定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-原则"><span class="nav-text">2. 原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-目的"><span class="nav-text">3. 目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-经验"><span class="nav-text">4. 经验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-何时重构"><span class="nav-text">5. 何时重构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-为什么重构有用-–-Kent-Beck"><span class="nav-text">6. 为什么重构有用 – Kent Beck</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-问题"><span class="nav-text">6.1 问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-期望"><span class="nav-text">6.2 期望</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-间接层"><span class="nav-text">7. 间接层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-重构难题"><span class="nav-text">8. 重构难题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-数据库"><span class="nav-text">8.1 数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-2-修改接口"><span class="nav-text">8.2 修改接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-3-难以通过重构手法完成的设计改动"><span class="nav-text">8.3 难以通过重构手法完成的设计改动</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-何时不该重构"><span class="nav-text">9. 何时不该重构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-代码的坏味道（Bad-Smell）"><span class="nav-text">10. 代码的坏味道（Bad Smell）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#10-1-Duplicated-Code（重复代码）"><span class="nav-text">10.1 Duplicated Code（重复代码）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-2-Long-Method（过长函数）"><span class="nav-text">10.2 Long Method（过长函数）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-3-Large-Class（过大的类）"><span class="nav-text">10.3 Large Class（过大的类）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-4-Long-Parameter-List（过长参数列）"><span class="nav-text">10.4 Long Parameter List（过长参数列）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-5-Divergent-Change（发散式变化）"><span class="nav-text">10.5 Divergent Change（发散式变化）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-6-Shotgun-Surgery（散弹式修改）"><span class="nav-text">10.6 Shotgun Surgery（散弹式修改）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-7-Feature-Envy（依恋情结）"><span class="nav-text">10.7 Feature Envy（依恋情结）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-8-Data-Clumps（数据泥团）"><span class="nav-text">10.8 Data Clumps（数据泥团）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-9-Primitive-Obsession（基本类型偏执）"><span class="nav-text">10.9 Primitive Obsession（基本类型偏执）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-10-Switch-Statements（switch表达式）"><span class="nav-text">10.10 Switch Statements（switch表达式）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-11-Paraller-Inheritance-Hierarchies（平行继承体系）"><span class="nav-text">10.11 Paraller Inheritance Hierarchies（平行继承体系）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-12-Lazy-Class（冗赘类）"><span class="nav-text">10.12 Lazy Class（冗赘类）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-13-Speculative-Generality（夸夸其谈未来性）"><span class="nav-text">10.13 Speculative Generality（夸夸其谈未来性）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-14-Temporary-Field（令人迷惑的临时字段）"><span class="nav-text">10.14 Temporary Field（令人迷惑的临时字段）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-15-Message-Chains（过度耦合的消息链）"><span class="nav-text">10.15 Message Chains（过度耦合的消息链）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-16-Middle-Man（中间人）"><span class="nav-text">10.16 Middle Man（中间人）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-17-Inappropriate-Intimacy（不恰当的亲密关系，即狎昵关系）"><span class="nav-text">10.17 Inappropriate Intimacy（不恰当的亲密关系，即狎昵关系）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-18-Alternative-Classes-with-Different-Interfaces（异曲同工的类）"><span class="nav-text">10.18 Alternative Classes with Different Interfaces（异曲同工的类）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-19-Incomplete-Library-Class（不完美的类库）"><span class="nav-text">10.19 Incomplete Library Class（不完美的类库）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-20-Data-Class（纯粹的数据类）"><span class="nav-text">10.20 Data Class（纯粹的数据类）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-21-Refused-Bequest（被拒绝的遗赠）"><span class="nav-text">10.21 Refused Bequest（被拒绝的遗赠）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-22-Comments（过多的注释）"><span class="nav-text">10.22 Comments（过多的注释）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-测试"><span class="nav-text">11 测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-text">其他</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#示例"><span class="nav-text">示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构-vs-性能优化"><span class="nav-text">重构 vs 性能优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#观点"><span class="nav-text">观点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2017 &mdash; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">祥_venux</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+    
+      <script id="dsq-count-scr" src="https://venux27.disqus.com/count.js" async></script>
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://www.venux.cn/posts/05.编程思想/02.重构/01.重构-介绍/';
+          this.page.identifier = '/posts/05.编程思想/02.重构/01.重构-介绍/';
+          this.page.title = '01.重构-介绍';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://venux27.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("UDjFXGEpy6nb5tWHq55BEaoV-gzGzoHsz", "qdpkXjO9HeADnrAdOAvRsuXi");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 6827,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
