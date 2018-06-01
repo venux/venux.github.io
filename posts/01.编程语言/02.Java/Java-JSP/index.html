@@ -108,7 +108,7 @@
 <meta property="og:image" content="http://www.venux.cn/images/posts/jsp-arch.jpg">
 <meta property="og:image" content="http://www.venux.cn/images/posts/jsp-processing.jpg">
 <meta property="og:image" content="http://www.venux.cn/images/posts/jsp_life_cycle.jpg">
-<meta property="og:updated_time" content="2018-05-29T06:41:16.901Z">
+<meta property="og:updated_time" content="2018-06-01T07:15:43.043Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java-JSP">
 <meta name="twitter:description" content="1 介绍JSP（Java Server Pages），一种动态网页开发技术，类似于 ASP。通常以&amp;lt;%开头，以%&amp;gt;结尾。">
@@ -488,26 +488,26 @@
 </ul>
 </li>
 <li><p><strong>初始化阶段</strong>：加载与JSP对应的servlet类，创建其实例，并调用它的初始化方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">jspInit</span><span class="params">()</span></span>&#123;</div><div class="line">  <span class="comment">//JSP初始化代码</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">jspInit</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="comment">//JSP初始化代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>执行阶段</strong>：调用与JSP对应的servlet实例的服务方法</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">_jspService</span><span class="params">(HttpServletRequest request,HttpServletResponse response)</span></span>&#123;</div><div class="line">  <span class="comment">//服务端处理代码</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">_jspService</span><span class="params">(HttpServletRequest request,HttpServletResponse response)</span></span>&#123;</span><br><span class="line">  <span class="comment">//服务端处理代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>销毁阶段</strong>：调用与JSP对应的servlet实例的销毁方法，然后销毁servlet实例</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">jspDestroy</span><span class="params">()</span></span>&#123;</div><div class="line">  <span class="comment">//清理代码</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">jspDestroy</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="comment">//清理代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="5-JSP-语法"><a href="#5-JSP-语法" class="headerlink" title="5 JSP 语法"></a>5 JSP 语法</h2><h3 id="5-1-脚本程序"><a href="#5-1-脚本程序" class="headerlink" title="5.1 脚本程序"></a>5.1 脚本程序</h3><p>可包含任意量的Java语句、变量、方法或表达式。格式：<br><figure class="highlight jsp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;% 代码片段 %&gt;</div></pre></td></tr></table></figure></p>
-<p>或<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;jsp:scriptlet&gt;</div><div class="line">  代码片段</div><div class="line">&lt;/jsp:scriptlet&gt;</div></pre></td></tr></table></figure></p>
-<h3 id="5-2-头部支持中文"><a href="#5-2-头部支持中文" class="headerlink" title="5.2 头部支持中文"></a>5.2 头部支持中文</h3><figure class="highlight jsp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html;charset=UTF-8"</span> pageEncoding=<span class="string">"UTF-8"</span> %&gt;</div></pre></td></tr></table></figure>
-<h3 id="5-3-声明"><a href="#5-3-声明" class="headerlink" title="5.3 声明"></a>5.3 声明</h3><p>一个声明语句可以声明一个或多个变量、方法，供后面的Java代码使用。<br><figure class="highlight jsp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;%! declaration;[ declaration;]+ ... %&gt;</div></pre></td></tr></table></figure></p>
-<p>或<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;jsp:declaration&gt;</div><div class="line">  代码片段</div><div class="line">&lt;/jsp:declaration&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="5-JSP-语法"><a href="#5-JSP-语法" class="headerlink" title="5 JSP 语法"></a>5 JSP 语法</h2><h3 id="5-1-脚本程序"><a href="#5-1-脚本程序" class="headerlink" title="5.1 脚本程序"></a>5.1 脚本程序</h3><p>可包含任意量的Java语句、变量、方法或表达式。格式：<br><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;% 代码片段 %&gt;</span><br></pre></td></tr></table></figure></p>
+<p>或<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:scriptlet&gt;</span><br><span class="line">  代码片段</span><br><span class="line">&lt;/jsp:scriptlet&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="5-2-头部支持中文"><a href="#5-2-头部支持中文" class="headerlink" title="5.2 头部支持中文"></a>5.2 头部支持中文</h3><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html;charset=UTF-8"</span> pageEncoding=<span class="string">"UTF-8"</span> %&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="5-3-声明"><a href="#5-3-声明" class="headerlink" title="5.3 声明"></a>5.3 声明</h3><p>一个声明语句可以声明一个或多个变量、方法，供后面的Java代码使用。<br><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%! declaration;[ declaration;]+ ... %&gt;</span><br></pre></td></tr></table></figure></p>
+<p>或<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:declaration&gt;</span><br><span class="line">  代码片段</span><br><span class="line">&lt;/jsp:declaration&gt;</span><br></pre></td></tr></table></figure></p>
 <h3 id="5-4-表达式"><a href="#5-4-表达式" class="headerlink" title="5.4 表达式"></a>5.4 表达式</h3><p>一个JSP表达式中包含的脚本语言表达式，先被转化成String，然后插入到表达式出现的地方。<br><code>注意：</code>不能以分号来结束。</p>
-<figure class="highlight jsp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;%= 表达式 %&gt;</div></pre></td></tr></table></figure>
-<p>或<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;jsp:expression&gt;</div><div class="line">   表达式</div><div class="line">&lt;/jsp:expression&gt;</div></pre></td></tr></table></figure></p>
-<h3 id="5-5-注释"><a href="#5-5-注释" class="headerlink" title="5.5 注释"></a>5.5 注释</h3><figure class="highlight jsp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;%--注释--%&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%= 表达式 %&gt;</span><br></pre></td></tr></table></figure>
+<p>或<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:expression&gt;</span><br><span class="line">   表达式</span><br><span class="line">&lt;/jsp:expression&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="5-5-注释"><a href="#5-5-注释" class="headerlink" title="5.5 注释"></a>5.5 注释</h3><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%--注释--%&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="5-6-指令"><a href="#5-6-指令" class="headerlink" title="5.6 指令"></a>5.6 指令</h3><p>设置与整个JSP页面相关的属性。</p>
-<figure class="highlight jsp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;%@ directive attribute=<span class="string">"value"</span> %&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ directive attribute=<span class="string">"value"</span> %&gt;</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -531,7 +531,7 @@
 </tbody>
 </table>
 <h3 id="5-7-行为"><a href="#5-7-行为" class="headerlink" title="5.7 行为"></a>5.7 行为</h3><p>使用XML语法结构来控制servlet引擎。它能够动态插入一个文件，重用JavaBean组件，引导用户去另一个页面，为Java插件产生相关的HTML等等。<br>行为标签只有一种语法格式，它严格遵守XML标准。</p>
-<figure class="highlight jsp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;jsp:action_name attribute=<span class="string">"value"</span> /&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:action_name attribute=<span class="string">"value"</span> /&gt;</span><br></pre></td></tr></table></figure>
 <table>
 <thead>
 <tr>
@@ -628,8 +628,8 @@
 </tr>
 </tbody>
 </table>
-<h3 id="5-9-控制流语句"><a href="#5-9-控制流语句" class="headerlink" title="5.9 控制流语句"></a>5.9 控制流语句</h3><h4 id="5-9-1-判断语句"><a href="#5-9-1-判断语句" class="headerlink" title="5.9.1 判断语句"></a>5.9.1 判断语句</h4><figure class="highlight jsp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;% <span class="keyword">if</span>(flag)&#123; %&gt;</div><div class="line">  &lt;p&gt;True&lt;/p&gt;</div><div class="line">&lt;% &#125;<span class="keyword">else</span>&#123; %&gt;</div><div class="line">  &lt;p&gt;False&lt;/p&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure>
-<h4 id="5-9-2-循环语句"><a href="#5-9-2-循环语句" class="headerlink" title="5.9.2 循环语句"></a>5.9.2 循环语句</h4><figure class="highlight jsp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;% <span class="keyword">for</span> ( index = <span class="number">1</span>; index &lt;= <span class="number">3</span>; index++)&#123; %&gt;</div><div class="line">  &lt;p&gt;</div><div class="line">    &lt;%= index %&gt; </div><div class="line">  &lt;/p&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure>
+<h3 id="5-9-控制流语句"><a href="#5-9-控制流语句" class="headerlink" title="5.9 控制流语句"></a>5.9 控制流语句</h3><h4 id="5-9-1-判断语句"><a href="#5-9-1-判断语句" class="headerlink" title="5.9.1 判断语句"></a>5.9.1 判断语句</h4><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;% <span class="keyword">if</span>(flag)&#123; %&gt;</span><br><span class="line">  &lt;p&gt;True&lt;/p&gt;</span><br><span class="line">&lt;% &#125;<span class="keyword">else</span>&#123; %&gt;</span><br><span class="line">  &lt;p&gt;False&lt;/p&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="5-9-2-循环语句"><a href="#5-9-2-循环语句" class="headerlink" title="5.9.2 循环语句"></a>5.9.2 循环语句</h4><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">for</span> ( index = <span class="number">1</span>; index &lt;= <span class="number">3</span>; index++)&#123; %&gt;</span><br><span class="line">  &lt;p&gt;</span><br><span class="line">    &lt;%= index %&gt; </span><br><span class="line">  &lt;/p&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="5-10-运算符"><a href="#5-10-运算符" class="headerlink" title="5.10 运算符"></a>5.10 运算符</h3><p>JSP支持所有Java逻辑和算术运算符。</p>
 <h3 id="5-11-字面量"><a href="#5-11-字面量" class="headerlink" title="5.11 字面量"></a>5.11 字面量</h3><ul>
 <li>布尔值(boolean)：true 和 false;</li>
@@ -833,7 +833,7 @@ var jiathis_config={
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">43</span>
+                <span class="site-state-item-count">46</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

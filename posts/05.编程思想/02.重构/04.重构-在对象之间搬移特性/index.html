@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Java," />
+  <meta name="keywords" content="编程思想,重构," />
 
 
 
@@ -97,18 +97,18 @@
 
 
 
-<meta name="description" content="1 集合遍历1.1 迭代器（实现 Iterator 接口的实例） 检查是否有尚未访问的元素。 访问集合中的下一个元素。 删除集合的最后访问元素。  1.2 for-each循环 for-each循环遍历任何实现类实现Iterable接口的集合。  ps:不能使用for-each循环从集合中删除元素，将抛出ConcurrentModificationException异常。 1.3 forEach(">
-<meta name="keywords" content="Java">
+<meta name="description" content="1. 问题及方案 职责不清晰：Move Field、Move Method； 类承担过多职责：Extract Class； 类职责过少：Inline Class； 类之间关联：Hide Delegate、Remove Middle Man； 不能访问类的源码，却又想添加职责：Introduce Foreign Method、Introduce Local Extension；  2. Move M">
+<meta name="keywords" content="编程思想,重构">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java-集合">
-<meta property="og:url" content="http://www.venux.cn/posts/01.编程语言/02.Java/Java-集合/index.html">
+<meta property="og:title" content="04.重构-在对象之间搬移特性">
+<meta property="og:url" content="http://www.venux.cn/posts/05.编程思想/02.重构/04.重构-在对象之间搬移特性/index.html">
 <meta property="og:site_name" content="祥_venux">
-<meta property="og:description" content="1 集合遍历1.1 迭代器（实现 Iterator 接口的实例） 检查是否有尚未访问的元素。 访问集合中的下一个元素。 删除集合的最后访问元素。  1.2 for-each循环 for-each循环遍历任何实现类实现Iterable接口的集合。  ps:不能使用for-each循环从集合中删除元素，将抛出ConcurrentModificationException异常。 1.3 forEach(">
+<meta property="og:description" content="1. 问题及方案 职责不清晰：Move Field、Move Method； 类承担过多职责：Extract Class； 类职责过少：Inline Class； 类之间关联：Hide Delegate、Remove Middle Man； 不能访问类的源码，却又想添加职责：Introduce Foreign Method、Introduce Local Extension；  2. Move M">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-01T07:15:43.062Z">
+<meta property="og:updated_time" content="2018-06-01T07:17:16.321Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java-集合">
-<meta name="twitter:description" content="1 集合遍历1.1 迭代器（实现 Iterator 接口的实例） 检查是否有尚未访问的元素。 访问集合中的下一个元素。 删除集合的最后访问元素。  1.2 for-each循环 for-each循环遍历任何实现类实现Iterable接口的集合。  ps:不能使用for-each循环从集合中删除元素，将抛出ConcurrentModificationException异常。 1.3 forEach(">
+<meta name="twitter:title" content="04.重构-在对象之间搬移特性">
+<meta name="twitter:description" content="1. 问题及方案 职责不清晰：Move Field、Move Method； 类承担过多职责：Extract Class； 类职责过少：Inline Class； 类之间关联：Hide Delegate、Remove Middle Man； 不能访问类的源码，却又想添加职责：Introduce Foreign Method、Introduce Local Extension；  2. Move M">
 
 
 
@@ -138,13 +138,13 @@
 
 
 
-  <link rel="canonical" href="http://www.venux.cn/posts/01.编程语言/02.Java/Java-集合/"/>
+  <link rel="canonical" href="http://www.venux.cn/posts/05.编程思想/02.重构/04.重构-在对象之间搬移特性/"/>
 
 
 
 
 
-  <title>java-集合 | 祥_venux</title>
+  <title>04.重构-在对象之间搬移特性 | 祥_venux</title>
   
 
 
@@ -335,7 +335,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/posts/01.编程语言/02.Java/Java-集合/">
+    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/posts/05.编程思想/02.重构/04.重构-在对象之间搬移特性/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="祥_venux">
@@ -352,7 +352,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">java-集合</h1>
+          <h1 class="post-title" itemprop="name headline">04.重构-在对象之间搬移特性</h1>
         
 
         <div class="post-meta">
@@ -364,8 +364,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-09T21:43:16+08:00">
-                2018-04-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-31T23:06:26+08:00">
+                2018-05-31
               </time>
             
 
@@ -387,8 +387,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/01-编程语言/" itemprop="url" rel="index">
-                    <span itemprop="name">01.编程语言</span>
+                  <a href="/categories/05-编程思想/" itemprop="url" rel="index">
+                    <span itemprop="name">05.编程思想</span>
                   </a>
                 </span>
 
@@ -398,8 +398,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/01-编程语言/02-Java/" itemprop="url" rel="index">
-                    <span itemprop="name">02.Java</span>
+                  <a href="/categories/05-编程思想/02-重构/" itemprop="url" rel="index">
+                    <span itemprop="name">02.重构</span>
                   </a>
                 </span>
 
@@ -416,9 +416,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/01.编程语言/02.Java/Java-集合/#comments" itemprop="discussionUrl">
+                <a href="/posts/05.编程思想/02.重构/04.重构-在对象之间搬移特性/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/posts/01.编程语言/02.Java/Java-集合/" itemprop="commentCount"></span>
+                        data-disqus-identifier="/posts/05.编程思想/02.重构/04.重构-在对象之间搬移特性/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -426,7 +426,7 @@
 
           
           
-             <span id="/posts/01.编程语言/02.Java/Java-集合/" class="leancloud_visitors" data-flag-title="java-集合">
+             <span id="/posts/05.编程思想/02.重构/04.重构-在对象之间搬移特性/" class="leancloud_visitors" data-flag-title="04.重构-在对象之间搬移特性">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -457,61 +457,52 @@
       
 
       
-        <h2 id="1-集合遍历"><a href="#1-集合遍历" class="headerlink" title="1 集合遍历"></a>1 集合遍历</h2><h3 id="1-1-迭代器（实现-Iterator-接口的实例）"><a href="#1-1-迭代器（实现-Iterator-接口的实例）" class="headerlink" title="1.1 迭代器（实现 Iterator 接口的实例）"></a>1.1 迭代器（实现 Iterator<e> 接口的实例）</e></h3><ul>
-<li>检查是否有尚未访问的元素。</li>
-<li>访问集合中的下一个元素。</li>
-<li>删除集合的最后访问元素。</li>
+        <h2 id="1-问题及方案"><a href="#1-问题及方案" class="headerlink" title="1. 问题及方案"></a>1. 问题及方案</h2><ul>
+<li>职责不清晰：Move Field、Move Method；</li>
+<li>类承担过多职责：Extract Class；</li>
+<li>类职责过少：Inline Class；</li>
+<li>类之间关联：Hide Delegate、Remove Middle Man；</li>
+<li>不能访问类的源码，却又想添加职责：Introduce Foreign Method、Introduce Local Extension；</li>
 </ul>
-<h3 id="1-2-for-each循环"><a href="#1-2-for-each循环" class="headerlink" title="1.2 for-each循环"></a>1.2 for-each循环</h3><ul>
-<li>for-each循环遍历任何实现类实现Iterable接口的集合。</li>
+<h2 id="2-Move-Method（搬移函数）"><a href="#2-Move-Method（搬移函数）" class="headerlink" title="2. Move Method（搬移函数）"></a>2. Move Method（搬移函数）</h2><p>问题：类中，有个函数与另一类过多交互。<br>在该函数最常引用的类中建立一个有着类似行为的新函数。将旧函数变成一个单纯的委托函数，或是直接移除。</p>
+<h3 id="2-1-动机"><a href="#2-1-动机" class="headerlink" title="2.1 动机"></a>2.1 动机</h3><ul>
+<li>类中有太多行为职责；</li>
+<li>类之间太多合作导致高度耦合；</li>
 </ul>
-<p><code>ps:</code>不能使用for-each循环从集合中删除元素，将抛出ConcurrentModificationException异常。</p>
-<h3 id="1-3-forEach-方法"><a href="#1-3-forEach-方法" class="headerlink" title="1.3 forEach()方法"></a>1.3 forEach()方法</h3><ul>
-<li>Iterable接口包含一个新的 forEach(Consumer action)方法。</li>
+<h2 id="3-Move-Field（搬移字段）"><a href="#3-Move-Field（搬移字段）" class="headerlink" title="3. Move Field（搬移字段）"></a>3. Move Field（搬移字段）</h2><p>问题：类中，某个字段被另外一个类更多的使用。<br>在目标类新建一个字段，修改源字段的所有用户，令它们改用新字段。</p>
+<h3 id="3-2-做法"><a href="#3-2-做法" class="headerlink" title="3.2 做法"></a>3.2 做法</h3><ul>
+<li>Self Encapsulate Field：即对字段进行包装，提高 get、set 操作；</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// Create a list of strings</span></span><br><span class="line">    List&lt;String&gt; names = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    names.add(<span class="string">"A"</span>);</span><br><span class="line">    names.add(<span class="string">"B"</span>);</span><br><span class="line">    names.add(<span class="string">"C"</span>);</span><br><span class="line"></span><br><span class="line">    names.forEach(System.out::println);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h3 id="2-集合（Set接口）（唯一对象的集合）"><a href="#2-集合（Set接口）（唯一对象的集合）" class="headerlink" title="2 集合（Set接口）（唯一对象的集合）"></a>2 集合（Set接口）（唯一对象的集合）</h3><ul>
-<li>集合是唯一元素的集合。当向集合添加重复元素时，它们将被忽略。</li>
-<li>Java最多允许一个Set中的一个空元素。 </li>
-<li>Set 中元素的排序并不重要。Java不保证 Set 中元素的排序。</li>
+<h2 id="4-Extract-Class（提炼类）"><a href="#4-Extract-Class（提炼类）" class="headerlink" title="4. Extract Class（提炼类）"></a>4. Extract Class（提炼类）</h2><p>建立一个新类，将相关的字段和函数从旧类搬移到新类。</p>
+<h3 id="4-1-动机"><a href="#4-1-动机" class="headerlink" title="4.1 动机"></a>4.1 动机</h3><ul>
+<li>类的职责过多；</li>
+<li>类有部分特性需子类化；</li>
 </ul>
-<h3 id="2-1-数学集"><a href="#2-1-数学集" class="headerlink" title="2.1 数学集"></a>2.1 数学集</h3><ul>
-<li>HashSet 类：不保证顺序元素</li>
-<li>LinkedHashSet 类：保证插入元素顺序</li>
+<h2 id="5-Inline-Class（类内联化）"><a href="#5-Inline-Class（类内联化）" class="headerlink" title="5. Inline Class（类内联化）"></a>5. Inline Class（类内联化）</h2><p>将这个类的所有特性搬移到另一个类中，然后移除原类。此手法正好与 Extract Class 相反。</p>
+<h3 id="5-1-动机"><a href="#5-1-动机" class="headerlink" title="5.1 动机"></a>5.1 动机</h3><p>一个类不再承担足够职责，不再有单独存在的里有。</p>
+<h2 id="6-Hide-Delegate（隐藏“委托关系”）"><a href="#6-Hide-Delegate（隐藏“委托关系”）" class="headerlink" title="6. Hide Delegate（隐藏“委托关系”）"></a>6. Hide Delegate（隐藏“委托关系”）</h2><p>在服务类上建立客户所需的所有函数，用以隐藏委托关系。</p>
+<h3 id="6-1-动机"><a href="#6-1-动机" class="headerlink" title="6.1 动机"></a>6.1 动机</h3><p>“封装”意味着每个对象都应该尽可能少了解系统的其他部分。</p>
+<h2 id="7-Remove-Middle-Man（移除中间人）"><a href="#7-Remove-Middle-Man（移除中间人）" class="headerlink" title="7. Remove Middle Man（移除中间人）"></a>7. Remove Middle Man（移除中间人）</h2><p>问题：某个类做了过多的简单委托动作。<br>让客户直接调用委托类。</p>
+<h3 id="7-1-动机"><a href="#7-1-动机" class="headerlink" title="7.1 动机"></a>7.1 动机</h3><ul>
+<li>合适的隐藏程度；</li>
+<li>与 Hide Delegate 相反；</li>
 </ul>
-<h3 id="2-2-排序集"><a href="#2-2-排序集" class="headerlink" title="2.2 排序集"></a>2.2 排序集</h3><p>SortedSet 接口表示Java集合中的排序集合框架。</p>
-<ul>
-<li>元素实现Comparable接口，将使用compareTo()方法排序，称之为自然排序；</li>
-<li>传递一个比较器自定义排序；</li>
-<li>若指定Comparator，则用Comparator排序而忽略Comparable。</li>
-<li>TreeSet是SortedSet接口的一个实现。</li>
+<h2 id="8-Introduce-Foreign-Method（引入外部函数）"><a href="#8-Introduce-Foreign-Method（引入外部函数）" class="headerlink" title="8. Introduce Foreign Method（引入外部函数）"></a>8. Introduce Foreign Method（引入外部函数）</h2><p>问题：你需要为提供服务的类增加一个函数，但无法修改这个类。<br>在客户类中建立一个函数，并以第一参数形式传入一个服务类实例。</p>
+<h3 id="8-1-动机"><a href="#8-1-动机" class="headerlink" title="8.1 动机"></a>8.1 动机</h3><ul>
+<li>同样功能防止重复代码。</li>
+<li>若许多类都需要同样的外加函数，则应提取出来，使用 Introduce Local Extension。<br><code>ps:</code>类似 C# 的扩展函数。</li>
+<li>坚持“函数与数据应该被统一封装”的原则。</li>
 </ul>
-<h3 id="2-3-导航集（有序集）"><a href="#2-3-导航集（有序集）" class="headerlink" title="2.3 导航集（有序集）"></a>2.3 导航集（有序集）</h3><p>NavigableSet 表示Java集合中的可导航集合框架。NavigableSet 接口继承了SortedSet接口和扩展 SortedSet 。</p>
-<ul>
-<li>TreeSet 类是 NavigableSet 接口的实现类之一。</li>
+<h2 id="9-Introduce-Local-Extension（引入本地扩展）"><a href="#9-Introduce-Local-Extension（引入本地扩展）" class="headerlink" title="9. Introduce Local Extension（引入本地扩展）"></a>9. Introduce Local Extension（引入本地扩展）</h2><p>问题：你需要为提供服务的类增加一些函数，但无法修改这个类。<br>建立一个新类，使它包含这些额外函数。让这个扩展品成为原类的子类或包装类。<br>  <code>ps:</code>C# 的扩展方法更简单易用，若编程语言不支持扩展方法，则使用子类或包装类形式。</p>
+<h3 id="9-1-注意事项"><a href="#9-1-注意事项" class="headerlink" title="9.1 注意事项"></a>9.1 注意事项</h3><ul>
+<li>优先级：扩展方法 &gt; 子类 &gt; 包装类；</li>
+<li>添加“转型构造函数”，即源类型作为参数的构造函数；</li>
+<li>子类问题：必须在对象创建期实施、必须创建子类对象（若旧对象一直使用，则有两个对象保存原数据，数据修改会有问题）；</li>
+<li>包装类 Wrapper；</li>
 </ul>
-<h2 id="3-列表（List接口）（有序、可重复）"><a href="#3-列表（List接口）（有序、可重复）" class="headerlink" title="3 列表（List接口）（有序、可重复）"></a>3 列表（List接口）（有序、可重复）</h2><ul>
-<li>ArrayList：访问快，添加删除慢</li>
-<li>LinkedList：访问慢，添加删除快</li>
-<li>LinkIterator接口（继承Iterator接口）遍历列表</li>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li>《重构-改善既有代码的设计》（第7章）</li>
 </ul>
-<h2 id="4-队列（Queue接口）（先进先出FIFO）"><a href="#4-队列（Queue接口）（先进先出FIFO）" class="headerlink" title="4 队列（Queue接口）（先进先出FIFO）"></a>4 队列（Queue接口）（先进先出FIFO）</h2><ul>
-<li>LinkedList：简单的队列允许在尾部插入和从头部移除。</li>
-<li>PriorityQueue：优先级队列为每个元素分配优先级，并允许从队列中删除具有最高优先级的元素。</li>
-<li>DelayQueue：延迟队列向每个元素添加延迟，并仅在其延迟已过去时删除该元素。</li>
-<li>Deque、ArrayDeque、LinkedList（FIFO或LIFO）：双端队列允许其元件从头部和尾部插入和移除。</li>
-<li>BlockingQueue接口（线程安全、适用于生产者/消费者）、ArrayBlockingQueue、LinkedBlockingQueue、PriorityBlockingQueue、SynchronousQueue：阻塞队列阻塞线程，当线程已满时向其添加元素，当线程为空时，它阻止线程从中删除元素。</li>
-<li>TransferQueue：传输队列是阻塞队列，其中对象的切换发生在生产者线程和消费者线程之间。</li>
-<li>阻塞双端队列是双端队列和阻塞队列的组合。</li>
-</ul>
-<h2 id="5-映射（Map-lt-K-V-gt-接口）-（键不能重复）"><a href="#5-映射（Map-lt-K-V-gt-接口）-（键不能重复）" class="headerlink" title="5 映射（Map&lt;K,V&gt;接口） （键不能重复）"></a>5 映射（Map&lt;K,V&gt;接口） （键不能重复）</h2><ul>
-<li>HashMap</li>
-<li>LinkedHashMap</li>
-<li>WeakHashMap</li>
-</ul>
-<h2 id="6-Collection-类"><a href="#6-Collection-类" class="headerlink" title="6 Collection 类"></a>6 Collection 类</h2><p>该类中包含许多静态的辅助方法用于处理集合，如排序、搜索等。</p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>本文主要用于记录个人不明了之处，故可能忽略许多知识点，如有需要，请自行查找相关资料，谢谢。</p>
 
       
     </div>
@@ -558,7 +549,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Java/" rel="tag"># Java</a>
+            <a href="/tags/编程思想/" rel="tag"># 编程思想</a>
+          
+            <a href="/tags/重构/" rel="tag"># 重构</a>
           
         </div>
       
@@ -581,8 +574,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/01.编程语言/02.Java/Java-各版本新特性/" rel="next" title="Java各版本新特性">
-                <i class="fa fa-chevron-left"></i> Java各版本新特性
+              <a href="/posts/05.编程思想/02.重构/03.重构-重新组织函数/" rel="next" title="03.重构-重新组织函数">
+                <i class="fa fa-chevron-left"></i> 03.重构-重新组织函数
               </a>
             
           </div>
@@ -590,10 +583,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/posts/01.编程语言/02.Java/Java-反射/" rel="prev" title="java-反射">
-                java-反射 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -853,7 +842,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-集合遍历"><span class="nav-text">1 集合遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-迭代器（实现-Iterator-接口的实例）"><span class="nav-text">1.1 迭代器（实现 Iterator 接口的实例）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-for-each循环"><span class="nav-text">1.2 for-each循环</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-forEach-方法"><span class="nav-text">1.3 forEach()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-集合（Set接口）（唯一对象的集合）"><span class="nav-text">2 集合（Set接口）（唯一对象的集合）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-数学集"><span class="nav-text">2.1 数学集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-排序集"><span class="nav-text">2.2 排序集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-导航集（有序集）"><span class="nav-text">2.3 导航集（有序集）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-列表（List接口）（有序、可重复）"><span class="nav-text">3 列表（List接口）（有序、可重复）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-队列（Queue接口）（先进先出FIFO）"><span class="nav-text">4 队列（Queue接口）（先进先出FIFO）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-映射（Map-lt-K-V-gt-接口）-（键不能重复）"><span class="nav-text">5 映射（Map&lt;K,V&gt;接口） （键不能重复）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Collection-类"><span class="nav-text">6 Collection 类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意"><span class="nav-text">注意</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-问题及方案"><span class="nav-text">1. 问题及方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Move-Method（搬移函数）"><span class="nav-text">2. Move Method（搬移函数）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-动机"><span class="nav-text">2.1 动机</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Move-Field（搬移字段）"><span class="nav-text">3. Move Field（搬移字段）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-做法"><span class="nav-text">3.2 做法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Extract-Class（提炼类）"><span class="nav-text">4. Extract Class（提炼类）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-动机"><span class="nav-text">4.1 动机</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Inline-Class（类内联化）"><span class="nav-text">5. Inline Class（类内联化）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-动机"><span class="nav-text">5.1 动机</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Hide-Delegate（隐藏“委托关系”）"><span class="nav-text">6. Hide Delegate（隐藏“委托关系”）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-动机"><span class="nav-text">6.1 动机</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-Remove-Middle-Man（移除中间人）"><span class="nav-text">7. Remove Middle Man（移除中间人）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-动机"><span class="nav-text">7.1 动机</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-Introduce-Foreign-Method（引入外部函数）"><span class="nav-text">8. Introduce Foreign Method（引入外部函数）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-动机"><span class="nav-text">8.1 动机</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-Introduce-Local-Extension（引入本地扩展）"><span class="nav-text">9. Introduce Local Extension（引入本地扩展）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#9-1-注意事项"><span class="nav-text">9.1 注意事项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
@@ -1015,9 +1004,9 @@ var jiathis_config={
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://www.venux.cn/posts/01.编程语言/02.Java/Java-集合/';
-          this.page.identifier = '/posts/01.编程语言/02.Java/Java-集合/';
-          this.page.title = 'java-集合';
+          this.page.url = 'http://www.venux.cn/posts/05.编程思想/02.重构/04.重构-在对象之间搬移特性/';
+          this.page.identifier = '/posts/05.编程思想/02.重构/04.重构-在对象之间搬移特性/';
+          this.page.title = '04.重构-在对象之间搬移特性';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://venux27.disqus.com/embed.js';

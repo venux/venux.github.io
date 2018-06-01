@@ -107,7 +107,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://www.venux.cn/images/posts/原型1.jpg">
 <meta property="og:image" content="http://www.venux.cn/images/posts/原型2.jpg">
-<meta property="og:updated_time" content="2018-05-29T06:41:16.924Z">
+<meta property="og:updated_time" content="2018-06-01T07:15:43.075Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="设计模式-04.PROTOTYPE（原型）— 对象创建型模式">
 <meta name="twitter:description" content="1 意图用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。 2 别名无 3 动机">
@@ -499,13 +499,13 @@
 </ul>
 <h2 id="10-代码示例"><a href="#10-代码示例" class="headerlink" title="10 代码示例"></a>10 代码示例</h2><ul>
 <li><p>Prototype</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">interface IPrototype</div><div class="line">&#123;</div><div class="line">    IPrototype Clone();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">interface IPrototype</span><br><span class="line">&#123;</span><br><span class="line">    IPrototype Clone();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>ConcretePrototype（Staff、WholeNote、HalfNote）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">class ConcretePrototype : IPrototype</div><div class="line">&#123;</div><div class="line">    public IPrototype Clone()</div><div class="line">    &#123;</div><div class="line">        Console.WriteLine(&quot;ConcretePrototype&quot;);</div><div class="line"></div><div class="line">        return this.MemberwiseClone() as IPrototype;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class ConcretePrototype : IPrototype</span><br><span class="line">&#123;</span><br><span class="line">    public IPrototype Clone()</span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(&quot;ConcretePrototype&quot;);</span><br><span class="line"></span><br><span class="line">        return this.MemberwiseClone() as IPrototype;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Client（GraphicTool）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">class Client</div><div class="line">&#123;</div><div class="line">    IPrototype prototype=new ConcretePrototype();</div><div class="line">    IPrototype clonePrototype=prototype.Clone();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Client</span><br><span class="line">&#123;</span><br><span class="line">    IPrototype prototype=new ConcretePrototype();</span><br><span class="line">    IPrototype clonePrototype=prototype.Clone();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="11-已知应用"><a href="#11-已知应用" class="headerlink" title="11 已知应用"></a>11 已知应用</h2><p>ICloneable.Clone</p>
@@ -708,7 +708,7 @@ var jiathis_config={
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">43</span>
+                <span class="site-state-item-count">46</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
