@@ -109,7 +109,7 @@
 <meta property="og:image" content="http://www.venux.cn/images/posts/Java_Array.jpg">
 <meta property="og:image" content="http://www.venux.cn/images/posts/Java_Stream.jpg">
 <meta property="og:image" content="http://www.venux.cn/images/posts/Java_Exception.jpg">
-<meta property="og:updated_time" content="2018-06-01T07:15:43.050Z">
+<meta property="og:updated_time" content="2018-06-01T08:16:10.732Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java基础知识01">
 <meta name="twitter:description" content="1 Hello World 示例12345public class HelloWorld&amp;#123;    public static void main(String[] args)&amp;#123;        System.out.println(&quot;Hello World&quot;);    &amp;#125;&amp;#125; ps:  Java 中类名（CamelCase 风格）要与文件名保持一致； Java">
@@ -1488,6 +1488,7 @@
 <h3 id="43-1-hashCode"><a href="#43-1-hashCode" class="headerlink" title="43.1 hashCode"></a>43.1 hashCode</h3><ul>
 <li>如果两个对象使用equals()方法相等，则它们必须具有相同的哈希码。</li>
 <li>如果x.hashCode()等于y.hashCode()，则x.equals(y)不必返回true。</li>
+<li><strong>快速实现 hashCode方法</strong>：读取 equals() 使用的所有字段的 hash 码，然后对它们进行按位异或（^）操作。</li>
 </ul>
 <h3 id="43-2-equals"><a href="#43-2-equals" class="headerlink" title="43.2 equals"></a>43.2 equals</h3><p>这里是equals()方法的实现的规范。假设x，y和z是三个对象的非空引用。</p>
 <ul>
@@ -1754,7 +1755,7 @@ var jiathis_config={
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

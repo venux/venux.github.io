@@ -97,18 +97,18 @@
 
 
 
-<meta name="description" content="1. 问题及方案 职责不清晰：Move Field、Move Method； 类承担过多职责：Extract Class； 类职责过少：Inline Class； 类之间关联：Hide Delegate、Remove Middle Man； 不能访问类的源码，却又想添加职责：Introduce Foreign Method、Introduce Local Extension；  2. Move M">
+<meta name="description" content="1. 问题及方案 职责不清晰：Move Field、Move Method； 类承担过多职责：Extract Class； 类职责过少：Inline Class； 类之间关联：Hide Delegate、Remove Middle Man； 不能访问类的源码，却又想添加职责：Introduce Foreign Method、Introduce Local Extension；">
 <meta name="keywords" content="编程思想,重构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="04.重构-在对象之间搬移特性">
 <meta property="og:url" content="http://www.venux.cn/posts/05.编程思想/02.重构/04.重构-在对象之间搬移特性/index.html">
 <meta property="og:site_name" content="祥_venux">
-<meta property="og:description" content="1. 问题及方案 职责不清晰：Move Field、Move Method； 类承担过多职责：Extract Class； 类职责过少：Inline Class； 类之间关联：Hide Delegate、Remove Middle Man； 不能访问类的源码，却又想添加职责：Introduce Foreign Method、Introduce Local Extension；  2. Move M">
+<meta property="og:description" content="1. 问题及方案 职责不清晰：Move Field、Move Method； 类承担过多职责：Extract Class； 类职责过少：Inline Class； 类之间关联：Hide Delegate、Remove Middle Man； 不能访问类的源码，却又想添加职责：Introduce Foreign Method、Introduce Local Extension；">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-01T07:17:16.321Z">
+<meta property="og:updated_time" content="2018-06-01T07:18:42.719Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="04.重构-在对象之间搬移特性">
-<meta name="twitter:description" content="1. 问题及方案 职责不清晰：Move Field、Move Method； 类承担过多职责：Extract Class； 类职责过少：Inline Class； 类之间关联：Hide Delegate、Remove Middle Man； 不能访问类的源码，却又想添加职责：Introduce Foreign Method、Introduce Local Extension；  2. Move M">
+<meta name="twitter:description" content="1. 问题及方案 职责不清晰：Move Field、Move Method； 类承担过多职责：Extract Class； 类职责过少：Inline Class； 类之间关联：Hide Delegate、Remove Middle Man； 不能访问类的源码，却又想添加职责：Introduce Foreign Method、Introduce Local Extension；">
 
 
 
@@ -464,6 +464,7 @@
 <li>类之间关联：Hide Delegate、Remove Middle Man；</li>
 <li>不能访问类的源码，却又想添加职责：Introduce Foreign Method、Introduce Local Extension；</li>
 </ul>
+<a id="more"></a>
 <h2 id="2-Move-Method（搬移函数）"><a href="#2-Move-Method（搬移函数）" class="headerlink" title="2. Move Method（搬移函数）"></a>2. Move Method（搬移函数）</h2><p>问题：类中，有个函数与另一类过多交互。<br>在该函数最常引用的类中建立一个有着类似行为的新函数。将旧函数变成一个单纯的委托函数，或是直接移除。</p>
 <h3 id="2-1-动机"><a href="#2-1-动机" class="headerlink" title="2.1 动机"></a>2.1 动机</h3><ul>
 <li>类中有太多行为职责；</li>
@@ -584,6 +585,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/posts/05.编程思想/02.重构/05.重构-重新组织数据/" rel="prev" title="05.重构-重新组织数据">
+                05.重构-重新组织数据 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -694,7 +699,7 @@ var jiathis_config={
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">46</span>
+                <span class="site-state-item-count">48</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
