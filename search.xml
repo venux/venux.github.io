@@ -3,6 +3,134 @@
   
     
     <entry>
+      <title>Oracle表名列名长度限制</title>
+      <link href="//posts/02.%E6%95%B0%E6%8D%AE%E5%BA%93/03.Oracle/Oracle%E8%A1%A8%E5%90%8D%E5%88%97%E5%90%8D%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6/"/>
+      <url>//posts/02.%E6%95%B0%E6%8D%AE%E5%BA%93/03.Oracle/Oracle%E8%A1%A8%E5%90%8D%E5%88%97%E5%90%8D%E9%95%BF%E5%BA%A6%E9%99%90%E5%88%B6/</url>
+      <content type="html"><![CDATA[<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>1 <a href="https://blog.csdn.net/haiross/article/details/38379615" target="_blank" rel="noopener">oracle的表名、字段名、constraint名的长度限制分别是多少？</a></p>]]></content>
+      
+      <categories>
+          
+          <category> 02.数据库 </category>
+          
+          <category> 04.Oracle </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Oracle </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>SQL比较</title>
+      <link href="//posts/02.%E6%95%B0%E6%8D%AE%E5%BA%93/SQL%E6%AF%94%E8%BE%83/"/>
+      <url>//posts/02.%E6%95%B0%E6%8D%AE%E5%BA%93/SQL%E6%AF%94%E8%BE%83/</url>
+      <content type="html"><![CDATA[<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul><li><a href="https://sqlwithmanoj.com/2015/05/03/what-is-sql-plsql-t-sql-and-difference-between-them/" target="_blank" rel="noopener">What is SQL, PL/SQL, T-SQL and difference between them</a></li><li><a href="https://stackoverflow.com/questions/1043265/what-is-the-difference-between-sql-pl-sql-and-t-sql" target="_blank" rel="noopener">What is the difference between SQL, PL-SQL and T-SQL?</a></li></ul>]]></content>
+      
+      
+        <tags>
+            
+            <tag> SQL Server </tag>
+            
+            <tag> Oracle </tag>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Oracle服务名</title>
+      <link href="//posts/02.%E6%95%B0%E6%8D%AE%E5%BA%93/03.Oracle/Oracle%E6%9C%8D%E5%8A%A1%E5%90%8D/"/>
+      <url>//posts/02.%E6%95%B0%E6%8D%AE%E5%BA%93/03.Oracle/Oracle%E6%9C%8D%E5%8A%A1%E5%90%8D/</url>
+      <content type="html"><![CDATA[<h2 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1. 介绍"></a>1. 介绍</h2><p>TNS serviceNAME</p><ul><li>格式1：<strong>IP地址:端口号/实例名</strong>，实例192.168.10.5：1521/ORCL；</li><li>格式2：<strong>服务名</strong>，在TNSNAMES.ORA文件配置；</li></ul><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>1 <a href="https://blog.csdn.net/BlueCY/article/details/76164941" target="_blank" rel="noopener">Oracle ODBC 配置（不需安装oracle客户端）</a></p>]]></content>
+      
+      <categories>
+          
+          <category> 02.数据库 </category>
+          
+          <category> 04.Oracle </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Oracle </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Oracle字符集</title>
+      <link href="//posts/02.%E6%95%B0%E6%8D%AE%E5%BA%93/03.Oracle/Oracle%E5%AD%97%E7%AC%A6%E9%9B%86/"/>
+      <url>//posts/02.%E6%95%B0%E6%8D%AE%E5%BA%93/03.Oracle/Oracle%E5%AD%97%E7%AC%A6%E9%9B%86/</url>
+      <content type="html"><![CDATA[<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>1 <a href="https://blog.csdn.net/meunsina/article/details/53954215" target="_blank" rel="noopener">彻底搞懂Oracle字符集</a><br>2 <a href="https://blog.csdn.net/wstoneh01/article/details/50588720" target="_blank" rel="noopener">正确设置与使用SQL Server的字符集（Collation，即排序规则）</a><br>3 <a href="https://blog.csdn.net/luofujiang/article/details/9030819" target="_blank" rel="noopener">ORA-12704:字符集不匹配错误</a></p>]]></content>
+      
+      <categories>
+          
+          <category> 02.数据库 </category>
+          
+          <category> 04.Oracle </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Oracle </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Oracle ODBC配置</title>
+      <link href="//posts/02.%E6%95%B0%E6%8D%AE%E5%BA%93/03.Oracle/Oracle%20ODBC%E9%85%8D%E7%BD%AE/"/>
+      <url>//posts/02.%E6%95%B0%E6%8D%AE%E5%BA%93/03.Oracle/Oracle%20ODBC%E9%85%8D%E7%BD%AE/</url>
+      <content type="html"><![CDATA[<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>1 <a href="https://blog.csdn.net/BlueCY/article/details/76164941" target="_blank" rel="noopener">Oracle ODBC 配置（不需安装oracle客户端）</a></p>]]></content>
+      
+      <categories>
+          
+          <category> 02.数据库 </category>
+          
+          <category> 04.Oracle </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Oracle </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>SQLServer转Oracle</title>
+      <link href="//posts/02.%E6%95%B0%E6%8D%AE%E5%BA%93/SQLServer%E8%BD%ACOracle/"/>
+      <url>//posts/02.%E6%95%B0%E6%8D%AE%E5%BA%93/SQLServer%E8%BD%ACOracle/</url>
+      <content type="html"><![CDATA[<h2 id="1-情景"><a href="#1-情景" class="headerlink" title="1. 情景"></a>1. 情景</h2><p>公司项目的新客户数据库为 Oracle，故需将项目的 SQL Server 库转换为 Oracle 库。</p><h2 id="2-工具"><a href="#2-工具" class="headerlink" title="2. 工具"></a>2. 工具</h2><ul><li>SQL Server 自带的 bcm（注意：需将 SQL Server 安装目录下对应版本的 Tools\Binn 目录，如<code>C:\Program Files\Microsoft SQL Server\100\Tools\Binn</code> 添加到环境变量 Path 中）；</li><li><a href="http://download.oracle.com/otn/java/sqldeveloper/sqldeveloper-17.2.0.188.1159-no-jre.zip" target="_blank" rel="noopener">SQL Developer 17.2</a>(注意：需安装配置 Java 8)；</li></ul><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul><li><a href="http://www.oracle.com/webfolder/technetwork/tutorials/obe/db/hol08/sqldev_migration/mssqlserver/migrate_microsoft_sqlserver_otn.htm" target="_blank" rel="noopener">Migrating a Microsoft SQL Server Database to Oracle Database 11g</a></li><li><a href="https://blog.csdn.net/rootcn/article/details/8894130" target="_blank" rel="noopener">用 SQL Developer 3.2 将 SQL Server 2008 数据库离线迁移到 Oracle 11g</a></li><li><a href="https://www.cnblogs.com/benbenfishfish/p/8675075.html" target="_blank" rel="noopener">Oracle和sqlserver数据类型对应</a></li></ul>]]></content>
+      
+      
+        <tags>
+            
+            <tag> SQL Server </tag>
+            
+            <tag> Oracle </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>12.重构-总结</title>
       <link href="//posts/05.%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/02.%E9%87%8D%E6%9E%84/12.%E9%87%8D%E6%9E%84-%E6%80%BB%E7%BB%93/"/>
       <url>//posts/05.%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/02.%E9%87%8D%E6%9E%84/12.%E9%87%8D%E6%9E%84-%E6%80%BB%E7%BB%93/</url>
@@ -53,10 +181,10 @@
     </entry>
     
     <entry>
-      <title>10.重构-重构、复用与现实（William Opdyke）</title>
-      <link href="//posts/05.%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/02.%E9%87%8D%E6%9E%84/10.%E9%87%8D%E6%9E%84-%E9%87%8D%E6%9E%84%E3%80%81%E5%A4%8D%E7%94%A8%E4%B8%8E%E7%8E%B0%E5%AE%9E/"/>
-      <url>//posts/05.%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/02.%E9%87%8D%E6%9E%84/10.%E9%87%8D%E6%9E%84-%E9%87%8D%E6%9E%84%E3%80%81%E5%A4%8D%E7%94%A8%E4%B8%8E%E7%8E%B0%E5%AE%9E/</url>
-      <content type="html"><![CDATA[<h2 id="1-重构"><a href="#1-重构" class="headerlink" title="1. 重构"></a>1. 重构</h2><h3 id="1-1-问题"><a href="#1-1-问题" class="headerlink" title="1.1 问题"></a>1.1 问题</h3><ul><li>生产进度的压力：<ul><li>重写整个程序（理想情况）；</li><li>复制、修改现有系统；  </li></ul></li><li>不知道如何重构；</li><li>如果利益是长远的，为什么现在做呢？可能收获利益之时，就已经不在职位上了；</li><li>代码重构是额外工作，老板看不到付出；</li><li>重构可能破坏现有程序；</li></ul><h3 id="1-2-回答"><a href="#1-2-回答" class="headerlink" title="1.2 回答"></a>1.2 回答</h3><ul><li>重构可以带来短期利益和长期利益。</li><li>已有重构工具和技术，可快速，无痛苦完成；</li><li>重构虽然花费精力和时间开销，当可在其他阶段减小相应开销；</li><li>当重构成为软件开发规则的一部分时，人们就觉得它必不可少；</li></ul><a id="more"></a><h2 id="2-做法"><a href="#2-做法" class="headerlink" title="2. 做法"></a>2. 做法</h2><ul><li>了解如何重构、在哪儿重构；</li><li>合理利用重构工具；</li><li>遵守重构规则；</li><li>团队保持共识；</li></ul><h2 id="3-安全性"><a href="#3-安全性" class="headerlink" title="3. 安全性"></a>3. 安全性</h2><p>安全性是令人关系的议题，特别是大型系统。许多应用程序由于财政、法律和道德伦理的压力，需要不间断、可靠、不出错的提供服务。</p><h2 id="3-1-如何进行安全重构"><a href="#3-1-如何进行安全重构" class="headerlink" title="3.1 如何进行安全重构"></a>3.1 如何进行安全重构</h2><ul><li>选择：<ul><li>相信编码功力；</li><li>相信编译器能捕捉错误；</li><li>相信测试能测出错误；</li><li>相信代码复审能捕捉错误；</li></ul></li><li>局限性：<ul><li>人人都可能犯错；</li><li>一些微妙错误编译器无法捕捉；</li><li>测试不可能覆盖所有情况，测出所有问题；</li><li>代码复审很可能没有，或出错，或没找到错误；</li></ul></li><li>方案：<ul><li>定义并快速实现一个重构工具的原型，用以检查某项重构是否可以安全地施加于程序上。若可能，则重构。这避免了大量可能因为人为错误引入的 bug。</li></ul></li></ul><h2 id="4-复用"><a href="#4-复用" class="headerlink" title="4. 复用"></a>4. 复用</h2><h3 id="4-1-问题（类似于重构）"><a href="#4-1-问题（类似于重构）" class="headerlink" title="4.1 问题（类似于重构）"></a>4.1 问题（类似于重构）</h3><ul><li>不知道“该复用什么”或“如何复用”；</li><li>对采用复用方法缺乏动力，除非有短期利益；</li><li>开销、学习曲线和探索成本；</li><li>项目压力；</li></ul><h3 id="4-2-回答（原则）"><a href="#4-2-回答（原则）" class="headerlink" title="4.2 回答（原则）"></a>4.2 回答（原则）</h3><ul><li>对员工进行培训；</li><li>尽量获取短期利益；</li><li>减少开销；</li><li>安全引入新技术；<br><code>ps</code>：这些不仅仅可用于重构和软件复用，还可用于技术传播。</li></ul><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul><li>《重构-改善既有代码的设计》（第13章）</li></ul>]]></content>
+      <title>11.重构-重构工具（Don Roberts 和 John Brant）</title>
+      <link href="//posts/05.%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/02.%E9%87%8D%E6%9E%84/11.%E9%87%8D%E6%9E%84-%E9%87%8D%E6%9E%84%E5%B7%A5%E5%85%B7/"/>
+      <url>//posts/05.%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/02.%E9%87%8D%E6%9E%84/11.%E9%87%8D%E6%9E%84-%E9%87%8D%E6%9E%84%E5%B7%A5%E5%85%B7/</url>
+      <content type="html"><![CDATA[<h2 id="1-总结"><a href="#1-总结" class="headerlink" title="1. 总结"></a>1. 总结</h2><p>作者那时写《重构》一书时，还未像现如今一样。现在，各类 IDE 都提供重构工具辅助重构，而不用自己去实现一整套重构工具或手动重构了。所以，现在程序员自然而然的乐意像整理代码一样去整理系统，即重构。这样，对代码的可维护性、可复用性和可理解性大大加强。</p><a id="more"></a><h2 id="2-辅助工具"><a href="#2-辅助工具" class="headerlink" title="2. 辅助工具"></a>2. 辅助工具</h2><ul><li>自动化重构工具；</li><li>自动化测试工具；</li></ul><h2 id="3-重构工具的技术标准"><a href="#3-重构工具的技术标准" class="headerlink" title="3. 重构工具的技术标准"></a>3. 重构工具的技术标准</h2><ul><li>程序数据库；</li><li>解析树；</li><li>准确性；</li></ul><h2 id="4-重构工具的实用标准"><a href="#4-重构工具的实用标准" class="headerlink" title="4. 重构工具的实用标准"></a>4. 重构工具的实用标准</h2><ul><li>速度；</li><li>撤销；</li><li>与其他工具集成；</li><li>易用性（个人添加）；</li></ul><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul><li>《重构-改善既有代码的设计》（第14章）</li></ul>]]></content>
       
       <categories>
           
@@ -78,10 +206,10 @@
     </entry>
     
     <entry>
-      <title>11.重构-重构工具（Don Roberts 和 John Brant）</title>
-      <link href="//posts/05.%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/02.%E9%87%8D%E6%9E%84/11.%E9%87%8D%E6%9E%84-%E9%87%8D%E6%9E%84%E5%B7%A5%E5%85%B7/"/>
-      <url>//posts/05.%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/02.%E9%87%8D%E6%9E%84/11.%E9%87%8D%E6%9E%84-%E9%87%8D%E6%9E%84%E5%B7%A5%E5%85%B7/</url>
-      <content type="html"><![CDATA[<h2 id="1-总结"><a href="#1-总结" class="headerlink" title="1. 总结"></a>1. 总结</h2><p>作者那时写《重构》一书时，还未像现如今一样。现在，各类 IDE 都提供重构工具辅助重构，而不用自己去实现一整套重构工具或手动重构了。所以，现在程序员自然而然的乐意像整理代码一样去整理系统，即重构。这样，对代码的可维护性、可复用性和可理解性大大加强。</p><a id="more"></a><h2 id="2-辅助工具"><a href="#2-辅助工具" class="headerlink" title="2. 辅助工具"></a>2. 辅助工具</h2><ul><li>自动化重构工具；</li><li>自动化测试工具；</li></ul><h2 id="3-重构工具的技术标准"><a href="#3-重构工具的技术标准" class="headerlink" title="3. 重构工具的技术标准"></a>3. 重构工具的技术标准</h2><ul><li>程序数据库；</li><li>解析树；</li><li>准确性；</li></ul><h2 id="4-重构工具的实用标准"><a href="#4-重构工具的实用标准" class="headerlink" title="4. 重构工具的实用标准"></a>4. 重构工具的实用标准</h2><ul><li>速度；</li><li>撤销；</li><li>与其他工具集成；</li><li>易用性（个人添加）；</li></ul><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul><li>《重构-改善既有代码的设计》（第14章）</li></ul>]]></content>
+      <title>10.重构-重构、复用与现实（William Opdyke）</title>
+      <link href="//posts/05.%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/02.%E9%87%8D%E6%9E%84/10.%E9%87%8D%E6%9E%84-%E9%87%8D%E6%9E%84%E3%80%81%E5%A4%8D%E7%94%A8%E4%B8%8E%E7%8E%B0%E5%AE%9E/"/>
+      <url>//posts/05.%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/02.%E9%87%8D%E6%9E%84/10.%E9%87%8D%E6%9E%84-%E9%87%8D%E6%9E%84%E3%80%81%E5%A4%8D%E7%94%A8%E4%B8%8E%E7%8E%B0%E5%AE%9E/</url>
+      <content type="html"><![CDATA[<h2 id="1-重构"><a href="#1-重构" class="headerlink" title="1. 重构"></a>1. 重构</h2><h3 id="1-1-问题"><a href="#1-1-问题" class="headerlink" title="1.1 问题"></a>1.1 问题</h3><ul><li>生产进度的压力：<ul><li>重写整个程序（理想情况）；</li><li>复制、修改现有系统；  </li></ul></li><li>不知道如何重构；</li><li>如果利益是长远的，为什么现在做呢？可能收获利益之时，就已经不在职位上了；</li><li>代码重构是额外工作，老板看不到付出；</li><li>重构可能破坏现有程序；</li></ul><h3 id="1-2-回答"><a href="#1-2-回答" class="headerlink" title="1.2 回答"></a>1.2 回答</h3><ul><li>重构可以带来短期利益和长期利益。</li><li>已有重构工具和技术，可快速，无痛苦完成；</li><li>重构虽然花费精力和时间开销，当可在其他阶段减小相应开销；</li><li>当重构成为软件开发规则的一部分时，人们就觉得它必不可少；</li></ul><a id="more"></a><h2 id="2-做法"><a href="#2-做法" class="headerlink" title="2. 做法"></a>2. 做法</h2><ul><li>了解如何重构、在哪儿重构；</li><li>合理利用重构工具；</li><li>遵守重构规则；</li><li>团队保持共识；</li></ul><h2 id="3-安全性"><a href="#3-安全性" class="headerlink" title="3. 安全性"></a>3. 安全性</h2><p>安全性是令人关系的议题，特别是大型系统。许多应用程序由于财政、法律和道德伦理的压力，需要不间断、可靠、不出错的提供服务。</p><h2 id="3-1-如何进行安全重构"><a href="#3-1-如何进行安全重构" class="headerlink" title="3.1 如何进行安全重构"></a>3.1 如何进行安全重构</h2><ul><li>选择：<ul><li>相信编码功力；</li><li>相信编译器能捕捉错误；</li><li>相信测试能测出错误；</li><li>相信代码复审能捕捉错误；</li></ul></li><li>局限性：<ul><li>人人都可能犯错；</li><li>一些微妙错误编译器无法捕捉；</li><li>测试不可能覆盖所有情况，测出所有问题；</li><li>代码复审很可能没有，或出错，或没找到错误；</li></ul></li><li>方案：<ul><li>定义并快速实现一个重构工具的原型，用以检查某项重构是否可以安全地施加于程序上。若可能，则重构。这避免了大量可能因为人为错误引入的 bug。</li></ul></li></ul><h2 id="4-复用"><a href="#4-复用" class="headerlink" title="4. 复用"></a>4. 复用</h2><h3 id="4-1-问题（类似于重构）"><a href="#4-1-问题（类似于重构）" class="headerlink" title="4.1 问题（类似于重构）"></a>4.1 问题（类似于重构）</h3><ul><li>不知道“该复用什么”或“如何复用”；</li><li>对采用复用方法缺乏动力，除非有短期利益；</li><li>开销、学习曲线和探索成本；</li><li>项目压力；</li></ul><h3 id="4-2-回答（原则）"><a href="#4-2-回答（原则）" class="headerlink" title="4.2 回答（原则）"></a>4.2 回答（原则）</h3><ul><li>对员工进行培训；</li><li>尽量获取短期利益；</li><li>减少开销；</li><li>安全引入新技术；<br><code>ps</code>：这些不仅仅可用于重构和软件复用，还可用于技术传播。</li></ul><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul><li>《重构-改善既有代码的设计》（第13章）</li></ul>]]></content>
       
       <categories>
           
@@ -226,10 +354,10 @@
     </entry>
     
     <entry>
-      <title>04.重构-在对象之间搬移特性</title>
-      <link href="//posts/05.%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/02.%E9%87%8D%E6%9E%84/04.%E9%87%8D%E6%9E%84-%E5%9C%A8%E5%AF%B9%E8%B1%A1%E4%B9%8B%E9%97%B4%E6%90%AC%E7%A7%BB%E7%89%B9%E6%80%A7/"/>
-      <url>//posts/05.%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/02.%E9%87%8D%E6%9E%84/04.%E9%87%8D%E6%9E%84-%E5%9C%A8%E5%AF%B9%E8%B1%A1%E4%B9%8B%E9%97%B4%E6%90%AC%E7%A7%BB%E7%89%B9%E6%80%A7/</url>
-      <content type="html"><![CDATA[<h2 id="1-问题及方案"><a href="#1-问题及方案" class="headerlink" title="1. 问题及方案"></a>1. 问题及方案</h2><ul><li>职责不清晰：Move Field、Move Method；</li><li>类承担过多职责：Extract Class；</li><li>类职责过少：Inline Class；</li><li>类之间关联：Hide Delegate、Remove Middle Man；</li><li>不能访问类的源码，却又想添加职责：Introduce Foreign Method、Introduce Local Extension；</li></ul><a id="more"></a><h2 id="2-Move-Method（搬移函数）"><a href="#2-Move-Method（搬移函数）" class="headerlink" title="2. Move Method（搬移函数）"></a>2. Move Method（搬移函数）</h2><p>问题：类中，有个函数与另一类过多交互。<br>在该函数最常引用的类中建立一个有着类似行为的新函数。将旧函数变成一个单纯的委托函数，或是直接移除。</p><h3 id="2-1-动机"><a href="#2-1-动机" class="headerlink" title="2.1 动机"></a>2.1 动机</h3><ul><li>类中有太多行为职责；</li><li>类之间太多合作导致高度耦合；</li></ul><h2 id="3-Move-Field（搬移字段）"><a href="#3-Move-Field（搬移字段）" class="headerlink" title="3. Move Field（搬移字段）"></a>3. Move Field（搬移字段）</h2><p>问题：类中，某个字段被另外一个类更多的使用。<br>在目标类新建一个字段，修改源字段的所有用户，令它们改用新字段。</p><h3 id="3-2-做法"><a href="#3-2-做法" class="headerlink" title="3.2 做法"></a>3.2 做法</h3><ul><li>Self Encapsulate Field：即对字段进行包装，提高 get、set 操作；</li></ul><h2 id="4-Extract-Class（提炼类）"><a href="#4-Extract-Class（提炼类）" class="headerlink" title="4. Extract Class（提炼类）"></a>4. Extract Class（提炼类）</h2><p>建立一个新类，将相关的字段和函数从旧类搬移到新类。</p><h3 id="4-1-动机"><a href="#4-1-动机" class="headerlink" title="4.1 动机"></a>4.1 动机</h3><ul><li>类的职责过多；</li><li>类有部分特性需子类化；</li></ul><h2 id="5-Inline-Class（类内联化）"><a href="#5-Inline-Class（类内联化）" class="headerlink" title="5. Inline Class（类内联化）"></a>5. Inline Class（类内联化）</h2><p>将这个类的所有特性搬移到另一个类中，然后移除原类。此手法正好与 Extract Class 相反。</p><h3 id="5-1-动机"><a href="#5-1-动机" class="headerlink" title="5.1 动机"></a>5.1 动机</h3><p>一个类不再承担足够职责，不再有单独存在的里有。</p><h2 id="6-Hide-Delegate（隐藏“委托关系”）"><a href="#6-Hide-Delegate（隐藏“委托关系”）" class="headerlink" title="6. Hide Delegate（隐藏“委托关系”）"></a>6. Hide Delegate（隐藏“委托关系”）</h2><p>在服务类上建立客户所需的所有函数，用以隐藏委托关系。</p><h3 id="6-1-动机"><a href="#6-1-动机" class="headerlink" title="6.1 动机"></a>6.1 动机</h3><p>“封装”意味着每个对象都应该尽可能少了解系统的其他部分。</p><h2 id="7-Remove-Middle-Man（移除中间人）"><a href="#7-Remove-Middle-Man（移除中间人）" class="headerlink" title="7. Remove Middle Man（移除中间人）"></a>7. Remove Middle Man（移除中间人）</h2><p>问题：某个类做了过多的简单委托动作。<br>让客户直接调用委托类。</p><h3 id="7-1-动机"><a href="#7-1-动机" class="headerlink" title="7.1 动机"></a>7.1 动机</h3><ul><li>合适的隐藏程度；</li><li>与 Hide Delegate 相反；</li></ul><h2 id="8-Introduce-Foreign-Method（引入外部函数）"><a href="#8-Introduce-Foreign-Method（引入外部函数）" class="headerlink" title="8. Introduce Foreign Method（引入外部函数）"></a>8. Introduce Foreign Method（引入外部函数）</h2><p>问题：你需要为提供服务的类增加一个函数，但无法修改这个类。<br>在客户类中建立一个函数，并以第一参数形式传入一个服务类实例。</p><h3 id="8-1-动机"><a href="#8-1-动机" class="headerlink" title="8.1 动机"></a>8.1 动机</h3><ul><li>同样功能防止重复代码。</li><li>若许多类都需要同样的外加函数，则应提取出来，使用 Introduce Local Extension。<br><code>ps:</code>类似 C# 的扩展函数。</li><li>坚持“函数与数据应该被统一封装”的原则。</li></ul><h2 id="9-Introduce-Local-Extension（引入本地扩展）"><a href="#9-Introduce-Local-Extension（引入本地扩展）" class="headerlink" title="9. Introduce Local Extension（引入本地扩展）"></a>9. Introduce Local Extension（引入本地扩展）</h2><p>问题：你需要为提供服务的类增加一些函数，但无法修改这个类。<br>建立一个新类，使它包含这些额外函数。让这个扩展品成为原类的子类或包装类。<br>  <code>ps:</code>C# 的扩展方法更简单易用，若编程语言不支持扩展方法，则使用子类或包装类形式。</p><h3 id="9-1-注意事项"><a href="#9-1-注意事项" class="headerlink" title="9.1 注意事项"></a>9.1 注意事项</h3><ul><li>优先级：扩展方法 &gt; 子类 &gt; 包装类；</li><li>添加“转型构造函数”，即源类型作为参数的构造函数；</li><li>子类问题：必须在对象创建期实施、必须创建子类对象（若旧对象一直使用，则有两个对象保存原数据，数据修改会有问题）；</li><li>包装类 Wrapper；</li></ul><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul><li>《重构-改善既有代码的设计》（第7章）</li></ul>]]></content>
+      <title>05.重构-重新组织数据</title>
+      <link href="//posts/05.%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/02.%E9%87%8D%E6%9E%84/05.%E9%87%8D%E6%9E%84-%E9%87%8D%E6%96%B0%E7%BB%84%E7%BB%87%E6%95%B0%E6%8D%AE/"/>
+      <url>//posts/05.%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/02.%E9%87%8D%E6%9E%84/05.%E9%87%8D%E6%9E%84-%E9%87%8D%E6%96%B0%E7%BB%84%E7%BB%87%E6%95%B0%E6%8D%AE/</url>
+      <content type="html"><![CDATA[<h2 id="1-问题及方案"><a href="#1-问题及方案" class="headerlink" title="1. 问题及方案"></a>1. 问题及方案</h2><ul><li>表示方式：Replace Value with Object、Change Value to Reference；</li><li>数组的行为方式很像一种数据结构：Replace Array with Object；</li><li>魔法数：Replace Magic Number with Symbolic Constant；</li><li>对象关联方向：Change Unidirectional Association to Bidirectional（单向-&gt;双向）、Change Bidirectional Association to Unidirectional（双向-&gt;单向）；</li><li>非公开数据：Encapsulate Field、Encapsulate Collection；</li><li>记录暴露在外：Replace Record with Data Class；</li><li>类型码（type code）：Replace Type Code with Class、Replace Type Code with Subclasses、Replace Type Code with State/Strategy；</li></ul><a id="more"></a><h2 id="2-Self-Encapsulate-Field（自封装字段）"><a href="#2-Self-Encapsulate-Field（自封装字段）" class="headerlink" title="2. Self Encapsulate Field（自封装字段）"></a>2. Self Encapsulate Field（自封装字段）</h2><p>为这个字段设置取值、设值函数，并只能通过该函数访问。</p><h2 id="3-Replace-Data-Value-with-Object（以对象取代数据值）"><a href="#3-Replace-Data-Value-with-Object（以对象取代数据值）" class="headerlink" title="3. Replace Data Value with Object（以对象取代数据值）"></a>3. Replace Data Value with Object（以对象取代数据值）</h2><p>将数据项变成对象。</p><h2 id="4-Change-Value-to-Reference（将值对象改为引用对象）"><a href="#4-Change-Value-to-Reference（将值对象改为引用对象）" class="headerlink" title="4. Change Value to Reference（将值对象改为引用对象）"></a>4. Change Value to Reference（将值对象改为引用对象）</h2><p>问题：你从一个类衍生出许多彼此相等的实例，希望将它们替换为同一个对象。<br>将这个值对象改为引用对象。</p><h3 id="4-1-动机"><a href="#4-1-动机" class="headerlink" title="4.1 动机"></a>4.1 动机</h3><ul><li>实例共享，防止多份拷贝；</li><li>解决方案：如单例模式、静态函数等；</li></ul><h2 id="5-Change-Reference-to-Value（将引用对象改为值对象）"><a href="#5-Change-Reference-to-Value（将引用对象改为值对象）" class="headerlink" title="5. Change Reference to Value（将引用对象改为值对象）"></a>5. Change Reference to Value（将引用对象改为值对象）</h2><p>问题：你有一个引用对象，很小且不可变，而且不易管理。<br>将这个引用对象改为值对象。</p><h3 id="5-1-动机"><a href="#5-1-动机" class="headerlink" title="5.1 动机"></a>5.1 动机</h3><ul><li>值对象特性：不可变；</li><li>提供 equals() 和 hashCode() 等实现；</li></ul><h2 id="6-Replace-Array-with-Object（以对象取代数组）"><a href="#6-Replace-Array-with-Object（以对象取代数组）" class="headerlink" title="6. Replace Array with Object（以对象取代数组）"></a>6. Replace Array with Object（以对象取代数组）</h2><p>问题：你有一个数组，其中的元素每个都代表不同的东西。<br><code>ps</code>：Martin Flower 写《重构》一书时，基于 Java1.0 -&gt; Java1.1 版本，那时还没有泛型一说。现如今应该不会出现这种数组存储完全不同类型的问题，否则就是需求分析建模出错。<br>以对象取代数组，对于数组中的每个元素，都使用一个字段表示。</p><h2 id="6-1-动机"><a href="#6-1-动机" class="headerlink" title="6.1 动机"></a>6.1 动机</h2><ul><li>数组存储不同类型数据；</li><li>个人理解另一个问题：数组数据涉及到相关操作，可考虑将属性修改为直接继承已有列表类型的对象，而后扩展相应操作。</li></ul><h2 id="7-Duplicate-Observed-Data（复制“被监视数据”）"><a href="#7-Duplicate-Observed-Data（复制“被监视数据”）" class="headerlink" title="7. Duplicate Observed Data（复制“被监视数据”）"></a>7. Duplicate Observed Data（复制“被监视数据”）</h2><p>将数据复制到一个领域对象中。建立一个 Observer 模式，用以同步领域对象和 GUI 对象内的重复数据。</p><h3 id="7-1-动机"><a href="#7-1-动机" class="headerlink" title="7.1 动机"></a>7.1 动机</h3><ul><li>UI 和业务逻辑代码分离；</li></ul><h2 id="8-Change-Unidirectional-Association-to-Bidirectional（将单向关联改为双向关联）"><a href="#8-Change-Unidirectional-Association-to-Bidirectional（将单向关联改为双向关联）" class="headerlink" title="8. Change Unidirectional Association to Bidirectional（将单向关联改为双向关联）"></a>8. Change Unidirectional Association to Bidirectional（将单向关联改为双向关联）</h2><p>添加一个反向指针，并使修改函数能够同时更新两条连接。</p><h3 id="8-1-动机"><a href="#8-1-动机" class="headerlink" title="8.1 动机"></a>8.1 动机</h3><ul><li>被引用类需要其引用者以便进行某些处理。</li></ul><h2 id="9-Change-Bidirectional-Association-to-Unidirectional（将双向关联改为单向关联）"><a href="#9-Change-Bidirectional-Association-to-Unidirectional（将双向关联改为单向关联）" class="headerlink" title="9. Change Bidirectional Association to Unidirectional（将双向关联改为单向关联）"></a>9. Change Bidirectional Association to Unidirectional（将双向关联改为单向关联）</h2><p>去除不必要的关联。</p><h3 id="9-1-动机"><a href="#9-1-动机" class="headerlink" title="9.1 动机"></a>9.1 动机</h3><ul><li>双向关联维护复杂，引用垃圾回收不了；</li><li>依赖关系太强，导致紧耦合；</li></ul><h2 id="10-Replace-Magic-Number-with-Symbolic-Constant（使用字面常量替换魔法数）"><a href="#10-Replace-Magic-Number-with-Symbolic-Constant（使用字面常量替换魔法数）" class="headerlink" title="10. Replace Magic Number with Symbolic Constant（使用字面常量替换魔法数）"></a>10. Replace Magic Number with Symbolic Constant（使用字面常量替换魔法数）</h2><p>创造一个变量，根据其意义为它命名，并将上述的字面数值替换为这个常量。<br><code>ps</code>：</p><ul><li>常量不会造成任何性能开销，却可以大大提高代码可读性。</li><li>若魔法数是类型码，考虑使用 Replace Type Code with Class；</li></ul><h2 id="11-Encapsulate-Field（封装字段）"><a href="#11-Encapsulate-Field（封装字段）" class="headerlink" title="11. Encapsulate Field（封装字段）"></a>11. Encapsulate Field（封装字段）</h2><p>将字段声明为 private，并提供 get/set 方法。<br><code>ps</code>：面向对象的原则之一就是封装，或称为“数据隐藏”。故数据不应该声明为 public，而通过（函数）行为暴露。</p><h2 id="12-Encapsulate-Collection（封装集合）"><a href="#12-Encapsulate-Collection（封装集合）" class="headerlink" title="12. Encapsulate Collection（封装集合）"></a>12. Encapsulate Collection（封装集合）</h2><p>让这个函数返回该集合的一个只读副本，并在这个类中提供添加/删除集合元素的函数。</p><h3 id="12-1-动机"><a href="#12-1-动机" class="headerlink" title="12.1 动机"></a>12.1 动机</h3><ul><li>集合用来保存一组实例，并提供取值/设值函数；</li><li>取值函数不应该返回集合本身，因为这会使得用户修改集合内容而集合拥有者却不知晓，过多暴露对象内部数据结构的信息；</li><li>不应该为集合提供一个设置函数，而应该提供添加/删除元素的函数；</li><li>封装数组，直接将数组替换为其他集合；</li></ul><h2 id="13-Replace-Record-with-Data-Class（以数据类取代记录）"><a href="#13-Replace-Record-with-Data-Class（以数据类取代记录）" class="headerlink" title="13. Replace Record with Data Class（以数据类取代记录）"></a>13. Replace Record with Data Class（以数据类取代记录）</h2><p>为该记录创建一个“哑”数据对象。<br><code>ps</code>：其实就是单独建立一个实体（Model/Entity），只有取值/设值函数。</p><h2 id="14-Replace-Type-Code-with-Class（以类取代状态码）"><a href="#14-Replace-Type-Code-with-Class（以类取代状态码）" class="headerlink" title="14. Replace Type Code with Class（以类取代状态码）"></a>14. Replace Type Code with Class（以类取代状态码）</h2><p>以一个新的类替换该数值类型码。<br><code>ps</code>：</p><ul><li>现如今有枚举类型，强类型检查，可优先考虑。</li><li>或者单独建立一个类，提供相应的状态码的静态字段，类似于 C# 中 Encoding 类的实现。</li></ul><h2 id="15-Replace-Type-Code-with-Subclasses（以子类取代类型码）"><a href="#15-Replace-Type-Code-with-Subclasses（以子类取代类型码）" class="headerlink" title="15. Replace Type Code with Subclasses（以子类取代类型码）"></a>15. Replace Type Code with Subclasses（以子类取代类型码）</h2><p>以子类取代这个类型码。<br><code>ps</code>：</p><ul><li>主要作用是为 Replace Conditional with Polymorphism 搭建平台。</li><li>若宿主类中无条件表达式，推荐使用 Replace Type Code with Class。</li></ul><h3 id="15-1-动机"><a href="#15-1-动机" class="headerlink" title="15.1 动机"></a>15.1 动机</h3><ul><li>以类型码的宿主类作为基类，针对每种类型码建立相应子类；</li><li>把“对不同行为的了解”从类用户转移到类自身；</li><li>不适用情况，需使用 Replace Type Code with State/Strategy：<ul><li>类型码在对象创建后发生改变；</li><li>由于某种原因，类型码宿主已有子类；</li></ul></li></ul><h2 id="16-Replace-Type-Code-with-State-Strategy（使用-State-Strategy-模式取代类型码）"><a href="#16-Replace-Type-Code-with-State-Strategy（使用-State-Strategy-模式取代类型码）" class="headerlink" title="16. Replace Type Code with State/Strategy（使用 State/Strategy 模式取代类型码）"></a>16. Replace Type Code with State/Strategy（使用 State/Strategy 模式取代类型码）</h2><p>以状态对象取代类型码。</p><ul><li>状态：State；</li><li>算法：Strategy；</li></ul><h2 id="17-Replace-Subclass-with-Fields（以字段取代子类）"><a href="#17-Replace-Subclass-with-Fields（以字段取代子类）" class="headerlink" title="17. Replace Subclass with Fields（以字段取代子类）"></a>17. Replace Subclass with Fields（以字段取代子类）</h2><p>问题：各个子类的唯一差别在于“返回常量数据”的函数上。<br>修改这些函数，使它们返回超类中的某个（新增）字段，然后销毁子类。</p><h3 id="17-1-动机"><a href="#17-1-动机" class="headerlink" title="17.1 动机"></a>17.1 动机</h3><p>建立子类的目的是为了增加新特性或变化行为。其中，有一类行为变化被称为“常量函数”，它们会返回一个硬编码的值，使得不同子类的同一个函数返回不同的值。<br><strong>若子类只有常量函数，则没存在的价值。可直接在超类中使用字段表示类型（如 C# 中的 Encoding 类）</strong></p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul><li>《重构-改善既有代码的设计》（第8章）</li></ul>]]></content>
       
       <categories>
           
@@ -251,10 +379,10 @@
     </entry>
     
     <entry>
-      <title>05.重构-重新组织数据</title>
-      <link href="//posts/05.%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/02.%E9%87%8D%E6%9E%84/05.%E9%87%8D%E6%9E%84-%E9%87%8D%E6%96%B0%E7%BB%84%E7%BB%87%E6%95%B0%E6%8D%AE/"/>
-      <url>//posts/05.%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/02.%E9%87%8D%E6%9E%84/05.%E9%87%8D%E6%9E%84-%E9%87%8D%E6%96%B0%E7%BB%84%E7%BB%87%E6%95%B0%E6%8D%AE/</url>
-      <content type="html"><![CDATA[<h2 id="1-问题及方案"><a href="#1-问题及方案" class="headerlink" title="1. 问题及方案"></a>1. 问题及方案</h2><ul><li>表示方式：Replace Value with Object、Change Value to Reference；</li><li>数组的行为方式很像一种数据结构：Replace Array with Object；</li><li>魔法数：Replace Magic Number with Symbolic Constant；</li><li>对象关联方向：Change Unidirectional Association to Bidirectional（单向-&gt;双向）、Change Bidirectional Association to Unidirectional（双向-&gt;单向）；</li><li>非公开数据：Encapsulate Field、Encapsulate Collection；</li><li>记录暴露在外：Replace Record with Data Class；</li><li>类型码（type code）：Replace Type Code with Class、Replace Type Code with Subclasses、Replace Type Code with State/Strategy；</li></ul><a id="more"></a><h2 id="2-Self-Encapsulate-Field（自封装字段）"><a href="#2-Self-Encapsulate-Field（自封装字段）" class="headerlink" title="2. Self Encapsulate Field（自封装字段）"></a>2. Self Encapsulate Field（自封装字段）</h2><p>为这个字段设置取值、设值函数，并只能通过该函数访问。</p><h2 id="3-Replace-Data-Value-with-Object（以对象取代数据值）"><a href="#3-Replace-Data-Value-with-Object（以对象取代数据值）" class="headerlink" title="3. Replace Data Value with Object（以对象取代数据值）"></a>3. Replace Data Value with Object（以对象取代数据值）</h2><p>将数据项变成对象。</p><h2 id="4-Change-Value-to-Reference（将值对象改为引用对象）"><a href="#4-Change-Value-to-Reference（将值对象改为引用对象）" class="headerlink" title="4. Change Value to Reference（将值对象改为引用对象）"></a>4. Change Value to Reference（将值对象改为引用对象）</h2><p>问题：你从一个类衍生出许多彼此相等的实例，希望将它们替换为同一个对象。<br>将这个值对象改为引用对象。</p><h3 id="4-1-动机"><a href="#4-1-动机" class="headerlink" title="4.1 动机"></a>4.1 动机</h3><ul><li>实例共享，防止多份拷贝；</li><li>解决方案：如单例模式、静态函数等；</li></ul><h2 id="5-Change-Reference-to-Value（将引用对象改为值对象）"><a href="#5-Change-Reference-to-Value（将引用对象改为值对象）" class="headerlink" title="5. Change Reference to Value（将引用对象改为值对象）"></a>5. Change Reference to Value（将引用对象改为值对象）</h2><p>问题：你有一个引用对象，很小且不可变，而且不易管理。<br>将这个引用对象改为值对象。</p><h3 id="5-1-动机"><a href="#5-1-动机" class="headerlink" title="5.1 动机"></a>5.1 动机</h3><ul><li>值对象特性：不可变；</li><li>提供 equals() 和 hashCode() 等实现；</li></ul><h2 id="6-Replace-Array-with-Object（以对象取代数组）"><a href="#6-Replace-Array-with-Object（以对象取代数组）" class="headerlink" title="6. Replace Array with Object（以对象取代数组）"></a>6. Replace Array with Object（以对象取代数组）</h2><p>问题：你有一个数组，其中的元素每个都代表不同的东西。<br><code>ps</code>：Martin Flower 写《重构》一书时，基于 Java1.0 -&gt; Java1.1 版本，那时还没有泛型一说。现如今应该不会出现这种数组存储完全不同类型的问题，否则就是需求分析建模出错。<br>以对象取代数组，对于数组中的每个元素，都使用一个字段表示。</p><h2 id="6-1-动机"><a href="#6-1-动机" class="headerlink" title="6.1 动机"></a>6.1 动机</h2><ul><li>数组存储不同类型数据；</li><li>个人理解另一个问题：数组数据涉及到相关操作，可考虑将属性修改为直接继承已有列表类型的对象，而后扩展相应操作。</li></ul><h2 id="7-Duplicate-Observed-Data（复制“被监视数据”）"><a href="#7-Duplicate-Observed-Data（复制“被监视数据”）" class="headerlink" title="7. Duplicate Observed Data（复制“被监视数据”）"></a>7. Duplicate Observed Data（复制“被监视数据”）</h2><p>将数据复制到一个领域对象中。建立一个 Observer 模式，用以同步领域对象和 GUI 对象内的重复数据。</p><h3 id="7-1-动机"><a href="#7-1-动机" class="headerlink" title="7.1 动机"></a>7.1 动机</h3><ul><li>UI 和业务逻辑代码分离；</li></ul><h2 id="8-Change-Unidirectional-Association-to-Bidirectional（将单向关联改为双向关联）"><a href="#8-Change-Unidirectional-Association-to-Bidirectional（将单向关联改为双向关联）" class="headerlink" title="8. Change Unidirectional Association to Bidirectional（将单向关联改为双向关联）"></a>8. Change Unidirectional Association to Bidirectional（将单向关联改为双向关联）</h2><p>添加一个反向指针，并使修改函数能够同时更新两条连接。</p><h3 id="8-1-动机"><a href="#8-1-动机" class="headerlink" title="8.1 动机"></a>8.1 动机</h3><ul><li>被引用类需要其引用者以便进行某些处理。</li></ul><h2 id="9-Change-Bidirectional-Association-to-Unidirectional（将双向关联改为单向关联）"><a href="#9-Change-Bidirectional-Association-to-Unidirectional（将双向关联改为单向关联）" class="headerlink" title="9. Change Bidirectional Association to Unidirectional（将双向关联改为单向关联）"></a>9. Change Bidirectional Association to Unidirectional（将双向关联改为单向关联）</h2><p>去除不必要的关联。</p><h3 id="9-1-动机"><a href="#9-1-动机" class="headerlink" title="9.1 动机"></a>9.1 动机</h3><ul><li>双向关联维护复杂，引用垃圾回收不了；</li><li>依赖关系太强，导致紧耦合；</li></ul><h2 id="10-Replace-Magic-Number-with-Symbolic-Constant（使用字面常量替换魔法数）"><a href="#10-Replace-Magic-Number-with-Symbolic-Constant（使用字面常量替换魔法数）" class="headerlink" title="10. Replace Magic Number with Symbolic Constant（使用字面常量替换魔法数）"></a>10. Replace Magic Number with Symbolic Constant（使用字面常量替换魔法数）</h2><p>创造一个变量，根据其意义为它命名，并将上述的字面数值替换为这个常量。<br><code>ps</code>：</p><ul><li>常量不会造成任何性能开销，却可以大大提高代码可读性。</li><li>若魔法数是类型码，考虑使用 Replace Type Code with Class；</li></ul><h2 id="11-Encapsulate-Field（封装字段）"><a href="#11-Encapsulate-Field（封装字段）" class="headerlink" title="11. Encapsulate Field（封装字段）"></a>11. Encapsulate Field（封装字段）</h2><p>将字段声明为 private，并提供 get/set 方法。<br><code>ps</code>：面向对象的原则之一就是封装，或称为“数据隐藏”。故数据不应该声明为 public，而通过（函数）行为暴露。</p><h2 id="12-Encapsulate-Collection（封装集合）"><a href="#12-Encapsulate-Collection（封装集合）" class="headerlink" title="12. Encapsulate Collection（封装集合）"></a>12. Encapsulate Collection（封装集合）</h2><p>让这个函数返回该集合的一个只读副本，并在这个类中提供添加/删除集合元素的函数。</p><h3 id="12-1-动机"><a href="#12-1-动机" class="headerlink" title="12.1 动机"></a>12.1 动机</h3><ul><li>集合用来保存一组实例，并提供取值/设值函数；</li><li>取值函数不应该返回集合本身，因为这会使得用户修改集合内容而集合拥有者却不知晓，过多暴露对象内部数据结构的信息；</li><li>不应该为集合提供一个设置函数，而应该提供添加/删除元素的函数；</li><li>封装数组，直接将数组替换为其他集合；</li></ul><h2 id="13-Replace-Record-with-Data-Class（以数据类取代记录）"><a href="#13-Replace-Record-with-Data-Class（以数据类取代记录）" class="headerlink" title="13. Replace Record with Data Class（以数据类取代记录）"></a>13. Replace Record with Data Class（以数据类取代记录）</h2><p>为该记录创建一个“哑”数据对象。<br><code>ps</code>：其实就是单独建立一个实体（Model/Entity），只有取值/设值函数。</p><h2 id="14-Replace-Type-Code-with-Class（以类取代状态码）"><a href="#14-Replace-Type-Code-with-Class（以类取代状态码）" class="headerlink" title="14. Replace Type Code with Class（以类取代状态码）"></a>14. Replace Type Code with Class（以类取代状态码）</h2><p>以一个新的类替换该数值类型码。<br><code>ps</code>：</p><ul><li>现如今有枚举类型，强类型检查，可优先考虑。</li><li>或者单独建立一个类，提供相应的状态码的静态字段，类似于 C# 中 Encoding 类的实现。</li></ul><h2 id="15-Replace-Type-Code-with-Subclasses（以子类取代类型码）"><a href="#15-Replace-Type-Code-with-Subclasses（以子类取代类型码）" class="headerlink" title="15. Replace Type Code with Subclasses（以子类取代类型码）"></a>15. Replace Type Code with Subclasses（以子类取代类型码）</h2><p>以子类取代这个类型码。<br><code>ps</code>：</p><ul><li>主要作用是为 Replace Conditional with Polymorphism 搭建平台。</li><li>若宿主类中无条件表达式，推荐使用 Replace Type Code with Class。</li></ul><h3 id="15-1-动机"><a href="#15-1-动机" class="headerlink" title="15.1 动机"></a>15.1 动机</h3><ul><li>以类型码的宿主类作为基类，针对每种类型码建立相应子类；</li><li>把“对不同行为的了解”从类用户转移到类自身；</li><li>不适用情况，需使用 Replace Type Code with State/Strategy：<ul><li>类型码在对象创建后发生改变；</li><li>由于某种原因，类型码宿主已有子类；</li></ul></li></ul><h2 id="16-Replace-Type-Code-with-State-Strategy（使用-State-Strategy-模式取代类型码）"><a href="#16-Replace-Type-Code-with-State-Strategy（使用-State-Strategy-模式取代类型码）" class="headerlink" title="16. Replace Type Code with State/Strategy（使用 State/Strategy 模式取代类型码）"></a>16. Replace Type Code with State/Strategy（使用 State/Strategy 模式取代类型码）</h2><p>以状态对象取代类型码。</p><ul><li>状态：State；</li><li>算法：Strategy；</li></ul><h2 id="17-Replace-Subclass-with-Fields（以字段取代子类）"><a href="#17-Replace-Subclass-with-Fields（以字段取代子类）" class="headerlink" title="17. Replace Subclass with Fields（以字段取代子类）"></a>17. Replace Subclass with Fields（以字段取代子类）</h2><p>问题：各个子类的唯一差别在于“返回常量数据”的函数上。<br>修改这些函数，使它们返回超类中的某个（新增）字段，然后销毁子类。</p><h3 id="17-1-动机"><a href="#17-1-动机" class="headerlink" title="17.1 动机"></a>17.1 动机</h3><p>建立子类的目的是为了增加新特性或变化行为。其中，有一类行为变化被称为“常量函数”，它们会返回一个硬编码的值，使得不同子类的同一个函数返回不同的值。<br><strong>若子类只有常量函数，则没存在的价值。可直接在超类中使用字段表示类型（如 C# 中的 Encoding 类）</strong></p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul><li>《重构-改善既有代码的设计》（第8章）</li></ul>]]></content>
+      <title>04.重构-在对象之间搬移特性</title>
+      <link href="//posts/05.%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/02.%E9%87%8D%E6%9E%84/04.%E9%87%8D%E6%9E%84-%E5%9C%A8%E5%AF%B9%E8%B1%A1%E4%B9%8B%E9%97%B4%E6%90%AC%E7%A7%BB%E7%89%B9%E6%80%A7/"/>
+      <url>//posts/05.%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/02.%E9%87%8D%E6%9E%84/04.%E9%87%8D%E6%9E%84-%E5%9C%A8%E5%AF%B9%E8%B1%A1%E4%B9%8B%E9%97%B4%E6%90%AC%E7%A7%BB%E7%89%B9%E6%80%A7/</url>
+      <content type="html"><![CDATA[<h2 id="1-问题及方案"><a href="#1-问题及方案" class="headerlink" title="1. 问题及方案"></a>1. 问题及方案</h2><ul><li>职责不清晰：Move Field、Move Method；</li><li>类承担过多职责：Extract Class；</li><li>类职责过少：Inline Class；</li><li>类之间关联：Hide Delegate、Remove Middle Man；</li><li>不能访问类的源码，却又想添加职责：Introduce Foreign Method、Introduce Local Extension；</li></ul><a id="more"></a><h2 id="2-Move-Method（搬移函数）"><a href="#2-Move-Method（搬移函数）" class="headerlink" title="2. Move Method（搬移函数）"></a>2. Move Method（搬移函数）</h2><p>问题：类中，有个函数与另一类过多交互。<br>在该函数最常引用的类中建立一个有着类似行为的新函数。将旧函数变成一个单纯的委托函数，或是直接移除。</p><h3 id="2-1-动机"><a href="#2-1-动机" class="headerlink" title="2.1 动机"></a>2.1 动机</h3><ul><li>类中有太多行为职责；</li><li>类之间太多合作导致高度耦合；</li></ul><h2 id="3-Move-Field（搬移字段）"><a href="#3-Move-Field（搬移字段）" class="headerlink" title="3. Move Field（搬移字段）"></a>3. Move Field（搬移字段）</h2><p>问题：类中，某个字段被另外一个类更多的使用。<br>在目标类新建一个字段，修改源字段的所有用户，令它们改用新字段。</p><h3 id="3-2-做法"><a href="#3-2-做法" class="headerlink" title="3.2 做法"></a>3.2 做法</h3><ul><li>Self Encapsulate Field：即对字段进行包装，提高 get、set 操作；</li></ul><h2 id="4-Extract-Class（提炼类）"><a href="#4-Extract-Class（提炼类）" class="headerlink" title="4. Extract Class（提炼类）"></a>4. Extract Class（提炼类）</h2><p>建立一个新类，将相关的字段和函数从旧类搬移到新类。</p><h3 id="4-1-动机"><a href="#4-1-动机" class="headerlink" title="4.1 动机"></a>4.1 动机</h3><ul><li>类的职责过多；</li><li>类有部分特性需子类化；</li></ul><h2 id="5-Inline-Class（类内联化）"><a href="#5-Inline-Class（类内联化）" class="headerlink" title="5. Inline Class（类内联化）"></a>5. Inline Class（类内联化）</h2><p>将这个类的所有特性搬移到另一个类中，然后移除原类。此手法正好与 Extract Class 相反。</p><h3 id="5-1-动机"><a href="#5-1-动机" class="headerlink" title="5.1 动机"></a>5.1 动机</h3><p>一个类不再承担足够职责，不再有单独存在的里有。</p><h2 id="6-Hide-Delegate（隐藏“委托关系”）"><a href="#6-Hide-Delegate（隐藏“委托关系”）" class="headerlink" title="6. Hide Delegate（隐藏“委托关系”）"></a>6. Hide Delegate（隐藏“委托关系”）</h2><p>在服务类上建立客户所需的所有函数，用以隐藏委托关系。</p><h3 id="6-1-动机"><a href="#6-1-动机" class="headerlink" title="6.1 动机"></a>6.1 动机</h3><p>“封装”意味着每个对象都应该尽可能少了解系统的其他部分。</p><h2 id="7-Remove-Middle-Man（移除中间人）"><a href="#7-Remove-Middle-Man（移除中间人）" class="headerlink" title="7. Remove Middle Man（移除中间人）"></a>7. Remove Middle Man（移除中间人）</h2><p>问题：某个类做了过多的简单委托动作。<br>让客户直接调用委托类。</p><h3 id="7-1-动机"><a href="#7-1-动机" class="headerlink" title="7.1 动机"></a>7.1 动机</h3><ul><li>合适的隐藏程度；</li><li>与 Hide Delegate 相反；</li></ul><h2 id="8-Introduce-Foreign-Method（引入外部函数）"><a href="#8-Introduce-Foreign-Method（引入外部函数）" class="headerlink" title="8. Introduce Foreign Method（引入外部函数）"></a>8. Introduce Foreign Method（引入外部函数）</h2><p>问题：你需要为提供服务的类增加一个函数，但无法修改这个类。<br>在客户类中建立一个函数，并以第一参数形式传入一个服务类实例。</p><h3 id="8-1-动机"><a href="#8-1-动机" class="headerlink" title="8.1 动机"></a>8.1 动机</h3><ul><li>同样功能防止重复代码。</li><li>若许多类都需要同样的外加函数，则应提取出来，使用 Introduce Local Extension。<br><code>ps:</code>类似 C# 的扩展函数。</li><li>坚持“函数与数据应该被统一封装”的原则。</li></ul><h2 id="9-Introduce-Local-Extension（引入本地扩展）"><a href="#9-Introduce-Local-Extension（引入本地扩展）" class="headerlink" title="9. Introduce Local Extension（引入本地扩展）"></a>9. Introduce Local Extension（引入本地扩展）</h2><p>问题：你需要为提供服务的类增加一些函数，但无法修改这个类。<br>建立一个新类，使它包含这些额外函数。让这个扩展品成为原类的子类或包装类。<br>  <code>ps:</code>C# 的扩展方法更简单易用，若编程语言不支持扩展方法，则使用子类或包装类形式。</p><h3 id="9-1-注意事项"><a href="#9-1-注意事项" class="headerlink" title="9.1 注意事项"></a>9.1 注意事项</h3><ul><li>优先级：扩展方法 &gt; 子类 &gt; 包装类；</li><li>添加“转型构造函数”，即源类型作为参数的构造函数；</li><li>子类问题：必须在对象创建期实施、必须创建子类对象（若旧对象一直使用，则有两个对象保存原数据，数据修改会有问题）；</li><li>包装类 Wrapper；</li></ul><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul><li>《重构-改善既有代码的设计》（第7章）</li></ul>]]></content>
       
       <categories>
           
