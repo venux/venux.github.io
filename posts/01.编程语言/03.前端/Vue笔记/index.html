@@ -97,19 +97,19 @@
 
 
 
-<meta name="description" content="1.安装 vue vue-cli vue-devtools  2.Vue实例生命周期">
+<meta name="description" content="1.安装 vue vue-cli vue-devtools  2.Vue实例生命周期 3.模板语法3.1 指令指令 (Directives) 是带有 v- 前缀的特殊特性。指令特性的值预期是单个 JavaScript 表达式 (v-for 是例外情况，稍后我们再讨论)。指令的职责是，当表达式的值改变时，将其产生的连带影响，响应式地作用于 DOM。 知识点 只有当实例被创建时 data 中存在的属性">
 <meta name="keywords" content="前端,Vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue笔记">
 <meta property="og:url" content="http://www.venux.cn/posts/01.编程语言/03.前端/Vue笔记/index.html">
 <meta property="og:site_name" content="祥_venux">
-<meta property="og:description" content="1.安装 vue vue-cli vue-devtools  2.Vue实例生命周期">
+<meta property="og:description" content="1.安装 vue vue-cli vue-devtools  2.Vue实例生命周期 3.模板语法3.1 指令指令 (Directives) 是带有 v- 前缀的特殊特性。指令特性的值预期是单个 JavaScript 表达式 (v-for 是例外情况，稍后我们再讨论)。指令的职责是，当表达式的值改变时，将其产生的连带影响，响应式地作用于 DOM。 知识点 只有当实例被创建时 data 中存在的属性">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://www.venux.cn/images/posts/vue-lifecycle.png">
-<meta property="og:updated_time" content="2018-07-19T05:51:43.166Z">
+<meta property="og:updated_time" content="2018-08-01T09:11:32.006Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue笔记">
-<meta name="twitter:description" content="1.安装 vue vue-cli vue-devtools  2.Vue实例生命周期">
+<meta name="twitter:description" content="1.安装 vue vue-cli vue-devtools  2.Vue实例生命周期 3.模板语法3.1 指令指令 (Directives) 是带有 v- 前缀的特殊特性。指令特性的值预期是单个 JavaScript 表达式 (v-for 是例外情况，稍后我们再讨论)。指令的职责是，当表达式的值改变时，将其产生的连带影响，响应式地作用于 DOM。 知识点 只有当实例被创建时 data 中存在的属性">
 <meta name="twitter:image" content="http://www.venux.cn/images/posts/vue-lifecycle.png">
 
 
@@ -475,6 +475,14 @@
 <li>vue-devtools</li>
 </ul>
 <h2 id="2-Vue实例生命周期"><a href="#2-Vue实例生命周期" class="headerlink" title="2.Vue实例生命周期"></a>2.Vue实例生命周期</h2><p><img src="/images/posts/vue-lifecycle.png" alt="Vue实例声明周期"></p>
+<h2 id="3-模板语法"><a href="#3-模板语法" class="headerlink" title="3.模板语法"></a>3.模板语法</h2><h3 id="3-1-指令"><a href="#3-1-指令" class="headerlink" title="3.1 指令"></a>3.1 指令</h3><p>指令 (Directives) 是带有 v- 前缀的特殊特性。<br>指令特性的值预期是单个 JavaScript 表达式 (v-for 是例外情况，稍后我们再讨论)。<br>指令的职责是，当表达式的值改变时，将其产生的连带影响，响应式地作用于 DOM。</p>
+<h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><ul>
+<li>只有当实例被创建时 data 中存在的属性才是响应式的。如果你知道你会在晚些时候需要一个属性，但是一开始它为空或不存在，那么你仅需要设置一些初始值。唯一的例外是使用 Object.freeze()，这会阻止修改现有的属性，也意味着响应系统无法再追踪变化。</li>
+<li>生命周期钩子的 <code>this</code> 上下文指向调用它的 Vue 实例。<ul>
+<li>不要在选项属性或回调上使用箭头函数，因为箭头函数是和父级上下文绑定在一起的。</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -670,7 +678,7 @@ var jiathis_config={
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">64</span>
+                <span class="site-state-item-count">65</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -818,7 +826,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装"><span class="nav-text">1.安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Vue实例生命周期"><span class="nav-text">2.Vue实例生命周期</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装"><span class="nav-text">1.安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Vue实例生命周期"><span class="nav-text">2.Vue实例生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-模板语法"><span class="nav-text">3.模板语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-指令"><span class="nav-text">3.1 指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点"><span class="nav-text">知识点</span></a></li></ol></div>
             
 
           </div>
