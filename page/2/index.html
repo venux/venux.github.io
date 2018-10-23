@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="venux, 鲁文祥, .NET, C#" />
+  <meta name="keywords" content="venux, 鲁文祥, .NET" />
 
 
 
@@ -344,7 +344,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/posts/05.编程思想/02.重构/11.重构-重构工具/">
+    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/posts/02.数据库/SQLServer转Oracle/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="祥_venux">
@@ -363,7 +363,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/posts/05.编程思想/02.重构/11.重构-重构工具/" itemprop="url">11.重构-重构工具（Don Roberts 和 John Brant）</a></h1>
+                <a class="post-title-link" href="/posts/02.数据库/SQLServer转Oracle/" itemprop="url">SQLServer转Oracle</a></h1>
         
 
         <div class="post-meta">
@@ -375,8 +375,163 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-10T19:06:26+08:00">
-                2018-06-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-12T13:31:10+08:00">
+                2018-07-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/02-数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">02.数据库</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="1-情景"><a href="#1-情景" class="headerlink" title="1. 情景"></a>1. 情景</h2><p>公司项目的新客户数据库为 Oracle，故需将项目的 SQL Server 库转换为 Oracle 库。</p>
+<h2 id="2-工具"><a href="#2-工具" class="headerlink" title="2. 工具"></a>2. 工具</h2><ul>
+<li>SQL Server 自带的 bcm（注意：需将 SQL Server 安装目录下对应版本的 Tools\Binn 目录，如<code>C:\Program Files\Microsoft SQL Server\100\Tools\Binn</code> 添加到环境变量 Path 中）；</li>
+<li><a href="http://download.oracle.com/otn/java/sqldeveloper/sqldeveloper-17.2.0.188.1159-no-jre.zip" target="_blank" rel="noopener">SQL Developer 17.2</a>(注意：需安装配置 Java 8)；</li>
+</ul>
+<h2 id="3-代码"><a href="#3-代码" class="headerlink" title="3. 代码"></a>3. 代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br><span class="line">455</span><br><span class="line">456</span><br><span class="line">457</span><br><span class="line">458</span><br><span class="line">459</span><br><span class="line">460</span><br><span class="line">461</span><br><span class="line">462</span><br><span class="line">463</span><br><span class="line">464</span><br><span class="line">465</span><br><span class="line">466</span><br><span class="line">467</span><br><span class="line">468</span><br><span class="line">469</span><br><span class="line">470</span><br><span class="line">471</span><br><span class="line">472</span><br><span class="line">473</span><br><span class="line">474</span><br><span class="line">475</span><br><span class="line">476</span><br><span class="line">477</span><br><span class="line">478</span><br><span class="line">479</span><br><span class="line">480</span><br><span class="line">481</span><br><span class="line">482</span><br><span class="line">483</span><br><span class="line">484</span><br><span class="line">485</span><br><span class="line">486</span><br><span class="line">487</span><br><span class="line">488</span><br><span class="line">489</span><br><span class="line">490</span><br><span class="line">491</span><br><span class="line">492</span><br><span class="line">493</span><br><span class="line">494</span><br><span class="line">495</span><br><span class="line">496</span><br><span class="line">497</span><br><span class="line">498</span><br><span class="line">499</span><br><span class="line">500</span><br><span class="line">501</span><br><span class="line">502</span><br><span class="line">503</span><br><span class="line">504</span><br><span class="line">505</span><br><span class="line">506</span><br><span class="line">507</span><br><span class="line">508</span><br><span class="line">509</span><br><span class="line">510</span><br><span class="line">511</span><br><span class="line">512</span><br><span class="line">513</span><br><span class="line">514</span><br><span class="line">515</span><br><span class="line">516</span><br><span class="line">517</span><br><span class="line">518</span><br><span class="line">519</span><br><span class="line">520</span><br><span class="line">521</span><br><span class="line">522</span><br><span class="line">523</span><br><span class="line">524</span><br><span class="line">525</span><br><span class="line">526</span><br><span class="line">527</span><br><span class="line">528</span><br><span class="line">529</span><br><span class="line">530</span><br><span class="line">531</span><br><span class="line">532</span><br><span class="line">533</span><br><span class="line">534</span><br><span class="line">535</span><br><span class="line">536</span><br><span class="line">537</span><br><span class="line">538</span><br><span class="line">539</span><br><span class="line">540</span><br><span class="line">541</span><br><span class="line">542</span><br><span class="line">543</span><br><span class="line">544</span><br><span class="line">545</span><br><span class="line">546</span><br><span class="line">547</span><br><span class="line">548</span><br><span class="line">549</span><br><span class="line">550</span><br><span class="line">551</span><br><span class="line">552</span><br><span class="line">553</span><br><span class="line">554</span><br><span class="line">555</span><br><span class="line">556</span><br><span class="line">557</span><br><span class="line">558</span><br><span class="line">559</span><br><span class="line">560</span><br><span class="line">561</span><br><span class="line">562</span><br><span class="line">563</span><br><span class="line">564</span><br><span class="line">565</span><br><span class="line">566</span><br><span class="line">567</span><br><span class="line">568</span><br><span class="line">569</span><br><span class="line">570</span><br><span class="line">571</span><br><span class="line">572</span><br><span class="line">573</span><br><span class="line">574</span><br><span class="line">575</span><br><span class="line">576</span><br><span class="line">577</span><br><span class="line">578</span><br><span class="line">579</span><br><span class="line">580</span><br><span class="line">581</span><br><span class="line">582</span><br><span class="line">583</span><br><span class="line">584</span><br><span class="line">585</span><br><span class="line">586</span><br><span class="line">587</span><br><span class="line">588</span><br><span class="line">589</span><br><span class="line">590</span><br><span class="line">591</span><br><span class="line">592</span><br><span class="line">593</span><br><span class="line">594</span><br><span class="line">595</span><br><span class="line">596</span><br><span class="line">597</span><br><span class="line">598</span><br><span class="line">599</span><br><span class="line">600</span><br><span class="line">601</span><br><span class="line">602</span><br><span class="line">603</span><br><span class="line">604</span><br><span class="line">605</span><br><span class="line">606</span><br><span class="line">607</span><br><span class="line">608</span><br><span class="line">609</span><br><span class="line">610</span><br><span class="line">611</span><br><span class="line">612</span><br><span class="line">613</span><br><span class="line">614</span><br><span class="line">615</span><br><span class="line">616</span><br><span class="line">617</span><br><span class="line">618</span><br><span class="line">619</span><br><span class="line">620</span><br><span class="line">621</span><br><span class="line">622</span><br><span class="line">623</span><br><span class="line">624</span><br><span class="line">625</span><br><span class="line">626</span><br><span class="line">627</span><br><span class="line">628</span><br><span class="line">629</span><br><span class="line">630</span><br><span class="line">631</span><br><span class="line">632</span><br><span class="line">633</span><br><span class="line">634</span><br><span class="line">635</span><br><span class="line">636</span><br><span class="line">637</span><br><span class="line">638</span><br><span class="line">639</span><br><span class="line">640</span><br><span class="line">641</span><br><span class="line">642</span><br><span class="line">643</span><br><span class="line">644</span><br><span class="line">645</span><br><span class="line">646</span><br><span class="line">647</span><br><span class="line">648</span><br><span class="line">649</span><br><span class="line">650</span><br><span class="line">651</span><br><span class="line">652</span><br><span class="line">653</span><br><span class="line">654</span><br><span class="line">655</span><br><span class="line">656</span><br><span class="line">657</span><br><span class="line">658</span><br><span class="line">659</span><br><span class="line">660</span><br><span class="line">661</span><br><span class="line">662</span><br><span class="line">663</span><br><span class="line">664</span><br><span class="line">665</span><br><span class="line">666</span><br><span class="line">667</span><br><span class="line">668</span><br></pre></td><td class="code"><pre><span class="line">#region 私有方法</span><br><span class="line">  /// &lt;summary&gt;</span><br><span class="line">  /// 合并多个空格</span><br><span class="line">  /// &lt;/summary&gt;</span><br><span class="line">  /// &lt;param name=&quot;sql&quot;&gt;源SQL&lt;/param&gt;</span><br><span class="line">  /// &lt;returns&gt;目标SQL&lt;/returns&gt;</span><br><span class="line">  private string MergeSpace(string sql)</span><br><span class="line">  &#123;</span><br><span class="line">      if (string.IsNullOrEmpty(sql))</span><br><span class="line">      &#123;</span><br><span class="line">          return sql;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      Regex replaceSpace = new Regex(@&quot;\s&#123;1,&#125;&quot;, RegexOptions.IgnoreCase);</span><br><span class="line">      string result = replaceSpace.Replace(sql, &quot; &quot;).Trim();</span><br><span class="line"></span><br><span class="line">      return result;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  /// &lt;summary&gt;</span><br><span class="line">  /// 替换空字符串</span><br><span class="line">  /// &lt;/summary&gt;</span><br><span class="line">  /// &lt;param name=&quot;sql&quot;&gt;源SQL&lt;/param&gt;</span><br><span class="line">  /// &lt;returns&gt;目标SQL&lt;/returns&gt;</span><br><span class="line">  /// &lt;remarks&gt;</span><br><span class="line">  /// https://www.cnblogs.com/memory4young/p/use-null-empty-space-in-oracle.html</span><br><span class="line">  /// 问题：Oracle中null和&apos;&apos;(中间没空格的空字符串)是一个意思，若字段设置为非空（not null），使用&apos;&apos;插入会报错。</span><br><span class="line">  /// 解决方案：使用&apos; &apos;（中间多一个空格）作为空字符串</span><br><span class="line">  /// &lt;/remarks&gt;</span><br><span class="line">  private string ReplaceEmptySpace(string sql)</span><br><span class="line">  &#123;</span><br><span class="line">      if (string.IsNullOrEmpty(sql))</span><br><span class="line">      &#123;</span><br><span class="line">          return sql;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      string result = new StringBuilder(sql).Replace(&quot;&apos;&apos;&quot;, &quot;&apos; &apos;&quot;).Replace(&quot;\&quot;\&quot;&quot;, &quot;\&quot; \&quot;&quot;).ToString();</span><br><span class="line"></span><br><span class="line">      return result;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  /// &lt;summary&gt;</span><br><span class="line">  /// 处理bool值属性情况</span><br><span class="line">  /// &lt;/summary&gt;</span><br><span class="line">  /// &lt;param name=&quot;sql&quot;&gt;SQL&lt;/param&gt;</span><br><span class="line">  /// &lt;returns&gt;SQL&lt;/returns&gt;</span><br><span class="line">  /// &lt;remarks&gt;由于Oracle的bool值类型存为number(1)，无法实现bool和number的自动转换，故使用手动转换。&lt;/remarks&gt;</span><br><span class="line">  private string HandlerBooleanValue(string sql)</span><br><span class="line">  &#123;</span><br><span class="line">      if (string.IsNullOrEmpty(sql))</span><br><span class="line">      &#123;</span><br><span class="line">          return sql;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      if (sql.IndexOf(&quot;True&quot;, StringComparison.OrdinalIgnoreCase) == -1 &amp;&amp; sql.IndexOf(&quot;False&quot;, StringComparison.OrdinalIgnoreCase) == -1)</span><br><span class="line">      &#123;</span><br><span class="line">          return sql;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      string result = sql;</span><br><span class="line"></span><br><span class="line">      /**</span><br><span class="line">        * 使用正则表达式的\b来区分单词边界，只匹配True、Fale，而不会匹配TrueName。</span><br><span class="line">        * https://docs.microsoft.com/zh-cn/dotnet/standard/base-types/regular-expression-language-quick-reference?view=netframework-4.7.2</span><br><span class="line">        */</span><br><span class="line">      result = Regex.Replace(result, @&quot;\bTrue\b&quot;, &quot;1&quot;, RegexOptions.IgnoreCase);</span><br><span class="line">      result = Regex.Replace(result, @&quot;\bFalse\b&quot;, &quot;0&quot;, RegexOptions.IgnoreCase);</span><br><span class="line"></span><br><span class="line">      return result;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  /// &lt;summary&gt;</span><br><span class="line">  /// 处理SELECT语句中无FROM情况</span><br><span class="line">  /// &lt;/summary&gt;</span><br><span class="line">  /// &lt;param name=&quot;sql&quot;&gt;源SQL&lt;/param&gt;</span><br><span class="line">  /// &lt;returns&gt;目标SQL&lt;/returns&gt;</span><br><span class="line">  /// &lt;remarks&gt;</span><br><span class="line">  /// 由于Oracle必须要有FROM语句，若无，需加上FROM DUAL子句。</span><br><span class="line">  /// 例子：</span><br><span class="line">  /// 原：SELECT &quot;TEST&quot;;</span><br><span class="line">  /// 目标：SELECT &quot;TEST&quot; FROM DUAL</span><br><span class="line">  /// &lt;/remarks&gt;</span><br><span class="line">  private string HandlerNotContainFromWhenSelect(string sql)</span><br><span class="line">  &#123;</span><br><span class="line">      if (string.IsNullOrEmpty(sql))</span><br><span class="line">      &#123;</span><br><span class="line">          return sql;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      //不是SELECT语句或已有FROM则跳过</span><br><span class="line">      if (sql.IndexOf(&quot;SELECT&quot;, StringComparison.OrdinalIgnoreCase) == -1 || sql.IndexOf(&quot; FROM&quot;, StringComparison.OrdinalIgnoreCase) != -1)</span><br><span class="line">      &#123;</span><br><span class="line">          return sql;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      string result = sql + &quot; FROM DUAL&quot;;</span><br><span class="line">      return result;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  /// &lt;summary&gt;</span><br><span class="line">  /// 处理当前日期函数</span><br><span class="line">  /// &lt;/summary&gt;</span><br><span class="line">  /// &lt;param name=&quot;sql&quot;&gt;&lt;/param&gt;</span><br><span class="line">  /// &lt;returns&gt;&lt;/returns&gt;</span><br><span class="line">  private string HandleDateOfNowFunction(string sql)</span><br><span class="line">  &#123;</span><br><span class="line">      if (string.IsNullOrEmpty(sql))</span><br><span class="line">      &#123;</span><br><span class="line">          return sql;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      if (sql.IndexOf(&quot;GETDATE&quot;, StringComparison.OrdinalIgnoreCase) == -1)</span><br><span class="line">      &#123;</span><br><span class="line">          return sql;</span><br><span class="line">      &#125;</span><br><span class="line">      string sq1 = Regex.Replace(sql, @&quot;GETDATE\(\)&quot;, &quot;SYSDATE&quot;, RegexOptions.IgnoreCase);</span><br><span class="line"></span><br><span class="line">      return sq1;// Regex.Replace(sql, &quot;GETDATE()&quot;, &quot;SYSDATE&quot;, RegexOptions.IgnoreCase);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  /// &lt;summary&gt;</span><br><span class="line">  /// 处理日期，时间字符串</span><br><span class="line">  /// &lt;/summary&gt;</span><br><span class="line">  /// &lt;param name=&quot;sql&quot;&gt;&lt;/param&gt;</span><br><span class="line">  /// &lt;returns&gt;&lt;/returns&gt;</span><br><span class="line">  /// &lt;remarks&gt;旧代码迁移过来&lt;/remarks&gt;</span><br><span class="line">  private string HandleDateString(string sql)</span><br><span class="line">  &#123;</span><br><span class="line">      if (string.IsNullOrEmpty(sql))</span><br><span class="line">      &#123;</span><br><span class="line">          return sql;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      //不包括单引号和双引号，则表示无日期字符串，不处理</span><br><span class="line">      if (sql.IndexOf(&apos;\&apos;&apos;) == -1 &amp;&amp; sql.IndexOf(&apos;&quot;&apos;) == -1)</span><br><span class="line">      &#123;</span><br><span class="line">          return sql;</span><br><span class="line">      &#125;</span><br><span class="line">      //只包含一个单引号或（和）一个双引号，则表示无日期字符串，不处理</span><br><span class="line">      if (sql.IndexOf(&apos;\&apos;&apos;) == sql.LastIndexOf(&apos;\&apos;&apos;) &amp;&amp; sql.IndexOf(&apos;&quot;&apos;) == sql.LastIndexOf(&apos;&quot;&apos;))</span><br><span class="line">      &#123;</span><br><span class="line">          return sql;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      string result = sql;</span><br><span class="line">      int startPos = 0;</span><br><span class="line"></span><br><span class="line">      for (int i = 0; i &lt; result.Length; i++)</span><br><span class="line">      &#123;</span><br><span class="line">          int pos = result.IndexOf(&apos;\&apos;&apos;, startPos);</span><br><span class="line"></span><br><span class="line">          if (pos == -1)</span><br><span class="line">          &#123;</span><br><span class="line">              break;</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">          bool isDateTime = false;</span><br><span class="line"></span><br><span class="line">          int pos2 = result.IndexOf(&apos;\&apos;&apos;, pos + 1);</span><br><span class="line">          if (pos2 == -1)</span><br><span class="line">          &#123;</span><br><span class="line">              break;</span><br><span class="line">          &#125;</span><br><span class="line">          string temp = result.Substring(pos + 1, pos2 - pos - 1);</span><br><span class="line">          try</span><br><span class="line">          &#123;</span><br><span class="line">              string regularText = @&quot;^(\d&#123;1,4&#125;)(-|\/)(\d&#123;1,2&#125;)\2(\d&#123;1,2&#125;)&quot;;</span><br><span class="line">              isDateTime = System.Text.RegularExpressions.Regex.IsMatch(temp, regularText);</span><br><span class="line"></span><br><span class="line">              //特殊情况例如DateTime.Parse(&quot;3 333&quot;)也是可以通过的，所以要过滤</span><br><span class="line"></span><br><span class="line">              //DateTime dt;</span><br><span class="line">              //if (DateTime.TryParse(temp, out dt))</span><br><span class="line">              //&#123;</span><br><span class="line">              //    if (temp.IndexOf(&apos;-&apos;) &gt; 0 ||</span><br><span class="line">              //    temp.IndexOf(&apos;/&apos;) &gt; 0 || temp.IndexOf(&apos;\\&apos;) &gt; 0)</span><br><span class="line">              //    &#123;</span><br><span class="line">              //        isDateTime = true;</span><br><span class="line">              //    &#125;</span><br><span class="line">              //&#125;</span><br><span class="line">              //else</span><br><span class="line">              //    isDateTime = false;</span><br><span class="line"></span><br><span class="line">          &#125;</span><br><span class="line">          catch (Exception)</span><br><span class="line">          &#123;</span><br><span class="line">              isDateTime = false;</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">          if (isDateTime)</span><br><span class="line">          &#123;</span><br><span class="line">              result = result.Remove(pos, pos2 - pos + 1);</span><br><span class="line"></span><br><span class="line">              string strNewDt = &quot;&quot;;</span><br><span class="line"></span><br><span class="line">              //根据“：”判断是否有毫秒（有3个“：”认为有毫秒）</span><br><span class="line">              if (temp.Split(new string[] &#123; &quot;:&quot; &#125;, StringSplitOptions.RemoveEmptyEntries).Length &gt; 3)</span><br><span class="line">              &#123;</span><br><span class="line">                  //temp = temp.Substring(0, temp.LastIndexOf(&quot;:&quot;));截断毫秒</span><br><span class="line">                  strNewDt = &quot;to_timestamp(&apos;&quot; + temp + &quot;&apos;,&apos;yyyy-mm-dd hh24:mi:ss:ff&apos;)&quot;;//转换为timestamp</span><br><span class="line">                  //注意：无论是截断方式合适转换为timestamp方式，最终存储到数据库后的数据都没有毫秒</span><br><span class="line">              &#125;</span><br><span class="line">              else</span><br><span class="line">              &#123;</span><br><span class="line">                  strNewDt = &quot;to_date(&apos;&quot; + temp + &quot;&apos;,&apos;yyyy-mm-dd hh24:mi:ss&apos;) &quot;;</span><br><span class="line">              &#125;</span><br><span class="line"></span><br><span class="line">              string strpre = result.Substring(0, pos);</span><br><span class="line">              string strpost = result.Substring(pos);</span><br><span class="line">              result = strpre + strNewDt + strpost;</span><br><span class="line"></span><br><span class="line">              startPos = pos + strNewDt.Length;</span><br><span class="line">          &#125;</span><br><span class="line">          else</span><br><span class="line">              startPos = pos2 + 1;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      return result;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  private string ReplaceTop1(string sql)</span><br><span class="line">  &#123;</span><br><span class="line">      if (sql.IndexOf(&quot;SELECT &quot;, StringComparison.OrdinalIgnoreCase) == -1 || sql.IndexOf(&quot; TOP &quot;, StringComparison.OrdinalIgnoreCase) == -1)</span><br><span class="line">      &#123;</span><br><span class="line">          return sql;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      string result = sql;</span><br><span class="line">      Dictionary&lt;string, string&gt; dict = new Dictionary&lt;string, string&gt;();</span><br><span class="line">      if (this.HasChildSelect(result))</span><br><span class="line">      &#123;</span><br><span class="line">          string childSql = this.GetChildSql(result);</span><br><span class="line">      &#125;</span><br><span class="line">      return result;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  private string ReplaceTop(string sql)</span><br><span class="line">  &#123;</span><br><span class="line">      if (sql.IndexOf(&quot;SELECT &quot;, StringComparison.OrdinalIgnoreCase) == -1 || sql.IndexOf(&quot; TOP &quot;, StringComparison.OrdinalIgnoreCase) == -1)</span><br><span class="line">      &#123;</span><br><span class="line">          return sql;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      string result = sql;</span><br><span class="line">      Dictionary&lt;string, string&gt; dict = new Dictionary&lt;string, string&gt;();</span><br><span class="line">      while (this.HasChildSelect(result))</span><br><span class="line">      &#123;</span><br><span class="line">          string childSql = this.GetChildSql(result);</span><br><span class="line">          string guid = Guid.NewGuid().ToString();</span><br><span class="line">          dict.Add(guid, childSql);</span><br><span class="line"></span><br><span class="line">          result = result.Replace(childSql, guid);</span><br><span class="line">      &#125;</span><br><span class="line">      result = this.HandleTopSyntax(result);</span><br><span class="line"></span><br><span class="line">      if (dict.Count &gt; 0)</span><br><span class="line">      &#123;</span><br><span class="line">          foreach (var di in dict)</span><br><span class="line">          &#123;</span><br><span class="line">              string newValue = ReplaceTop(di.Value);</span><br><span class="line">              result = result.Replace(di.Key, newValue);</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      return result;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  /// &lt;summary&gt;</span><br><span class="line">  /// 判断sql语句中是否存在子查询</span><br><span class="line">  /// &lt;/summary&gt;</span><br><span class="line">  /// &lt;param name=&quot;sql&quot;&gt;要判断是否存在子查询的sql语句&lt;/param&gt;</span><br><span class="line">  /// &lt;returns&gt;存在子查询返回true，否则返回false&lt;/returns&gt;</span><br><span class="line">  private bool HasChildSelect(string sql)</span><br><span class="line">  &#123;</span><br><span class="line">      bool b = false;</span><br><span class="line">      if (!string.IsNullOrEmpty(sql))</span><br><span class="line">      &#123;</span><br><span class="line">          string tmpSql = sql;</span><br><span class="line">          //此算法认为子查询都由“（）”括号括起来，如（select * from tableName）,注意可能会有Union方法不出现“（）”，此处未兼容</span><br><span class="line">          string[] ss = tmpSql.ToUpper().Split(new string[] &#123; &quot;SELECT&quot; &#125;, StringSplitOptions.RemoveEmptyEntries);</span><br><span class="line">          if (ss != null &amp;&amp; ss.Length &gt; 0)</span><br><span class="line">          &#123;</span><br><span class="line">              foreach (string s in ss)</span><br><span class="line">              &#123;</span><br><span class="line">                  if (s.Trim().EndsWith(&quot;(&quot;))</span><br><span class="line">                  &#123;</span><br><span class="line">                      b = true;</span><br><span class="line">                      break;</span><br><span class="line">                  &#125;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      return b;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  /// &lt;summary&gt;</span><br><span class="line">  /// 获取子查询语句</span><br><span class="line">  /// &lt;/summary&gt;</span><br><span class="line">  /// &lt;param name=&quot;sql&quot;&gt;原sql语句&lt;/param&gt;</span><br><span class="line">  /// &lt;returns&gt;子查询sql&lt;/returns&gt;</span><br><span class="line">  private string GetChildSql(string sql)</span><br><span class="line">  &#123;</span><br><span class="line">      string tmpSql = sql;</span><br><span class="line">      //此算法认为子查询都由“（）”括号括起来，如（select * from tableName）,注意可能会有Union方法不出现“（）”，此处未兼容</span><br><span class="line">      int startIndex = 0;//截取子查询的开始索引</span><br><span class="line">      int selectIndex = tmpSql.IndexOf(&quot;SELECT &quot;, 0, StringComparison.OrdinalIgnoreCase);</span><br><span class="line">      while (selectIndex != -1)</span><br><span class="line">      &#123;</span><br><span class="line">          startIndex += selectIndex;</span><br><span class="line">          if (tmpSql.Substring(0, selectIndex).Trim().EndsWith(&quot;(&quot;))</span><br><span class="line">          &#123;</span><br><span class="line">              break;</span><br><span class="line">          &#125;</span><br><span class="line">          else</span><br><span class="line">          &#123;</span><br><span class="line">              tmpSql = tmpSql.Substring(selectIndex + 6);</span><br><span class="line">              selectIndex = tmpSql.IndexOf(&quot;SELECT &quot;, 0, StringComparison.OrdinalIgnoreCase);</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      int endIndex = startIndex;//截取子查询的结束索引</span><br><span class="line">      int tmp = 0;//记录左括号数量</span><br><span class="line">      for (int i = startIndex; i &lt; tmpSql.Length; i++)</span><br><span class="line">      &#123;</span><br><span class="line">          if (tmpSql[i] == &apos;)&apos;)</span><br><span class="line">          &#123;</span><br><span class="line">              if (tmp == 0)</span><br><span class="line">              &#123;</span><br><span class="line">                  endIndex = i;</span><br><span class="line">                  break;</span><br><span class="line">              &#125;</span><br><span class="line">              else</span><br><span class="line">              &#123;</span><br><span class="line">                  tmp--;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">          else if (tmpSql[i] == &apos;(&apos;)</span><br><span class="line">          &#123;</span><br><span class="line">              tmp++;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      tmpSql = tmpSql.Substring(startIndex, endIndex - startIndex);</span><br><span class="line">      return tmpSql;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  ///处理TOP语法</span><br><span class="line">  /// &lt;/summary&gt;</span><br><span class="line">  /// &lt;param name=&quot;sql&quot;&gt;&lt;/param&gt;</span><br><span class="line">  /// &lt;returns&gt;&lt;/returns&gt;</span><br><span class="line">  /// &lt;remarks&gt;旧代码迁移过来&lt;/remarks&gt;</span><br><span class="line">  private string HandleTopSyntax(string sql)</span><br><span class="line">  &#123;</span><br><span class="line">      if (string.IsNullOrEmpty(sql))</span><br><span class="line">      &#123;</span><br><span class="line">          return sql;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      if (sql.IndexOf(&quot;SELECT &quot;, StringComparison.OrdinalIgnoreCase) == -1 || sql.IndexOf(&quot; TOP &quot;, StringComparison.OrdinalIgnoreCase) == -1)</span><br><span class="line">      &#123;</span><br><span class="line">          return sql;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      string result = sql;</span><br><span class="line"></span><br><span class="line">      //若有TOP，则前方需有SELECT，故从第六个字符开始搜索</span><br><span class="line">      int topIndex = sql.IndexOf(&quot; TOP &quot;, 6, StringComparison.OrdinalIgnoreCase);</span><br><span class="line"></span><br><span class="line">      sql = sql.Substring(topIndex + 4);</span><br><span class="line">      result = result.Substring(topIndex + 4);</span><br><span class="line"></span><br><span class="line">      sql = sql.Trim();</span><br><span class="line">      result = result.Trim();</span><br><span class="line"></span><br><span class="line">      //具体条数</span><br><span class="line">      string count = sql.Substring(0, sql.IndexOf(&apos; &apos;));</span><br><span class="line"></span><br><span class="line">      sql = sql.Substring(sql.IndexOf(&apos; &apos;));</span><br><span class="line">      result = result.Substring(result.IndexOf(&apos; &apos;));</span><br><span class="line"></span><br><span class="line">      result = &quot;SELECT &quot; + result;</span><br><span class="line">      int whereIndex = result.LastIndexOf(&quot;WHERE&quot;, StringComparison.OrdinalIgnoreCase);</span><br><span class="line">      if (whereIndex &gt; 0)</span><br><span class="line">      &#123;</span><br><span class="line">          result = result.Insert(whereIndex + 5, &quot; ROWNUM&lt;= &quot; + count + &quot; AND &quot;);</span><br><span class="line">      &#125;</span><br><span class="line">      else</span><br><span class="line">      &#123;</span><br><span class="line">          int orderbyIndex = result.LastIndexOf(&quot;ORDER BY&quot;, StringComparison.OrdinalIgnoreCase);</span><br><span class="line">          if (orderbyIndex &gt; 0)</span><br><span class="line">          &#123;</span><br><span class="line">              //result = result.Insert(orderbyIndex, &quot; WHERE ROWNUM&lt;= &quot; + count);</span><br><span class="line">              //Oracle中先执行ORDER BY，后再外层执行条数选择</span><br><span class="line">              //result = &quot;SELECT * FROM (&quot; + result + &quot; ) WHERE ROWNUM &lt;= &quot; + count;</span><br><span class="line">          &#125;</span><br><span class="line">          else</span><br><span class="line">          &#123;</span><br><span class="line">              result = result + &quot; WHERE ROWNUM&lt;= &quot; + count;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      return result;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  /// &lt;summary&gt;</span><br><span class="line">  /// lfc改造后的方法，外层包Select后引起原原sql中存在select * 时报错</span><br><span class="line">  /// &lt;/summary&gt;</span><br><span class="line">  /// &lt;param name=&quot;sql&quot;&gt;&lt;/param&gt;</span><br><span class="line">  /// &lt;returns&gt;&lt;/returns&gt;</span><br><span class="line">  /// &lt;remarks&gt;旧代码迁移过来&lt;/remarks&gt;</span><br><span class="line">  private string HandleTopSyntax_LFC(string sql)</span><br><span class="line">  &#123;</span><br><span class="line">      if (string.IsNullOrEmpty(sql))</span><br><span class="line">      &#123;</span><br><span class="line">          return sql;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      if (sql.IndexOf(&quot;SELECT &quot;, StringComparison.OrdinalIgnoreCase) == -1 || sql.IndexOf(&quot; TOP &quot;, StringComparison.OrdinalIgnoreCase) == -1)</span><br><span class="line">      &#123;</span><br><span class="line">          return sql;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      string result = sql;</span><br><span class="line"></span><br><span class="line">      //若有TOP，则前方需有SELECT，故从第六个字符开始搜索</span><br><span class="line">      int topIndex = result.IndexOf(&quot; TOP &quot;, 6, StringComparison.OrdinalIgnoreCase);</span><br><span class="line"></span><br><span class="line">      //sql = sql.Substring(topIndex + 4);</span><br><span class="line">      result = result.Substring(topIndex + 4).Trim();</span><br><span class="line"></span><br><span class="line">      //sql = sql.Trim();</span><br><span class="line">      //result = result.Trim();</span><br><span class="line"></span><br><span class="line">      //获取Top值</span><br><span class="line">      string count = result.Substring(0, result.IndexOf(&apos; &apos;));</span><br><span class="line"></span><br><span class="line">      //sql = sql.Substring(sql.IndexOf(&apos; &apos;));</span><br><span class="line">      result = result.Substring(result.IndexOf(&apos; &apos;));//获取top N后的sql部分</span><br><span class="line"></span><br><span class="line">      result = &quot;SELECT * FROM (SELECT &quot; + result;</span><br><span class="line">      //int whereIndex = result.LastIndexOf(&quot;WHERE&quot;, StringComparison.OrdinalIgnoreCase);</span><br><span class="line">      //if (whereIndex &gt; 0)</span><br><span class="line">      //&#123;</span><br><span class="line">      //    //result = result.Insert(whereIndex + 5, &quot; ROWNUM&lt;= &quot; + count + &quot; AND &quot;);</span><br><span class="line">      //&#125;</span><br><span class="line">      //else</span><br><span class="line">      //&#123;</span><br><span class="line">      //    int orderbyIndex = result.LastIndexOf(&quot;ORDER BY&quot;, StringComparison.OrdinalIgnoreCase);</span><br><span class="line">      //    if (orderbyIndex &gt; 0)</span><br><span class="line">      //    &#123;</span><br><span class="line">      //        //result = result.Insert(orderbyIndex, &quot; WHERE ROWNUM&lt;= &quot; + count);</span><br><span class="line">      //        //Oracle中先执行ORDER BY，后再外层执行条数选择</span><br><span class="line">      //        result = &quot;SELECT * FROM (&quot; + result + &quot; ) WHERE ROWNUM &lt;= &quot; + count;</span><br><span class="line">      //    &#125;</span><br><span class="line">      //    else</span><br><span class="line">      //    &#123;</span><br><span class="line">      //        result = result + &quot; WHERE ROWNUM&lt;= &quot; + count;</span><br><span class="line">      //    &#125;</span><br><span class="line">      //&#125;</span><br><span class="line"></span><br><span class="line">      result = result + &quot;) WHERE ROWNUM&lt;= &quot; + count;</span><br><span class="line"></span><br><span class="line">      return result;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  /// &lt;summary&gt;</span><br><span class="line">  /// 处理Worklist</span><br><span class="line">  /// &lt;/summary&gt;</span><br><span class="line">  /// &lt;param name=&quot;sql&quot;&gt;&lt;/param&gt;</span><br><span class="line">  /// &lt;returns&gt;&lt;/returns&gt;</span><br><span class="line">  /// &lt;remarks&gt;</span><br><span class="line">  /// 旧代码迁移过来</span><br><span class="line">  /// 备注：</span><br><span class="line">  /// 由于Oracle字段名最大长度为30个，而SQL Server的Recycle_Worklist和Worklist表中有字段名超出30个，故单独修改Oracle部分字段的字段名以兼容ORACLE。</span><br><span class="line">  /// 查询字段名大于30字符的SQL：</span><br><span class="line">  /// SELECT</span><br><span class="line">  ///     sysobjects.name AS TableName,</span><br><span class="line">  ///     syscolumns.name AS ColumnName,</span><br><span class="line">  ///     UPPER(syscolumns.name) AS OracleColumnName</span><br><span class="line">  /// FROM</span><br><span class="line">  ///     sysobjects</span><br><span class="line">  ///     LEFT JOIN syscolumns ON syscolumns.id= sysobjects.id </span><br><span class="line">  /// WHERE</span><br><span class="line">  ///     sysobjects.xtype= &apos;u&apos; </span><br><span class="line">  ///     AND len( syscolumns.name ) &gt; 30 </span><br><span class="line">  /// ORDER BY</span><br><span class="line">  ///     TableName ASC,</span><br><span class="line">  ///     ColumnName ASC;</span><br><span class="line">  /// &lt;/remarks&gt;</span><br><span class="line">  private string HandleWorkList(string sql)</span><br><span class="line">  &#123;</span><br><span class="line">      if (string.IsNullOrEmpty(sql))</span><br><span class="line">      &#123;</span><br><span class="line">          return sql;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      if (sql.IndexOf(&quot;Worklist&quot;, StringComparison.OrdinalIgnoreCase) == -1)</span><br><span class="line">      &#123;</span><br><span class="line">          return sql;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      string result = sql;</span><br><span class="line"></span><br><span class="line">      result = Regex.Replace(result, &quot;ScheduledProcedureStepStartDate&quot;, &quot;SpsStartDate&quot;, RegexOptions.IgnoreCase);</span><br><span class="line">      result = Regex.Replace(result, &quot;ScheduledProcedureStepStartTime&quot;, &quot;SpsStartTime&quot;, RegexOptions.IgnoreCase);</span><br><span class="line">      result = Regex.Replace(result, &quot;ScheduledPerformingPhysiciansName&quot;, &quot;ScheduledPerfPhysiciansName&quot;, RegexOptions.IgnoreCase);</span><br><span class="line">      result = Regex.Replace(result, &quot;ScheduledPerformingPhysiciansChineseName&quot;, &quot;ScheduledPerfPhysiciansChName&quot;, RegexOptions.IgnoreCase);</span><br><span class="line">      result = Regex.Replace(result, &quot;ScheduledActionItemCodingSchemeDesignator&quot;, &quot;SpsItemDesignator&quot;, RegexOptions.IgnoreCase);</span><br><span class="line">      result = Regex.Replace(result, &quot;Confidentialityconstraintonpatientdata&quot;, &quot;ConfConstraintPatData&quot;, RegexOptions.IgnoreCase);</span><br><span class="line">      result = Regex.Replace(result, &quot;ScheduledProcedureStepDescription&quot;, &quot;SpsDescription&quot;, RegexOptions.IgnoreCase);</span><br><span class="line"></span><br><span class="line">      return result;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  /// &lt;summary&gt;</span><br><span class="line">  /// 处理方括号</span><br><span class="line">  /// &lt;/summary&gt;</span><br><span class="line">  /// &lt;param name=&quot;sql&quot;&gt;&lt;/param&gt;</span><br><span class="line">  /// &lt;returns&gt;&lt;/returns&gt;</span><br><span class="line">  /// &lt;remarks&gt;旧代码迁移过来&lt;/remarks&gt;</span><br><span class="line">  private string HandleSquareBracket(string sql)</span><br><span class="line">  &#123;</span><br><span class="line">      if (string.IsNullOrEmpty(sql))</span><br><span class="line">      &#123;</span><br><span class="line">          return sql;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      if (sql.Contains(&quot;[&quot;) == false &amp;&amp; sql.Contains(&quot;]&quot;) == false)</span><br><span class="line">      &#123;</span><br><span class="line">          return sql;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      string result = sql;</span><br><span class="line"></span><br><span class="line">      result = result.Replace(&quot;[&quot;, string.Empty);</span><br><span class="line">      result = result.Replace(&quot;]&quot;, string.Empty);</span><br><span class="line"></span><br><span class="line">      return result;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  #region 旧代码</span><br><span class="line">  private string ConvertToOracleSyntax(string sql)</span><br><span class="line">  &#123;</span><br><span class="line">      string oracleSyntax = sql.Trim();</span><br><span class="line">      sql = sql.ToLower().Trim();</span><br><span class="line">      int startPos = 0;</span><br><span class="line"></span><br><span class="line">      #region SELECT TOP语法转换</span><br><span class="line">      if (sql.Substring(0, 6) == &quot;select&quot;)</span><br><span class="line">      &#123;</span><br><span class="line">          int topIndex = sql.IndexOf(&quot; top &quot;);</span><br><span class="line">          if (topIndex &gt;= 6 &amp;&amp; topIndex &lt; 10)</span><br><span class="line">          &#123;</span><br><span class="line">              sql = sql.Substring(topIndex + 4);</span><br><span class="line">              oracleSyntax = oracleSyntax.Substring(topIndex + 4);</span><br><span class="line"></span><br><span class="line">              sql = sql.Trim();</span><br><span class="line">              oracleSyntax = oracleSyntax.Trim();</span><br><span class="line"></span><br><span class="line">              string nstr = sql.Substring(0, sql.IndexOf(&apos; &apos;));</span><br><span class="line"></span><br><span class="line">              sql = sql.Substring(sql.IndexOf(&apos; &apos;));</span><br><span class="line">              oracleSyntax = oracleSyntax.Substring(oracleSyntax.IndexOf(&apos; &apos;));</span><br><span class="line"></span><br><span class="line">              oracleSyntax = &quot;select &quot; + oracleSyntax;</span><br><span class="line">              oracleSyntax = oracleSyntax.ToUpper();</span><br><span class="line">              int whereIndex = oracleSyntax.LastIndexOf(&quot;WHERE&quot;);</span><br><span class="line">              if (whereIndex &gt; 0)</span><br><span class="line">              &#123;</span><br><span class="line">                  oracleSyntax = oracleSyntax.Insert(whereIndex + 5, &quot; ROWNUM&lt;= &quot; + nstr + &quot; AND &quot;);</span><br><span class="line">              &#125;</span><br><span class="line">              else</span><br><span class="line">              &#123;</span><br><span class="line">                  int orderbyIndex = oracleSyntax.LastIndexOf(&quot;ORDER BY&quot;);</span><br><span class="line">                  if (orderbyIndex &gt; 0)</span><br><span class="line">                  &#123;</span><br><span class="line">                      oracleSyntax = oracleSyntax.Insert(orderbyIndex, &quot; WHERE ROWNUM&lt;= &quot; + nstr);</span><br><span class="line">                  &#125;</span><br><span class="line">                  else</span><br><span class="line">                  &#123;</span><br><span class="line">                      oracleSyntax = oracleSyntax + &quot; WHERE ROWNUM&lt;= &quot; + nstr;</span><br><span class="line">                  &#125;</span><br><span class="line">              &#125;</span><br><span class="line"></span><br><span class="line">              //oracleSyntax = &quot;select * from ( select &quot; + oracleSyntax + &quot; ) where rownum &lt;= &quot; + nstr;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      #endregion</span><br><span class="line"></span><br><span class="line">      #region 时间格式转换</span><br><span class="line">      //to_date</span><br><span class="line">      for (int i = 0; i &lt; oracleSyntax.Length; i++)</span><br><span class="line">      &#123;</span><br><span class="line">          int pos = oracleSyntax.IndexOf(&apos;\&apos;&apos;, startPos);</span><br><span class="line">          bool isDateTime = false;</span><br><span class="line">          if (pos &gt;= 0)</span><br><span class="line">          &#123;</span><br><span class="line">              int pos2 = oracleSyntax.IndexOf(&apos;\&apos;&apos;, pos + 1);</span><br><span class="line">              if (pos2 &gt; 0)</span><br><span class="line">              &#123;</span><br><span class="line">                  string temp = oracleSyntax.Substring(pos + 1, pos2 - pos - 1);</span><br><span class="line">                  try</span><br><span class="line">                  &#123;</span><br><span class="line">                      string regularText = @&quot;^(\d&#123;1,4&#125;)(-|\/)(\d&#123;1,2&#125;)\2(\d&#123;1,2&#125;)&quot;;</span><br><span class="line">                      isDateTime = System.Text.RegularExpressions.Regex.IsMatch(temp, regularText);</span><br><span class="line"></span><br><span class="line">                      //特殊情况例如DateTime.Parse(&quot;3 333&quot;)也是可以通过的，所以要过滤</span><br><span class="line"></span><br><span class="line">                      //DateTime dt;</span><br><span class="line">                      //if (DateTime.TryParse(temp, out dt))</span><br><span class="line">                      //&#123;</span><br><span class="line">                      //    if (temp.IndexOf(&apos;-&apos;) &gt; 0 ||</span><br><span class="line">                      //    temp.IndexOf(&apos;/&apos;) &gt; 0 || temp.IndexOf(&apos;\\&apos;) &gt; 0)</span><br><span class="line">                      //    &#123;</span><br><span class="line">                      //        isDateTime = true;</span><br><span class="line">                      //    &#125;</span><br><span class="line">                      //&#125;</span><br><span class="line">                      //else</span><br><span class="line">                      //    isDateTime = false;</span><br><span class="line"></span><br><span class="line">                  &#125;</span><br><span class="line">                  catch (Exception)</span><br><span class="line">                  &#123;</span><br><span class="line">                      isDateTime = false;</span><br><span class="line">                  &#125;</span><br><span class="line"></span><br><span class="line">                  if (isDateTime)</span><br><span class="line">                  &#123;</span><br><span class="line">                      oracleSyntax = oracleSyntax.Remove(pos, pos2 - pos + 1);</span><br><span class="line">                      string strNewDt = &quot;to_date(&apos;&quot; + temp + &quot;&apos;,&apos;yyyy-mm-dd hh24:mi:ss&apos;) &quot;;</span><br><span class="line"></span><br><span class="line">                      string strpre = oracleSyntax.Substring(0, pos);</span><br><span class="line">                      string strpost = oracleSyntax.Substring(pos);</span><br><span class="line">                      oracleSyntax = strpre + strNewDt + strpost;</span><br><span class="line"></span><br><span class="line">                      startPos = pos + strNewDt.Length;</span><br><span class="line">                  &#125;</span><br><span class="line">                  else</span><br><span class="line">                      startPos = pos2 + 1;</span><br><span class="line">              &#125;</span><br><span class="line">              else</span><br><span class="line">              &#123;</span><br><span class="line">                  break;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">          else</span><br><span class="line">          &#123;</span><br><span class="line">              break;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      #endregion</span><br><span class="line"></span><br><span class="line">      if (oracleSyntax.IndexOf(&quot; Worklist&quot;) &gt; 0)</span><br><span class="line">      &#123;</span><br><span class="line">          oracleSyntax = oracleSyntax.Replace(&quot;ScheduledProcedureStepStartDate&quot;, &quot;SpsStartDate&quot;);</span><br><span class="line">          oracleSyntax = oracleSyntax.Replace(&quot;ScheduledProcedureStepStartTime&quot;, &quot;SpsStartTime&quot;);</span><br><span class="line">          oracleSyntax = oracleSyntax.Replace(&quot;ScheduledPerformingPhysiciansName&quot;, &quot;ScheduledPerfPhysiciansName&quot;);</span><br><span class="line">          oracleSyntax = oracleSyntax.Replace(&quot;ScheduledPerformingPhysiciansChineseName&quot;, &quot;ScheduledPerfPhysiciansChName&quot;);</span><br><span class="line">          oracleSyntax = oracleSyntax.Replace(&quot;ScheduledActionItemCodingSchemeDesignator&quot;, &quot;SpsItemDesignator&quot;);</span><br><span class="line">          oracleSyntax = oracleSyntax.Replace(&quot;Confidentialityconstraintonpatientdata&quot;, &quot;ConfConstraintPatData&quot;);</span><br><span class="line">          oracleSyntax = oracleSyntax.Replace(&quot;ScheduledProcedureStepDescription&quot;, &quot;SpsDescription&quot;);</span><br><span class="line">      &#125;</span><br><span class="line">      oracleSyntax = oracleSyntax.Replace(&quot;[&quot;, string.Empty);</span><br><span class="line">      oracleSyntax = oracleSyntax.Replace(&quot;]&quot;, string.Empty);</span><br><span class="line"></span><br><span class="line">      return oracleSyntax;</span><br><span class="line">  &#125;</span><br><span class="line">  #endregion</span><br><span class="line"></span><br><span class="line">  #endregion</span><br></pre></td></tr></table></figure>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
+<li><a href="http://www.oracle.com/webfolder/technetwork/tutorials/obe/db/hol08/sqldev_migration/mssqlserver/migrate_microsoft_sqlserver_otn.htm" target="_blank" rel="noopener">Migrating a Microsoft SQL Server Database to Oracle Database 11g</a></li>
+<li><a href="https://blog.csdn.net/rootcn/article/details/8894130" target="_blank" rel="noopener">用 SQL Developer 3.2 将 SQL Server 2008 数据库离线迁移到 Oracle 11g</a></li>
+<li><a href="https://www.cnblogs.com/benbenfishfish/p/8675075.html" target="_blank" rel="noopener">Oracle和sqlserver数据类型对应</a></li>
+<li><a href="https://www.cnblogs.com/Jashinck/p/8652058.html" target="_blank" rel="noopener">Oracle 和SQL Server 中的SQL语句使用区别</a></li>
+<li><a href="https://blog.csdn.net/leftfist/article/details/71133570" target="_blank" rel="noopener">sql server t-sql脚本转成oracle plsql</a></li>
+<li><a href="https://www.cnblogs.com/memory4young/p/use-null-empty-space-in-oracle.html" target="_blank" rel="noopener">Oracle中的NULL、’’（空字符串）以及’_’（空格）</a></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/posts/05.编程思想/02.重构/12.重构-总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="祥_venux">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="祥_venux">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/05.编程思想/02.重构/12.重构-总结/" itemprop="url">12.重构-总结</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-14T19:06:26+08:00">
+                2018-06-14
               </time>
             
 
@@ -422,31 +577,9 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/posts/05.编程思想/02.重构/11.重构-重构工具/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/posts/05.编程思想/02.重构/11.重构-重构工具/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
-          
-             <span id="/posts/05.编程思想/02.重构/11.重构-重构工具/" class="leancloud_visitors" data-flag-title="11.重构-重构工具（Don Roberts 和 John Brant）">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
           
 
           
@@ -469,10 +602,177 @@
 
       
         
-          <h2 id="1-总结"><a href="#1-总结" class="headerlink" title="1. 总结"></a>1. 总结</h2><p>作者那时写《重构》一书时，还未像现如今一样。现在，各类 IDE 都提供重构工具辅助重构，而不用自己去实现一整套重构工具或手动重构了。所以，现在程序员自然而然的乐意像整理代码一样去整理系统，即重构。这样，对代码的可维护性、可复用性和可理解性大大加强。</p>
+          <h2 id="1-问题"><a href="#1-问题" class="headerlink" title="1. 问题"></a>1. 问题</h2><p>前面的篇幅只是一个介绍，一个起点，如果没有这些技术，就无法对程序进行改动。有了这些技术，你仍然做不到，但起码可以开始尝试。</p>
+<ul>
+<li>何时应该使用、何时不应该使用；</li>
+<li>何时开始、何时停止；</li>
+<li>何时前进、何时等待；</li>
+</ul>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/posts/05.编程思想/02.重构/11.重构-重构工具/#more" rel="contents">
+            <a class="btn" href="/posts/05.编程思想/02.重构/12.重构-总结/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/posts/01.编程语言/02.Java/Gradle/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="祥_venux">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="祥_venux">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/01.编程语言/02.Java/Gradle/" itemprop="url">Gradle</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-10T22:05:19+08:00">
+                2018-06-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/01-编程语言/" itemprop="url" rel="index">
+                    <span itemprop="name">01.编程语言</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/01-编程语言/02-Java/" itemprop="url" rel="index">
+                    <span itemprop="name">02.Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1. 介绍"></a>1. 介绍</h2><p>一个自动化构建工具，用于加速开发者生产率，特点：</p>
+<ul>
+<li>Build Anything;</li>
+<li>Automate Everything;</li>
+<li>Deliver Faster;</li>
+</ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/posts/01.编程语言/02.Java/Gradle/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -601,31 +901,9 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/posts/05.编程思想/02.重构/10.重构-重构、复用与现实/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/posts/05.编程思想/02.重构/10.重构-重构、复用与现实/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
-          
-             <span id="/posts/05.编程思想/02.重构/10.重构-重构、复用与现实/" class="leancloud_visitors" data-flag-title="10.重构-重构、复用与现实（William Opdyke）">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
           
 
           
@@ -668,6 +946,163 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/posts/05.编程思想/02.重构/10.重构-重构、复用与现实/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/posts/05.编程思想/02.重构/11.重构-重构工具/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="祥_venux">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/head2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="祥_venux">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/posts/05.编程思想/02.重构/11.重构-重构工具/" itemprop="url">11.重构-重构工具（Don Roberts 和 John Brant）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-10T19:06:26+08:00">
+                2018-06-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/05-编程思想/" itemprop="url" rel="index">
+                    <span itemprop="name">05.编程思想</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/05-编程思想/02-重构/" itemprop="url" rel="index">
+                    <span itemprop="name">02.重构</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="1-总结"><a href="#1-总结" class="headerlink" title="1. 总结"></a>1. 总结</h2><p>作者那时写《重构》一书时，还未像现如今一样。现在，各类 IDE 都提供重构工具辅助重构，而不用自己去实现一整套重构工具或手动重构了。所以，现在程序员自然而然的乐意像整理代码一样去整理系统，即重构。这样，对代码的可维护性、可复用性和可理解性大大加强。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/posts/05.编程思想/02.重构/11.重构-重构工具/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -796,31 +1231,9 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/posts/05.编程思想/02.重构/09.重构-大型重构/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/posts/05.编程思想/02.重构/09.重构-大型重构/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
-          
-             <span id="/posts/05.编程思想/02.重构/09.重构-大型重构/" class="leancloud_visitors" data-flag-title="09.重构-大型重构">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
           
 
           
@@ -980,31 +1393,9 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/posts/05.编程思想/02.重构/08.重构-处理类的继承关系/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/posts/05.编程思想/02.重构/08.重构-处理类的继承关系/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
-          
-             <span id="/posts/05.编程思想/02.重构/08.重构-处理类的继承关系/" class="leancloud_visitors" data-flag-title="08.重构-处理类的继承关系(generalization)">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
           
 
           
@@ -1168,31 +1559,9 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/posts/05.编程思想/02.重构/07.重构-简化函数调用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/posts/05.编程思想/02.重构/07.重构-简化函数调用/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
-          
-             <span id="/posts/05.编程思想/02.重构/07.重构-简化函数调用/" class="leancloud_visitors" data-flag-title="07.重构-简化函数调用">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
           
 
           
@@ -1348,31 +1717,9 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/posts/05.编程思想/其他/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/posts/05.编程思想/其他/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
-          
-             <span id="/posts/05.编程思想/其他/" class="leancloud_visitors" data-flag-title="其他">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
           
 
           
@@ -1524,31 +1871,9 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/posts/05.编程思想/02.重构/06.重构-简化条件表达式/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/posts/05.编程思想/02.重构/06.重构-简化条件表达式/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
-          
-             <span id="/posts/05.编程思想/02.重构/06.重构-简化条件表达式/" class="leancloud_visitors" data-flag-title="06.重构-简化条件表达式">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
           
 
           
@@ -1583,563 +1908,6 @@
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/posts/05.编程思想/02.重构/06.重构-简化条件表达式/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/posts/05.编程思想/02.重构/05.重构-重新组织数据/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="祥_venux">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head2.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="祥_venux">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/posts/05.编程思想/02.重构/05.重构-重新组织数据/" itemprop="url">05.重构-重新组织数据</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-31T23:06:26+08:00">
-                2018-05-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/05-编程思想/" itemprop="url" rel="index">
-                    <span itemprop="name">05.编程思想</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/05-编程思想/02-重构/" itemprop="url" rel="index">
-                    <span itemprop="name">02.重构</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/posts/05.编程思想/02.重构/05.重构-重新组织数据/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/posts/05.编程思想/02.重构/05.重构-重新组织数据/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/posts/05.编程思想/02.重构/05.重构-重新组织数据/" class="leancloud_visitors" data-flag-title="05.重构-重新组织数据">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="1-问题及方案"><a href="#1-问题及方案" class="headerlink" title="1. 问题及方案"></a>1. 问题及方案</h2><ul>
-<li>表示方式：Replace Value with Object、Change Value to Reference；</li>
-<li>数组的行为方式很像一种数据结构：Replace Array with Object；</li>
-<li>魔法数：Replace Magic Number with Symbolic Constant；</li>
-<li>对象关联方向：Change Unidirectional Association to Bidirectional（单向-&gt;双向）、Change Bidirectional Association to Unidirectional（双向-&gt;单向）；</li>
-<li>非公开数据：Encapsulate Field、Encapsulate Collection；</li>
-<li>记录暴露在外：Replace Record with Data Class；</li>
-<li>类型码（type code）：Replace Type Code with Class、Replace Type Code with Subclasses、Replace Type Code with State/Strategy；</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/05.编程思想/02.重构/05.重构-重新组织数据/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/posts/05.编程思想/02.重构/04.重构-在对象之间搬移特性/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="祥_venux">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head2.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="祥_venux">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/posts/05.编程思想/02.重构/04.重构-在对象之间搬移特性/" itemprop="url">04.重构-在对象之间搬移特性</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-31T23:06:26+08:00">
-                2018-05-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/05-编程思想/" itemprop="url" rel="index">
-                    <span itemprop="name">05.编程思想</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/05-编程思想/02-重构/" itemprop="url" rel="index">
-                    <span itemprop="name">02.重构</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/posts/05.编程思想/02.重构/04.重构-在对象之间搬移特性/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/posts/05.编程思想/02.重构/04.重构-在对象之间搬移特性/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/posts/05.编程思想/02.重构/04.重构-在对象之间搬移特性/" class="leancloud_visitors" data-flag-title="04.重构-在对象之间搬移特性">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="1-问题及方案"><a href="#1-问题及方案" class="headerlink" title="1. 问题及方案"></a>1. 问题及方案</h2><ul>
-<li>职责不清晰：Move Field、Move Method；</li>
-<li>类承担过多职责：Extract Class；</li>
-<li>类职责过少：Inline Class；</li>
-<li>类之间关联：Hide Delegate、Remove Middle Man；</li>
-<li>不能访问类的源码，却又想添加职责：Introduce Foreign Method、Introduce Local Extension；</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/05.编程思想/02.重构/04.重构-在对象之间搬移特性/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/posts/05.编程思想/02.重构/03.重构-重新组织函数/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="祥_venux">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head2.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="祥_venux">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/posts/05.编程思想/02.重构/03.重构-重新组织函数/" itemprop="url">03.重构-重新组织函数</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-31T18:06:26+08:00">
-                2018-05-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/05-编程思想/" itemprop="url" rel="index">
-                    <span itemprop="name">05.编程思想</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/05-编程思想/02-重构/" itemprop="url" rel="index">
-                    <span itemprop="name">02.重构</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/posts/05.编程思想/02.重构/03.重构-重新组织函数/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/posts/05.编程思想/02.重构/03.重构-重新组织函数/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/posts/05.编程思想/02.重构/03.重构-重新组织函数/" class="leancloud_visitors" data-flag-title="03.重构-重新组织函数">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="1-问题及方案"><a href="#1-问题及方案" class="headerlink" title="1. 问题及方案"></a>1. 问题及方案</h2><ul>
-<li>Long Methods（过长函数）：Extract Method；</li>
-<li>某些函数没做什么太多事情：Inline Method；</li>
-<li>临时变量：Replace Temp with Query、Split Temporary Variable、Replace Method with Method Object；</li>
-<li>参数问题：Remove Assignments to Parameters；</li>
-<li>改进算法：Substitute Algorithm；</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/posts/05.编程思想/02.重构/03.重构-重新组织函数/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -2229,7 +1997,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">65</span>
+                <span class="site-state-item-count">70</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2240,7 +2008,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -2251,7 +2019,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-count">39</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -2289,28 +2057,6 @@
                   
                     
                       网易云音乐
-                    
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://twitter.com/venux_27" target="_blank" title="Twitter">
-                  
-                    <i class="fa fa-fw fa-twitter"></i>
-                  
-                    
-                      Twitter
-                    
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://www.facebook.com/luwenbiao333" target="_blank" title="Facebook">
-                  
-                    <i class="fa fa-fw fa-facebook"></i>
-                  
-                    
-                      Facebook
                     
                 </a>
               </span>
@@ -2512,14 +2258,6 @@
 
   
 
-    
-      <script id="dsq-count-scr" src="https://venux27.disqus.com/count.js" async></script>
-    
-
-    
-
-  
-
 
 
 
@@ -2532,6 +2270,10 @@
   
 
 
+
+
+
+  
 
 
 
@@ -2864,113 +2606,6 @@
 
 
   
-
-  
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script>AV.initialize("UDjFXGEpy6nb5tWHq55BEaoV-gzGzoHsz", "qdpkXjO9HeADnrAdOAvRsuXi");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
 
   
 <script>

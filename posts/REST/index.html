@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ASP.NET Core," />
+  <meta name="keywords" content="REST," />
 
 
 
@@ -97,18 +97,18 @@
 
 
 
-<meta name="description" content="1.介绍ASP.NET Core 通过多环境控制 APP 的行为，例如 development，staging 和 production。环境变量决定了运行环境，从而根据不同环境采用不同配置。">
-<meta name="keywords" content="ASP.NET Core">
+<meta name="description" content="1 简介REST (Representational State Transfer) was introduced and defined in 2000 by Roy Fielding in his doctoral dissertation（博士论文）. REST is an architectural style for designing distributed systems. It i">
+<meta name="keywords" content="REST">
 <meta property="og:type" content="article">
-<meta property="og:title" content="多环境工作">
-<meta property="og:url" content="http://www.venux.cn/posts/01.编程语言/01.CSharp/CSharp-Environment/index.html">
+<meta property="og:title" content="REST 介绍">
+<meta property="og:url" content="http://www.venux.cn/posts/REST/index.html">
 <meta property="og:site_name" content="祥_venux">
-<meta property="og:description" content="1.介绍ASP.NET Core 通过多环境控制 APP 的行为，例如 development，staging 和 production。环境变量决定了运行环境，从而根据不同环境采用不同配置。">
+<meta property="og:description" content="1 简介REST (Representational State Transfer) was introduced and defined in 2000 by Roy Fielding in his doctoral dissertation（博士论文）. REST is an architectural style for designing distributed systems. It i">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-23T02:41:38.716Z">
+<meta property="og:updated_time" content="2018-10-23T02:21:27.435Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="多环境工作">
-<meta name="twitter:description" content="1.介绍ASP.NET Core 通过多环境控制 APP 的行为，例如 development，staging 和 production。环境变量决定了运行环境，从而根据不同环境采用不同配置。">
+<meta name="twitter:title" content="REST 介绍">
+<meta name="twitter:description" content="1 简介REST (Representational State Transfer) was introduced and defined in 2000 by Roy Fielding in his doctoral dissertation（博士论文）. REST is an architectural style for designing distributed systems. It i">
 
 
 
@@ -138,13 +138,13 @@
 
 
 
-  <link rel="canonical" href="http://www.venux.cn/posts/01.编程语言/01.CSharp/CSharp-Environment/"/>
+  <link rel="canonical" href="http://www.venux.cn/posts/REST/"/>
 
 
 
 
 
-  <title>多环境工作 | 祥_venux</title>
+  <title>REST 介绍 | 祥_venux</title>
   
 
 
@@ -345,7 +345,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/posts/01.编程语言/01.CSharp/CSharp-Environment/">
+    <link itemprop="mainEntityOfPage" href="http://www.venux.cn/posts/REST/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="祥_venux">
@@ -362,7 +362,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">多环境工作</h1>
+          <h1 class="post-title" itemprop="name headline">REST 介绍</h1>
         
 
         <div class="post-meta">
@@ -374,8 +374,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-31T15:26:07+08:00">
-                2017-08-31
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-30T18:52:12+08:00">
+                2018-04-30
               </time>
             
 
@@ -385,67 +385,12 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/01-编程语言/" itemprop="url" rel="index">
-                    <span itemprop="name">01.编程语言</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/01-编程语言/01-CSharp/" itemprop="url" rel="index">
-                    <span itemprop="name">01.CSharp</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/posts/01.编程语言/01.CSharp/CSharp-Environment/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="/posts/01.编程语言/01.CSharp/CSharp-Environment/" itemprop="commentCount"></span>
-                </a>
-              </span>
             
           
 
           
-          
-             <span id="/posts/01.编程语言/01.CSharp/CSharp-Environment/" class="leancloud_visitors" data-flag-title="多环境工作">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
           
 
           
@@ -467,34 +412,55 @@
       
 
       
-        <h2 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1.介绍"></a>1.介绍</h2><p>ASP.NET Core 通过多环境控制 APP 的行为，例如 development，staging 和 production。环境变量决定了运行环境，从而根据不同环境采用不同配置。</p>
+        <h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1 简介"></a>1 简介</h2><p><strong>REST (Representational State Transfer)</strong> was introduced and defined in <strong>2000</strong> by <strong>Roy Fielding</strong> in his doctoral dissertation（博士论文）. REST is <strong>an architectural style</strong> for <strong>designing distributed systems</strong>. It is <strong>not a standard but a set of constraints（约束）</strong>, such as being <strong>stateless, having a client/server relationship, and a uniform interface</strong>. REST is <strong>not strictly related to HTTP</strong>, but it is most commonly <strong>associated</strong> with it.</p>
 <a id="more"></a>
-<h2 id="2-ASPNETCORE-ENVIRONMENT-环境变量"><a href="#2-ASPNETCORE-ENVIRONMENT-环境变量" class="headerlink" title="2.ASPNETCORE_ENVIRONMENT 环境变量"></a>2.ASPNETCORE_ENVIRONMENT 环境变量</h2><ul>
-<li>Development 开发环境</li>
-<li>Staging 预发布、部署上线前的最终测试环境、生产环境的物理镜像</li>
-<li>Production 生产环境（安全性、高性能、稳健性）<ul>
-<li>开启缓存</li>
-<li>客户端资源 <code>bundled</code>，<code>minified</code> 或 <code>CDN</code></li>
-<li>关闭 <code>diagnostic ErrorPages</code></li>
-<li>开启 <code>friendly error pages</code></li>
-<li>开启 <code>production logging</code> 和 <code>monitoring</code></li>
-<li>…</li>
+<h2 id="2-原则"><a href="#2-原则" class="headerlink" title="2 原则"></a>2 原则</h2><ul>
+<li><strong>Resources</strong> expose（暴露） easily understood directory structure URIs.</li>
+<li><strong>Representations</strong> transfer（传递） JSON or XML to represent data objects and attributes.</li>
+<li><strong>Messages</strong> use HTTP methods explicitly（明确的） (for example, GET, POST, PUT, and DELETE).</li>
+<li><strong>Stateless</strong> interactions（交互） store no client context on the server between requests. State dependencies limit and restrict scalability（依赖状态限制了可伸缩性）. The client holds session state.</li>
 </ul>
+<h2 id="3-HTTP-方法"><a href="#3-HTTP-方法" class="headerlink" title="3 HTTP 方法"></a>3 HTTP 方法</h2><p>使用 HTTP 方法以便在 HTTP 请求中映射 CRUD(create,retrieve(取回),update,delete) 操作。<br>幂等（idempotent）：指使用同样的参数，不管重复进行多少次操作，均显示同样的结果。</p>
+<h3 id="3-1-GET（Retrieve）"><a href="#3-1-GET（Retrieve）" class="headerlink" title="3.1 GET（Retrieve）"></a>3.1 GET（Retrieve）</h3><ul>
+<li>用于获取信息，即查询操作（Retrieve）。该操作必须是安全的和幂等的；</li>
+<li>它可能有副作用，但是用户不关心；</li>
+<li>请求可选择条件。<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GET /addresses/1</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="3-注意事项"><a href="#3-注意事项" class="headerlink" title="3.注意事项"></a>3.注意事项</h2><ul>
-<li>Windows 不区分大小写，Linux 默认区分大小写。</li>
-<li>设置：右键项目属性-调试-环境变量，另在 <code>~\Properties\launchSettings.json</code> 可看到具体配置。<ul>
-<li>launchSettings.json 存储的变量可访问到，不安全，禁止存放加密信息，使用 <code>Secret Manager</code> 存放加密信息。 </li>
-</ul>
-</li>
-<li>本机设置<ul>
-<li>临时：<code>set ASPNETCORE_ENVIRONMENT=Development</code></li>
-<li>永久：环境变量-ASPNETCORE_ENVIRONMENT=Development</li>
-</ul>
+<h3 id="3-2-POST（Create）"><a href="#3-2-POST（Create）" class="headerlink" title="3.2 POST（Create）"></a>3.2 POST（Create）</h3><ul>
+<li>通常用于创建实体，即创建操作（Create）；</li>
+<li>也可用于更新操作（Update）；</li>
+<li>非幂等。<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">POST /addresses</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p>1 <a href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/environments" target="_blank" rel="noopener">多环境工作</a></p>
+<h3 id="3-3-PUT（Update）"><a href="#3-3-PUT（Update）" class="headerlink" title="3.3 PUT（Update）"></a>3.3 PUT（Update）</h3><ul>
+<li>通常用于更新实体，即更新操作（Update）；</li>
+<li>也可用于创建操作（Create）；</li>
+<li>幂等（该特性是与 POST 的主要差别）。<br><em>注意：</em> PUT 替换一个已存在的实体，若只提供该实体的部分字段属性，则其余字段属性会被替换为空字符串或 null。 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PUT /addresses/1</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="3-4-DELETE（Delete）"><a href="#3-4-DELETE（Delete）" class="headerlink" title="3.4 DELETE（Delete）"></a>3.4 DELETE（Delete）</h3><ul>
+<li>通常用于删除实体，即删除操作（Delete）；<br><em>注意：</em> 删除不一定要立即执行，也可为异步操作或者长时间的请求。<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE /addresses/1</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="3-5-PATCH（补丁）（Update）"><a href="#3-5-PATCH（补丁）（Update）" class="headerlink" title="3.5 PATCH（补丁）（Update）"></a>3.5 PATCH（补丁）（Update）</h3><ul>
+<li>通常用于更新实体，<strong>仅更新指定的字符属性</strong>，即更新操作（Update）；</li>
+<li>幂等<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PATCH /addresses/1</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="HTTP-状态码"><a href="#HTTP-状态码" class="headerlink" title="HTTP 状态码"></a>HTTP 状态码</h2><ul>
+<li>1XX - informational</li>
+<li>2XX - success</li>
+<li>3XX - redirection</li>
+<li>4XX - client error</li>
+<li>5XX - server error</li>
+</ul>
+<h2 id="Media-types"><a href="#Media-types" class="headerlink" title="Media types"></a>Media types</h2><ul>
+<li>Accept：指明客户端接收响应内容的类型，如 <code>application/json</code> 告诉服务端返回 JSON；</li>
+<li>Content-Type：指明客户端发送请求内容的类型，如 <code>application/xml</code> 告诉服务端接收 XML；</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>1 <a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm" target="_blank" rel="noopener">Architectural Styles and the Design of Network-based Software Architectures</a><br>2 <a href="https://spring.io/understanding/REST" target="_blank" rel="noopener">Understanding REST</a></p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>本文主要用于记录个人笔记，方便查看不明了之处，故可能摘抄许多文章，如有冒犯，请联系我删除。另由于个人查看，故可能忽略许多知识点，请自行查看相关资料，谢谢。</p>
 
       
     </div>
@@ -541,22 +507,12 @@
       
         <div class="post-tags">
           
-            <a href="/tags/ASP-NET-Core/" rel="tag"># ASP.NET Core</a>
+            <a href="/tags/REST/" rel="tag"># REST</a>
           
         </div>
       
 
       
-      
-        <div class="post-widgets">
-        
-          <div class="wp_rating">
-            <div id="wpac-rating"></div>
-          </div>
-        
-
-        
-        </div>
       
       
 
@@ -564,8 +520,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/03.工具/Markdown/" rel="next" title="Markdown笔记">
-                <i class="fa fa-chevron-left"></i> Markdown笔记
+              <a href="/posts/java-Spring Framework/" rel="next" title="java-Spring Framework">
+                <i class="fa fa-chevron-left"></i> java-Spring Framework
               </a>
             
           </div>
@@ -574,8 +530,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/posts/05.编程思想/01.设计模式/设计模式-00总体介绍/" rel="prev" title="设计模式-总体介绍">
-                设计模式-总体介绍 <i class="fa fa-chevron-right"></i>
+              <a href="/posts/08.架构/01.DDD/01.介绍/" rel="prev" title="DDD-01介绍">
+                DDD-01介绍 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -632,13 +588,6 @@ var jiathis_config={
           
   <div class="comments" id="comments">
     
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
-    
   </div>
 
 
@@ -688,7 +637,7 @@ var jiathis_config={
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">65</span>
+                <span class="site-state-item-count">70</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -699,7 +648,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -710,7 +659,7 @@ var jiathis_config={
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">35</span>
+                <span class="site-state-item-count">39</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -748,28 +697,6 @@ var jiathis_config={
                   
                     
                       网易云音乐
-                    
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://twitter.com/venux_27" target="_blank" title="Twitter">
-                  
-                    <i class="fa fa-fw fa-twitter"></i>
-                  
-                    
-                      Twitter
-                    
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://www.facebook.com/luwenbiao333" target="_blank" title="Facebook">
-                  
-                    <i class="fa fa-fw fa-facebook"></i>
-                  
-                    
-                      Facebook
                     
                 </a>
               </span>
@@ -836,7 +763,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-介绍"><span class="nav-text">1.介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-ASPNETCORE-ENVIRONMENT-环境变量"><span class="nav-text">2.ASPNETCORE_ENVIRONMENT 环境变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-注意事项"><span class="nav-text">3.注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文章"><span class="nav-text">参考文章</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-简介"><span class="nav-text">1 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-原则"><span class="nav-text">2 原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-HTTP-方法"><span class="nav-text">3 HTTP 方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-GET（Retrieve）"><span class="nav-text">3.1 GET（Retrieve）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-POST（Create）"><span class="nav-text">3.2 POST（Create）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-PUT（Update）"><span class="nav-text">3.3 PUT（Update）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-DELETE（Delete）"><span class="nav-text">3.4 DELETE（Delete）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-5-PATCH（补丁）（Update）"><span class="nav-text">3.5 PATCH（补丁）（Update）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP-状态码"><span class="nav-text">HTTP 状态码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Media-types"><span class="nav-text">Media types</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-text">参考</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意"><span class="nav-text">注意</span></a></li></ol></div>
             
 
           </div>
@@ -991,26 +918,6 @@ var jiathis_config={
 
   
 
-    
-      <script id="dsq-count-scr" src="https://venux27.disqus.com/count.js" async></script>
-    
-
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'http://www.venux.cn/posts/01.编程语言/01.CSharp/CSharp-Environment/';
-          this.page.identifier = '/posts/01.编程语言/01.CSharp/CSharp-Environment/';
-          this.page.title = '多环境工作';
-        };
-        var d = document, s = d.createElement('script');
-        s.src = 'https://venux27.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      </script>
-    
-
-  
-
 
 
 
@@ -1023,6 +930,10 @@ var jiathis_config={
   
 
 
+
+
+
+  
 
 
 
@@ -1357,113 +1268,6 @@ var jiathis_config={
   
 
   
-  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script>AV.initialize("UDjFXGEpy6nb5tWHq55BEaoV-gzGzoHsz", "qdpkXjO9HeADnrAdOAvRsuXi");</script>
-  <script>
-    function showTime(Counter) {
-      var query = new AV.Query(Counter);
-      var entries = [];
-      var $visitors = $(".leancloud_visitors");
-
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      query.containedIn('url', entries);
-      query.find()
-        .done(function (results) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.get('url');
-            var time = item.get('time');
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function (object, error) {
-          console.log("Error: " + error.code + " " + error.message);
-        });
-    }
-
-    function addCount(Counter) {
-      var $visitors = $(".leancloud_visitors");
-      var url = $visitors.attr('id').trim();
-      var title = $visitors.attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-
-      query.equalTo("url", url);
-      query.find({
-        success: function(results) {
-          if (results.length > 0) {
-            var counter = results[0];
-            counter.fetchWhenSave(true);
-            counter.increment("time");
-            counter.save(null, {
-              success: function(counter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(counter.get('time'));
-              },
-              error: function(counter, error) {
-                console.log('Failed to save Visitor num, with error message: ' + error.message);
-              }
-            });
-          } else {
-            var newcounter = new Counter();
-            /* Set ACL */
-            var acl = new AV.ACL();
-            acl.setPublicReadAccess(true);
-            acl.setPublicWriteAccess(true);
-            newcounter.setACL(acl);
-            /* End Set ACL */
-            newcounter.set("title", title);
-            newcounter.set("url", url);
-            newcounter.set("time", 1);
-            newcounter.save(null, {
-              success: function(newcounter) {
-                var $element = $(document.getElementById(url));
-                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
-              },
-              error: function(newcounter, error) {
-                console.log('Failed to create');
-              }
-            });
-          }
-        },
-        error: function(error) {
-          console.log('Error:' + error.code + " " + error.message);
-        }
-      });
-    }
-
-    $(function() {
-      var Counter = AV.Object.extend("Counter");
-      if ($('.leancloud_visitors').length == 1) {
-        addCount(Counter);
-      } else if ($('.post-title-link').length > 1) {
-        showTime(Counter);
-      }
-    });
-  </script>
-
-
-
-  
 <script>
 (function(){
     var bp = document.createElement('script');
@@ -1481,23 +1285,6 @@ var jiathis_config={
 
 
   
-  <script type="text/javascript">
-  wpac_init = window.wpac_init || [];
-  wpac_init.push({widget: 'Rating', id: 6827,
-    el: 'wpac-rating',
-    color: 'fc6423'
-  });
-  (function() {
-    if ('WIDGETPACK_LOADED' in window) return;
-    WIDGETPACK_LOADED = true;
-    var mc = document.createElement('script');
-    mc.type = 'text/javascript';
-    mc.async = true;
-    mc.src = '//embed.widgetpack.com/widget.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
-  })();
-  </script>
-
 
   
 
